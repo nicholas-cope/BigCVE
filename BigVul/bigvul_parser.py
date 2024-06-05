@@ -5,11 +5,13 @@ import pandas as pd
 
 file = "Dataset/MSR_data_cleaned.csv"
 
-df = pd.read_csv(file, nrows = 1)
+df = pd.read_csv(file, nrows=10000)
 
 if 'func_before' in df.columns and 'func_after' in df.columns:
-    selected_columns = df[['func_before', 'func_after']]
-    first_row = selected_columns.iloc[0]
-
-    print(f"func_before: {first_row['func_before']}")
-    print(f"func_after: {first_row['func_after']}")
+    if 'func_before' in df.columns and 'func_after' in df.columns:
+        for index, row in df.iterrows():
+            print(f"\n--- Row {index + 1} ---")
+            print(f"func_before: {row['func_before']}")
+            print(f"func_after: {row['func_after']}")
+    else:
+        print("Error: One or both columns 'func_before' and 'func_after' were not found in the CSV file.")
