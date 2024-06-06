@@ -34,6 +34,15 @@ vulnerable_file_name = f"vulnerability{row_number}.cpp
 fixed_file_name_name = f"fixed{row_number}.cpp"
 
 #Automatically closes files so don't have to worry
+#Vulnerable File
+with open(vulnerable_file_name, "w", encoding="utf8", errors="ignore") as vulnerable_file:
+    vulnerable_file.write(row.get(vulnerableFunction, "Not Found"))
+    
+#Fixed File 
+with open(fixed_file_name, "w", encoding="utf8", errors="ignore") as fixed_file:
+    fixed_file.write(row.get(fixedFunction, "Not Found"))
+
+row_number += 1
 
 '''
 
