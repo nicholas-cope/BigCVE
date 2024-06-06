@@ -28,6 +28,15 @@ with open(file_path, "r", encoding="utf8", errors="ignore") as file:
         print(row.get(fixedFunction, "Not Found"))
         row_number += 1
 
+#Whenever we get to the part where we output all 180,000 lines into 360,000 files
+f'''
+vulnerable_file_name = f"vulnerability{row_number}.cpp
+fixed_file_name_name = f"fixed{row_number}.cpp"
+
+#Automatically closes files so don't have to worry
+
+'''
+
 
 
 
