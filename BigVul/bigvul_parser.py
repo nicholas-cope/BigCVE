@@ -8,4 +8,9 @@ file = "Dataset/MSR_data_cleaned.csv"
 #Optimizing performance
 chunks = 25000
 
+#Columns we want to read
+vulnerableFunction = "func_before"
+fixedFunction = "func_after"
+
+
 
