@@ -16,19 +16,18 @@ fixedFunction = "func_after"
 #While BigVul is in utf8, just checking for safety
 with open(file_path, "r", encoding="utf8", errors="ignore") as file:
     #The reader for the specified number of chunks
-    reader = csv.reader(file)
+    #Reading as a dictionary in order to use direct access
+    reader = csv.DictReader(file)
     #Printing the rows we want
-    #O(n^2) - Oh no
     row_number = 1
 
-    for chunk in reader:
-        for row in chunk:
-            print("Row number: "+ str(row_number))
-            print("Function Before:")
-            print(row.get(vulnerableFunction, "Not Found"))
-            print("Function After:")
-            print(row.get(fixedFunction, "Not Found"))
-            row_number += 1
+    for row in reader:
+        print("Row number: "+ str(row_number))
+        print("Function Before:")
+        print(row.get(vulnerableFunction, "Not Found"))
+        print("Function After:")
+        print(row.get(fixedFunction, "Not Found"))
+        row_number += 1
 
 
 
