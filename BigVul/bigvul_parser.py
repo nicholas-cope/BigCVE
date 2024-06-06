@@ -1,7 +1,4 @@
 import csv
-
-import pandas as pd
-
 #Path to BigVul Dataset
 file_path = "Dataset/MSR_data_cleaned.csv"
 #How many rows we are going to read at a time
