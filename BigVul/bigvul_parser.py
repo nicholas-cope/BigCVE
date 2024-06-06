@@ -19,9 +19,16 @@ with open(file_path, "r", encoding="utf8", errors="ignore") as file:
     reader = csv.reader(file)
     #Printing the rows we want
     #O(n^2) - Oh no
-    for row_group in reader:
-        for row in row_group:
-            print
+    row_number = 1
+
+    for chunk in reader:
+        for row in chunk:
+            print("Row number: "+ str(row_number))
+            print("Function Before:")
+            print(row.get(vulnerableFunction, "Not Found"))
+            print("Function After:")
+            print(row.get(fixedFunction, "Not Found"))
+            row_number += 1
 
 
 
