@@ -12,6 +12,8 @@ chunks = 25000
 vulnerableFunction = "func_before"
 fixedFunction = "func_after"
 
+#Increasing CSV field limit
+csv.field_size_limit(100000000)
 #Reading the file in chunks
 #While BigVul is in utf8, just checking for safety
 with open(file_path, "r", encoding="utf8", errors="ignore") as file:
