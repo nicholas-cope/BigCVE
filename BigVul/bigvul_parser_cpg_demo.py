@@ -1,6 +1,10 @@
 import csv
 import os
-from joern.all import JoernSteps
+import subprocess
+import time
+
+#Timing
+start_time = time.time()
 
 # Path to BigVul Dataset
 file_path = "Dataset/MSR_data_cleaned.csv"
@@ -44,19 +48,12 @@ with open(file_path, "r", encoding="utf8", errors="ignore") as file:
 
         row_number += 1
 
-#Joern API Usage
 
-joern = JoernSteps()
-joern.setGraphDbURL("http://localhost:7474/db/data")
 
-function_directory = "BigVul/Functions"
-output_directory = "BigVul/CPG"
-
-#Traversing each file in the Functions Directory
-for function in os.listdir(function_directory):
-    #Checking if the file is a C++ file
-    if function.endswith(".cpp"):
-
+#End Time
+end_time = time.time()
+elapsed_time = end_time - start_time
+print(f"Elapsed time: {elapsed_time} seconds")
 
 
 
