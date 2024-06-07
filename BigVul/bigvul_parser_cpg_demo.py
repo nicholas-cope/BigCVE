@@ -20,14 +20,28 @@ with open(file_path, "r", encoding="utf8", errors="ignore") as file:
     reader = csv.DictReader(file)
     # Printing the rows we want
     row_number = 1
+    # Max Numbers of Rows Read
+    max_rows = 10
 
     for row in reader:
-        print("Row number: " + str(row_number))
-        print("Function Before:")
-        print(row.get(vulnerableFunction, "Not Found"))
-        print("Function After:")
-        print(row.get(fixedFunction, "Not Found"))
+        #Ensuring that rows does not over max rows
+        if row_number >= max_rows:
+            break
+        #Printing File Code
+        vulnerable_file_name = f"vulnerability{row_number}.cpp
+        fixed_file_name = f"fixed{row_number}.cpp"
+
+        # Automatically closes files so don't have to worry
+        # Vulnerable File
+        with open(vulnerable_file_name, "w", encoding="utf8", errors="ignore") as vulnerable_file:
+            vulnerable_file.write(row.get(vulnerableFunction, "Not Found"))
+
+        # Fixed File
+        with open(fixed_file_name, "w", encoding="utf8", errors="ignore") as fixed_file:
+            fixed_file.write(row.get(fixedFunction, "Not Found"))
+
         row_number += 1
+
 
 # Whenever we get to the part where we output all 188635 lines into 360,000 files
 f'''
