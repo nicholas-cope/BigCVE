@@ -50,7 +50,12 @@ joern = JoernSteps()
 joern.setGraphDbURL("http://localhost:7474/db/data")
 
 function_directory = "BigVul/Functions"
+output_directory = "BigVul/CPG"
 
+#Traversing each file in the Functions Directory
+for function in os.listdir(function_directory):
+    #Checking if the file is a C++ file
+    if function.endswith(".cpp"):
 
 
 
