@@ -1,5 +1,6 @@
 import csv
 import os
+from joern.all import JoernSteps
 
 # Path to BigVul Dataset
 file_path = "Dataset/MSR_data_cleaned.csv"
@@ -42,6 +43,14 @@ with open(file_path, "r", encoding="utf8", errors="ignore") as file:
             fixed_file.write(row.get(fixedFunction, "Not Found"))
 
         row_number += 1
+
+#Joern API Usage
+
+joern = JoernSteps()
+joern.setGraphDbURL("http://localhost:7474/db/data")
+
+function_directory = "BigVul/Functions"
+
 
 
 
