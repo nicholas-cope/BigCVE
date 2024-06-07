@@ -1,7 +1,7 @@
 import csv
 import os
-import subprocess
 import time
+import subprocess
 
 #Timing
 start_time = time.time()
@@ -48,8 +48,8 @@ with open(file_path, "r", encoding="utf8", errors="ignore") as file:
 
         row_number += 1
 
-
-
+#Executing Generation
+subprocess.run(["python", "generate_cpgs.py"])
 #End Time
 end_time = time.time()
 elapsed_time = end_time - start_time

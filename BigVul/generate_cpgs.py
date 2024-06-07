@@ -9,7 +9,7 @@ output_directory = "CPG/"
 joern_path = "/Users/yurischool/joern/joern-cli/"
 temp_joern_files_location = "Temp/"
 
-done_files = {done.stem for done in Path(output_directory).iterdir()}  # Set for faster lookups
+done_files = {done.stem for done in Path(output_directory).iterdir()}  #Faster seraching
 
 def joern_parse(source_file):
     sample_name = Path(source_file).stem
@@ -21,12 +21,13 @@ def joern_parse(source_file):
     bin_file = Path(temp_joern_files_location) / f"{sample_name}.bin"
     out_file = Path(output_directory) / sample_name
 
-    # Using f-strings for clearer formatting and Path objects for better file handling
+    # Changing up string concatenation
     os.system(f"{joern_path}joern-parse {source_file} --language c --output {bin_file}")
     os.system(f"{joern_path}joern-export {bin_file} --repr cpg --out {out_file} --format dot")
     os.remove(bin_file)
 
 
+#Well this fixed the error
 if __name__ == '__main__':
     set_start_method("spawn")
     files = glob.glob(source_directory + "*.cpp")
