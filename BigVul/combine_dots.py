@@ -36,6 +36,15 @@ def handle_sample(sample_folder):
             if str(val)[2:9] == "UNKNOWN":
                 print("Bad Joern parsing. Abandoning combination.")
                 return
+
+        #Reading the vulnerable graph
+        vulnerable_graph = nx.drawing.nx_pydot.read_dot(vulnerable_dot_file)
+        labels_dict = dict(nx.get_node_attributes(vulnerable_graph, 'label'))
+        for val in labels_dict.values():
+            if str(val)[2:9] == "UNKNOWN":
+                print("Bad Joern parsing. Abandoning combination.")
+                return
+
     except:
         print(f"Could not read .dot file for {function_name}. Skipping")
         return
