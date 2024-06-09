@@ -10,9 +10,22 @@ output_location = "Combined_CPG/"
 
 
 def handle_sample(sample_folder):
+    function_name = Path(sample_folder).name
+
+    fixed_folder = Path(sample_folder) / "fixed" / "<includes>"
+    vulnerable_folder = Path(sample_folder) / "vulnerable" / "<includes>"
+
     print(sample_folder)
     folder = Path(sample_folder)
-    num_dots = len(list(folder.iterdir()))
+    dot_files = [f for f in folder.iterdir() if f.is_file() and f.suffix == ".dot"]  # filter for .dot files
+
+    num_dots = len(dot_files)
+
+    if num_dots == 0:
+        print("No dot files.")
+        return
+    elif num_dots == 1:
+        graph = nx.drawing.nx_pydot.read_dot(dot_files[0])  # pass the file to read_dot
 
     if num_dots == 0:
         print("No dot files.")
