@@ -11,9 +11,15 @@ output_location = "Combined_CPG/"
 
 def handle_sample(sample_folder):
     function_name = Path(sample_folder).name
+    #Extracting the number
+    function_number = ''.join(filter(str.isdigit, function_name))
 
-    fixed_folder = Path(sample_folder) / "fixed" / "<includes>"
-    vulnerable_folder = Path(sample_folder) / "vulnerable" / "<includes>"
+    fixed_folder = Path(sample_folder) / f"fixed{function_number}" / f"fixed{function_number}.cpp"
+    vulnerable_folder = Path(sample_folder) / f"vulnerable{function_number}" / f"vulnerable{function_number}.cpp"
+
+    #Specific Graph We Are Combining
+    fixed_dot_file = fixed_folder / "check_rodc_critical_attribute.dot"
+    vulnerable_dot_file = vulnerable_folder / "check_rodc_critical_attribute.dot"
 
     print(sample_folder)
     folder = Path(sample_folder)
