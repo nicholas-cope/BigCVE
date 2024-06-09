@@ -10,6 +10,7 @@ output_location = "Combined_CPG/"
 
 
 def handle_sample(sample_folder):
+    print(sample_folder)
     function_name = Path(sample_folder).name
     #Extracting the number
     function_number = ''.join(filter(str.isdigit, function_name))
@@ -21,37 +22,18 @@ def handle_sample(sample_folder):
     fixed_dot_file = fixed_folder / "check_rodc_critical_attribute.dot"
     vulnerable_dot_file = vulnerable_folder / "check_rodc_critical_attribute.dot"
 
-    print(sample_folder)
-    folder = Path(sample_folder)
-    dot_files = [f for f in folder.iterdir() if f.is_file() and f.suffix == ".dot"]  # filter for .dot files
-
-    num_dots = len(dot_files)
-
-    if num_dots == 0:
-        print("No dot files.")
+    #Checking if .dot fiels exists
+    if not fixed_dot_file.exists() or not vulnerable_dot_file.exists():
+        print(f"Missing .dot files for {function_name}. Skipping")
         return
-    elif num_dots == 1:
-        graph = nx.drawing.nx_pydot.read_dot(dot_files[0])  # pass the file to read_dot
 
-    if num_dots == 0:
-        print("No dot files.")
+    #To Catch Errors without killing the program
+    try:
+        fixed_graph = nx.drawing.nx_pydot.read_dot(fixed_dot_file)
+        labels_dict = dict(nx.get_node_attributes(fixed_graph, 'label'))
+    except:
+        print(f"Could not read .dot file for {function_name}. Skipping")
         return
-    elif num_dots == 1:
-        graph = nx.drawing.nx_pydot.read_dot(list(folder.iterdir())[0])
-        labels_dict = dict(nx.get_node_attributes(graph, 'label'))
-        for val in labels_dict.values():
-            if str(val)[2:9] == "UNKNOWN":
-                print("Bad Joern parsing. Abandoning combination.")
-                return
-
-    # Operation is assumed to be normal at this point
-    overall_graph = nx.MultiDiGraph()
-    for dot in folder.iterdir():
-        overall_graph = nx.compose(overall_graph, nx.drawing.nx_pydot.read_dot(dot))
-
-    out = output_location + Path(sample_folder).name + ".dot"
-
-    nx.nx_pydot.write_dot(overall_graph, out)
 
 
 if __name__ == '__main__':
