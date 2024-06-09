@@ -29,8 +29,13 @@ def handle_sample(sample_folder):
 
     #To Catch Errors without killing the program
     try:
+        #Reading the fixed graph
         fixed_graph = nx.drawing.nx_pydot.read_dot(fixed_dot_file)
         labels_dict = dict(nx.get_node_attributes(fixed_graph, 'label'))
+        for val in labels_dict.values():
+            if str(val)[2:9] == "UNKNOWN":
+                print("Bad Joern parsing. Abandoning combination.")
+                return
     except:
         print(f"Could not read .dot file for {function_name}. Skipping")
         return
