@@ -13,15 +13,21 @@ done_files = {done.stem for done in Path(output_directory).iterdir()}  #Faster s
 
 def joern_parse(source_file):
     sample_name = Path(source_file).stem
+    # Extract the function number by keeping only digits
+    function_number = ''.join(filter(str.isdigit, sample_name))
+
+    # Check if directory exists, if not create it
+    function_output_dir = Path(output_directory) / f"function{function_number}"
+    if not function_output_dir.exists():
+        function_output_dir.mkdir(parents=True)
 
     if sample_name in done_files:
         print(f"{sample_name} already processed")
         return
 
     bin_file = Path(temp_joern_files_location) / f"{sample_name}.bin"
-    out_file = Path(output_directory) / sample_name
+    out_file = function_output_dir / sample_name  # Put output in function directory
 
-    # Changing up string concatenation
     os.system(f"{joern_path}joern-parse {source_file} --language c --output {bin_file}")
     os.system(f"{joern_path}joern-export {bin_file} --repr cpg --out {out_file} --format dot")
     os.remove(bin_file)
