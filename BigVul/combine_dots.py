@@ -35,7 +35,8 @@ def handle_sample(sample_folder):
     nx.nx_pydot.write_dot(overall_graph, out)
 
 
-folders = glob.glob(raw_cpgs_location + "*/")
+if __name__ == '__main__':
+    folders = glob.glob(raw_cpgs_location + "*/")
 
-with Pool(12) as p:
-    p.map(handle_sample, folders)
+    with Pool(12) as p:
+        p.map(handle_sample, folders)
