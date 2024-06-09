@@ -10,16 +10,17 @@ output_location = "Combined_CPG/"
 
 
 def handle_sample(sample_folder):
-    print(sample_folder)
+    #print(sample_folder)
     function_name = Path(sample_folder).name
     #Extracting the number
     function_number = ''.join(filter(str.isdigit, function_name))
 
-    fixed_folder = Path(sample_folder) / f"fixed{function_number}" / f"fixed{function_number}.cpp"
-    vulnerable_folder = Path(sample_folder) / f"vulnerable{function_number}" / f"vulnerable{function_number}.cpp"
+    fixed_folder = Path(sample_folder) / f"fixed{function_number}"
+    vulnerable_folder = Path(sample_folder) / f"vulnerability{function_number}"
 
     #Specific Graph We Are Combining
     fixed_dot_file = fixed_folder / "check_rodc_critical_attribute.dot"
+    print(fixed_dot_file)
     vulnerable_dot_file = vulnerable_folder / "check_rodc_critical_attribute.dot"
 
     #Checking if .dot fiels exists
@@ -48,6 +49,15 @@ def handle_sample(sample_folder):
     except:
         print(f"Could not read .dot file for {function_name}. Skipping")
         return
+
+    # Operation is assumed to be normal at this point
+    overall_graph = nx.MultiDiGraph()
+    for dot in [fixed_dot_file, vulnerable_dot_file]:
+        overall_graph = nx.compose(overall_graph, nx.drawing.nx_pydot.read_dot(dot))
+
+    out = output_location + Path(sample_folder).name + ".dot"
+
+    nx.nx_pydot.write_dot(overall_graph, out)
 
 
 if __name__ == '__main__':
