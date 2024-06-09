@@ -8,6 +8,7 @@ chunks = 25000
 #Columns we want to read
 vulnerableFunction = "func_before"
 fixedFunction = "func_after"
+function_vul = "vul"
 
 #Increasing CSV field limit
 csv.field_size_limit(100000000)
@@ -19,14 +20,24 @@ with open(file_path, "r", encoding="utf8", errors="ignore") as file:
     reader = csv.DictReader(file)
     #Printing the rows we want
     row_number = 1
+    number_of_files = 1
 
+    #If vulnerability number == 0, function did not change
     for row in reader:
-        print("Row number: "+ str(row_number))
-        print("Function Before:")
-        print(row.get(vulnerableFunction, "Not Found"))
-        print("Function After:")
-        print(row.get(fixedFunction, "Not Found"))
+        if(row.get(function_vul) == '1'):
+            print("Row number: "+ str(row_number))
+            print("Vulnerable Function:")
+            print(row.get(function_vul, "Not Found"))
+            print(vulnerableFunction == fixedFunction)
+            print("Function Before:")
+            print(row.get(vulnerableFunction, "Not Found"))
+            print("Function After:")
+            print(row.get(fixedFunction, "Not Found"))
+            number_of_files += 1
         row_number += 1
+
+    print(number_of_files)
+
 
 
 #Whenever we get to the part where we output all 188635 lines into 360,000 files
