@@ -3,7 +3,6 @@ import os
 import time
 import subprocess
 
-#Timing
 start_time = time.time()
 
 # Path to BigVul Dataset
