@@ -22,9 +22,13 @@ with open(file_path, "r", encoding="utf8", errors="ignore") as file:
     row_number = 1
     number_of_files = 1
 
+
     #If vulnerability number == 0, function did not change
     for row in reader:
-        if(row.get(function_vul) == '1'):
+        lines_before = row.get('lines_before')
+        lines_after = row.get('lines_after')
+        #Assumption condition
+        if(row.get(function_vul) == '1' and (lines_before != lines_after)):
             print("Row number: "+ str(row_number))
             print("Vulnerable Function:")
             print(row.get(function_vul, "Not Found"))
