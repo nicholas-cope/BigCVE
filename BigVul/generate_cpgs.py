@@ -28,8 +28,8 @@ def joern_parse(source_file):
     bin_file = Path(temp_joern_files_location) / f"{sample_name}.bin"
     out_file = function_output_dir / sample_name  # Put output in function directory
 
-    os.system(f"{joern_path}joern-parse {source_file} --language c --output {bin_file}")
-    os.system(f"{joern_path}joern-export {bin_file} --repr cpg --out {out_file} --format dot")
+    os.system(f"{joern_path}joern-parse {source_file}  --language newc --output {bin_file}")
+    os.system(f"{joern_path}joern-export {bin_file} --repr cpg14 --out {out_file} --format dot")
     os.remove(bin_file)
 
 
