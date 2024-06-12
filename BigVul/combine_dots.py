@@ -1,16 +1,29 @@
 #Thanks Miles Once Again
 #Checking what the file looks like
 # dot -Tpng filename.dot -o outfile.png
-import os
 import networkx as nx
 import glob
 from pathlib import Path
 from multiprocessing import Pool, freeze_support
 
-raw_cpgs_location = "CPG/function1/fixed1"
+raw_cpgs_location = "CPG/"
 output_location = "Combined_CPG/"
 
+"""
+   Combines all .dot files within a single sample folder.
 
+   This function performs the following steps:
+       1. Checks if the folder contains .dot files.
+       2. Handles special cases (empty folder or single file).
+       3. Iterates over each .dot file:
+           - Reads the graph from the file.
+           - Quotes node names/attributes containing colons (for pydot compatibility).
+           - Combines the graph with the overall graph.
+       4. Saves the combined graph to a new .dot file.
+
+   Args:
+       sample_folder (str): Path to the folder containing .dot files.
+   """
 def handle_sample(sample_folder):
     print(sample_folder)
     folder = Path(sample_folder)
@@ -26,14 +39,9 @@ def handle_sample(sample_folder):
             if str(val)[2:9] == "UNKNOWN":
                 print("Bad Joern parsing. Abandoning combination.")
                 return
-
-    print("Creating overall graph...")
     overall_graph = nx.MultiDiGraph()
     for dot in folder.iterdir():
-        print(f"  Reading: {dot}")
         graph = nx.drawing.nx_pydot.read_dot(dot)
-
-        print(f"    Before quoting: {list(graph.nodes(data=True))[:5]}")
         # Quote node names and attribute values containing colons
         for node in graph.nodes():
             if ':' in node:
@@ -42,24 +50,25 @@ def handle_sample(sample_folder):
                 if ':' in value:
                     graph.nodes[node][attr] = f'"{value}"'
 
-        print(f"    After quoting: {list(graph.nodes(data=True))[:5]}")  # Convert to list before slicing
-
         overall_graph = nx.compose(overall_graph, graph)
-        print(f"    Composed graph size: {len(overall_graph.nodes())} nodes")
 
 
     out = output_location + Path(sample_folder).name + ".dot"
-    print(f"Writing combined graph to: {out}")
     nx.nx_pydot.write_dot(overall_graph, out)
-    print("--- Finished ---\n")
 
 if __name__ == '__main__':
-    freeze_support()  # Call freeze_support to prepare for multiprocessing
-    folders = glob.glob(raw_cpgs_location + "*/")
-    print("Folders:", folders)  # Add debugging print
+    freeze_support()
 
-    with Pool(12) as p:
-        p.map(handle_sample, folders)
+    all_folders = []
+    for function_dir in glob.glob(raw_cpgs_location + "*/"):
+        for subfolder in ["fixed", "vulnerability"]:
+            folders = glob.glob(function_dir + subfolder + "*/")
+            all_folders.extend(folders)
+
+    print("Folders to process:", all_folders)
+
+    with Pool(12) as p:  # Adjust number of processes if needed
+        p.map(handle_sample, all_folders)
     '''
     # Create paths to fixed and vulnerable subfolders
     fixed_folder = folder / f"fixed{function_number}"
