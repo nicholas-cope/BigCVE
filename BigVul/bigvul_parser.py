@@ -1,6 +1,6 @@
 import csv
 #Path to BigVul Dataset
-file_path = "Dataset/MSR_data_cleaned.csv"
+file_path = "Dataset/vulnerable_functions.csv"
 #How many rows we are going to read at a time
 #Optimizing performance
 chunks = 25000
