@@ -29,20 +29,26 @@ def handle_sample(sample_folder):
     folder = Path(sample_folder)
     num_dots = len(list(folder.iterdir()))
 
+    #Checking for an empty folder
     if num_dots == 0:
         print("No dot files.")
         return
+    # Handle single file case so no need to combine
     elif num_dots == 1:
         graph = nx.drawing.nx_pydot.read_dot(list(folder.iterdir())[0])
         labels_dict = dict(nx.get_node_attributes(graph, 'label'))
+        # Joern-specific check for bad parsing (optional)
         for val in labels_dict.values():
             if str(val)[2:9] == "UNKNOWN":
                 print("Bad Joern parsing. Abandoning combination.")
                 return
+    # If it's more than 1, create an empty graph to begin with, to which we will
+    # add (compose) all the other graphs
     overall_graph = nx.MultiDiGraph()
+    # Combine multiple .dot files
     for dot in folder.iterdir():
         graph = nx.drawing.nx_pydot.read_dot(dot)
-        # Quote node names and attribute values containing colons
+        # Quote node names and attribute values containing colons (fixing pydot issue)
         for node in graph.nodes():
             if ':' in node:
                 graph = nx.relabel_nodes(graph, {node: f'"{node}"'})
@@ -50,23 +56,28 @@ def handle_sample(sample_folder):
                 if ':' in value:
                     graph.nodes[node][attr] = f'"{value}"'
 
+        #Combining Graphs
         overall_graph = nx.compose(overall_graph, graph)
 
-
+    # Generate output file name and save
     out = output_location + Path(sample_folder).name + ".dot"
     nx.nx_pydot.write_dot(overall_graph, out)
 
+# --- MAIN EXECUTION ---
 if __name__ == '__main__':
+    # Required for multiprocessing
     freeze_support()
-
+    # Collect all "fixed" and "vulnerability" folders within function directories
     all_folders = []
     for function_dir in glob.glob(raw_cpgs_location + "*/"):
         for subfolder in ["fixed", "vulnerability"]:
             folders = glob.glob(function_dir + subfolder + "*/")
             all_folders.extend(folders)
 
+    #Debugging output
     print("Folders to process:", all_folders)
 
+    # Process folders in parallel
     with Pool(12) as p:  # Adjust number of processes if needed
         p.map(handle_sample, all_folders)
     '''
