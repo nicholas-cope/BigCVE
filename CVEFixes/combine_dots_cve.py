@@ -1,56 +1,109 @@
 #Thanks Miles Once Again
-from multiprocessing import Pool
-import os
-import glob
-import pydot
+#Checking what the file looks like
+# dot -Tpng filename.dot -o outfile.png
 import networkx as nx
+import glob
 from pathlib import Path
+from multiprocessing import Pool, freeze_support
+import pydot
 
 raw_cpgs_location = "CPG/"
 output_location = "Combined_CPG/"
 
+"""
+   Combines all .dot files within a single sample folder.
 
+   This function performs the following steps:
+       1. Checks if the folder contains .dot files.
+       2. Handles special cases (empty folder or single file).
+       3. Iterates over each .dot file:
+           - Reads the graph from the file.
+           - Quotes node names/attributes containing colons (for pydot compatibility).
+           - Combines the graph with the overall graph.
+       4. Saves the combined graph to a new .dot file.
+
+   Args:
+       sample_folder (str): Path to the folder containing .dot files.
+   """
 def handle_sample(sample_folder):
     print(sample_folder)
     folder = Path(sample_folder)
-    function_number = ''.join(filter(str.isdigit, sample_folder))
+    num_dots = len(list(folder.iterdir()))
 
-    fixed_folder = f"fixed{function_number}"
-    vuln_folder = f"vulnerability{function_number}"
-
-    dot_files = []
-    for sub_folder in [fixed_folder, vuln_folder]:
-        for item in os.listdir(folder / sub_folder):
-            item_path = folder / sub_folder / item
-            # Checking for "_global_.dot"
-            if item.endswith(".cpp") and os.path.isdir(item_path):
-                dot_path = item_path / "_global_.dot"
-                if dot_path.exists():
-                    dot_files.append(dot_path)
-    if not dot_files:
-        print("No relevant dot files found.")
+    #Checking for an empty folder
+    if num_dots == 0:
+        print("No dot files.")
         return
-
-    # Validation (similar to original)
-    for dot in dot_files:
-        graph = nx.drawing.nx_pydot.read_dot(dot)
+    # Handle single file case so no need to combine
+    elif num_dots == 1:
+        graph = nx.drawing.nx_pydot.read_dot(list(folder.iterdir())[0])
         labels_dict = dict(nx.get_node_attributes(graph, 'label'))
-        if any(str(val)[2:9] == "UNKNOWN" for val in labels_dict.values()):
-            print("Bad Joern parsing. Abandoning combination.")
-            return
-
-    # Combine the graphs
+        # Joern-specific check for bad parsing (optional)
+        for val in labels_dict.values():
+            if str(val)[2:9] == "UNKNOWN":
+                print("Bad Joern parsing. Abandoning combination.")
+                return
+    # If it's more than 1, create an empty graph to begin with, to which we will
+    # add (compose) all the other graphs
     overall_graph = nx.MultiDiGraph()
-    for dot in dot_files:
-        overall_graph = nx.compose(overall_graph, nx.drawing.nx_pydot.read_dot(dot))
+    # Combine multiple .dot files
+    for dot in folder.iterdir():
+        graph = nx.drawing.nx_pydot.read_dot(dot)
+        # Quote node names and attribute values containing colons (fixing pydot issue)
+        for node in graph.nodes():
+            if ':' in node:
+                graph = nx.relabel_nodes(graph, {node: f'"{node}"'})
+            for attr, value in graph.nodes[node].items():
+                if ':' in value:
+                    graph.nodes[node][attr] = f'"{value}"'
 
-    # Save the combined graph
+        #Combining Graphs
+        overall_graph = nx.compose(overall_graph, graph)
+
+    # Generate output file name and save
     out = output_location + Path(sample_folder).name + ".dot"
     nx.nx_pydot.write_dot(overall_graph, out)
 
+# --- MAIN EXECUTION ---
+if __name__ == '__main__':
+    # Required for multiprocessing
+    freeze_support()
+    # Collect all "fixed" and "vulnerability" folders within function directories
+    all_folders = []
+    for function_dir in glob.glob(raw_cpgs_location + "*/"):
+        for subfolder in ["fixed", "vulnerability"]:
+            folders = glob.glob(function_dir + subfolder + "*/")
+            all_folders.extend(folders)
 
-if __name__ == "__main__":
-    # Get all the sample folders in the raw CPG location
-    folders = [f.path for f in os.scandir(raw_cpgs_location) if f.is_dir()]
-    with Pool(processes=15) as pool:
-        pool.map(handle_sample, folders)
+    #Debugging output
+    print("Folders to process:", all_folders)
+
+    # Process folders in parallel
+    with Pool(12) as p:  # Adjust number of processes if needed
+        p.map(handle_sample, all_folders)
+    '''
+    # Create paths to fixed and vulnerable subfolders
+    fixed_folder = folder / f"fixed{function_number}"
+    vuln_folder = folder / f"vulnerability{function_number}"
+
+    # Initialize empty graphs to store combined graphs
+    vuln_graph = nx.MultiDiGraph()
+    fixed_graph = nx.MultiDiGraph()
+
+    # Find root nodes in each graph (nodes with no incoming edges)
+    fixed_roots = [n for n, d in fixed_graph.in_degree() if d == 0]
+    vuln_roots = [n for n, d in vuln_graph.in_degree() if d == 0]
+
+    # Combine the final vulnerable and fixed graphs
+    combined_graph = nx.compose(vuln_graph, fixed_graph)
+
+    # Add "fix" edges from each vulnerable root to each fixed root
+    for vuln_root in vuln_roots:
+        for fixed_root in fixed_roots:
+            combined_graph.add_edge(vuln_root, fixed_root, label="fix")
+
+    # Save the combined graph with fix edges to the output directory
+    out = Path(output_location) / (folder.name + ".dot")  # Convert output_location to Path
+    nx.drawing.nx_pydot.write_dot(combined_graph, out)
+'''
+
