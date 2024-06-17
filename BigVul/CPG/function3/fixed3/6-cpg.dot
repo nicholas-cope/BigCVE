@@ -1,0 +1,16 @@
+digraph "YYDEBUG" {  
+"3350" [label = <(METHOD,YYDEBUG)> ]
+"3351" [label = <(PARAM,p1)> ]
+"3352" [label = <(PARAM,p2)> ]
+"3353" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)> ]
+"3354" [label = <(METHOD_RETURN,ANY)> ]
+  "3350" -> "3351"  [ label = "AST: "] 
+  "3350" -> "3353"  [ label = "AST: "] 
+  "3350" -> "3352"  [ label = "AST: "] 
+  "3350" -> "3354"  [ label = "AST: "] 
+  "3350" -> "3354"  [ label = "CFG: "] 
+  "3351" -> "3354"  [ label = "DDG: p1"] 
+  "3352" -> "3354"  [ label = "DDG: p2"] 
+  "3350" -> "3351"  [ label = "DDG: "] 
+  "3350" -> "3352"  [ label = "DDG: "] 
+}

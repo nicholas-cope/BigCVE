@@ -1,0 +1,16 @@
+digraph "timelib_get_nr" {  
+"3458" [label = <(METHOD,timelib_get_nr)> ]
+"3459" [label = <(PARAM,p1)> ]
+"3460" [label = <(PARAM,p2)> ]
+"3461" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)> ]
+"3462" [label = <(METHOD_RETURN,ANY)> ]
+  "3458" -> "3459"  [ label = "AST: "] 
+  "3458" -> "3461"  [ label = "AST: "] 
+  "3458" -> "3460"  [ label = "AST: "] 
+  "3458" -> "3462"  [ label = "AST: "] 
+  "3458" -> "3462"  [ label = "CFG: "] 
+  "3459" -> "3462"  [ label = "DDG: p1"] 
+  "3460" -> "3462"  [ label = "DDG: p2"] 
+  "3458" -> "3459"  [ label = "DDG: "] 
+  "3458" -> "3460"  [ label = "DDG: "] 
+}

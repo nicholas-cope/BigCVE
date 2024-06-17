@@ -1,27 +1,50 @@
-print("Not working")
+import os
+import networkx as nx
+import pydot
 
-'''
-    # Create paths to fixed and vulnerable subfolders
-    fixed_folder = folder / f"fixed{function_number}"
-    vuln_folder = folder / f"vulnerability{function_number}"
+# Function to load a graph from a DOT file
+def load_graph(file_path):
+    (graph,) = pydot.graph_from_dot_file(file_path)
+    return nx.nx_pydot.from_pydot(graph)
 
-    # Initialize empty graphs to store combined graphs
-    vuln_graph = nx.MultiDiGraph()
-    fixed_graph = nx.MultiDiGraph()
+# Function to identify the root node in a graph (node with no incoming edges)
+def find_root(graph):
+    for node in graph.nodes:
+        if graph.in_degree(node) == 0:
+            return node
+    return None
 
-    # Find root nodes in each graph (nodes with no incoming edges)
-    fixed_roots = [n for n, d in fixed_graph.in_degree() if d == 0]
-    vuln_roots = [n for n, d in vuln_graph.in_degree() if d == 0]
+# Function to combine two graphs by adding a directed edge from the root of g1 to the root of g2
+def combine_graphs(g1, g2):
+    combined_graph = nx.compose(g1, g2)
+    root_g1 = find_root(g1)
+    root_g2 = find_root(g2)
+    if root_g1 is not None and root_g2 is not None:
+        combined_graph.add_edge(root_g1, root_g2, label='fix')
+    return combined_graph
 
-    # Combine the final vulnerable and fixed graphs
-    combined_graph = nx.compose(vuln_graph, fixed_graph)
+# Directory paths
+input_dir = 'Combined_CPG'
+output_dir = 'Matched_CPG'
 
-    # Add "fix" edges from each vulnerable root to each fixed root
-    for vuln_root in vuln_roots:
-        for fixed_root in fixed_roots:
-            combined_graph.add_edge(vuln_root, fixed_root, label="fix")
+# Ensure the output directory exists
+os.makedirs(output_dir, exist_ok=True)
 
-    # Save the combined graph with fix edges to the output directory
-    out = Path(output_location) / (folder.name + ".dot")  # Convert output_location to Path
-    nx.drawing.nx_pydot.write_dot(combined_graph, out)
-'''
+# Iterate over each function directory
+for function in os.listdir(input_dir):
+    function_path = os.path.join(input_dir, function)
+    if os.path.isdir(function_path):
+        # Load the vulnerable and fixed graphs
+        vulnerable_file = os.path.join(function_path, f'vulnerability{function[-1]}.dot')
+        fixed_file = os.path.join(function_path, f'fixed{function[-1]}.dot')
+        if os.path.exists(vulnerable_file) and os.path.exists(fixed_file):
+            g_vulnerable = load_graph(vulnerable_file)
+            g_fixed = load_graph(fixed_file)
+
+            # Combine the graphs
+            combined_graph = combine_graphs(g_vulnerable, g_fixed)
+
+            # Output the combined graph to the output directory
+            output_file = os.path.join(output_dir, f'{function}.dot')
+            nx.drawing.nx_pydot.write_dot(combined_graph, output_file)
+            print(f'Combined CPG for {function} written to {output_file}')

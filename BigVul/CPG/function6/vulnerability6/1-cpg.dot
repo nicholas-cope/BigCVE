@@ -1,0 +1,8 @@
+digraph "&lt;global&gt;" {  
+"14" [label = <(METHOD,&lt;global&gt;)<SUB>1</SUB>> ]
+"15" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)> ]
+"16" [label = <(METHOD_RETURN,ANY)> ]
+  "14" -> "15"  [ label = "AST: "] 
+  "14" -> "16"  [ label = "AST: "] 
+  "14" -> "16"  [ label = "CFG: "] 
+}

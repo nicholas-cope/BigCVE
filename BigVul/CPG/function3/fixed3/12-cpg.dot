@@ -1,0 +1,16 @@
+digraph "&lt;operator&gt;.equals" {  
+"3378" [label = <(METHOD,&lt;operator&gt;.equals)> ]
+"3379" [label = <(PARAM,p1)> ]
+"3380" [label = <(PARAM,p2)> ]
+"3381" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)> ]
+"3382" [label = <(METHOD_RETURN,ANY)> ]
+  "3378" -> "3379"  [ label = "AST: "] 
+  "3378" -> "3381"  [ label = "AST: "] 
+  "3378" -> "3380"  [ label = "AST: "] 
+  "3378" -> "3382"  [ label = "AST: "] 
+  "3378" -> "3382"  [ label = "CFG: "] 
+  "3379" -> "3382"  [ label = "DDG: p1"] 
+  "3380" -> "3382"  [ label = "DDG: p2"] 
+  "3378" -> "3379"  [ label = "DDG: "] 
+  "3378" -> "3380"  [ label = "DDG: "] 
+}

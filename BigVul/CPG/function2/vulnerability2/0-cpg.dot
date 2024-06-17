@@ -1,0 +1,11 @@
+digraph "&lt;global&gt;" {  
+"6" [label = <(METHOD,&lt;global&gt;)<SUB>1</SUB>> ]
+"7" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>> ]
+"8" [label = <(UNKNOWN,PHPAPI void php_pcre_match_impl(pcre_cache_entr...,PHPAPI void php_pcre_match_impl(pcre_cache_entr...)<SUB>1</SUB>> ]
+"9" [label = <(METHOD_RETURN,ANY)<SUB>1</SUB>> ]
+  "6" -> "7"  [ label = "AST: "] 
+  "6" -> "9"  [ label = "AST: "] 
+  "7" -> "8"  [ label = "AST: "] 
+  "8" -> "9"  [ label = "CFG: "] 
+  "6" -> "8"  [ label = "CFG: "] 
+}

@@ -1,0 +1,16 @@
+digraph "&lt;operator&gt;.multiplication" {  
+"3419" [label = <(METHOD,&lt;operator&gt;.multiplication)> ]
+"3420" [label = <(PARAM,p1)> ]
+"3421" [label = <(PARAM,p2)> ]
+"3422" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)> ]
+"3423" [label = <(METHOD_RETURN,ANY)> ]
+  "3419" -> "3420"  [ label = "AST: "] 
+  "3419" -> "3422"  [ label = "AST: "] 
+  "3419" -> "3421"  [ label = "AST: "] 
+  "3419" -> "3423"  [ label = "AST: "] 
+  "3419" -> "3423"  [ label = "CFG: "] 
+  "3420" -> "3423"  [ label = "DDG: p1"] 
+  "3421" -> "3423"  [ label = "DDG: p2"] 
+  "3419" -> "3420"  [ label = "DDG: "] 
+  "3419" -> "3421"  [ label = "DDG: "] 
+}

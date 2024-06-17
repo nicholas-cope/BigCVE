@@ -1,0 +1,12 @@
+digraph "DEBUG_OUTPUT" {  
+"3397" [label = <(METHOD,DEBUG_OUTPUT)> ]
+"3398" [label = <(PARAM,p1)> ]
+"3399" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)> ]
+"3400" [label = <(METHOD_RETURN,ANY)> ]
+  "3397" -> "3398"  [ label = "AST: "] 
+  "3397" -> "3399"  [ label = "AST: "] 
+  "3397" -> "3400"  [ label = "AST: "] 
+  "3397" -> "3400"  [ label = "CFG: "] 
+  "3398" -> "3400"  [ label = "DDG: p1"] 
+  "3397" -> "3398"  [ label = "DDG: "] 
+}

@@ -1,0 +1,12 @@
+digraph "ldb_get_default_basedn" {  
+"98" [label = <(METHOD,ldb_get_default_basedn)> ]
+"99" [label = <(PARAM,p1)> ]
+"100" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)> ]
+"101" [label = <(METHOD_RETURN,ANY)> ]
+  "98" -> "99"  [ label = "AST: "] 
+  "98" -> "100"  [ label = "AST: "] 
+  "98" -> "101"  [ label = "AST: "] 
+  "98" -> "101"  [ label = "CFG: "] 
+  "99" -> "101"  [ label = "DDG: p1"] 
+  "98" -> "99"  [ label = "DDG: "] 
+}

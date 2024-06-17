@@ -1,0 +1,12 @@
+digraph "&lt;operator&gt;.indirection" {  
+"3355" [label = <(METHOD,&lt;operator&gt;.indirection)> ]
+"3356" [label = <(PARAM,p1)> ]
+"3357" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)> ]
+"3358" [label = <(METHOD_RETURN,ANY)> ]
+  "3355" -> "3356"  [ label = "AST: "] 
+  "3355" -> "3357"  [ label = "AST: "] 
+  "3355" -> "3358"  [ label = "AST: "] 
+  "3355" -> "3358"  [ label = "CFG: "] 
+  "3356" -> "3358"  [ label = "DDG: p1"] 
+  "3355" -> "3356"  [ label = "DDG: "] 
+}
