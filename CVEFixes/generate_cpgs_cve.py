@@ -1,6 +1,6 @@
-#Thanks Miles
 import glob
 import os
+import shutil
 from multiprocessing import Pool, freeze_support, set_start_method
 from pathlib import Path
 
@@ -9,7 +9,7 @@ output_directory = "CPG/"
 joern_path = "/root/joern/joern-cli/"
 temp_joern_files_location = "Temp/"
 
-done_files = {done.stem for done in Path(output_directory).iterdir()}  #Faster searching
+done_files = {done.stem for done in Path(output_directory).iterdir()}  # Faster searching
 
 def joern_parse(source_file):
     sample_name = Path(source_file).stem
@@ -18,8 +18,7 @@ def joern_parse(source_file):
 
     # Check if directory exists, if not create it
     function_output_dir = Path(output_directory) / f"function{function_number}"
-    if not function_output_dir.exists():
-        function_output_dir.mkdir(parents=True)
+    function_output_dir.mkdir(parents=True, exist_ok=True)  # Create directory safely
 
     if sample_name in done_files:
         print(f"{sample_name} already processed")
@@ -33,14 +32,38 @@ def joern_parse(source_file):
     os.remove(bin_file)
 
 
-#Well this fixed the error
+def clean_invalid_functions():
+    for function_dir in Path(output_directory).iterdir():
+        if function_dir.is_dir():
+            function_number = ''.join(filter(str.isdigit, function_dir.stem))
+            fixed_dir = function_dir / f'fixed_{function_number}'
+            vulnerability_dir = function_dir / f'vulnerability_{function_number}'
+
+            fixed_dot_files = list(fixed_dir.glob('*.dot'))
+            vulnerability_dot_files = list(vulnerability_dir.glob('*.dot'))
+
+            fixed_dot_files_count = len(fixed_dot_files)
+            vulnerability_dot_files_count = len(vulnerability_dot_files)
+
+            print(
+                f"Directory {function_dir} has {fixed_dot_files_count} .dot files in 'fixed_{function_number}' and {vulnerability_dot_files_count} .dot files in 'vulnerability_{function_number}'")
+
+            if fixed_dot_files_count == 2 and vulnerability_dot_files_count == 2:
+                print(f"Removing {function_dir} due to exactly 2 .dot files in both subdirectories")
+                shutil.rmtree(function_dir)
+
 if __name__ == '__main__':
     set_start_method("spawn")
     files = glob.glob(source_directory + "*.cpp")
 
+    # Create necessary directories before starting multiprocessing
+    for file in files:
+        sample_name = Path(file).stem
+        function_number = ''.join(filter(str.isdigit, sample_name))
+        function_output_dir = Path(output_directory) / f"function{function_number}"
+        function_output_dir.mkdir(parents=True, exist_ok=True)
+
     with Pool(18) as p:
         p.map(joern_parse, files)
 
-
-    # java_location = "~/.jdks/openjdk-19.0.2"
-    #os.environ["JAVA_HOME"] = java_location
+clean_invalid_functions()
