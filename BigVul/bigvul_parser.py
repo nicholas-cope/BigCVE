@@ -20,27 +20,20 @@ with open(file_path, "r", encoding="utf8", errors="ignore") as file:
     reader = csv.DictReader(file)
     #Printing the rows we want
     row_number = 1
-    number_of_files = 1
 
+        vulnerable_file_name = os.path.join("Functions", f"vulnerability{row_number}.cpp")
+        fixed_file_name = os.path.join("Functions", f"fixed{row_number}.cpp")
 
-    #If vulnerability number == 0, function did not change
-    for row in reader:
-        lines_before = row.get('lines_before')
-        lines_after = row.get('lines_after')
-        #Assumption condition
-        if(row.get(function_vul) == '1' and (lines_before != lines_after)):
-            print("Row number: "+ str(row_number))
-            print("Vulnerable Function:")
-            print(row.get(function_vul, "Not Found"))
-            print(vulnerableFunction == fixedFunction)
-            print("Function Before:")
-            print(row.get(vulnerableFunction, "Not Found"))
-            print("Function After:")
-            print(row.get(fixedFunction, "Not Found"))
-            number_of_files += 1
+        # Automatically closes files so don't have to worry
+        # Vulnerable File
+        with open(vulnerable_file_name, "w", encoding="utf8", errors="ignore") as vulnerable_file:
+            vulnerable_file.write(row.get(vulnerableFunction, "Not Found"))
+
+        # Fixed File
+        with open(fixed_file_name, "w", encoding="utf8", errors="ignore") as fixed_file:
+            fixed_file.write(row.get(fixedFunction, "Not Found"))
+
         row_number += 1
-
-    print(number_of_files)
 
 
 
