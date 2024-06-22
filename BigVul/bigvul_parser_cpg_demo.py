@@ -32,7 +32,6 @@ with open(file_path, "r", encoding="utf8", errors="ignore") as file:
         #Ensuring that rows does not over max rows
         if row_number > max_rows:
             break
-        #Printing File Code
         vulnerable_file_name = os.path.join("Functions", f"vulnerability{row_number}.cpp")
         fixed_file_name = os.path.join("Functions", f"fixed{row_number}.cpp")
 
