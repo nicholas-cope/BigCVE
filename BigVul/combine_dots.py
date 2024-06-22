@@ -2,14 +2,13 @@
 #Checking what the file looks like
 # dot -Tpng filename.dot -o outfile.png
 import shutil
-
 import networkx as nx
 import glob
 from pathlib import Path
 from multiprocessing import Pool, freeze_support
 
-raw_cpgs_location = "CPG/"
-output_location = "Combined_CPG/"
+raw_cpgs_location = "/home/ybc67/data/BigCVE/BigVul/CPG/"
+output_location = "/home/ybc67/data/BigCVE/BigVul/Combined_CPG/"
 
 """
    Combines all .dot files within a single sample folder.
@@ -95,6 +94,12 @@ def organize_files(output_location):
 if __name__ == '__main__':
     # Required for multiprocessing
     freeze_support()
+
+    try:
+        import pydot
+    except ModuleNotFoundError:
+        import subprocess
+        subprocess.check_call(["python", "-m", "pip", "install", "pydot", "pydotplus"])
     # Collect all "fixed" and "vulnerability" folders within function directories
     all_folders = []
     for function_dir in glob.glob(raw_cpgs_location + "*/"):
