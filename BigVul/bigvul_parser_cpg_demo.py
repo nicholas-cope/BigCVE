@@ -26,7 +26,7 @@ with open(file_path, "r", encoding="utf8", errors="ignore") as file:
     # Printing the rows we want
     row_number = 1
     # Max Numbers of Rows Read
-    max_rows = 10
+    max_rows = 1
 
     for row in reader:
         #Ensuring that rows does not over max rows
