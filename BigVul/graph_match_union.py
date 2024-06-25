@@ -46,7 +46,7 @@ for function in os.listdir(input_dir):
 
             # Add a single directed edge from the vulnerable root to the fixed root
             # Reverse Direction Here
-            combined_graph.add_edge(root_vulnerable, root_fixed, label='Connection to Fix', color='red', style='dashed', penwidth='2.0')
+            combined_graph.add_edge(root_fixed, root_vulnerable, label='Connection to Vulnerable', color='blue', style='dashed', penwidth='2.0')
 
             # Output the combined graph to the output directory
             output_file = os.path.join(output_dir, f'{function}.dot')

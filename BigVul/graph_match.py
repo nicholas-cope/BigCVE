@@ -1,6 +1,7 @@
 import os
 import networkx as nx
 import pydot
+# dot -Tpng filename.dot -o VulnerableToFixed.png
 
 # Function to load a graph from a DOT file
 def load_graph(file_path):
@@ -17,18 +18,26 @@ def find_root(graph):
 # Function to combine two graphs by adding a directed edge from the root of g1 to the root of g2
 def combine_graphs(g1, g2):
     combined_graph = nx.compose(g1, g2)
+
     # Identify corresponding nodes in both graphs
     for node in g2.nodes:
         if node in g1.nodes:
-            combined_graph.nodes[node]['label'] = 'fix'  # Mark as fixed
+            # Keep the original label and add a "fixed" shape for visual distinction
+            combined_graph.nodes[node]['shape'] = 'box'
+
             for pred in g1.predecessors(node):
-                combined_graph.add_edge(pred, node, label='fix', color='red', style='bold', penwidth='2.0')  # Mark edges as fixed
+                # Check if the edge already exists in combined_graph
+                if not combined_graph.has_edge(pred, node):
+                    # Add the edge with fix styling only if it's new
+                    combined_graph.add_edge(pred, node, color='red', style='bold', penwidth='2.0')
 
     return combined_graph
 
+
+
 # Directory paths
 input_dir = 'Combined_CPG'
-output_dir = 'Matched_CPG'
+output_dir = 'Matched_CPG_Whole'
 
 # Ensure the output directory exists
 os.makedirs(output_dir, exist_ok=True)
