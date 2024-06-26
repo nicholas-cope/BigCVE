@@ -28,8 +28,8 @@ def find_leaf_nodes(graph):
     return leaf_nodes
 
 # Directory paths
-input_dir = 'Combined_CPG'
-output_dir = 'Matched_CPG_Inverse'
+input_dir = '../Combined_CPG'
+output_dir = '../Matched_CPG_Inverse'
 
 # Ensure the output directory exists
 os.makedirs(output_dir, exist_ok=True)

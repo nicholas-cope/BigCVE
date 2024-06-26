@@ -36,8 +36,8 @@ def combine_graphs(g1, g2):
 
 
 # Directory paths
-input_dir = 'Combined_CPG'
-output_dir = 'Matched_CPG_Whole'
+input_dir = '../Combined_CPG'
+output_dir = '../Matched_CPG_Whole'
 
 # Ensure the output directory exists
 os.makedirs(output_dir, exist_ok=True)

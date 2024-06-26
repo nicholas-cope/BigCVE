@@ -6,7 +6,7 @@ import subprocess
 start_time = time.time()
 
 # Path to BigVul Dataset
-file_path = "Dataset/vulnerable_functions.csv"
+file_path = "../Dataset/vulnerable_functions.csv"
 # How many rows we are going to read at a time
 # Optimizing performance
 chunks = 25000
@@ -32,8 +32,8 @@ with open(file_path, "r", encoding="utf8", errors="ignore") as file:
         #Ensuring that rows does not over max rows
         if row_number > max_rows:
             break
-        vulnerable_file_name = os.path.join("Functions", f"vulnerability{row_number}.cpp")
-        fixed_file_name = os.path.join("Functions", f"fixed{row_number}.cpp")
+        vulnerable_file_name = os.path.join("../Functions", f"vulnerability{row_number}.cpp")
+        fixed_file_name = os.path.join("../Functions", f"fixed{row_number}.cpp")
 
         # Automatically closes files so don't have to worry
         # Vulnerable File
