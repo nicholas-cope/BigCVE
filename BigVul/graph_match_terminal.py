@@ -25,7 +25,7 @@ def find_leaf_nodes(graph):
     return leaf_nodes
 
 # Directory paths
-input_dir = 'Combined_CPG'
+input_dir = '/home/ybc67/data/BigCVE/BigVul/Combined_CPG'
 output_dir = 'Matched_CPG'
 
 os.makedirs(output_dir, exist_ok=True)

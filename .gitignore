@@ -1,3 +1,9 @@
 BigVul/Dataset/
-
 BigVul/Functions/
+BigVul/CPG/
+BigVul/Combined_CPG/
+/Matched_CPG/
+BigVul/Combined_CPG_Inverse/
+BigVul/Temp/
+BigVul/Pickle/
+BigVul/Pickle_Inverse/

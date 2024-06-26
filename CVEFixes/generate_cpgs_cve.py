@@ -4,10 +4,13 @@ import shutil
 from multiprocessing import Pool, freeze_support, set_start_method
 from pathlib import Path
 
-source_directory = "Functions/"
-output_directory = "CPG/"
-joern_path = "/root/joern/joern-cli/"
-temp_joern_files_location = "Temp/"
+source_directory = "/home/ybc67/data/BigCVE/CVEFixes/Functions/"
+output_directory = "/home/ybc67/data/BigCVE/CVEFixes/CPG/"
+temp_joern_files_location = "/home/ybc67/data/BigCVE/CVEFixes/Temp/"
+joern_path = "/home/ybc67/bin/joern/joern-cli/"
+
+jdk_path = "/home/ybc67/jdk-22.0.1/"
+os.environ["JAVA_HOME"] = jdk_path
 
 done_files = {done.stem for done in Path(output_directory).iterdir()}  # Faster searching
 
@@ -48,13 +51,14 @@ def clean_invalid_functions():
             print(
                 f"Directory {function_dir} has {fixed_dot_files_count} .dot files in 'fixed_{function_number}' and {vulnerability_dot_files_count} .dot files in 'vulnerability_{function_number}'")
 
-            if fixed_dot_files_count == 2 and vulnerability_dot_files_count == 2:
-                print(f"Removing {function_dir} due to exactly 2 .dot files in both subdirectories")
+            if fixed_dot_files_count == 2 or vulnerability_dot_files_count == 2:
+                print(f"Removing {function_dir} due to exactly 2 .dot files in either subdirectory")
                 shutil.rmtree(function_dir)
 
 if __name__ == '__main__':
     set_start_method("spawn")
     files = glob.glob(source_directory + "*.cpp")
+    print(files)
 
     # Create necessary directories before starting multiprocessing
     for file in files:
