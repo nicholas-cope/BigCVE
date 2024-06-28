@@ -1,6 +1,6 @@
 #Thanks Miles Once Again
 #Checking what the file looks like
-# dot -Tpng filename.dot -o outfile.png
+# dot -Tpng filename.dot -o VulnerableToFixed.png
 import shutil
 import networkx as nx
 import glob

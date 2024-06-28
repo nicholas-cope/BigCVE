@@ -1,7 +1,9 @@
 import os
 import networkx as nx
 import pydot
-
+#To generate the CPG's where terminal nodes of the fixed function are connected to the root node
+#of the vulnerable  function
+#fixed -> vulnerable
 # Function to load a graph from a DOT file
 def load_graph(file_path):
     """Loads a graph from a DOT file."""
@@ -14,11 +16,20 @@ def find_root(graph):
     for node in graph.nodes:
         if graph.in_degree(node) == 0:
             return node
-    return None  # If no root is found (shouldn't happen in your case)
+    return None
+
+# Function to identify all leaf nodes (nodes with no outgoing edges) in a graph
+def find_leaf_nodes(graph):
+    """Finds all leaf nodes (nodes with no outgoing edges) in a graph."""
+    leaf_nodes = []
+    for node in graph.nodes:
+        if graph.out_degree(node) == 0:
+            leaf_nodes.append(node)
+    return leaf_nodes
 
 # Directory paths
-input_dir = 'Combined_CPG'
-output_dir = 'Matched_CPG'
+input_dir = '../Combined_CPG'
+output_dir = '../Matched_CPG_Inverse'
 
 # Ensure the output directory exists
 os.makedirs(output_dir, exist_ok=True)
@@ -40,13 +51,14 @@ for function in os.listdir(input_dir):
             # Create a new graph that includes both vulnerable and fixed graphs as subgraphs
             combined_graph = nx.union(g_vulnerable, g_fixed, rename=('vulnerable_', 'fixed_'))
 
-            # Find the root nodes within the subgraphs
+            # Find leaf nodes in the fixed graph and the root of the vulnerable graph
+            fixed_leaf_nodes = ['fixed_' + leaf for leaf in find_leaf_nodes(g_fixed)]  # Add prefix
             root_vulnerable = 'vulnerable_' + find_root(g_vulnerable)
-            root_fixed = 'fixed_' + find_root(g_fixed)
 
-            # Add a single directed edge from the vulnerable root to the fixed root
-            # Reverse Direction Here
-            combined_graph.add_edge(root_vulnerable, root_fixed, label='Connection to Fix', color='red', style='dashed', penwidth='2.0')
+            # Connect each fixed leaf node to the vulnerable root
+            # Direction: Fixed leaf nodes --> Vulnerable root node
+            for leaf_node in fixed_leaf_nodes:
+                combined_graph.add_edge(leaf_node, root_vulnerable, label='Connection to Vulnerable Root', color='blue', style='dashed', penwidth='2.0')
 
             # Output the combined graph to the output directory
             output_file = os.path.join(output_dir, f'{function}.dot')
