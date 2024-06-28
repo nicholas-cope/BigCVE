@@ -85,11 +85,12 @@ def write_to_pkl(dot_file, out_path):
 
 def main():
 
-    out_path = "../Pickle/"
+    out_path = "../Pickle_Inverse/"
 
     os.makedirs(out_path, exist_ok=True)
 
-    matched_cpg_path = "../Matched_CPG/"
+
+    matched_cpg_path = "../Matched_CPG_Inverse/"
     dot_files = glob.glob(matched_cpg_path + '*.dot')
 
     with Pool(18) as pool:
