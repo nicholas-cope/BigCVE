@@ -4,6 +4,14 @@ BigVul/CPG/
 BigVul/Combined_CPG/
 /Matched_CPG/
 BigVul/Combined_CPG_Inverse/
+BigVul/Matched_CPG/
+BigVul/Matched_CPG_Inverse/
 BigVul/Temp/
 BigVul/Pickle/
 BigVul/Pickle_Inverse/
+
+CVEFixes/CPG/
+CVEFixes/Pickle/
+CVEFixes/Pickle_Inverse/
+CVEFixes/Combined_CPG/
+CVEFixes/Functions/
