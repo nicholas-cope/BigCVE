@@ -1,14 +1,14 @@
 #Thanks Miles Once Again
 #Checking what the file looks like
-# dot -Tpng filename.dot -o outfile.png
+# dot -Tpng filename.dot -o VulnerableToFixed.png
 import shutil
 import networkx as nx
 import glob
 from pathlib import Path
 from multiprocessing import Pool, freeze_support
 
-raw_cpgs_location = "/home/ybc67/data/BigCVE/CVEFixes/CPG/"
-output_location = "/home/ybc67/data/BigCVE/CVEFixes/Combined_CPG/"
+raw_cpgs_location = "/home/ybc67/data/BigCVE/BigVul/CPG/"
+output_location = "/home/ybc67/data/BigCVE/BigVul/Combined_CPG/"
 
 """
    Combines all .dot files within a single sample folder.
@@ -115,3 +115,5 @@ if __name__ == '__main__':
         p.map(handle_sample, all_folders)
 
     organize_files(output_location)
+
+
