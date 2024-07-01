@@ -7,12 +7,9 @@ import glob
 from multiprocessing import Pool
 from functools import partial
 import random
-from huggingface_hub import login
-#access_token = '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'
-#login(token= access_token)
 
 # This file is originaly based on VulCNN, but is fairly different now
-#Command to run python cpg_to_pickle.py -i ./Normalized_CPG -o ./output
+#Command to run python cpg_to_pickle.py -i ./Matched_CPG -o ./output
 
 # Imports for tokenization via codebert model
 import torch
@@ -20,10 +17,6 @@ from transformers import AutoTokenizer
 
 # Imports for graph construction
 from torch_geometric.data import Data, Batch
-from torch_geometric.loader import DataLoader
-access_token = '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'
-#HF_DATASETS_OFFLINE=1
-#HF_HUB_OFFLINE=1
 tokenizer = AutoTokenizer.from_pretrained("bigcode/starcoder")
 
 edge_type_map = {
@@ -78,36 +71,25 @@ def graph_generation(dot):
         for label, all_code in labels_dict.items():
             # Remove parenthesis around info and the markdown at the end
             # No longer represents just code. Also includes some joern info at the beginning
-            # code = all_code[all_code.find("(") + 1:-14].split('\\n')[0]
             code = all_code
-            # code = code.replace("static void", "void")
             labels_code[label] = code
-        #print('fine 1')
-        #print(labels_code)
 
         id = 0
         for label, code in labels_code.items():
-            #print('fine 1.0')
-            #print(label)
             label_node_map[label] = id
             id += 1
-            #print('fine 1.1')
-            #print(code)
             line_vec = sentence_embedding(code)
-            #print('fine 1.2')
             max_length = 64
             sized_line_vec = [0] * max_length
             for i in range(0, min(len(line_vec), max_length) - 1):
                 sized_line_vec[i] = line_vec[i]
             nodes.append(sized_line_vec)
-       #print('fine 2')
         for edge in pdg.edges(data=True):
             # Manual determination of edge type
             edge_type = 0
             try:
                 print(edge[2]["label"])
                 edge_type_string = edge[2]["label"].replace("\"", "").split(":")[0]
-                #edge_type = edge_type_map[edge_type_string]
             except:
                 print("Edge feature parsing error")
 
@@ -127,22 +109,17 @@ def graph_generation(dot):
         print('exception')
         return None
 
-
-
 def write_to_pkl(dot, out, existing_files):
     dot_name = dot.split('/')[-1].split('.dot')[0]
     if dot_name in existing_files:
         return None
     else:
-        print(dot_name)
-        print('HI')
         graph = graph_generation(dot)
         if graph == None:
             return None
         else:
             out_pkl = out + dot_name + '.pkl'
             with open(out_pkl, 'wb') as f:
-                print('test')
                 pickle.dump(graph, f)
 
 
@@ -151,14 +128,6 @@ def main():
     dir_name = args.input
     out_path = args.out
     # Don't judge my global variables. This was the way VulCNN did it and I don't feel like changing the structure
-    # global tokenizer
-    #tokenizer = AutoTokenizer.from_pretrained("neulab/codebert-c")
-    #tokenizer = AutoTokenizer.from_pretrained("bigcode/starcoder", token = access_token, local_files_only=True)
-    # tokenizer = AutoTokenizer.from_pretrained("bigcode/starcoder")
-
-    # tokens = tokenizer.tokenize("<(METHOD,ssl_get_algorithm2)")
-    # print(tokens)
-
     if dir_name[-1] == '/':
         dir_name = dir_name
     else:
@@ -185,11 +154,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-##out_path = "Pickle/"
-
-  ##  if not os.path.exists(out_path):
-   ##     os.makedirs(out_path)
-
-
- ##   matched_cpg_path = "Matched_CPG/"
