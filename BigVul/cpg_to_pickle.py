@@ -12,6 +12,7 @@ from huggingface_hub import login
 #login(token= access_token)
 
 # This file is originaly based on VulCNN, but is fairly different now
+#Command to run python cpg_to_pickle.py -i ./Normalized_CPG -o ./output
 
 # Imports for tokenization via codebert model
 import torch
@@ -86,54 +87,46 @@ def graph_generation(dot):
 
         id = 0
         for label, code in labels_code.items():
-            print('fine 1.0')
+            #print('fine 1.0')
             #print(label)
             label_node_map[label] = id
             id += 1
-            print('fine 1.1')
-            print(code)
+            #print('fine 1.1')
+            #print(code)
             line_vec = sentence_embedding(code)
-            print('fine 1.2')
+            #print('fine 1.2')
             max_length = 64
             sized_line_vec = [0] * max_length
             for i in range(0, min(len(line_vec), max_length) - 1):
                 sized_line_vec[i] = line_vec[i]
             nodes.append(sized_line_vec)
-        print('fine 2')
+       #print('fine 2')
         for edge in pdg.edges(data=True):
-            # Tokenization of edge features
-            max_edge_length = 16
-            sized_edge_vec = [0] * max_edge_length
-            try:
-                edge_type_string = edge[2]["label"]
-                edge_vec = sentence_embedding(edge_type_string)
-                for i in range(0, min(len(edge_vec), max_edge_length) - 1):
-                    sized_edge_vec[i] = edge_vec[i]
-            except:
-                print("Edge feature parsing error")
-            edge_features.append(sized_edge_vec)
-
             # Manual determination of edge type
             edge_type = 0
             try:
+                print(edge[2]["label"])
                 edge_type_string = edge[2]["label"].replace("\"", "").split(":")[0]
-                edge_type = edge_type_map[edge_type_string]
+                #edge_type = edge_type_map[edge_type_string]
             except:
                 print("Edge feature parsing error")
+
             edge_types.append([edge_type])
 
             edges.append([label_node_map[edge[0]], label_node_map[edge[1]]])
 
+            edge_features.append([0])
+
         data = Data(x=torch.tensor(nodes, dtype=torch.float),
                     edge_index=torch.tensor(edges, dtype=torch.long).t().contiguous(),
-                    edge_attr=torch.tensor(edge_features, dtype=torch.float),
-                    edge_type=torch.tensor(edge_type, dtype=torch.long)
+                    edge_attr=torch.tensor(edge_features, dtype=torch.float)
                     )
 
         return data
     except:
         print('exception')
         return None
+
 
 
 def write_to_pkl(dot, out, existing_files):
