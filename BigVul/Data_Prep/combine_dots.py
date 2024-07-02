@@ -7,8 +7,10 @@ import glob
 from pathlib import Path
 from multiprocessing import Pool, freeze_support
 
-raw_cpgs_location = "/home/ybc67/data/BigCVE/BigVul/CPG/"
-output_location = "/home/ybc67/data/BigCVE/BigVul/Combined_CPG/"
+raw_cpgs_location = "../CPG/"
+output_location = "../Combined_CPG/"
+
+#You have to create a folder called Combined_CPG
 
 """
    Combines all .dot files within a single sample folder.

@@ -25,8 +25,7 @@ def find_leaf_nodes(graph):
     return leaf_nodes
 
 # Directory paths
-input_dir = '../Normalized_CPG'
-#Hellbender:
+input_dir = '../Combined_CPG'
 output_dir = '../Matched_CPG'
 
 
@@ -44,17 +43,17 @@ for function in os.listdir(input_dir):
             g_vulnerable = load_graph(vulnerable_file)
             g_fixed = load_graph(fixed_file)
 
-            # Combine graphs without renaming
-            combined_graph = nx.compose(g_vulnerable, g_fixed)
-            #combined_graph = nx.union(g_vulnerable, g_fixed, rename=('vulnerable_', 'fixed_'))
+            combined_graph = nx.union(g_vulnerable, g_fixed, rename = "graph_")
 
             # Find leaf nodes in the vulnerable graph and the root of the fixed graph
-            vulnerable_leaf_nodes = find_leaf_nodes(g_vulnerable)
-            root_fixed = find_root(g_fixed)
+            vulnerable_leaf_nodes = ['nodes'+leaf for leaf in find_leaf_nodes(g_vulnerable)]  # Add prefix
+            root_fixed =  'nodes'+find_root(g_fixed)
 
             # Connect each vulnerable leaf node to the fixed root
+            # To reverse the direction, switch the order of `leaf_node` and `root_fixed`
             for leaf_node in vulnerable_leaf_nodes:
-                combined_graph.add_edge(leaf_node, root_fixed, label='Connection to Fixed Root', style='solid', penwidth='2.0')
+                #Removed Color
+                combined_graph.add_edge(leaf_node, root_fixed)
 
             output_file = os.path.join(output_dir, f'{function}.dot')
             nx.drawing.nx_pydot.write_dot(combined_graph, output_file)

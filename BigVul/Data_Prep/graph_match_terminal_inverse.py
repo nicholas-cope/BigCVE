@@ -44,24 +44,27 @@ for function in os.listdir(input_dir):
         vulnerable_file = os.path.join(function_path, f"vulnerability{function_number}.dot")
         fixed_file = os.path.join(function_path, f"fixed{function_number}.dot")
 
-        if os.path.exists(vulnerable_file) and os.path.exists(fixed_file):
+        #Adding this because I am so mad at Hellbender for shutting off on me so many times
+        output_file = os.path.join(output_dir, f'{function}.dot')
+
+        if os.path.exists(vulnerable_file) and os.path.exists(fixed_file) and not os.path.exists(output_file):
             g_vulnerable = load_graph(vulnerable_file)
             g_fixed = load_graph(fixed_file)
 
             # Create a new graph that includes both vulnerable and fixed graphs as subgraphs
-            combined_graph = nx.union(g_vulnerable, g_fixed, rename=('vulnerable_', 'fixed_'))
+            combined_graph = nx.union(g_vulnerable, g_fixed, rename = "graph_")
 
             # Find leaf nodes in the fixed graph and the root of the vulnerable graph
-            fixed_leaf_nodes = ['fixed_' + leaf for leaf in find_leaf_nodes(g_fixed)]  # Add prefix
-            root_vulnerable = 'vulnerable_' + find_root(g_vulnerable)
+            fixed_leaf_nodes = ['nodes' +leaf for leaf in find_leaf_nodes(g_fixed)]  # Add prefix
+            root_vulnerable = 'nodes' + find_root(g_vulnerable)
 
             # Connect each fixed leaf node to the vulnerable root
             # Direction: Fixed leaf nodes --> Vulnerable root node
             for leaf_node in fixed_leaf_nodes:
-                combined_graph.add_edge(leaf_node, root_vulnerable, label='Connection to Vulnerable Root', color='blue', style='dashed', penwidth='2.0')
+                #Removed Color
+                combined_graph.add_edge(leaf_node, root_vulnerable)
 
             # Output the combined graph to the output directory
-            output_file = os.path.join(output_dir, f'{function}.dot')
             nx.drawing.nx_pydot.write_dot(combined_graph, output_file)
             print(f'Combined CPG for {function} written to {output_file}')
         else:
