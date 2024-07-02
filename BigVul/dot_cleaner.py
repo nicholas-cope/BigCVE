@@ -61,6 +61,9 @@ def process_dot_files_in_directory(input_directory, output_directory):
 
 
 # Example usage
-input_directory = "Clean/"
-output_directory = "Testing/"  # Specify the output folder path
+input_directory = "Matched_CPG/"
+output_directory = "Clean_Matched_CPG_2/"  # Specify the output folder path
+
+os.makedirs(output_directory, exist_ok=True)
+
 process_dot_files_in_directory(input_directory, output_directory)
