@@ -7,13 +7,19 @@ import glob
 from multiprocessing import Pool
 from functools import partial
 import random
+from huggingface_hub import login, HfFolder
 
 # This file is originaly based on VulCNN, but is fairly different now
-#Command to run python cpg_to_pickle.py -i ./Matched_CPG -o ./output
+#Command to run python cpg_to_pickle.py -i ../vulFixing -o ../fixingPKL
+#Other way
+#python cpg_to_pickle.py -i ../vulInducing -o ../fixingPKL
 
 # Imports for tokenization via codebert model
 import torch
 from transformers import AutoTokenizer
+HF_TOKEN = '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'
+HfFolder.save_token(HF_TOKEN)
+login(HF_TOKEN, add_to_git_credential=True)
 
 # Imports for graph construction
 from torch_geometric.data import Data, Batch
@@ -64,20 +70,19 @@ def graph_generation(dot):
         edge_types = []
 
         pdg = graph_extraction(dot)
+        #print(pdg)
         labels_dict = nx.get_node_attributes(pdg, 'label')
+        #print(labels_dict)
         labels_code = dict()
         for label, all_code in labels_dict.items():
             # Remove parenthesis around info and the markdown at the end
             # No longer represents just code. Also includes some joern info at the beginning
             code = all_code
             labels_code[label] = code
-            #Get to Here
 
         id = 0
         for label, code in labels_code.items():
-            #Gets to Here
-            #If casted into an int -> exception
-            label_node_map[(label)] = id
+            label_node_map[label] = id
             id += 1
             line_vec = sentence_embedding(code)
             max_length = 64
@@ -85,21 +90,18 @@ def graph_generation(dot):
             for i in range(0, min(len(line_vec), max_length) - 1):
                 sized_line_vec[i] = line_vec[i]
             nodes.append(sized_line_vec)
-            #Gets to Here
         for edge in pdg.edges(data=True):
             # Manual determination of edge type
             edge_type = 0
             try:
                 print(edge[2]["label"])
-                #Gets to Here
                 edge_type_string = edge[2]["label"].replace("\"", "").split(":")[0]
             except:
                 print("Edge feature parsing error")
 
-
             edge_types.append([edge_type])
 
-            edges.append([label_node_map[(edge[0])], label_node_map[(edge[1])]])
+            edges.append([label_node_map[edge[0]], label_node_map[edge[1]]])
 
             edge_features.append([0])
 
@@ -129,8 +131,9 @@ def write_to_pkl(dot, out, existing_files):
 
 def main():
     #args = parse_options()
-    dir_name = "../vulFixing"
-    out_path = "../output"
+    print("Running")
+    dir_name = "Clean_Matched_CPG_Inv/"
+    out_path = "vulInducing/"
     # Don't judge my global variables. This was the way VulCNN did it and I don't feel like changing the structure
     if dir_name[-1] == '/':
         dir_name = dir_name
