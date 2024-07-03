@@ -59,7 +59,7 @@ for function in os.listdir(input_dir):
             # Connect each fixed leaf node to the vulnerable root
             # Direction: Fixed leaf nodes --> Vulnerable root node
             for leaf_node in fixed_leaf_nodes:
-                combined_graph.add_edge(leaf_node, root_vulnerable, label='Connection to Vulnerable Root', color='blue', style='dashed', penwidth='2.0')
+                combined_graph.add_edge(leaf_node, root_vulnerable)
 
             # Output the combined graph to the output directory
             output_file = os.path.join(output_dir, f'{function}.dot')

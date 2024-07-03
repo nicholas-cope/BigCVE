@@ -2,7 +2,7 @@ import csv
 import os
 
 # Path to BigVul Dataset (assuming it's in the same directory as this script)
-file_path = "../Dataset/MSR_data_cleaned.csv"
+file_path = "Dataset/MSR_data_cleaned.csv"
 
 # Create the "Dataset" folder if it doesn't exist
 output_folder = "Dataset"

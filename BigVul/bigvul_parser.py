@@ -19,7 +19,7 @@ csv.field_size_limit(100000000)
 functions_folder = "data/BigCVE/BigVul/Functions"
 os.makedirs(functions_folder, exist_ok=True)
 
-#Reading the file in chunks
+#Reading the file in  chunks
 #While BigVul is in utf8, just checking for safety
 with open(file_path, "r", encoding="utf8", errors="ignore") as file:
 

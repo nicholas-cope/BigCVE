@@ -1,16 +1,14 @@
 #Thanks Miles Once Again
 #Checking what the file looks like
-# dot -Tpng filename.dot -o VulnerableToFixed.png
+# dot -Tpng filename.dot -o outfile.png
 import shutil
 import networkx as nx
 import glob
 from pathlib import Path
 from multiprocessing import Pool, freeze_support
 
-raw_cpgs_location = "../CPG/"
-output_location = "../Combined_CPG/"
-
-#You have to create a folder called Combined_CPG
+raw_cpgs_location = "/home/ybc67/data/BigCVE/BigVul/CPG/"
+output_location = "/home/ybc67/data/BigCVE/BigVul/Combined_CPG/"
 
 """
    Combines all .dot files within a single sample folder.

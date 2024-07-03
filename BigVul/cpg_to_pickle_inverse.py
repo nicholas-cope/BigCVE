@@ -17,9 +17,12 @@ from huggingface_hub import login, HfFolder
 # Imports for tokenization via codebert model
 import torch
 from transformers import AutoTokenizer
+#Needed for Hellbender
+'''
 HF_TOKEN = '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'
 HfFolder.save_token(HF_TOKEN)
 login(HF_TOKEN, add_to_git_credential=True)
+'''
 
 # Imports for graph construction
 from torch_geometric.data import Data, Batch
@@ -133,7 +136,7 @@ def main():
     #args = parse_options()
     print("Running")
     dir_name = "Clean_Matched_CPG_Inv/"
-    out_path = "vulInducing/"
+    out_path = "vulInducingPKL/"
     # Don't judge my global variables. This was the way VulCNN did it and I don't feel like changing the structure
     if dir_name[-1] == '/':
         dir_name = dir_name
