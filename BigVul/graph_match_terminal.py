@@ -59,13 +59,5 @@ for function in os.listdir(input_dir):
             nx.drawing.nx_pydot.write_dot(combined_graph, output_file)
             print(f'Combined CPG for {function} written to {output_file}')
 
-print("Moving to cleaning")
-subprocess.run(["python", "dot_cleaner.py"], check=True)
-print("Moving to pkl")
-subprocess.run(["python", "cpg_to_pickle.py"], check=True)
-
-
-
-
-
-
+        else:
+            print(f"Warning: Missing vulnerability or fixed file for {function}")
