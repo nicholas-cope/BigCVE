@@ -1,8 +1,6 @@
 import os
 import networkx as nx
 import pydot
-import subprocess
-
 #To generate the CPG's where terminal nodes of the vulnerable function are connected to the root node
 #of the fixed function
 #vulnerable -> fixed

@@ -10,16 +10,17 @@ import random
 from huggingface_hub import login, HfFolder
 
 # This file is originaly based on VulCNN, but is fairly different now
+#Command to run python cpg_to_pickle.py -i ../vulFixing -o ../fixingPKL
+#Other way
+#python cpg_to_pickle.py -i ../vulInducing -o ../fixingPKL
+
 # Imports for tokenization via codebert model
 import torch
 from transformers import AutoTokenizer
-
-#Needed for Hellbender
-'''
 HF_TOKEN = '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'
 HfFolder.save_token(HF_TOKEN)
 login(HF_TOKEN, add_to_git_credential=True)
-'''
+
 # Imports for graph construction
 from torch_geometric.data import Data, Batch
 tokenizer = AutoTokenizer.from_pretrained("bigcode/starcoder")
