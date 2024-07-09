@@ -8,22 +8,16 @@ def load_graph(file_path):
     (graph,) = pydot.graph_from_dot_file(file_path)
     return nx.nx_pydot.from_pydot(graph)
 
+def find_roots(graph):
+    """Finds root nodes (nodes with no incoming edges) in a graph."""
+    return [node for node in graph.nodes if graph.in_degree(node) == 0]
+
 def find_sinks(graph):
     """Finds sink nodes (nodes with no outgoing edges) in a graph."""
     return [node for node in graph.nodes if graph.out_degree(node) == 0]
 
-def find_similar_nodes(g1, g2):
-    """Finds pairs of nodes with similar labels and types between two graphs."""
-    similar_nodes = []
-    for n1 in g1.nodes:
-        for n2 in g2.nodes:
-            if g1.nodes[n1].get('label') == g2.nodes[n2].get('label') and \
-               g1.nodes[n1].get('type') == g2.nodes[n2].get('type'):
-                similar_nodes.append((n1, n2))
-    return similar_nodes
-
 input_dir = 'Combined_CPG'
-output_dir = 'Matched_CPG_Similar'
+output_dir = 'Removed_Similar_Nodes_CPG'
 
 os.makedirs(output_dir, exist_ok=True)
 
@@ -39,10 +33,11 @@ for function in os.listdir(input_dir):
             g_fixed = load_graph(fixed_file)
             combined_graph = nx.union(g_vulnerable, g_fixed, rename=('vulnerable_', 'fixed_'))
 
-            # Connect and color SIMILAR nodes (yellow)
-            for v_node, f_node in find_similar_nodes(g_vulnerable, g_fixed):
-                combined_graph.add_edge('vulnerable_' + v_node, 'fixed_' + f_node)
-
+            # Connect and color root nodes (red)
+            vuln_roots = find_roots(g_vulnerable)
+            fixed_roots = find_roots(g_fixed)
+            for root_v, root_f in zip(vuln_roots, fixed_roots):  # Assuming same number of roots
+                combined_graph.add_edge('vulnerable_' + root_v, 'fixed_' + root_f)
 
             # Connect and color sinks (green)
             sink_vulnerable_nodes = find_sinks(combined_graph.subgraph([n for n in combined_graph if n.startswith('vulnerable_')]))
