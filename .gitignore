@@ -1,3 +1,6 @@
+#All Hellbender out files
+*.out
+
 BigVul/Dataset/
 BigVul/Functions/
 BigVul/CPG/
@@ -26,7 +29,7 @@ BigVul/Matched_CPG_Inverse/
 BigVul/Matched_CPG_Root_Inverse/
 BigVul/Matched_CPG_Root_Terminal_Inverse/
 BigVul/Pickle_Root/
-*.out
+
 
 
 CVEFixes/CPG/
@@ -34,3 +37,6 @@ CVEFixes/Pickle/
 CVEFixes/Pickle_Inverse/
 CVEFixes/Combined_CPG/
 CVEFixes/Functions/
+CVEFixes/Clean_Matched_CPG_CVE/
+CVEFixes/Clean_Matched_CPG_Inverse_CVE/
+CVEFixes/CVEFixes_v1.0.7
