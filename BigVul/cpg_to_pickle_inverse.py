@@ -17,12 +17,9 @@ from huggingface_hub import login, HfFolder
 # Imports for tokenization via codebert model
 import torch
 from transformers import AutoTokenizer
-#Needed for Hellbender
-'''
 HF_TOKEN = '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'
 HfFolder.save_token(HF_TOKEN)
 login(HF_TOKEN, add_to_git_credential=True)
-'''
 
 # Imports for graph construction
 from torch_geometric.data import Data, Batch

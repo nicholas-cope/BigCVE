@@ -17,7 +17,7 @@ def find_sinks(graph):
     return [node for node in graph.nodes if graph.out_degree(node) == 0]
 
 input_dir = 'Combined_CPG'
-output_dir = 'Matched_CPG_Root_Terminal'
+output_dir = 'Matched_CPG-Root_Inverse'
 
 os.makedirs(output_dir, exist_ok=True)
 
@@ -33,17 +33,17 @@ for function in os.listdir(input_dir):
             g_fixed = load_graph(fixed_file)
             combined_graph = nx.union(g_vulnerable, g_fixed, rename=('vulnerable_', 'fixed_'))
 
-            # Connect and color root nodes (red)
+            # Connect and color root nodes (red) - FIXED to VULNERABLE
             vuln_roots = find_roots(g_vulnerable)
             fixed_roots = find_roots(g_fixed)
-            for root_v, root_f in zip(vuln_roots, fixed_roots):  # Assuming same number of roots
-                combined_graph.add_edge('vulnerable_' + root_v, 'fixed_' + root_f)
+            for root_v, root_f in zip(vuln_roots, fixed_roots):
+                combined_graph.add_edge('fixed_' + root_f, 'vulnerable_' + root_v)
 
-            # Connect and color sinks (green)
+            # Connect and color sinks (green) - FIXED to VULNERABLE
             sink_vulnerable_nodes = find_sinks(combined_graph.subgraph([n for n in combined_graph if n.startswith('vulnerable_')]))
             sink_fixed_nodes = find_sinks(combined_graph.subgraph([n for n in combined_graph if n.startswith('fixed_')]))
             for sink_v, sink_f in zip(sink_vulnerable_nodes, sink_fixed_nodes):
-                combined_graph.add_edge(sink_v, sink_f)
+                combined_graph.add_edge(sink_f, sink_v)
 
             output_file = os.path.join(output_dir, f'{function}.dot')
             nx.drawing.nx_pydot.write_dot(combined_graph, output_file)

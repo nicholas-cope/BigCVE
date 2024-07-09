@@ -2,6 +2,7 @@ import os
 import networkx as nx
 import pydot
 import subprocess
+
 # Function to load a graph from a DOT file
 def load_graph(file_path):
     """Loads a graph from a DOT file."""

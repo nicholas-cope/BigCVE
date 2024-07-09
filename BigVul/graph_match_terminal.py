@@ -63,7 +63,6 @@ print("Moving to cleaning")
 subprocess.run(["python", "dot_cleaner.py"], check=True)
 print("Moving to pkl")
 subprocess.run(["python", "cpg_to_pickle.py"], check=True)
-# Directory paths
 
 
 
