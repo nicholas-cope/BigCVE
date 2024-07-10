@@ -2,6 +2,8 @@ import os
 import networkx as nx
 import pydot
 import subprocess
+import dot_cleaner
+import cpg_to_pickle
 #To generate the CPG's where terminal nodes of the fixed function are connected to the root node
 #of the vulnerable  function
 #fixed -> vulnerable

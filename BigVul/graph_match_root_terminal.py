@@ -4,6 +4,8 @@ import networkx as nx
 import pydot
 import shutil
 import subprocess
+import cpg_to_pickle
+import dot_cleaner
 
 def load_graph(file_path):
     """Loads a graph from a DOT file."""
@@ -20,6 +22,8 @@ def find_sinks(graph):
 
 input_dir = 'Combined_CPG/'
 output_dir = 'Matched_CPG_Root_Terminal/'
+clean_cpg_dir = ''
+pklFiles = ''
 
 os.makedirs(output_dir, exist_ok=True)
 

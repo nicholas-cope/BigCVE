@@ -29,8 +29,9 @@ BigVul/Matched_CPG_Inverse/
 BigVul/Matched_CPG_Root_Inverse/
 BigVul/Matched_CPG_Root_Terminal_Inverse/
 BigVul/Pickle_Root/
-
-
+BigVul/Clean_Matched_CPG_Root_Term_Inv
+BigVul/Clean_Matched_CPG_Root_Terminal
+BigVul/Pickle_Root_Terminal/
 
 CVEFixes/CPG/
 CVEFixes/Pickle/
@@ -40,3 +41,4 @@ CVEFixes/Functions/
 CVEFixes/Clean_Matched_CPG_CVE/
 CVEFixes/Clean_Matched_CPG_Inverse_CVE/
 CVEFixes/CVEFixes_v1.0.7
+

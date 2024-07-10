@@ -2,6 +2,8 @@ import os
 import networkx as nx
 import pydot
 import shutil
+import dot_cleaner
+import cpg_to_pickle
 
 def load_graph(file_path):
     """Loads a graph from a DOT file."""

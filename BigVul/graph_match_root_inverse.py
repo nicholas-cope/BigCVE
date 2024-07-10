@@ -2,6 +2,8 @@ import os
 import networkx as nx
 import pydot
 import subprocess
+import cpg_to_pickle
+import dot_cleaner
 
 # Function to load a graph from a DOT file
 def load_graph(file_path):
@@ -20,6 +22,8 @@ def find_root(graph):
 # Directory paths
 input_dir = 'Combined_CPG'
 output_dir = 'Matched_CPG_Root_Inverse'
+clean_cpg_dir = ''
+pklFiles = ''
 
 # Ensure the output directory exists
 os.makedirs(output_dir, exist_ok=True)
