@@ -22,8 +22,8 @@ def find_sinks(graph):
 
 input_dir = 'Combined_CPG/'
 output_dir = 'Matched_CPG_Root_Terminal/'
-clean_cpg_dir = ''
-pklFiles = ''
+clean_dot_dir = ''
+pkl_dir = ''
 
 os.makedirs(output_dir, exist_ok=True)
 
@@ -58,7 +58,7 @@ for function in os.listdir(input_dir):
             print(f"Warning: Missing vulnerability or fixed file for {function}")
     
 print("Moving to cleaning")
-subprocess.run(["python", "dot_cleaner_root.py"], check=True)
+dot_cleaner.clean_dot_files(output_dir, clean_dot_dir)
 print("Moving to pkl")
-subprocess.run(["python", "cpg_to_pickle_root.py"], check=True)
+cpg_to_pickle.main(clean_dot_dir, pkl_dir)
 

@@ -26,6 +26,8 @@ def find_similar_nodes(g1, g2):
 
 input_dir = 'Combined_CPG'
 output_dir = 'Matched_CPG_Similar'
+clean_dot_dir = ''
+pkl_dir = ''
 
 os.makedirs(output_dir, exist_ok=True)
 
@@ -57,3 +59,8 @@ for function in os.listdir(input_dir):
 
         else:
             print(f"Warning: Missing vulnerability or fixed file for {function}")
+    
+print("Moving to cleaning")
+dot_cleaner.clean_dot_files(output_dir, clean_dot_dir)
+print("Moving to pkl")
+cpg_to_pickle.main(clean_dot_dir, pkl_dir)

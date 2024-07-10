@@ -70,6 +70,6 @@ for function in os.listdir(input_dir):
         else:
             print(f"Warning: Missing vulnerability or fixed file for {function}")
 print("Moving to cleaning")
-subprocess.run(["python", "dot_cleaner_inverse.py"], check=True)
+dot_cleaner.clean_dot_files(output_dir, clean_dot_dir)
 print("Moving to pkl")
-subprocess.run(["python", "cpg_to_pickle_inverse.py"], check=True)
+cpg_to_pickle.main(clean_dot_dir, pkl_dir)

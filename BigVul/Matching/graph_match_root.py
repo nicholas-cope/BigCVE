@@ -2,8 +2,9 @@ import os
 import networkx as nx
 import pydot
 import subprocess
-import cpg_to_pickle
+#For streamline usage
 import dot_cleaner
+import cpg_to_pickle
 
 # Function to load a graph from a DOT file
 def load_graph(file_path):
@@ -19,14 +20,26 @@ def find_root(graph):
             return node
     return None  # If no root is found (shouldn't happen in your case)
 
-# Directory paths
-input_dir = 'Combined_CPG'
-output_dir = 'Matched_CPG_Root_Inverse'
-clean_cpg_dir = ''
-pklFiles = ''
+#Modified Directory Paths
+script_dir = os.path.dirname(os.path.realpath(__file__))  # Get the script's directory
+print(script_dir)
+output_root = os.path.join(os.path.dirname(script_dir))  # Parent directory of the scripts folder
+print(output_root)
+
+# Define output directories relative to the output_root
+output_dir = os.path.join(output_root, 'Matched_CPG_Root')
+print(output_dir)
+clean_dot_dir = os.path.join(output_root, 'Clean_Matched_CPG_Root')
+pkl_dir = os.path.join(output_root, 'rootPKL')
+
+# Define the input directory
+input_dir = os.path.join(output_root, 'Combined_CPG')
 
 # Ensure the output directory exists
+# Create the output directories if they don't exist
 os.makedirs(output_dir, exist_ok=True)
+os.makedirs(clean_dot_dir, exist_ok=True)
+os.makedirs(pkl_dir, exist_ok=True)
 
 # Iterate over each function directory
 for function in os.listdir(input_dir):
@@ -51,7 +64,7 @@ for function in os.listdir(input_dir):
 
             # Add a single directed edge from the vulnerable root to the fixed root
             # Reverse Direction Here
-            combined_graph.add_edge(root_fixed, root_vulnerable)
+            combined_graph.add_edge(root_vulnerable, root_fixed)
 
             # Output the combined graph to the output directory
             output_file = os.path.join(output_dir, f'{function}.dot')
@@ -61,6 +74,6 @@ for function in os.listdir(input_dir):
             print(f"Warning: Missing vulnerability or fixed file for {function}")
 
 print("Moving to cleaning")
-subprocess.run(["python", "dot_cleaner_root_inverse.py"], check=True)
+dot_cleaner.clean_dot_files(output_dir, clean_dot_dir)
 print("Moving to pkl")
-subprocess.run(["python", "cpg_to_pickle_root_inverse.py"], check=True)
+cpg_to_pickle.main(clean_dot_dir, pkl_dir)

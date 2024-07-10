@@ -1,0 +1,11 @@
+#!/bin/bash
+#SBATCH --job-name=Change_ME 
+#SBATCH --ntasks=30 # num of cpus
+#SBATCH -N 1
+#SBATCH --time=2-00:00:00 
+#SBATCH --mem=100G
+#SBATCH --mail-type=begin,end,fail,requeue 
+#SBATCH --export=all 
+#SBATCH --out=Hellbender-%j.out 
+
+python graph_match_root_terminal.py
