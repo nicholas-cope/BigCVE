@@ -1,0 +1,43 @@
+digraph "&lt;global&gt;" {
+vulnerable_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+vulnerable_8 [label=<(UNKNOWN,XGetDeviceControl(
+    register Display	*dpy,
+ ...,XGetDeviceControl(
+    register Display	*dpy,
+ ...)<SUB>1</SUB>>];
+vulnerable_9 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+vulnerable_14 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_15 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_16 [label=<(METHOD_RETURN,ANY)>];
+fixed_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+fixed_8 [label=<(UNKNOWN,XGetDeviceControl(
+    register Display	*dpy,
+ ...,XGetDeviceControl(
+    register Display	*dpy,
+ ...)<SUB>1</SUB>>];
+fixed_9 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+fixed_14 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_15 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_16 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_6 -> vulnerable_7  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_9  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_8  [key=0, label="CFG: "];
+vulnerable_7 -> vulnerable_8  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_9  [key=0, label="CFG: "];
+vulnerable_9 -> fixed_6  [key=0];
+vulnerable_14 -> vulnerable_15  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_16  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_16  [key=1, label="CFG: "];
+vulnerable_15 -> fixed_6  [key=0];
+vulnerable_16 -> fixed_6  [key=0];
+fixed_6 -> fixed_7  [key=0, label="AST: "];
+fixed_6 -> fixed_9  [key=0, label="AST: "];
+fixed_6 -> fixed_8  [key=0, label="CFG: "];
+fixed_7 -> fixed_8  [key=0, label="AST: "];
+fixed_8 -> fixed_9  [key=0, label="CFG: "];
+fixed_14 -> fixed_15  [key=0, label="AST: "];
+fixed_14 -> fixed_16  [key=0, label="AST: "];
+fixed_14 -> fixed_16  [key=1, label="CFG: "];
+}

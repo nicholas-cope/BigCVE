@@ -1,0 +1,147 @@
+digraph "&lt;global&gt;" {
+vulnerable_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+vulnerable_8 [label=<(METHOD,IsNowOnTapBarIntegrationEnabled)<SUB>1</SUB>>];
+vulnerable_9 [label="<(BLOCK,{
+   return GetBooleanParam(
+      switches::kE...,{
+   return GetBooleanParam(
+      switches::kE...)<SUB>1</SUB>>"];
+vulnerable_10 [label="<(RETURN,return GetBooleanParam(
+      switches::kEnable...,return GetBooleanParam(
+      switches::kEnable...)<SUB>2</SUB>>"];
+vulnerable_11 [label="<(GetBooleanParam,GetBooleanParam(
+      switches::kEnableContext...)<SUB>2</SUB>>"];
+vulnerable_12 [label="<(&lt;operator&gt;.fieldAccess,switches::kEnableContextualSearchNowOnTapBarInt...)<SUB>3</SUB>>"];
+vulnerable_13 [label="<(IDENTIFIER,switches,GetBooleanParam(
+      switches::kEnableContext...)<SUB>3</SUB>>"];
+vulnerable_14 [label=<(FIELD_IDENTIFIER,kEnableContextualSearchNowOnTapBarIntegration,kEnableContextualSearchNowOnTapBarIntegration)<SUB>3</SUB>>];
+vulnerable_15 [label=<(&lt;operator&gt;.addressOf,&amp;is_now_on_tap_bar_integration_enabled_cached_)<SUB>4</SUB>>];
+vulnerable_16 [label="<(IDENTIFIER,is_now_on_tap_bar_integration_enabled_cached_,GetBooleanParam(
+      switches::kEnableContext...)<SUB>4</SUB>>"];
+vulnerable_17 [label=<(&lt;operator&gt;.addressOf,&amp;is_now_on_tap_bar_integration_enabled_)<SUB>5</SUB>>];
+vulnerable_18 [label="<(IDENTIFIER,is_now_on_tap_bar_integration_enabled_,GetBooleanParam(
+      switches::kEnableContext...)<SUB>5</SUB>>"];
+vulnerable_19 [label=<(METHOD_RETURN,bool)<SUB>1</SUB>>];
+vulnerable_21 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+vulnerable_44 [label=<(METHOD,&lt;operator&gt;.fieldAccess)>];
+vulnerable_45 [label=<(PARAM,p1)>];
+vulnerable_46 [label=<(PARAM,p2)>];
+vulnerable_47 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_48 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_49 [label=<(METHOD,&lt;operator&gt;.addressOf)>];
+vulnerable_50 [label=<(PARAM,p1)>];
+vulnerable_51 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_52 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_38 [label=<(METHOD,GetBooleanParam)>];
+vulnerable_39 [label=<(PARAM,p1)>];
+vulnerable_40 [label=<(PARAM,p2)>];
+vulnerable_41 [label=<(PARAM,p3)>];
+vulnerable_42 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_43 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_32 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_33 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_34 [label=<(METHOD_RETURN,ANY)>];
+fixed_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+fixed_8 [label=<(METHOD,IsNowOnTapBarIntegrationEnabled)<SUB>1</SUB>>];
+fixed_9 [label="<(BLOCK,{
+bool ContextualSearchFieldTrial::IsContextual...,{
+bool ContextualSearchFieldTrial::IsContextual...)<SUB>1</SUB>>"];
+fixed_10 [label=<(METHOD_RETURN,bool)<SUB>1</SUB>>];
+fixed_12 [label=<(UNKNOWN,,)>];
+fixed_13 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+fixed_22 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_23 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_24 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_6 -> vulnerable_7  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_21  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_21  [key=1, label="CFG: "];
+vulnerable_7 -> vulnerable_8  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_9  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_19  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_14  [key=0, label="CFG: "];
+vulnerable_8 -> vulnerable_11  [key=0, label="DDG: "];
+vulnerable_9 -> vulnerable_10  [key=0, label="AST: "];
+vulnerable_10 -> vulnerable_11  [key=0, label="AST: "];
+vulnerable_10 -> vulnerable_19  [key=0, label="CFG: "];
+vulnerable_10 -> vulnerable_19  [key=1, label="DDG: &lt;RET&gt;"];
+vulnerable_11 -> vulnerable_12  [key=0, label="AST: "];
+vulnerable_11 -> vulnerable_15  [key=0, label="AST: "];
+vulnerable_11 -> vulnerable_17  [key=0, label="AST: "];
+vulnerable_11 -> vulnerable_10  [key=0, label="CFG: "];
+vulnerable_11 -> vulnerable_10  [key=1, label="DDG: GetBooleanParam(
+      switches::kEnableContextualSearchNowOnTapBarIntegration,
+      &amp;is_now_on_tap_bar_integration_enabled_cached_,
+      &amp;is_now_on_tap_bar_integration_enabled_)"];
+vulnerable_11 -> vulnerable_19  [key=0, label="DDG: switches::kEnableContextualSearchNowOnTapBarIntegration"];
+vulnerable_11 -> vulnerable_19  [key=1, label="DDG: &amp;is_now_on_tap_bar_integration_enabled_cached_"];
+vulnerable_11 -> vulnerable_19  [key=2, label="DDG: &amp;is_now_on_tap_bar_integration_enabled_"];
+vulnerable_11 -> vulnerable_19  [key=3, label="DDG: GetBooleanParam(
+      switches::kEnableContextualSearchNowOnTapBarIntegration,
+      &amp;is_now_on_tap_bar_integration_enabled_cached_,
+      &amp;is_now_on_tap_bar_integration_enabled_)"];
+vulnerable_12 -> vulnerable_13  [key=0, label="AST: "];
+vulnerable_12 -> vulnerable_14  [key=0, label="AST: "];
+vulnerable_12 -> vulnerable_15  [key=0, label="CFG: "];
+vulnerable_13 -> fixed_6  [key=0];
+vulnerable_14 -> vulnerable_12  [key=0, label="CFG: "];
+vulnerable_15 -> vulnerable_16  [key=0, label="AST: "];
+vulnerable_15 -> vulnerable_17  [key=0, label="CFG: "];
+vulnerable_16 -> fixed_6  [key=0];
+vulnerable_17 -> vulnerable_18  [key=0, label="AST: "];
+vulnerable_17 -> vulnerable_11  [key=0, label="CFG: "];
+vulnerable_18 -> fixed_6  [key=0];
+vulnerable_19 -> fixed_6  [key=0];
+vulnerable_21 -> fixed_6  [key=0];
+vulnerable_44 -> vulnerable_45  [key=0, label="AST: "];
+vulnerable_44 -> vulnerable_45  [key=1, label="DDG: "];
+vulnerable_44 -> vulnerable_47  [key=0, label="AST: "];
+vulnerable_44 -> vulnerable_46  [key=0, label="AST: "];
+vulnerable_44 -> vulnerable_46  [key=1, label="DDG: "];
+vulnerable_44 -> vulnerable_48  [key=0, label="AST: "];
+vulnerable_44 -> vulnerable_48  [key=1, label="CFG: "];
+vulnerable_45 -> vulnerable_48  [key=0, label="DDG: p1"];
+vulnerable_46 -> vulnerable_48  [key=0, label="DDG: p2"];
+vulnerable_47 -> fixed_6  [key=0];
+vulnerable_48 -> fixed_6  [key=0];
+vulnerable_49 -> vulnerable_50  [key=0, label="AST: "];
+vulnerable_49 -> vulnerable_50  [key=1, label="DDG: "];
+vulnerable_49 -> vulnerable_51  [key=0, label="AST: "];
+vulnerable_49 -> vulnerable_52  [key=0, label="AST: "];
+vulnerable_49 -> vulnerable_52  [key=1, label="CFG: "];
+vulnerable_50 -> vulnerable_52  [key=0, label="DDG: p1"];
+vulnerable_51 -> fixed_6  [key=0];
+vulnerable_52 -> fixed_6  [key=0];
+vulnerable_38 -> vulnerable_39  [key=0, label="AST: "];
+vulnerable_38 -> vulnerable_39  [key=1, label="DDG: "];
+vulnerable_38 -> vulnerable_42  [key=0, label="AST: "];
+vulnerable_38 -> vulnerable_40  [key=0, label="AST: "];
+vulnerable_38 -> vulnerable_40  [key=1, label="DDG: "];
+vulnerable_38 -> vulnerable_43  [key=0, label="AST: "];
+vulnerable_38 -> vulnerable_43  [key=1, label="CFG: "];
+vulnerable_38 -> vulnerable_41  [key=0, label="AST: "];
+vulnerable_38 -> vulnerable_41  [key=1, label="DDG: "];
+vulnerable_39 -> vulnerable_43  [key=0, label="DDG: p1"];
+vulnerable_40 -> vulnerable_43  [key=0, label="DDG: p2"];
+vulnerable_41 -> vulnerable_43  [key=0, label="DDG: p3"];
+vulnerable_42 -> fixed_6  [key=0];
+vulnerable_43 -> fixed_6  [key=0];
+vulnerable_32 -> vulnerable_33  [key=0, label="AST: "];
+vulnerable_32 -> vulnerable_34  [key=0, label="AST: "];
+vulnerable_32 -> vulnerable_34  [key=1, label="CFG: "];
+vulnerable_33 -> fixed_6  [key=0];
+vulnerable_34 -> fixed_6  [key=0];
+fixed_6 -> fixed_7  [key=0, label="AST: "];
+fixed_6 -> fixed_13  [key=0, label="AST: "];
+fixed_6 -> fixed_12  [key=0, label="CFG: "];
+fixed_7 -> fixed_8  [key=0, label="AST: "];
+fixed_7 -> fixed_12  [key=0, label="AST: "];
+fixed_8 -> fixed_9  [key=0, label="AST: "];
+fixed_8 -> fixed_10  [key=0, label="AST: "];
+fixed_8 -> fixed_10  [key=1, label="CFG: "];
+fixed_12 -> fixed_13  [key=0, label="CFG: "];
+fixed_22 -> fixed_23  [key=0, label="AST: "];
+fixed_22 -> fixed_24  [key=0, label="AST: "];
+fixed_22 -> fixed_24  [key=1, label="CFG: "];
+}

@@ -1,0 +1,62 @@
+digraph "&lt;global&gt;" {
+vulnerable_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+vulnerable_8 [label=<(METHOD,~AppModalDialog)<SUB>1</SUB>>];
+vulnerable_9 [label=<(BLOCK,{
+ },{
+ })<SUB>1</SUB>>];
+vulnerable_10 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+vulnerable_12 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+vulnerable_19 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_20 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_21 [label=<(METHOD_RETURN,ANY)>];
+fixed_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+fixed_8 [label=<(METHOD,~AppModalDialog)<SUB>1</SUB>>];
+fixed_9 [label=<(BLOCK,{
+  CompleteDialog();
+ },{
+  CompleteDialog();
+ })<SUB>1</SUB>>];
+fixed_10 [label=<(CompleteDialog,CompleteDialog())<SUB>2</SUB>>];
+fixed_11 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+fixed_13 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+fixed_26 [label=<(METHOD,CompleteDialog)>];
+fixed_27 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_28 [label=<(METHOD_RETURN,ANY)>];
+fixed_20 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_21 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_22 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_6 -> vulnerable_7  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_12  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_12  [key=1, label="CFG: "];
+vulnerable_7 -> vulnerable_8  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_9  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_10  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_10  [key=1, label="CFG: "];
+vulnerable_9 -> fixed_6  [key=0];
+vulnerable_10 -> fixed_6  [key=0];
+vulnerable_12 -> fixed_6  [key=0];
+vulnerable_19 -> vulnerable_20  [key=0, label="AST: "];
+vulnerable_19 -> vulnerable_21  [key=0, label="AST: "];
+vulnerable_19 -> vulnerable_21  [key=1, label="CFG: "];
+vulnerable_20 -> fixed_6  [key=0];
+vulnerable_21 -> fixed_6  [key=0];
+fixed_6 -> fixed_7  [key=0, label="AST: "];
+fixed_6 -> fixed_13  [key=0, label="AST: "];
+fixed_6 -> fixed_13  [key=1, label="CFG: "];
+fixed_7 -> fixed_8  [key=0, label="AST: "];
+fixed_8 -> fixed_9  [key=0, label="AST: "];
+fixed_8 -> fixed_11  [key=0, label="AST: "];
+fixed_8 -> fixed_10  [key=0, label="CFG: "];
+fixed_8 -> fixed_10  [key=1, label="DDG: "];
+fixed_9 -> fixed_10  [key=0, label="AST: "];
+fixed_10 -> fixed_11  [key=0, label="CFG: "];
+fixed_10 -> fixed_11  [key=1, label="DDG: CompleteDialog()"];
+fixed_26 -> fixed_27  [key=0, label="AST: "];
+fixed_26 -> fixed_28  [key=0, label="AST: "];
+fixed_26 -> fixed_28  [key=1, label="CFG: "];
+fixed_20 -> fixed_21  [key=0, label="AST: "];
+fixed_20 -> fixed_22  [key=0, label="AST: "];
+fixed_20 -> fixed_22  [key=1, label="CFG: "];
+}

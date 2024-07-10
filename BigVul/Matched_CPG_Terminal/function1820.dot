@@ -1,0 +1,278 @@
+digraph "&lt;operator&gt;.assignment" {
+vulnerable_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+vulnerable_8 [label=<(UNKNOWN,hstore_from_array(PG_FUNCTION_ARGS)
+{
+	ArrayTyp...,hstore_from_array(PG_FUNCTION_ARGS)
+{
+	ArrayTyp...)<SUB>1</SUB>>];
+vulnerable_9 [label="<(LOCAL,int ndims: int)<SUB>4</SUB>>"];
+vulnerable_10 [label=<(&lt;operator&gt;.assignment,ndims = ARR_NDIM(in_array))<SUB>4</SUB>>];
+vulnerable_11 [label=<(IDENTIFIER,ndims,ndims = ARR_NDIM(in_array))<SUB>4</SUB>>];
+vulnerable_12 [label=<(ARR_NDIM,ARR_NDIM(in_array))<SUB>4</SUB>>];
+vulnerable_13 [label=<(IDENTIFIER,in_array,ARR_NDIM(in_array))<SUB>4</SUB>>];
+vulnerable_14 [label="<(LOCAL,int count: int)<SUB>5</SUB>>"];
+vulnerable_15 [label="<(LOCAL,int32 buflen: int32)<SUB>6</SUB>>"];
+vulnerable_16 [label="<(LOCAL,HStore* out: HStore*)<SUB>7</SUB>>"];
+vulnerable_17 [label="<(LOCAL,Pairs* pairs: Pairs*)<SUB>8</SUB>>"];
+vulnerable_18 [label="<(LOCAL,Datum* in_datums: Datum*)<SUB>9</SUB>>"];
+vulnerable_19 [label="<(LOCAL,bool* in_nulls: bool*)<SUB>10</SUB>>"];
+vulnerable_20 [label="<(LOCAL,int in_count: int)<SUB>11</SUB>>"];
+vulnerable_21 [label="<(LOCAL,int i: int)<SUB>12</SUB>>"];
+vulnerable_22 [label=<(UNKNOWN,Assert(ARR_ELEMTYPE(in_array) == TEXTOID);,Assert(ARR_ELEMTYPE(in_array) == TEXTOID);)<SUB>14</SUB>>];
+vulnerable_23 [label="<(UNKNOWN,switch (ndims)
+	{
+		case 0:
+			out = hstorePair...,switch (ndims)
+	{
+		case 0:
+			out = hstorePair...)<SUB>16</SUB>>"];
+vulnerable_24 [label=<(UNKNOWN,deconstruct_array(in_array,
+					  TEXTOID, -1,...,deconstruct_array(in_array,
+					  TEXTOID, -1,...)<SUB>42</SUB>>];
+vulnerable_25 [label=<(UNKNOWN,count = in_count / 2;,count = in_count / 2;)<SUB>46</SUB>>];
+vulnerable_26 [label=<(UNKNOWN,pairs = palloc(count * sizeof(Pairs));,pairs = palloc(count * sizeof(Pairs));)<SUB>48</SUB>>];
+vulnerable_27 [label=<(UNKNOWN,for (i = 0;,for (i = 0;)<SUB>50</SUB>>];
+vulnerable_28 [label=<(UNKNOWN,i &lt; count;,i &lt; count;)<SUB>50</SUB>>];
+vulnerable_29 [label=<(UNKNOWN,++i)
+	{
+		if (in_nulls[i * 2])
+			ereport(ERROR...,++i)
+	{
+		if (in_nulls[i * 2])
+			ereport(ERROR...)<SUB>50</SUB>>];
+vulnerable_30 [label=<(UNKNOWN,count = hstoreUniquePairs(pairs, count, &amp;buflen);,count = hstoreUniquePairs(pairs, count, &amp;buflen);)<SUB>77</SUB>>];
+vulnerable_31 [label=<(UNKNOWN,out = hstorePairs(pairs, count, buflen);,out = hstorePairs(pairs, count, buflen);)<SUB>79</SUB>>];
+vulnerable_32 [label="<(LOCAL,PG_RETURN_POINTER : PG_RETURN_POINTER)<SUB>81</SUB>>"];
+vulnerable_33 [label=<(UNKNOWN,},})<SUB>82</SUB>>];
+vulnerable_34 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+vulnerable_53 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_54 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_55 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_64 [label=<(METHOD,ARR_NDIM)>];
+vulnerable_65 [label=<(PARAM,p1)>];
+vulnerable_66 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_67 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_59 [label=<(METHOD,&lt;operator&gt;.assignment)>];
+vulnerable_60 [label=<(PARAM,p1)>];
+vulnerable_61 [label=<(PARAM,p2)>];
+vulnerable_62 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_63 [label=<(METHOD_RETURN,ANY)>];
+fixed_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+fixed_8 [label=<(UNKNOWN,hstore_from_array(PG_FUNCTION_ARGS)
+{
+	ArrayTyp...,hstore_from_array(PG_FUNCTION_ARGS)
+{
+	ArrayTyp...)<SUB>1</SUB>>];
+fixed_9 [label="<(LOCAL,int ndims: int)<SUB>4</SUB>>"];
+fixed_10 [label=<(&lt;operator&gt;.assignment,ndims = ARR_NDIM(in_array))<SUB>4</SUB>>];
+fixed_11 [label=<(IDENTIFIER,ndims,ndims = ARR_NDIM(in_array))<SUB>4</SUB>>];
+fixed_12 [label=<(ARR_NDIM,ARR_NDIM(in_array))<SUB>4</SUB>>];
+fixed_13 [label=<(IDENTIFIER,in_array,ARR_NDIM(in_array))<SUB>4</SUB>>];
+fixed_14 [label="<(LOCAL,int count: int)<SUB>5</SUB>>"];
+fixed_15 [label="<(LOCAL,int32 buflen: int32)<SUB>6</SUB>>"];
+fixed_16 [label="<(LOCAL,HStore* out: HStore*)<SUB>7</SUB>>"];
+fixed_17 [label="<(LOCAL,Pairs* pairs: Pairs*)<SUB>8</SUB>>"];
+fixed_18 [label="<(LOCAL,Datum* in_datums: Datum*)<SUB>9</SUB>>"];
+fixed_19 [label="<(LOCAL,bool* in_nulls: bool*)<SUB>10</SUB>>"];
+fixed_20 [label="<(LOCAL,int in_count: int)<SUB>11</SUB>>"];
+fixed_21 [label="<(LOCAL,int i: int)<SUB>12</SUB>>"];
+fixed_22 [label=<(UNKNOWN,Assert(ARR_ELEMTYPE(in_array) == TEXTOID);,Assert(ARR_ELEMTYPE(in_array) == TEXTOID);)<SUB>14</SUB>>];
+fixed_23 [label="<(UNKNOWN,switch (ndims)
+	{
+		case 0:
+			out = hstorePair...,switch (ndims)
+	{
+		case 0:
+			out = hstorePair...)<SUB>16</SUB>>"];
+fixed_24 [label=<(UNKNOWN,deconstruct_array(in_array,
+					  TEXTOID, -1,...,deconstruct_array(in_array,
+					  TEXTOID, -1,...)<SUB>42</SUB>>];
+fixed_25 [label=<(UNKNOWN,count = in_count / 2;,count = in_count / 2;)<SUB>46</SUB>>];
+fixed_26 [label=<(UNKNOWN,if (count &gt; MaxAllocSize / sizeof(Pairs))
+		ere...,if (count &gt; MaxAllocSize / sizeof(Pairs))
+		ere...)<SUB>49</SUB>>];
+fixed_27 [label=<(UNKNOWN,pairs = palloc(count * sizeof(Pairs));,pairs = palloc(count * sizeof(Pairs));)<SUB>55</SUB>>];
+fixed_28 [label=<(UNKNOWN,for (i = 0;,for (i = 0;)<SUB>57</SUB>>];
+fixed_29 [label=<(UNKNOWN,i &lt; count;,i &lt; count;)<SUB>57</SUB>>];
+fixed_30 [label=<(UNKNOWN,++i)
+	{
+		if (in_nulls[i * 2])
+			ereport(ERROR...,++i)
+	{
+		if (in_nulls[i * 2])
+			ereport(ERROR...)<SUB>57</SUB>>];
+fixed_31 [label=<(UNKNOWN,count = hstoreUniquePairs(pairs, count, &amp;buflen);,count = hstoreUniquePairs(pairs, count, &amp;buflen);)<SUB>84</SUB>>];
+fixed_32 [label=<(UNKNOWN,out = hstorePairs(pairs, count, buflen);,out = hstorePairs(pairs, count, buflen);)<SUB>86</SUB>>];
+fixed_33 [label="<(LOCAL,PG_RETURN_POINTER : PG_RETURN_POINTER)<SUB>88</SUB>>"];
+fixed_34 [label=<(UNKNOWN,},})<SUB>89</SUB>>];
+fixed_35 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+fixed_54 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_55 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_56 [label=<(METHOD_RETURN,ANY)>];
+fixed_65 [label=<(METHOD,ARR_NDIM)>];
+fixed_66 [label=<(PARAM,p1)>];
+fixed_67 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_68 [label=<(METHOD_RETURN,ANY)>];
+fixed_60 [label=<(METHOD,&lt;operator&gt;.assignment)>];
+fixed_61 [label=<(PARAM,p1)>];
+fixed_62 [label=<(PARAM,p2)>];
+fixed_63 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_64 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_6 -> vulnerable_7  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_34  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_8  [key=0, label="CFG: "];
+vulnerable_6 -> vulnerable_12  [key=0, label="DDG: "];
+vulnerable_7 -> vulnerable_8  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_9  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_10  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_14  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_15  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_16  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_17  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_18  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_19  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_20  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_21  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_22  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_23  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_24  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_25  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_26  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_27  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_28  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_29  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_30  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_31  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_32  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_33  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_12  [key=0, label="CFG: "];
+vulnerable_9 -> fixed_6  [key=0];
+vulnerable_10 -> vulnerable_11  [key=0, label="AST: "];
+vulnerable_10 -> vulnerable_12  [key=0, label="AST: "];
+vulnerable_10 -> vulnerable_22  [key=0, label="CFG: "];
+vulnerable_10 -> vulnerable_34  [key=0, label="DDG: ndims"];
+vulnerable_10 -> vulnerable_34  [key=1, label="DDG: ARR_NDIM(in_array)"];
+vulnerable_10 -> vulnerable_34  [key=2, label="DDG: ndims = ARR_NDIM(in_array)"];
+vulnerable_11 -> fixed_6  [key=0];
+vulnerable_12 -> vulnerable_13  [key=0, label="AST: "];
+vulnerable_12 -> vulnerable_10  [key=0, label="CFG: "];
+vulnerable_12 -> vulnerable_10  [key=1, label="DDG: in_array"];
+vulnerable_12 -> vulnerable_34  [key=0, label="DDG: in_array"];
+vulnerable_13 -> fixed_6  [key=0];
+vulnerable_14 -> fixed_6  [key=0];
+vulnerable_15 -> fixed_6  [key=0];
+vulnerable_16 -> fixed_6  [key=0];
+vulnerable_17 -> fixed_6  [key=0];
+vulnerable_18 -> fixed_6  [key=0];
+vulnerable_19 -> fixed_6  [key=0];
+vulnerable_20 -> fixed_6  [key=0];
+vulnerable_21 -> fixed_6  [key=0];
+vulnerable_22 -> vulnerable_23  [key=0, label="CFG: "];
+vulnerable_23 -> vulnerable_24  [key=0, label="CFG: "];
+vulnerable_24 -> vulnerable_25  [key=0, label="CFG: "];
+vulnerable_25 -> vulnerable_26  [key=0, label="CFG: "];
+vulnerable_26 -> vulnerable_27  [key=0, label="CFG: "];
+vulnerable_27 -> vulnerable_28  [key=0, label="CFG: "];
+vulnerable_28 -> vulnerable_29  [key=0, label="CFG: "];
+vulnerable_29 -> vulnerable_30  [key=0, label="CFG: "];
+vulnerable_30 -> vulnerable_31  [key=0, label="CFG: "];
+vulnerable_31 -> vulnerable_33  [key=0, label="CFG: "];
+vulnerable_32 -> fixed_6  [key=0];
+vulnerable_33 -> vulnerable_34  [key=0, label="CFG: "];
+vulnerable_34 -> fixed_6  [key=0];
+vulnerable_53 -> vulnerable_54  [key=0, label="AST: "];
+vulnerable_53 -> vulnerable_55  [key=0, label="AST: "];
+vulnerable_53 -> vulnerable_55  [key=1, label="CFG: "];
+vulnerable_54 -> fixed_6  [key=0];
+vulnerable_55 -> fixed_6  [key=0];
+vulnerable_64 -> vulnerable_65  [key=0, label="AST: "];
+vulnerable_64 -> vulnerable_65  [key=1, label="DDG: "];
+vulnerable_64 -> vulnerable_66  [key=0, label="AST: "];
+vulnerable_64 -> vulnerable_67  [key=0, label="AST: "];
+vulnerable_64 -> vulnerable_67  [key=1, label="CFG: "];
+vulnerable_65 -> vulnerable_67  [key=0, label="DDG: p1"];
+vulnerable_66 -> fixed_6  [key=0];
+vulnerable_67 -> fixed_6  [key=0];
+vulnerable_59 -> vulnerable_60  [key=0, label="AST: "];
+vulnerable_59 -> vulnerable_60  [key=1, label="DDG: "];
+vulnerable_59 -> vulnerable_62  [key=0, label="AST: "];
+vulnerable_59 -> vulnerable_61  [key=0, label="AST: "];
+vulnerable_59 -> vulnerable_61  [key=1, label="DDG: "];
+vulnerable_59 -> vulnerable_63  [key=0, label="AST: "];
+vulnerable_59 -> vulnerable_63  [key=1, label="CFG: "];
+vulnerable_60 -> vulnerable_63  [key=0, label="DDG: p1"];
+vulnerable_61 -> vulnerable_63  [key=0, label="DDG: p2"];
+vulnerable_62 -> fixed_6  [key=0];
+vulnerable_63 -> fixed_6  [key=0];
+fixed_6 -> fixed_7  [key=0, label="AST: "];
+fixed_6 -> fixed_35  [key=0, label="AST: "];
+fixed_6 -> fixed_8  [key=0, label="CFG: "];
+fixed_6 -> fixed_12  [key=0, label="DDG: "];
+fixed_7 -> fixed_8  [key=0, label="AST: "];
+fixed_7 -> fixed_9  [key=0, label="AST: "];
+fixed_7 -> fixed_10  [key=0, label="AST: "];
+fixed_7 -> fixed_14  [key=0, label="AST: "];
+fixed_7 -> fixed_15  [key=0, label="AST: "];
+fixed_7 -> fixed_16  [key=0, label="AST: "];
+fixed_7 -> fixed_17  [key=0, label="AST: "];
+fixed_7 -> fixed_18  [key=0, label="AST: "];
+fixed_7 -> fixed_19  [key=0, label="AST: "];
+fixed_7 -> fixed_20  [key=0, label="AST: "];
+fixed_7 -> fixed_21  [key=0, label="AST: "];
+fixed_7 -> fixed_22  [key=0, label="AST: "];
+fixed_7 -> fixed_23  [key=0, label="AST: "];
+fixed_7 -> fixed_24  [key=0, label="AST: "];
+fixed_7 -> fixed_25  [key=0, label="AST: "];
+fixed_7 -> fixed_26  [key=0, label="AST: "];
+fixed_7 -> fixed_27  [key=0, label="AST: "];
+fixed_7 -> fixed_28  [key=0, label="AST: "];
+fixed_7 -> fixed_29  [key=0, label="AST: "];
+fixed_7 -> fixed_30  [key=0, label="AST: "];
+fixed_7 -> fixed_31  [key=0, label="AST: "];
+fixed_7 -> fixed_32  [key=0, label="AST: "];
+fixed_7 -> fixed_33  [key=0, label="AST: "];
+fixed_7 -> fixed_34  [key=0, label="AST: "];
+fixed_8 -> fixed_12  [key=0, label="CFG: "];
+fixed_10 -> fixed_11  [key=0, label="AST: "];
+fixed_10 -> fixed_12  [key=0, label="AST: "];
+fixed_10 -> fixed_22  [key=0, label="CFG: "];
+fixed_10 -> fixed_35  [key=0, label="DDG: ndims"];
+fixed_10 -> fixed_35  [key=1, label="DDG: ARR_NDIM(in_array)"];
+fixed_10 -> fixed_35  [key=2, label="DDG: ndims = ARR_NDIM(in_array)"];
+fixed_12 -> fixed_13  [key=0, label="AST: "];
+fixed_12 -> fixed_10  [key=0, label="CFG: "];
+fixed_12 -> fixed_10  [key=1, label="DDG: in_array"];
+fixed_12 -> fixed_35  [key=0, label="DDG: in_array"];
+fixed_22 -> fixed_23  [key=0, label="CFG: "];
+fixed_23 -> fixed_24  [key=0, label="CFG: "];
+fixed_24 -> fixed_25  [key=0, label="CFG: "];
+fixed_25 -> fixed_26  [key=0, label="CFG: "];
+fixed_26 -> fixed_27  [key=0, label="CFG: "];
+fixed_27 -> fixed_28  [key=0, label="CFG: "];
+fixed_28 -> fixed_29  [key=0, label="CFG: "];
+fixed_29 -> fixed_30  [key=0, label="CFG: "];
+fixed_30 -> fixed_31  [key=0, label="CFG: "];
+fixed_31 -> fixed_32  [key=0, label="CFG: "];
+fixed_32 -> fixed_34  [key=0, label="CFG: "];
+fixed_34 -> fixed_35  [key=0, label="CFG: "];
+fixed_54 -> fixed_55  [key=0, label="AST: "];
+fixed_54 -> fixed_56  [key=0, label="AST: "];
+fixed_54 -> fixed_56  [key=1, label="CFG: "];
+fixed_65 -> fixed_66  [key=0, label="AST: "];
+fixed_65 -> fixed_66  [key=1, label="DDG: "];
+fixed_65 -> fixed_67  [key=0, label="AST: "];
+fixed_65 -> fixed_68  [key=0, label="AST: "];
+fixed_65 -> fixed_68  [key=1, label="CFG: "];
+fixed_66 -> fixed_68  [key=0, label="DDG: p1"];
+fixed_60 -> fixed_61  [key=0, label="AST: "];
+fixed_60 -> fixed_61  [key=1, label="DDG: "];
+fixed_60 -> fixed_63  [key=0, label="AST: "];
+fixed_60 -> fixed_62  [key=0, label="AST: "];
+fixed_60 -> fixed_62  [key=1, label="DDG: "];
+fixed_60 -> fixed_64  [key=0, label="AST: "];
+fixed_60 -> fixed_64  [key=1, label="CFG: "];
+fixed_61 -> fixed_64  [key=0, label="DDG: p1"];
+fixed_62 -> fixed_64  [key=0, label="DDG: p2"];
+}

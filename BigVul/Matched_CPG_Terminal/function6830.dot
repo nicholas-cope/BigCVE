@@ -1,0 +1,1938 @@
+digraph "WKBundlePageSetPolicyClient" {
+vulnerable_201 [label=<(METHOD,WKBundlePageSetResourceLoadClient)>];
+vulnerable_202 [label=<(PARAM,p1)>];
+vulnerable_203 [label=<(PARAM,p2)>];
+vulnerable_204 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_205 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+vulnerable_8 [label=<(METHOD,InjectedBundlePage)<SUB>1</SUB>>];
+vulnerable_9 [label=<(PARAM,WKBundlePageRef page)<SUB>1</SUB>>];
+vulnerable_10 [label=<(BLOCK,{
+    WKBundlePageLoaderClient loaderClient = {...,{
+    WKBundlePageLoaderClient loaderClient = {...)<SUB>4</SUB>>];
+vulnerable_11 [label="<(LOCAL,WKBundlePageLoaderClient loaderClient: WKBundlePageLoaderClient)<SUB>5</SUB>>"];
+vulnerable_12 [label=<(&lt;operator&gt;.assignment,loaderClient = {
+        kWKBundlePageLoaderCli...)<SUB>5</SUB>>];
+vulnerable_13 [label=<(IDENTIFIER,loaderClient,loaderClient = {
+        kWKBundlePageLoaderCli...)<SUB>5</SUB>>];
+vulnerable_14 [label=<(&lt;operator&gt;.arrayInitializer,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>5</SUB>>];
+vulnerable_15 [label=<(IDENTIFIER,kWKBundlePageLoaderClientCurrentVersion,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>6</SUB>>];
+vulnerable_16 [label=<(LITERAL,this,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>7</SUB>>];
+vulnerable_17 [label=<(IDENTIFIER,didStartProvisionalLoadForFrame,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>8</SUB>>];
+vulnerable_18 [label=<(IDENTIFIER,didReceiveServerRedirectForProvisionalLoadForFrame,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>9</SUB>>];
+vulnerable_19 [label=<(IDENTIFIER,didFailProvisionalLoadWithErrorForFrame,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>10</SUB>>];
+vulnerable_20 [label=<(IDENTIFIER,didCommitLoadForFrame,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>11</SUB>>];
+vulnerable_21 [label=<(IDENTIFIER,didFinishDocumentLoadForFrame,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>12</SUB>>];
+vulnerable_22 [label=<(IDENTIFIER,didFinishLoadForFrame,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>13</SUB>>];
+vulnerable_23 [label=<(IDENTIFIER,didFailLoadWithErrorForFrame,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>14</SUB>>];
+vulnerable_24 [label=<(IDENTIFIER,didSameDocumentNavigationForFrame,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>15</SUB>>];
+vulnerable_25 [label=<(IDENTIFIER,didReceiveTitleForFrame,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>16</SUB>>];
+vulnerable_26 [label=<(LITERAL,0,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>17</SUB>>];
+vulnerable_27 [label=<(LITERAL,0,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>18</SUB>>];
+vulnerable_28 [label=<(LITERAL,0,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>19</SUB>>];
+vulnerable_29 [label=<(IDENTIFIER,didDisplayInsecureContentForFrame,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>20</SUB>>];
+vulnerable_30 [label=<(IDENTIFIER,didRunInsecureContentForFrame,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>21</SUB>>];
+vulnerable_31 [label=<(IDENTIFIER,didClearWindowForFrame,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>22</SUB>>];
+vulnerable_32 [label=<(IDENTIFIER,didCancelClientRedirectForFrame,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>23</SUB>>];
+vulnerable_33 [label=<(IDENTIFIER,willPerformClientRedirectForFrame,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>24</SUB>>];
+vulnerable_34 [label=<(IDENTIFIER,didHandleOnloadEventsForFrame,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>25</SUB>>];
+vulnerable_35 [label=<(LITERAL,0,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>26</SUB>>];
+vulnerable_36 [label=<(LITERAL,0,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>27</SUB>>];
+vulnerable_37 [label=<(IDENTIFIER,didDetectXSSForFrame,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>28</SUB>>];
+vulnerable_38 [label=<(LITERAL,0,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>29</SUB>>];
+vulnerable_39 [label=<(LITERAL,0,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>30</SUB>>];
+vulnerable_40 [label=<(LITERAL,0,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>31</SUB>>];
+vulnerable_41 [label=<(LITERAL,0,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>32</SUB>>];
+vulnerable_42 [label=<(LITERAL,0,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>33</SUB>>];
+vulnerable_43 [label=<(IDENTIFIER,didFinishProgress,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>34</SUB>>];
+vulnerable_44 [label=<(LITERAL,0,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>35</SUB>>];
+vulnerable_45 [label=<(LITERAL,0,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>36</SUB>>];
+vulnerable_46 [label=<(WKBundlePageSetPageLoaderClient,WKBundlePageSetPageLoaderClient(m_page, &amp;loader...)<SUB>38</SUB>>];
+vulnerable_47 [label=<(IDENTIFIER,m_page,WKBundlePageSetPageLoaderClient(m_page, &amp;loader...)<SUB>38</SUB>>];
+vulnerable_48 [label=<(&lt;operator&gt;.addressOf,&amp;loaderClient)<SUB>38</SUB>>];
+vulnerable_49 [label=<(IDENTIFIER,loaderClient,WKBundlePageSetPageLoaderClient(m_page, &amp;loader...)<SUB>38</SUB>>];
+vulnerable_50 [label="<(LOCAL,WKBundlePageResourceLoadClient resourceLoadClient: WKBundlePageResourceLoadClient)<SUB>40</SUB>>"];
+vulnerable_51 [label=<(&lt;operator&gt;.assignment,resourceLoadClient = {
+        kWKBundlePageRes...)<SUB>40</SUB>>];
+vulnerable_52 [label=<(IDENTIFIER,resourceLoadClient,resourceLoadClient = {
+        kWKBundlePageRes...)<SUB>40</SUB>>];
+vulnerable_53 [label=<(&lt;operator&gt;.arrayInitializer,{
+        kWKBundlePageResourceLoadClientCurren...)<SUB>40</SUB>>];
+vulnerable_54 [label=<(IDENTIFIER,kWKBundlePageResourceLoadClientCurrentVersion,{
+        kWKBundlePageResourceLoadClientCurren...)<SUB>41</SUB>>];
+vulnerable_55 [label=<(LITERAL,this,{
+        kWKBundlePageResourceLoadClientCurren...)<SUB>42</SUB>>];
+vulnerable_56 [label=<(IDENTIFIER,didInitiateLoadForResource,{
+        kWKBundlePageResourceLoadClientCurren...)<SUB>43</SUB>>];
+vulnerable_57 [label=<(IDENTIFIER,willSendRequestForFrame,{
+        kWKBundlePageResourceLoadClientCurren...)<SUB>44</SUB>>];
+vulnerable_58 [label=<(IDENTIFIER,didReceiveResponseForResource,{
+        kWKBundlePageResourceLoadClientCurren...)<SUB>45</SUB>>];
+vulnerable_59 [label=<(IDENTIFIER,didReceiveContentLengthForResource,{
+        kWKBundlePageResourceLoadClientCurren...)<SUB>46</SUB>>];
+vulnerable_60 [label=<(IDENTIFIER,didFinishLoadForResource,{
+        kWKBundlePageResourceLoadClientCurren...)<SUB>47</SUB>>];
+vulnerable_61 [label=<(IDENTIFIER,didFailLoadForResource,{
+        kWKBundlePageResourceLoadClientCurren...)<SUB>48</SUB>>];
+vulnerable_62 [label=<(IDENTIFIER,shouldCacheResponse,{
+        kWKBundlePageResourceLoadClientCurren...)<SUB>49</SUB>>];
+vulnerable_63 [label=<(LITERAL,0,{
+        kWKBundlePageResourceLoadClientCurren...)<SUB>50</SUB>>];
+vulnerable_64 [label=<(WKBundlePageSetResourceLoadClient,WKBundlePageSetResourceLoadClient(m_page, &amp;reso...)<SUB>52</SUB>>];
+vulnerable_65 [label=<(IDENTIFIER,m_page,WKBundlePageSetResourceLoadClient(m_page, &amp;reso...)<SUB>52</SUB>>];
+vulnerable_66 [label=<(&lt;operator&gt;.addressOf,&amp;resourceLoadClient)<SUB>52</SUB>>];
+vulnerable_67 [label=<(IDENTIFIER,resourceLoadClient,WKBundlePageSetResourceLoadClient(m_page, &amp;reso...)<SUB>52</SUB>>];
+vulnerable_68 [label="<(LOCAL,WKBundlePagePolicyClient policyClient: WKBundlePagePolicyClient)<SUB>54</SUB>>"];
+vulnerable_69 [label=<(&lt;operator&gt;.assignment,policyClient = {
+        kWKBundlePagePolicyCli...)<SUB>54</SUB>>];
+vulnerable_70 [label=<(IDENTIFIER,policyClient,policyClient = {
+        kWKBundlePagePolicyCli...)<SUB>54</SUB>>];
+vulnerable_71 [label=<(&lt;operator&gt;.arrayInitializer,{
+        kWKBundlePagePolicyClientCurrentVersi...)<SUB>54</SUB>>];
+vulnerable_72 [label=<(IDENTIFIER,kWKBundlePagePolicyClientCurrentVersion,{
+        kWKBundlePagePolicyClientCurrentVersi...)<SUB>55</SUB>>];
+vulnerable_73 [label=<(LITERAL,this,{
+        kWKBundlePagePolicyClientCurrentVersi...)<SUB>56</SUB>>];
+vulnerable_74 [label=<(IDENTIFIER,decidePolicyForNavigationAction,{
+        kWKBundlePagePolicyClientCurrentVersi...)<SUB>57</SUB>>];
+vulnerable_75 [label=<(IDENTIFIER,decidePolicyForNewWindowAction,{
+        kWKBundlePagePolicyClientCurrentVersi...)<SUB>58</SUB>>];
+vulnerable_76 [label=<(IDENTIFIER,decidePolicyForResponse,{
+        kWKBundlePagePolicyClientCurrentVersi...)<SUB>59</SUB>>];
+vulnerable_77 [label=<(IDENTIFIER,unableToImplementPolicy,{
+        kWKBundlePagePolicyClientCurrentVersi...)<SUB>60</SUB>>];
+vulnerable_78 [label=<(WKBundlePageSetPolicyClient,WKBundlePageSetPolicyClient(m_page, &amp;policyClient))<SUB>62</SUB>>];
+vulnerable_79 [label=<(IDENTIFIER,m_page,WKBundlePageSetPolicyClient(m_page, &amp;policyClient))<SUB>62</SUB>>];
+vulnerable_80 [label=<(&lt;operator&gt;.addressOf,&amp;policyClient)<SUB>62</SUB>>];
+vulnerable_81 [label=<(IDENTIFIER,policyClient,WKBundlePageSetPolicyClient(m_page, &amp;policyClient))<SUB>62</SUB>>];
+vulnerable_82 [label="<(LOCAL,WKBundlePageUIClient uiClient: WKBundlePageUIClient)<SUB>64</SUB>>"];
+vulnerable_83 [label=<(&lt;operator&gt;.assignment,uiClient = {
+        kWKBundlePageUIClientCurre...)<SUB>64</SUB>>];
+vulnerable_84 [label=<(IDENTIFIER,uiClient,uiClient = {
+        kWKBundlePageUIClientCurre...)<SUB>64</SUB>>];
+vulnerable_85 [label=<(&lt;operator&gt;.arrayInitializer,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>64</SUB>>];
+vulnerable_86 [label=<(IDENTIFIER,kWKBundlePageUIClientCurrentVersion,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>65</SUB>>];
+vulnerable_87 [label=<(LITERAL,this,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>66</SUB>>];
+vulnerable_88 [label=<(IDENTIFIER,willAddMessageToConsole,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>67</SUB>>];
+vulnerable_89 [label=<(IDENTIFIER,willSetStatusbarText,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>68</SUB>>];
+vulnerable_90 [label=<(IDENTIFIER,willRunJavaScriptAlert,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>69</SUB>>];
+vulnerable_91 [label=<(IDENTIFIER,willRunJavaScriptConfirm,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>70</SUB>>];
+vulnerable_92 [label=<(IDENTIFIER,willRunJavaScriptPrompt,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>71</SUB>>];
+vulnerable_93 [label=<(LITERAL,0,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>72</SUB>>];
+vulnerable_94 [label=<(LITERAL,0,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>73</SUB>>];
+vulnerable_95 [label=<(LITERAL,0,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>74</SUB>>];
+vulnerable_96 [label=<(LITERAL,0,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>75</SUB>>];
+vulnerable_97 [label=<(LITERAL,0,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>76</SUB>>];
+vulnerable_98 [label=<(LITERAL,0,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>77</SUB>>];
+vulnerable_99 [label=<(LITERAL,0,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>78</SUB>>];
+vulnerable_100 [label=<(LITERAL,0,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>79</SUB>>];
+vulnerable_101 [label=<(LITERAL,0,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>80</SUB>>];
+vulnerable_102 [label=<(IDENTIFIER,didReachApplicationCacheOriginQuota,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>81</SUB>>];
+vulnerable_103 [label=<(IDENTIFIER,didExceedDatabaseQuota,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>82</SUB>>];
+vulnerable_104 [label=<(LITERAL,0,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>83</SUB>>];
+vulnerable_105 [label=<(LITERAL,0,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>84</SUB>>];
+vulnerable_106 [label=<(LITERAL,0,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>85</SUB>>];
+vulnerable_107 [label=<(WKBundlePageSetUIClient,WKBundlePageSetUIClient(m_page, &amp;uiClient))<SUB>87</SUB>>];
+vulnerable_108 [label=<(IDENTIFIER,m_page,WKBundlePageSetUIClient(m_page, &amp;uiClient))<SUB>87</SUB>>];
+vulnerable_109 [label=<(&lt;operator&gt;.addressOf,&amp;uiClient)<SUB>87</SUB>>];
+vulnerable_110 [label=<(IDENTIFIER,uiClient,WKBundlePageSetUIClient(m_page, &amp;uiClient))<SUB>87</SUB>>];
+vulnerable_111 [label="<(LOCAL,WKBundlePageEditorClient editorClient: WKBundlePageEditorClient)<SUB>89</SUB>>"];
+vulnerable_112 [label=<(&lt;operator&gt;.assignment,editorClient = {
+        kWKBundlePageEditorCli...)<SUB>89</SUB>>];
+vulnerable_113 [label=<(IDENTIFIER,editorClient,editorClient = {
+        kWKBundlePageEditorCli...)<SUB>89</SUB>>];
+vulnerable_114 [label=<(&lt;operator&gt;.arrayInitializer,{
+        kWKBundlePageEditorClientCurrentVersi...)<SUB>89</SUB>>];
+vulnerable_115 [label=<(IDENTIFIER,kWKBundlePageEditorClientCurrentVersion,{
+        kWKBundlePageEditorClientCurrentVersi...)<SUB>90</SUB>>];
+vulnerable_116 [label=<(LITERAL,this,{
+        kWKBundlePageEditorClientCurrentVersi...)<SUB>91</SUB>>];
+vulnerable_117 [label=<(IDENTIFIER,shouldBeginEditing,{
+        kWKBundlePageEditorClientCurrentVersi...)<SUB>92</SUB>>];
+vulnerable_118 [label=<(IDENTIFIER,shouldEndEditing,{
+        kWKBundlePageEditorClientCurrentVersi...)<SUB>93</SUB>>];
+vulnerable_119 [label=<(IDENTIFIER,shouldInsertNode,{
+        kWKBundlePageEditorClientCurrentVersi...)<SUB>94</SUB>>];
+vulnerable_120 [label=<(IDENTIFIER,shouldInsertText,{
+        kWKBundlePageEditorClientCurrentVersi...)<SUB>95</SUB>>];
+vulnerable_121 [label=<(IDENTIFIER,shouldDeleteRange,{
+        kWKBundlePageEditorClientCurrentVersi...)<SUB>96</SUB>>];
+vulnerable_122 [label=<(IDENTIFIER,shouldChangeSelectedRange,{
+        kWKBundlePageEditorClientCurrentVersi...)<SUB>97</SUB>>];
+vulnerable_123 [label=<(IDENTIFIER,shouldApplyStyle,{
+        kWKBundlePageEditorClientCurrentVersi...)<SUB>98</SUB>>];
+vulnerable_124 [label=<(IDENTIFIER,didBeginEditing,{
+        kWKBundlePageEditorClientCurrentVersi...)<SUB>99</SUB>>];
+vulnerable_125 [label=<(IDENTIFIER,didEndEditing,{
+        kWKBundlePageEditorClientCurrentVersi...)<SUB>100</SUB>>];
+vulnerable_126 [label=<(IDENTIFIER,didChange,{
+        kWKBundlePageEditorClientCurrentVersi...)<SUB>101</SUB>>];
+vulnerable_127 [label=<(IDENTIFIER,didChangeSelection,{
+        kWKBundlePageEditorClientCurrentVersi...)<SUB>102</SUB>>];
+vulnerable_128 [label=<(LITERAL,0,{
+        kWKBundlePageEditorClientCurrentVersi...)<SUB>103</SUB>>];
+vulnerable_129 [label=<(LITERAL,0,{
+        kWKBundlePageEditorClientCurrentVersi...)<SUB>104</SUB>>];
+vulnerable_130 [label=<(LITERAL,0,{
+        kWKBundlePageEditorClientCurrentVersi...)<SUB>105</SUB>>];
+vulnerable_131 [label=<(WKBundlePageSetEditorClient,WKBundlePageSetEditorClient(m_page, &amp;editorClient))<SUB>107</SUB>>];
+vulnerable_132 [label=<(IDENTIFIER,m_page,WKBundlePageSetEditorClient(m_page, &amp;editorClient))<SUB>107</SUB>>];
+vulnerable_133 [label=<(&lt;operator&gt;.addressOf,&amp;editorClient)<SUB>107</SUB>>];
+vulnerable_134 [label=<(IDENTIFIER,editorClient,WKBundlePageSetEditorClient(m_page, &amp;editorClient))<SUB>107</SUB>>];
+vulnerable_135 [label=<(MODIFIER,CONSTRUCTOR)>];
+vulnerable_136 [label=<(MODIFIER,PUBLIC)>];
+vulnerable_137 [label=<(METHOD_RETURN,InjectedBundlePage.InjectedBundlePage)<SUB>1</SUB>>];
+vulnerable_139 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+vulnerable_173 [label=<(METHOD,&lt;operator&gt;.arrayInitializer)>];
+vulnerable_174 [label=<(PARAM,p1)>];
+vulnerable_175 [label=<(PARAM,p2)>];
+vulnerable_176 [label=<(PARAM,p3)>];
+vulnerable_177 [label=<(PARAM,p4)>];
+vulnerable_178 [label=<(PARAM,p5)>];
+vulnerable_179 [label=<(PARAM,p6)>];
+vulnerable_180 [label=<(PARAM,p7)>];
+vulnerable_181 [label=<(PARAM,p8)>];
+vulnerable_182 [label=<(PARAM,p9)>];
+vulnerable_183 [label=<(PARAM,p10)>];
+vulnerable_184 [label=<(PARAM,p11)>];
+vulnerable_185 [label=<(PARAM,p12)>];
+vulnerable_186 [label=<(PARAM,p13)>];
+vulnerable_187 [label=<(PARAM,p14)>];
+vulnerable_188 [label=<(PARAM,p15)>];
+vulnerable_189 [label=<(PARAM,p16)>];
+vulnerable_190 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_191 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_216 [label=<(METHOD,WKBundlePageSetEditorClient)>];
+vulnerable_217 [label=<(PARAM,p1)>];
+vulnerable_218 [label=<(PARAM,p2)>];
+vulnerable_219 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_220 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_211 [label=<(METHOD,WKBundlePageSetUIClient)>];
+vulnerable_212 [label=<(PARAM,p1)>];
+vulnerable_213 [label=<(PARAM,p2)>];
+vulnerable_214 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_215 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_197 [label=<(METHOD,&lt;operator&gt;.addressOf)>];
+vulnerable_198 [label=<(PARAM,p1)>];
+vulnerable_199 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_200 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_192 [label=<(METHOD,WKBundlePageSetPageLoaderClient)>];
+vulnerable_193 [label=<(PARAM,p1)>];
+vulnerable_194 [label=<(PARAM,p2)>];
+vulnerable_195 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_196 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_168 [label=<(METHOD,&lt;operator&gt;.assignment)>];
+vulnerable_169 [label=<(PARAM,p1)>];
+vulnerable_170 [label=<(PARAM,p2)>];
+vulnerable_171 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_172 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_162 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_163 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_164 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_206 [label=<(METHOD,WKBundlePageSetPolicyClient)>];
+vulnerable_207 [label=<(PARAM,p1)>];
+vulnerable_208 [label=<(PARAM,p2)>];
+vulnerable_209 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_210 [label=<(METHOD_RETURN,ANY)>];
+fixed_203 [label=<(METHOD,WKBundlePageSetResourceLoadClient)>];
+fixed_204 [label=<(PARAM,p1)>];
+fixed_205 [label=<(PARAM,p2)>];
+fixed_206 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_207 [label=<(METHOD_RETURN,ANY)>];
+fixed_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+fixed_8 [label=<(METHOD,InjectedBundlePage)<SUB>1</SUB>>];
+fixed_9 [label=<(PARAM,WKBundlePageRef page)<SUB>1</SUB>>];
+fixed_10 [label=<(BLOCK,{
+    WKBundlePageLoaderClient loaderClient = {...,{
+    WKBundlePageLoaderClient loaderClient = {...)<SUB>4</SUB>>];
+fixed_11 [label="<(LOCAL,WKBundlePageLoaderClient loaderClient: WKBundlePageLoaderClient)<SUB>5</SUB>>"];
+fixed_12 [label=<(&lt;operator&gt;.assignment,loaderClient = {
+        kWKBundlePageLoaderCli...)<SUB>5</SUB>>];
+fixed_13 [label=<(IDENTIFIER,loaderClient,loaderClient = {
+        kWKBundlePageLoaderCli...)<SUB>5</SUB>>];
+fixed_14 [label=<(&lt;operator&gt;.arrayInitializer,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>5</SUB>>];
+fixed_15 [label=<(IDENTIFIER,kWKBundlePageLoaderClientCurrentVersion,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>6</SUB>>];
+fixed_16 [label=<(LITERAL,this,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>7</SUB>>];
+fixed_17 [label=<(IDENTIFIER,didStartProvisionalLoadForFrame,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>8</SUB>>];
+fixed_18 [label=<(IDENTIFIER,didReceiveServerRedirectForProvisionalLoadForFrame,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>9</SUB>>];
+fixed_19 [label=<(IDENTIFIER,didFailProvisionalLoadWithErrorForFrame,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>10</SUB>>];
+fixed_20 [label=<(IDENTIFIER,didCommitLoadForFrame,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>11</SUB>>];
+fixed_21 [label=<(IDENTIFIER,didFinishDocumentLoadForFrame,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>12</SUB>>];
+fixed_22 [label=<(IDENTIFIER,didFinishLoadForFrame,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>13</SUB>>];
+fixed_23 [label=<(IDENTIFIER,didFailLoadWithErrorForFrame,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>14</SUB>>];
+fixed_24 [label=<(IDENTIFIER,didSameDocumentNavigationForFrame,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>15</SUB>>];
+fixed_25 [label=<(IDENTIFIER,didReceiveTitleForFrame,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>16</SUB>>];
+fixed_26 [label=<(LITERAL,0,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>17</SUB>>];
+fixed_27 [label=<(LITERAL,0,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>18</SUB>>];
+fixed_28 [label=<(LITERAL,0,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>19</SUB>>];
+fixed_29 [label=<(IDENTIFIER,didDisplayInsecureContentForFrame,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>20</SUB>>];
+fixed_30 [label=<(IDENTIFIER,didRunInsecureContentForFrame,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>21</SUB>>];
+fixed_31 [label=<(IDENTIFIER,didClearWindowForFrame,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>22</SUB>>];
+fixed_32 [label=<(IDENTIFIER,didCancelClientRedirectForFrame,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>23</SUB>>];
+fixed_33 [label=<(IDENTIFIER,willPerformClientRedirectForFrame,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>24</SUB>>];
+fixed_34 [label=<(IDENTIFIER,didHandleOnloadEventsForFrame,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>25</SUB>>];
+fixed_35 [label=<(LITERAL,0,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>26</SUB>>];
+fixed_36 [label=<(LITERAL,0,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>27</SUB>>];
+fixed_37 [label=<(IDENTIFIER,didDetectXSSForFrame,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>28</SUB>>];
+fixed_38 [label=<(LITERAL,0,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>29</SUB>>];
+fixed_39 [label=<(LITERAL,0,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>30</SUB>>];
+fixed_40 [label=<(LITERAL,0,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>31</SUB>>];
+fixed_41 [label=<(LITERAL,0,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>32</SUB>>];
+fixed_42 [label=<(LITERAL,0,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>33</SUB>>];
+fixed_43 [label=<(IDENTIFIER,didFinishProgress,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>34</SUB>>];
+fixed_44 [label=<(LITERAL,0,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>35</SUB>>];
+fixed_45 [label=<(LITERAL,0,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>36</SUB>>];
+fixed_46 [label=<(LITERAL,0,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>37</SUB>>];
+fixed_47 [label=<(LITERAL,0,{
+        kWKBundlePageLoaderClientCurrentVersi...)<SUB>38</SUB>>];
+fixed_48 [label=<(WKBundlePageSetPageLoaderClient,WKBundlePageSetPageLoaderClient(m_page, &amp;loader...)<SUB>40</SUB>>];
+fixed_49 [label=<(IDENTIFIER,m_page,WKBundlePageSetPageLoaderClient(m_page, &amp;loader...)<SUB>40</SUB>>];
+fixed_50 [label=<(&lt;operator&gt;.addressOf,&amp;loaderClient)<SUB>40</SUB>>];
+fixed_51 [label=<(IDENTIFIER,loaderClient,WKBundlePageSetPageLoaderClient(m_page, &amp;loader...)<SUB>40</SUB>>];
+fixed_52 [label="<(LOCAL,WKBundlePageResourceLoadClient resourceLoadClient: WKBundlePageResourceLoadClient)<SUB>42</SUB>>"];
+fixed_53 [label=<(&lt;operator&gt;.assignment,resourceLoadClient = {
+        kWKBundlePageRes...)<SUB>42</SUB>>];
+fixed_54 [label=<(IDENTIFIER,resourceLoadClient,resourceLoadClient = {
+        kWKBundlePageRes...)<SUB>42</SUB>>];
+fixed_55 [label=<(&lt;operator&gt;.arrayInitializer,{
+        kWKBundlePageResourceLoadClientCurren...)<SUB>42</SUB>>];
+fixed_56 [label=<(IDENTIFIER,kWKBundlePageResourceLoadClientCurrentVersion,{
+        kWKBundlePageResourceLoadClientCurren...)<SUB>43</SUB>>];
+fixed_57 [label=<(LITERAL,this,{
+        kWKBundlePageResourceLoadClientCurren...)<SUB>44</SUB>>];
+fixed_58 [label=<(IDENTIFIER,didInitiateLoadForResource,{
+        kWKBundlePageResourceLoadClientCurren...)<SUB>45</SUB>>];
+fixed_59 [label=<(IDENTIFIER,willSendRequestForFrame,{
+        kWKBundlePageResourceLoadClientCurren...)<SUB>46</SUB>>];
+fixed_60 [label=<(IDENTIFIER,didReceiveResponseForResource,{
+        kWKBundlePageResourceLoadClientCurren...)<SUB>47</SUB>>];
+fixed_61 [label=<(IDENTIFIER,didReceiveContentLengthForResource,{
+        kWKBundlePageResourceLoadClientCurren...)<SUB>48</SUB>>];
+fixed_62 [label=<(IDENTIFIER,didFinishLoadForResource,{
+        kWKBundlePageResourceLoadClientCurren...)<SUB>49</SUB>>];
+fixed_63 [label=<(IDENTIFIER,didFailLoadForResource,{
+        kWKBundlePageResourceLoadClientCurren...)<SUB>50</SUB>>];
+fixed_64 [label=<(IDENTIFIER,shouldCacheResponse,{
+        kWKBundlePageResourceLoadClientCurren...)<SUB>51</SUB>>];
+fixed_65 [label=<(LITERAL,0,{
+        kWKBundlePageResourceLoadClientCurren...)<SUB>52</SUB>>];
+fixed_66 [label=<(WKBundlePageSetResourceLoadClient,WKBundlePageSetResourceLoadClient(m_page, &amp;reso...)<SUB>54</SUB>>];
+fixed_67 [label=<(IDENTIFIER,m_page,WKBundlePageSetResourceLoadClient(m_page, &amp;reso...)<SUB>54</SUB>>];
+fixed_68 [label=<(&lt;operator&gt;.addressOf,&amp;resourceLoadClient)<SUB>54</SUB>>];
+fixed_69 [label=<(IDENTIFIER,resourceLoadClient,WKBundlePageSetResourceLoadClient(m_page, &amp;reso...)<SUB>54</SUB>>];
+fixed_70 [label="<(LOCAL,WKBundlePagePolicyClient policyClient: WKBundlePagePolicyClient)<SUB>56</SUB>>"];
+fixed_71 [label=<(&lt;operator&gt;.assignment,policyClient = {
+        kWKBundlePagePolicyCli...)<SUB>56</SUB>>];
+fixed_72 [label=<(IDENTIFIER,policyClient,policyClient = {
+        kWKBundlePagePolicyCli...)<SUB>56</SUB>>];
+fixed_73 [label=<(&lt;operator&gt;.arrayInitializer,{
+        kWKBundlePagePolicyClientCurrentVersi...)<SUB>56</SUB>>];
+fixed_74 [label=<(IDENTIFIER,kWKBundlePagePolicyClientCurrentVersion,{
+        kWKBundlePagePolicyClientCurrentVersi...)<SUB>57</SUB>>];
+fixed_75 [label=<(LITERAL,this,{
+        kWKBundlePagePolicyClientCurrentVersi...)<SUB>58</SUB>>];
+fixed_76 [label=<(IDENTIFIER,decidePolicyForNavigationAction,{
+        kWKBundlePagePolicyClientCurrentVersi...)<SUB>59</SUB>>];
+fixed_77 [label=<(IDENTIFIER,decidePolicyForNewWindowAction,{
+        kWKBundlePagePolicyClientCurrentVersi...)<SUB>60</SUB>>];
+fixed_78 [label=<(IDENTIFIER,decidePolicyForResponse,{
+        kWKBundlePagePolicyClientCurrentVersi...)<SUB>61</SUB>>];
+fixed_79 [label=<(IDENTIFIER,unableToImplementPolicy,{
+        kWKBundlePagePolicyClientCurrentVersi...)<SUB>62</SUB>>];
+fixed_80 [label=<(WKBundlePageSetPolicyClient,WKBundlePageSetPolicyClient(m_page, &amp;policyClient))<SUB>64</SUB>>];
+fixed_81 [label=<(IDENTIFIER,m_page,WKBundlePageSetPolicyClient(m_page, &amp;policyClient))<SUB>64</SUB>>];
+fixed_82 [label=<(&lt;operator&gt;.addressOf,&amp;policyClient)<SUB>64</SUB>>];
+fixed_83 [label=<(IDENTIFIER,policyClient,WKBundlePageSetPolicyClient(m_page, &amp;policyClient))<SUB>64</SUB>>];
+fixed_84 [label="<(LOCAL,WKBundlePageUIClient uiClient: WKBundlePageUIClient)<SUB>66</SUB>>"];
+fixed_85 [label=<(&lt;operator&gt;.assignment,uiClient = {
+        kWKBundlePageUIClientCurre...)<SUB>66</SUB>>];
+fixed_86 [label=<(IDENTIFIER,uiClient,uiClient = {
+        kWKBundlePageUIClientCurre...)<SUB>66</SUB>>];
+fixed_87 [label=<(&lt;operator&gt;.arrayInitializer,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>66</SUB>>];
+fixed_88 [label=<(IDENTIFIER,kWKBundlePageUIClientCurrentVersion,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>67</SUB>>];
+fixed_89 [label=<(LITERAL,this,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>68</SUB>>];
+fixed_90 [label=<(IDENTIFIER,willAddMessageToConsole,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>69</SUB>>];
+fixed_91 [label=<(IDENTIFIER,willSetStatusbarText,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>70</SUB>>];
+fixed_92 [label=<(IDENTIFIER,willRunJavaScriptAlert,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>71</SUB>>];
+fixed_93 [label=<(IDENTIFIER,willRunJavaScriptConfirm,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>72</SUB>>];
+fixed_94 [label=<(IDENTIFIER,willRunJavaScriptPrompt,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>73</SUB>>];
+fixed_95 [label=<(LITERAL,0,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>74</SUB>>];
+fixed_96 [label=<(LITERAL,0,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>75</SUB>>];
+fixed_97 [label=<(LITERAL,0,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>76</SUB>>];
+fixed_98 [label=<(LITERAL,0,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>77</SUB>>];
+fixed_99 [label=<(LITERAL,0,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>78</SUB>>];
+fixed_100 [label=<(LITERAL,0,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>79</SUB>>];
+fixed_101 [label=<(LITERAL,0,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>80</SUB>>];
+fixed_102 [label=<(LITERAL,0,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>81</SUB>>];
+fixed_103 [label=<(LITERAL,0,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>82</SUB>>];
+fixed_104 [label=<(IDENTIFIER,didReachApplicationCacheOriginQuota,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>83</SUB>>];
+fixed_105 [label=<(IDENTIFIER,didExceedDatabaseQuota,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>84</SUB>>];
+fixed_106 [label=<(LITERAL,0,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>85</SUB>>];
+fixed_107 [label=<(LITERAL,0,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>86</SUB>>];
+fixed_108 [label=<(LITERAL,0,{
+        kWKBundlePageUIClientCurrentVersion,
+...)<SUB>87</SUB>>];
+fixed_109 [label=<(WKBundlePageSetUIClient,WKBundlePageSetUIClient(m_page, &amp;uiClient))<SUB>89</SUB>>];
+fixed_110 [label=<(IDENTIFIER,m_page,WKBundlePageSetUIClient(m_page, &amp;uiClient))<SUB>89</SUB>>];
+fixed_111 [label=<(&lt;operator&gt;.addressOf,&amp;uiClient)<SUB>89</SUB>>];
+fixed_112 [label=<(IDENTIFIER,uiClient,WKBundlePageSetUIClient(m_page, &amp;uiClient))<SUB>89</SUB>>];
+fixed_113 [label="<(LOCAL,WKBundlePageEditorClient editorClient: WKBundlePageEditorClient)<SUB>91</SUB>>"];
+fixed_114 [label=<(&lt;operator&gt;.assignment,editorClient = {
+        kWKBundlePageEditorCli...)<SUB>91</SUB>>];
+fixed_115 [label=<(IDENTIFIER,editorClient,editorClient = {
+        kWKBundlePageEditorCli...)<SUB>91</SUB>>];
+fixed_116 [label=<(&lt;operator&gt;.arrayInitializer,{
+        kWKBundlePageEditorClientCurrentVersi...)<SUB>91</SUB>>];
+fixed_117 [label=<(IDENTIFIER,kWKBundlePageEditorClientCurrentVersion,{
+        kWKBundlePageEditorClientCurrentVersi...)<SUB>92</SUB>>];
+fixed_118 [label=<(LITERAL,this,{
+        kWKBundlePageEditorClientCurrentVersi...)<SUB>93</SUB>>];
+fixed_119 [label=<(IDENTIFIER,shouldBeginEditing,{
+        kWKBundlePageEditorClientCurrentVersi...)<SUB>94</SUB>>];
+fixed_120 [label=<(IDENTIFIER,shouldEndEditing,{
+        kWKBundlePageEditorClientCurrentVersi...)<SUB>95</SUB>>];
+fixed_121 [label=<(IDENTIFIER,shouldInsertNode,{
+        kWKBundlePageEditorClientCurrentVersi...)<SUB>96</SUB>>];
+fixed_122 [label=<(IDENTIFIER,shouldInsertText,{
+        kWKBundlePageEditorClientCurrentVersi...)<SUB>97</SUB>>];
+fixed_123 [label=<(IDENTIFIER,shouldDeleteRange,{
+        kWKBundlePageEditorClientCurrentVersi...)<SUB>98</SUB>>];
+fixed_124 [label=<(IDENTIFIER,shouldChangeSelectedRange,{
+        kWKBundlePageEditorClientCurrentVersi...)<SUB>99</SUB>>];
+fixed_125 [label=<(IDENTIFIER,shouldApplyStyle,{
+        kWKBundlePageEditorClientCurrentVersi...)<SUB>100</SUB>>];
+fixed_126 [label=<(IDENTIFIER,didBeginEditing,{
+        kWKBundlePageEditorClientCurrentVersi...)<SUB>101</SUB>>];
+fixed_127 [label=<(IDENTIFIER,didEndEditing,{
+        kWKBundlePageEditorClientCurrentVersi...)<SUB>102</SUB>>];
+fixed_128 [label=<(IDENTIFIER,didChange,{
+        kWKBundlePageEditorClientCurrentVersi...)<SUB>103</SUB>>];
+fixed_129 [label=<(IDENTIFIER,didChangeSelection,{
+        kWKBundlePageEditorClientCurrentVersi...)<SUB>104</SUB>>];
+fixed_130 [label=<(LITERAL,0,{
+        kWKBundlePageEditorClientCurrentVersi...)<SUB>105</SUB>>];
+fixed_131 [label=<(LITERAL,0,{
+        kWKBundlePageEditorClientCurrentVersi...)<SUB>106</SUB>>];
+fixed_132 [label=<(LITERAL,0,{
+        kWKBundlePageEditorClientCurrentVersi...)<SUB>107</SUB>>];
+fixed_133 [label=<(WKBundlePageSetEditorClient,WKBundlePageSetEditorClient(m_page, &amp;editorClient))<SUB>109</SUB>>];
+fixed_134 [label=<(IDENTIFIER,m_page,WKBundlePageSetEditorClient(m_page, &amp;editorClient))<SUB>109</SUB>>];
+fixed_135 [label=<(&lt;operator&gt;.addressOf,&amp;editorClient)<SUB>109</SUB>>];
+fixed_136 [label=<(IDENTIFIER,editorClient,WKBundlePageSetEditorClient(m_page, &amp;editorClient))<SUB>109</SUB>>];
+fixed_137 [label=<(MODIFIER,CONSTRUCTOR)>];
+fixed_138 [label=<(MODIFIER,PUBLIC)>];
+fixed_139 [label=<(METHOD_RETURN,InjectedBundlePage.InjectedBundlePage)<SUB>1</SUB>>];
+fixed_141 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+fixed_175 [label=<(METHOD,&lt;operator&gt;.arrayInitializer)>];
+fixed_176 [label=<(PARAM,p1)>];
+fixed_177 [label=<(PARAM,p2)>];
+fixed_178 [label=<(PARAM,p3)>];
+fixed_179 [label=<(PARAM,p4)>];
+fixed_180 [label=<(PARAM,p5)>];
+fixed_181 [label=<(PARAM,p6)>];
+fixed_182 [label=<(PARAM,p7)>];
+fixed_183 [label=<(PARAM,p8)>];
+fixed_184 [label=<(PARAM,p9)>];
+fixed_185 [label=<(PARAM,p10)>];
+fixed_186 [label=<(PARAM,p11)>];
+fixed_187 [label=<(PARAM,p12)>];
+fixed_188 [label=<(PARAM,p13)>];
+fixed_189 [label=<(PARAM,p14)>];
+fixed_190 [label=<(PARAM,p15)>];
+fixed_191 [label=<(PARAM,p16)>];
+fixed_192 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_193 [label=<(METHOD_RETURN,ANY)>];
+fixed_218 [label=<(METHOD,WKBundlePageSetEditorClient)>];
+fixed_219 [label=<(PARAM,p1)>];
+fixed_220 [label=<(PARAM,p2)>];
+fixed_221 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_222 [label=<(METHOD_RETURN,ANY)>];
+fixed_213 [label=<(METHOD,WKBundlePageSetUIClient)>];
+fixed_214 [label=<(PARAM,p1)>];
+fixed_215 [label=<(PARAM,p2)>];
+fixed_216 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_217 [label=<(METHOD_RETURN,ANY)>];
+fixed_199 [label=<(METHOD,&lt;operator&gt;.addressOf)>];
+fixed_200 [label=<(PARAM,p1)>];
+fixed_201 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_202 [label=<(METHOD_RETURN,ANY)>];
+fixed_194 [label=<(METHOD,WKBundlePageSetPageLoaderClient)>];
+fixed_195 [label=<(PARAM,p1)>];
+fixed_196 [label=<(PARAM,p2)>];
+fixed_197 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_198 [label=<(METHOD_RETURN,ANY)>];
+fixed_170 [label=<(METHOD,&lt;operator&gt;.assignment)>];
+fixed_171 [label=<(PARAM,p1)>];
+fixed_172 [label=<(PARAM,p2)>];
+fixed_173 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_174 [label=<(METHOD_RETURN,ANY)>];
+fixed_164 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_165 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_166 [label=<(METHOD_RETURN,ANY)>];
+fixed_208 [label=<(METHOD,WKBundlePageSetPolicyClient)>];
+fixed_209 [label=<(PARAM,p1)>];
+fixed_210 [label=<(PARAM,p2)>];
+fixed_211 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_212 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_201 -> vulnerable_202  [key=0, label="AST: "];
+vulnerable_201 -> vulnerable_202  [key=1, label="DDG: "];
+vulnerable_201 -> vulnerable_204  [key=0, label="AST: "];
+vulnerable_201 -> vulnerable_203  [key=0, label="AST: "];
+vulnerable_201 -> vulnerable_203  [key=1, label="DDG: "];
+vulnerable_201 -> vulnerable_205  [key=0, label="AST: "];
+vulnerable_201 -> vulnerable_205  [key=1, label="CFG: "];
+vulnerable_202 -> vulnerable_205  [key=0, label="DDG: p1"];
+vulnerable_203 -> vulnerable_205  [key=0, label="DDG: p2"];
+vulnerable_204 -> fixed_203  [key=0];
+vulnerable_205 -> fixed_203  [key=0];
+vulnerable_6 -> vulnerable_7  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_139  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_139  [key=1, label="CFG: "];
+vulnerable_7 -> vulnerable_8  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_9  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_9  [key=1, label="DDG: "];
+vulnerable_8 -> vulnerable_10  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_135  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_136  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_137  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_14  [key=0, label="CFG: "];
+vulnerable_8 -> vulnerable_14  [key=1, label="DDG: "];
+vulnerable_8 -> vulnerable_46  [key=0, label="DDG: "];
+vulnerable_8 -> vulnerable_64  [key=0, label="DDG: "];
+vulnerable_8 -> vulnerable_78  [key=0, label="DDG: "];
+vulnerable_8 -> vulnerable_107  [key=0, label="DDG: "];
+vulnerable_8 -> vulnerable_131  [key=0, label="DDG: "];
+vulnerable_8 -> vulnerable_53  [key=0, label="DDG: "];
+vulnerable_8 -> vulnerable_71  [key=0, label="DDG: "];
+vulnerable_8 -> vulnerable_85  [key=0, label="DDG: "];
+vulnerable_8 -> vulnerable_114  [key=0, label="DDG: "];
+vulnerable_9 -> vulnerable_137  [key=0, label="DDG: page"];
+vulnerable_10 -> vulnerable_11  [key=0, label="AST: "];
+vulnerable_10 -> vulnerable_12  [key=0, label="AST: "];
+vulnerable_10 -> vulnerable_46  [key=0, label="AST: "];
+vulnerable_10 -> vulnerable_50  [key=0, label="AST: "];
+vulnerable_10 -> vulnerable_51  [key=0, label="AST: "];
+vulnerable_10 -> vulnerable_64  [key=0, label="AST: "];
+vulnerable_10 -> vulnerable_68  [key=0, label="AST: "];
+vulnerable_10 -> vulnerable_69  [key=0, label="AST: "];
+vulnerable_10 -> vulnerable_78  [key=0, label="AST: "];
+vulnerable_10 -> vulnerable_82  [key=0, label="AST: "];
+vulnerable_10 -> vulnerable_83  [key=0, label="AST: "];
+vulnerable_10 -> vulnerable_107  [key=0, label="AST: "];
+vulnerable_10 -> vulnerable_111  [key=0, label="AST: "];
+vulnerable_10 -> vulnerable_112  [key=0, label="AST: "];
+vulnerable_10 -> vulnerable_131  [key=0, label="AST: "];
+vulnerable_11 -> fixed_203  [key=0];
+vulnerable_12 -> vulnerable_13  [key=0, label="AST: "];
+vulnerable_12 -> vulnerable_14  [key=0, label="AST: "];
+vulnerable_12 -> vulnerable_48  [key=0, label="CFG: "];
+vulnerable_12 -> vulnerable_137  [key=0, label="DDG: loaderClient"];
+vulnerable_12 -> vulnerable_137  [key=1, label="DDG: {
+        kWKBundlePageLoaderClientCurrentVersion,
+        this,
+        didStartProvisionalLoadForFrame,
+        didReceiveServerRedirectForProvisionalLoadForFrame,
+        didFailProvisionalLoadWithErrorForFrame,
+        didCommitLoadForFrame,
+        didFinishDocumentLoadForFrame,
+        didFinishLoadForFrame,
+        didFailLoadWithErrorForFrame,
+        didSameDocumentNavigationForFrame,
+        didReceiveTitleForFrame,
+        0, // didFirstLayoutForFrame
+        0, // didFirstVisuallyNonEmptyLayoutForFrame
+        0, // didRemoveFrameFromHierarchy
+        didDisplayInsecureContentForFrame,
+        didRunInsecureContentForFrame,
+        didClearWindowForFrame,
+        didCancelClientRedirectForFrame,
+        willPerformClientRedirectForFrame,
+        didHandleOnloadEventsForFrame,
+        0, // didLayoutForFrame
+        0, // didNewFirstVisuallyNonEmptyLayoutForFrame
+        didDetectXSSForFrame,
+        0, // shouldGoToBackForwardListItem
+        0, // didCreateGlobalObjectF..."];
+vulnerable_12 -> vulnerable_137  [key=2, label="DDG: loaderClient = {
+        kWKBundlePageLoaderClientCurrentVersion,
+        this,
+        didStartProvisionalLoadForFrame,
+        didReceiveServerRedirectForProvisionalLoadForFrame,
+        didFailProvisionalLoadWithErrorForFrame,
+        didCommitLoadForFrame,
+        didFinishDocumentLoadForFrame,
+        didFinishLoadForFrame,
+        didFailLoadWithErrorForFrame,
+        didSameDocumentNavigationForFrame,
+        didReceiveTitleForFrame,
+        0, // didFirstLayoutForFrame
+        0, // didFirstVisuallyNonEmptyLayoutForFrame
+        0, // didRemoveFrameFromHierarchy
+        didDisplayInsecureContentForFrame,
+        didRunInsecureContentForFrame,
+        didClearWindowForFrame,
+        didCancelClientRedirectForFrame,
+        willPerformClientRedirectForFrame,
+        didHandleOnloadEventsForFrame,
+        0, // didLayoutForFrame
+        0, // didNewFirstVisuallyNonEmptyLayoutForFrame
+        didDetectXSSForFrame,
+        0, // shouldGoToBackForwardListItem
+        0, // didCrea..."];
+vulnerable_12 -> vulnerable_46  [key=0, label="DDG: loaderClient"];
+vulnerable_13 -> fixed_203  [key=0];
+vulnerable_14 -> vulnerable_15  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_16  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_17  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_18  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_19  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_20  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_21  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_22  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_23  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_24  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_25  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_26  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_27  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_28  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_29  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_30  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_31  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_32  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_33  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_34  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_35  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_36  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_37  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_38  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_39  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_40  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_41  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_42  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_43  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_44  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_45  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_12  [key=0, label="CFG: "];
+vulnerable_14 -> vulnerable_12  [key=1, label="DDG: didStartProvisionalLoadForFrame"];
+vulnerable_14 -> vulnerable_12  [key=2, label="DDG: didCommitLoadForFrame"];
+vulnerable_14 -> vulnerable_12  [key=3, label="DDG: 0"];
+vulnerable_14 -> vulnerable_12  [key=4, label="DDG: kWKBundlePageLoaderClientCurrentVersion"];
+vulnerable_14 -> vulnerable_12  [key=5, label="DDG: didReceiveServerRedirectForProvisionalLoadForFrame"];
+vulnerable_14 -> vulnerable_12  [key=6, label="DDG: didFailLoadWithErrorForFrame"];
+vulnerable_14 -> vulnerable_12  [key=7, label="DDG: didHandleOnloadEventsForFrame"];
+vulnerable_14 -> vulnerable_12  [key=8, label="DDG: didFinishProgress"];
+vulnerable_14 -> vulnerable_12  [key=9, label="DDG: didRunInsecureContentForFrame"];
+vulnerable_14 -> vulnerable_12  [key=10, label="DDG: didDetectXSSForFrame"];
+vulnerable_14 -> vulnerable_12  [key=11, label="DDG: didFinishLoadForFrame"];
+vulnerable_14 -> vulnerable_12  [key=12, label="DDG: willPerformClientRedirectForFrame"];
+vulnerable_14 -> vulnerable_12  [key=13, label="DDG: this"];
+vulnerable_14 -> vulnerable_12  [key=14, label="DDG: didFailProvisionalLoadWithErrorForFrame"];
+vulnerable_14 -> vulnerable_12  [key=15, label="DDG: didSameDocumentNavigationForFrame"];
+vulnerable_14 -> vulnerable_12  [key=16, label="DDG: didCancelClientRedirectForFrame"];
+vulnerable_14 -> vulnerable_12  [key=17, label="DDG: didReceiveTitleForFrame"];
+vulnerable_14 -> vulnerable_12  [key=18, label="DDG: didClearWindowForFrame"];
+vulnerable_14 -> vulnerable_12  [key=19, label="DDG: didFinishDocumentLoadForFrame"];
+vulnerable_14 -> vulnerable_12  [key=20, label="DDG: didDisplayInsecureContentForFrame"];
+vulnerable_14 -> vulnerable_137  [key=0, label="DDG: kWKBundlePageLoaderClientCurrentVersion"];
+vulnerable_14 -> vulnerable_137  [key=1, label="DDG: didReceiveServerRedirectForProvisionalLoadForFrame"];
+vulnerable_14 -> vulnerable_137  [key=2, label="DDG: didFailProvisionalLoadWithErrorForFrame"];
+vulnerable_14 -> vulnerable_137  [key=3, label="DDG: didCommitLoadForFrame"];
+vulnerable_14 -> vulnerable_137  [key=4, label="DDG: didFinishDocumentLoadForFrame"];
+vulnerable_14 -> vulnerable_137  [key=5, label="DDG: didFinishLoadForFrame"];
+vulnerable_14 -> vulnerable_137  [key=6, label="DDG: didFailLoadWithErrorForFrame"];
+vulnerable_14 -> vulnerable_137  [key=7, label="DDG: didSameDocumentNavigationForFrame"];
+vulnerable_14 -> vulnerable_137  [key=8, label="DDG: didReceiveTitleForFrame"];
+vulnerable_14 -> vulnerable_137  [key=9, label="DDG: didDisplayInsecureContentForFrame"];
+vulnerable_14 -> vulnerable_137  [key=10, label="DDG: didRunInsecureContentForFrame"];
+vulnerable_14 -> vulnerable_137  [key=11, label="DDG: didClearWindowForFrame"];
+vulnerable_14 -> vulnerable_137  [key=12, label="DDG: didCancelClientRedirectForFrame"];
+vulnerable_14 -> vulnerable_137  [key=13, label="DDG: willPerformClientRedirectForFrame"];
+vulnerable_14 -> vulnerable_137  [key=14, label="DDG: didHandleOnloadEventsForFrame"];
+vulnerable_14 -> vulnerable_137  [key=15, label="DDG: didDetectXSSForFrame"];
+vulnerable_14 -> vulnerable_137  [key=16, label="DDG: didFinishProgress"];
+vulnerable_14 -> vulnerable_137  [key=17, label="DDG: didStartProvisionalLoadForFrame"];
+vulnerable_15 -> fixed_203  [key=0];
+vulnerable_16 -> fixed_203  [key=0];
+vulnerable_17 -> fixed_203  [key=0];
+vulnerable_18 -> fixed_203  [key=0];
+vulnerable_19 -> fixed_203  [key=0];
+vulnerable_20 -> fixed_203  [key=0];
+vulnerable_21 -> fixed_203  [key=0];
+vulnerable_22 -> fixed_203  [key=0];
+vulnerable_23 -> fixed_203  [key=0];
+vulnerable_24 -> fixed_203  [key=0];
+vulnerable_25 -> fixed_203  [key=0];
+vulnerable_26 -> fixed_203  [key=0];
+vulnerable_27 -> fixed_203  [key=0];
+vulnerable_28 -> fixed_203  [key=0];
+vulnerable_29 -> fixed_203  [key=0];
+vulnerable_30 -> fixed_203  [key=0];
+vulnerable_31 -> fixed_203  [key=0];
+vulnerable_32 -> fixed_203  [key=0];
+vulnerable_33 -> fixed_203  [key=0];
+vulnerable_34 -> fixed_203  [key=0];
+vulnerable_35 -> fixed_203  [key=0];
+vulnerable_36 -> fixed_203  [key=0];
+vulnerable_37 -> fixed_203  [key=0];
+vulnerable_38 -> fixed_203  [key=0];
+vulnerable_39 -> fixed_203  [key=0];
+vulnerable_40 -> fixed_203  [key=0];
+vulnerable_41 -> fixed_203  [key=0];
+vulnerable_42 -> fixed_203  [key=0];
+vulnerable_43 -> fixed_203  [key=0];
+vulnerable_44 -> fixed_203  [key=0];
+vulnerable_45 -> fixed_203  [key=0];
+vulnerable_46 -> vulnerable_47  [key=0, label="AST: "];
+vulnerable_46 -> vulnerable_48  [key=0, label="AST: "];
+vulnerable_46 -> vulnerable_53  [key=0, label="CFG: "];
+vulnerable_46 -> vulnerable_137  [key=0, label="DDG: &amp;loaderClient"];
+vulnerable_46 -> vulnerable_137  [key=1, label="DDG: WKBundlePageSetPageLoaderClient(m_page, &amp;loaderClient)"];
+vulnerable_46 -> vulnerable_64  [key=0, label="DDG: m_page"];
+vulnerable_47 -> fixed_203  [key=0];
+vulnerable_48 -> vulnerable_49  [key=0, label="AST: "];
+vulnerable_48 -> vulnerable_46  [key=0, label="CFG: "];
+vulnerable_49 -> fixed_203  [key=0];
+vulnerable_50 -> fixed_203  [key=0];
+vulnerable_51 -> vulnerable_52  [key=0, label="AST: "];
+vulnerable_51 -> vulnerable_53  [key=0, label="AST: "];
+vulnerable_51 -> vulnerable_66  [key=0, label="CFG: "];
+vulnerable_51 -> vulnerable_137  [key=0, label="DDG: resourceLoadClient"];
+vulnerable_51 -> vulnerable_137  [key=1, label="DDG: {
+        kWKBundlePageResourceLoadClientCurrentVersion,
+        this,
+        didInitiateLoadForResource,
+        willSendRequestForFrame,
+        didReceiveResponseForResource,
+        didReceiveContentLengthForResource,
+        didFinishLoadForResource,
+        didFailLoadForResource,
+        shouldCacheResponse,
+        0 // shouldUseCredentialStorage
+    }"];
+vulnerable_51 -> vulnerable_137  [key=2, label="DDG: resourceLoadClient = {
+        kWKBundlePageResourceLoadClientCurrentVersion,
+        this,
+        didInitiateLoadForResource,
+        willSendRequestForFrame,
+        didReceiveResponseForResource,
+        didReceiveContentLengthForResource,
+        didFinishLoadForResource,
+        didFailLoadForResource,
+        shouldCacheResponse,
+        0 // shouldUseCredentialStorage
+    }"];
+vulnerable_51 -> vulnerable_64  [key=0, label="DDG: resourceLoadClient"];
+vulnerable_52 -> fixed_203  [key=0];
+vulnerable_53 -> vulnerable_54  [key=0, label="AST: "];
+vulnerable_53 -> vulnerable_55  [key=0, label="AST: "];
+vulnerable_53 -> vulnerable_56  [key=0, label="AST: "];
+vulnerable_53 -> vulnerable_57  [key=0, label="AST: "];
+vulnerable_53 -> vulnerable_58  [key=0, label="AST: "];
+vulnerable_53 -> vulnerable_59  [key=0, label="AST: "];
+vulnerable_53 -> vulnerable_60  [key=0, label="AST: "];
+vulnerable_53 -> vulnerable_61  [key=0, label="AST: "];
+vulnerable_53 -> vulnerable_62  [key=0, label="AST: "];
+vulnerable_53 -> vulnerable_63  [key=0, label="AST: "];
+vulnerable_53 -> vulnerable_51  [key=0, label="CFG: "];
+vulnerable_53 -> vulnerable_51  [key=1, label="DDG: didInitiateLoadForResource"];
+vulnerable_53 -> vulnerable_51  [key=2, label="DDG: kWKBundlePageResourceLoadClientCurrentVersion"];
+vulnerable_53 -> vulnerable_51  [key=3, label="DDG: didReceiveContentLengthForResource"];
+vulnerable_53 -> vulnerable_51  [key=4, label="DDG: this"];
+vulnerable_53 -> vulnerable_51  [key=5, label="DDG: didFailLoadForResource"];
+vulnerable_53 -> vulnerable_51  [key=6, label="DDG: didFinishLoadForResource"];
+vulnerable_53 -> vulnerable_51  [key=7, label="DDG: willSendRequestForFrame"];
+vulnerable_53 -> vulnerable_51  [key=8, label="DDG: didReceiveResponseForResource"];
+vulnerable_53 -> vulnerable_51  [key=9, label="DDG: shouldCacheResponse"];
+vulnerable_53 -> vulnerable_51  [key=10, label="DDG: 0"];
+vulnerable_53 -> vulnerable_137  [key=0, label="DDG: kWKBundlePageResourceLoadClientCurrentVersion"];
+vulnerable_53 -> vulnerable_137  [key=1, label="DDG: didInitiateLoadForResource"];
+vulnerable_53 -> vulnerable_137  [key=2, label="DDG: didReceiveResponseForResource"];
+vulnerable_53 -> vulnerable_137  [key=3, label="DDG: didReceiveContentLengthForResource"];
+vulnerable_53 -> vulnerable_137  [key=4, label="DDG: didFinishLoadForResource"];
+vulnerable_53 -> vulnerable_137  [key=5, label="DDG: didFailLoadForResource"];
+vulnerable_53 -> vulnerable_137  [key=6, label="DDG: shouldCacheResponse"];
+vulnerable_53 -> vulnerable_137  [key=7, label="DDG: willSendRequestForFrame"];
+vulnerable_54 -> fixed_203  [key=0];
+vulnerable_55 -> fixed_203  [key=0];
+vulnerable_56 -> fixed_203  [key=0];
+vulnerable_57 -> fixed_203  [key=0];
+vulnerable_58 -> fixed_203  [key=0];
+vulnerable_59 -> fixed_203  [key=0];
+vulnerable_60 -> fixed_203  [key=0];
+vulnerable_61 -> fixed_203  [key=0];
+vulnerable_62 -> fixed_203  [key=0];
+vulnerable_63 -> fixed_203  [key=0];
+vulnerable_64 -> vulnerable_65  [key=0, label="AST: "];
+vulnerable_64 -> vulnerable_66  [key=0, label="AST: "];
+vulnerable_64 -> vulnerable_71  [key=0, label="CFG: "];
+vulnerable_64 -> vulnerable_137  [key=0, label="DDG: &amp;resourceLoadClient"];
+vulnerable_64 -> vulnerable_137  [key=1, label="DDG: WKBundlePageSetResourceLoadClient(m_page, &amp;resourceLoadClient)"];
+vulnerable_64 -> vulnerable_78  [key=0, label="DDG: m_page"];
+vulnerable_65 -> fixed_203  [key=0];
+vulnerable_66 -> vulnerable_67  [key=0, label="AST: "];
+vulnerable_66 -> vulnerable_64  [key=0, label="CFG: "];
+vulnerable_67 -> fixed_203  [key=0];
+vulnerable_68 -> fixed_203  [key=0];
+vulnerable_69 -> vulnerable_70  [key=0, label="AST: "];
+vulnerable_69 -> vulnerable_71  [key=0, label="AST: "];
+vulnerable_69 -> vulnerable_80  [key=0, label="CFG: "];
+vulnerable_69 -> vulnerable_137  [key=0, label="DDG: policyClient"];
+vulnerable_69 -> vulnerable_137  [key=1, label="DDG: {
+        kWKBundlePagePolicyClientCurrentVersion,
+        this,
+        decidePolicyForNavigationAction,
+        decidePolicyForNewWindowAction,
+        decidePolicyForResponse,
+        unableToImplementPolicy
+    }"];
+vulnerable_69 -> vulnerable_137  [key=2, label="DDG: policyClient = {
+        kWKBundlePagePolicyClientCurrentVersion,
+        this,
+        decidePolicyForNavigationAction,
+        decidePolicyForNewWindowAction,
+        decidePolicyForResponse,
+        unableToImplementPolicy
+    }"];
+vulnerable_69 -> vulnerable_78  [key=0, label="DDG: policyClient"];
+vulnerable_70 -> fixed_203  [key=0];
+vulnerable_71 -> vulnerable_72  [key=0, label="AST: "];
+vulnerable_71 -> vulnerable_73  [key=0, label="AST: "];
+vulnerable_71 -> vulnerable_74  [key=0, label="AST: "];
+vulnerable_71 -> vulnerable_75  [key=0, label="AST: "];
+vulnerable_71 -> vulnerable_76  [key=0, label="AST: "];
+vulnerable_71 -> vulnerable_77  [key=0, label="AST: "];
+vulnerable_71 -> vulnerable_69  [key=0, label="CFG: "];
+vulnerable_71 -> vulnerable_69  [key=1, label="DDG: decidePolicyForNavigationAction"];
+vulnerable_71 -> vulnerable_69  [key=2, label="DDG: unableToImplementPolicy"];
+vulnerable_71 -> vulnerable_69  [key=3, label="DDG: decidePolicyForResponse"];
+vulnerable_71 -> vulnerable_69  [key=4, label="DDG: decidePolicyForNewWindowAction"];
+vulnerable_71 -> vulnerable_69  [key=5, label="DDG: this"];
+vulnerable_71 -> vulnerable_69  [key=6, label="DDG: kWKBundlePagePolicyClientCurrentVersion"];
+vulnerable_71 -> vulnerable_137  [key=0, label="DDG: kWKBundlePagePolicyClientCurrentVersion"];
+vulnerable_71 -> vulnerable_137  [key=1, label="DDG: decidePolicyForNavigationAction"];
+vulnerable_71 -> vulnerable_137  [key=2, label="DDG: decidePolicyForNewWindowAction"];
+vulnerable_71 -> vulnerable_137  [key=3, label="DDG: unableToImplementPolicy"];
+vulnerable_71 -> vulnerable_137  [key=4, label="DDG: decidePolicyForResponse"];
+vulnerable_72 -> fixed_203  [key=0];
+vulnerable_73 -> fixed_203  [key=0];
+vulnerable_74 -> fixed_203  [key=0];
+vulnerable_75 -> fixed_203  [key=0];
+vulnerable_76 -> fixed_203  [key=0];
+vulnerable_77 -> fixed_203  [key=0];
+vulnerable_78 -> vulnerable_79  [key=0, label="AST: "];
+vulnerable_78 -> vulnerable_80  [key=0, label="AST: "];
+vulnerable_78 -> vulnerable_85  [key=0, label="CFG: "];
+vulnerable_78 -> vulnerable_137  [key=0, label="DDG: &amp;policyClient"];
+vulnerable_78 -> vulnerable_137  [key=1, label="DDG: WKBundlePageSetPolicyClient(m_page, &amp;policyClient)"];
+vulnerable_78 -> vulnerable_107  [key=0, label="DDG: m_page"];
+vulnerable_79 -> fixed_203  [key=0];
+vulnerable_80 -> vulnerable_81  [key=0, label="AST: "];
+vulnerable_80 -> vulnerable_78  [key=0, label="CFG: "];
+vulnerable_81 -> fixed_203  [key=0];
+vulnerable_82 -> fixed_203  [key=0];
+vulnerable_83 -> vulnerable_84  [key=0, label="AST: "];
+vulnerable_83 -> vulnerable_85  [key=0, label="AST: "];
+vulnerable_83 -> vulnerable_109  [key=0, label="CFG: "];
+vulnerable_83 -> vulnerable_137  [key=0, label="DDG: uiClient"];
+vulnerable_83 -> vulnerable_137  [key=1, label="DDG: {
+        kWKBundlePageUIClientCurrentVersion,
+        this,
+        willAddMessageToConsole,
+        willSetStatusbarText,
+        willRunJavaScriptAlert,
+        willRunJavaScriptConfirm,
+        willRunJavaScriptPrompt,
+        0, /*mouseDidMoveOverElement*/
+        0, /*pageDidScroll*/
+        0, /*paintCustomOverhangArea*/
+        0, /*shouldGenerateFileForUpload*/
+        0, /*generateFileForUpload*/
+        0, /*shouldRubberBandInDirection*/
+        0, /*statusBarIsVisible*/
+        0, /*menuBarIsVisible*/
+        0, /*toolbarsAreVisible*/
+        didReachApplicationCacheOriginQuota,
+        didExceedDatabaseQuota,
+        0, /*plugInStartLabelTitle*/
+        0, /*plugInStartLabelSubtitle*/
+        0, /*plugInExtraStyleSheet*/
+    }"];
+vulnerable_83 -> vulnerable_137  [key=2, label="DDG: uiClient = {
+        kWKBundlePageUIClientCurrentVersion,
+        this,
+        willAddMessageToConsole,
+        willSetStatusbarText,
+        willRunJavaScriptAlert,
+        willRunJavaScriptConfirm,
+        willRunJavaScriptPrompt,
+        0, /*mouseDidMoveOverElement*/
+        0, /*pageDidScroll*/
+        0, /*paintCustomOverhangArea*/
+        0, /*shouldGenerateFileForUpload*/
+        0, /*generateFileForUpload*/
+        0, /*shouldRubberBandInDirection*/
+        0, /*statusBarIsVisible*/
+        0, /*menuBarIsVisible*/
+        0, /*toolbarsAreVisible*/
+        didReachApplicationCacheOriginQuota,
+        didExceedDatabaseQuota,
+        0, /*plugInStartLabelTitle*/
+        0, /*plugInStartLabelSubtitle*/
+        0, /*plugInExtraStyleSheet*/
+    }"];
+vulnerable_83 -> vulnerable_107  [key=0, label="DDG: uiClient"];
+vulnerable_84 -> fixed_203  [key=0];
+vulnerable_85 -> vulnerable_86  [key=0, label="AST: "];
+vulnerable_85 -> vulnerable_87  [key=0, label="AST: "];
+vulnerable_85 -> vulnerable_88  [key=0, label="AST: "];
+vulnerable_85 -> vulnerable_89  [key=0, label="AST: "];
+vulnerable_85 -> vulnerable_90  [key=0, label="AST: "];
+vulnerable_85 -> vulnerable_91  [key=0, label="AST: "];
+vulnerable_85 -> vulnerable_92  [key=0, label="AST: "];
+vulnerable_85 -> vulnerable_93  [key=0, label="AST: "];
+vulnerable_85 -> vulnerable_94  [key=0, label="AST: "];
+vulnerable_85 -> vulnerable_95  [key=0, label="AST: "];
+vulnerable_85 -> vulnerable_96  [key=0, label="AST: "];
+vulnerable_85 -> vulnerable_97  [key=0, label="AST: "];
+vulnerable_85 -> vulnerable_98  [key=0, label="AST: "];
+vulnerable_85 -> vulnerable_99  [key=0, label="AST: "];
+vulnerable_85 -> vulnerable_100  [key=0, label="AST: "];
+vulnerable_85 -> vulnerable_101  [key=0, label="AST: "];
+vulnerable_85 -> vulnerable_102  [key=0, label="AST: "];
+vulnerable_85 -> vulnerable_103  [key=0, label="AST: "];
+vulnerable_85 -> vulnerable_104  [key=0, label="AST: "];
+vulnerable_85 -> vulnerable_105  [key=0, label="AST: "];
+vulnerable_85 -> vulnerable_106  [key=0, label="AST: "];
+vulnerable_85 -> vulnerable_83  [key=0, label="CFG: "];
+vulnerable_85 -> vulnerable_83  [key=1, label="DDG: didReachApplicationCacheOriginQuota"];
+vulnerable_85 -> vulnerable_83  [key=2, label="DDG: willRunJavaScriptAlert"];
+vulnerable_85 -> vulnerable_83  [key=3, label="DDG: 0"];
+vulnerable_85 -> vulnerable_83  [key=4, label="DDG: willRunJavaScriptPrompt"];
+vulnerable_85 -> vulnerable_83  [key=5, label="DDG: willSetStatusbarText"];
+vulnerable_85 -> vulnerable_83  [key=6, label="DDG: willAddMessageToConsole"];
+vulnerable_85 -> vulnerable_83  [key=7, label="DDG: kWKBundlePageUIClientCurrentVersion"];
+vulnerable_85 -> vulnerable_83  [key=8, label="DDG: didExceedDatabaseQuota"];
+vulnerable_85 -> vulnerable_83  [key=9, label="DDG: willRunJavaScriptConfirm"];
+vulnerable_85 -> vulnerable_83  [key=10, label="DDG: this"];
+vulnerable_85 -> vulnerable_137  [key=0, label="DDG: kWKBundlePageUIClientCurrentVersion"];
+vulnerable_85 -> vulnerable_137  [key=1, label="DDG: willAddMessageToConsole"];
+vulnerable_85 -> vulnerable_137  [key=2, label="DDG: willSetStatusbarText"];
+vulnerable_85 -> vulnerable_137  [key=3, label="DDG: willRunJavaScriptAlert"];
+vulnerable_85 -> vulnerable_137  [key=4, label="DDG: willRunJavaScriptPrompt"];
+vulnerable_85 -> vulnerable_137  [key=5, label="DDG: didReachApplicationCacheOriginQuota"];
+vulnerable_85 -> vulnerable_137  [key=6, label="DDG: didExceedDatabaseQuota"];
+vulnerable_85 -> vulnerable_137  [key=7, label="DDG: willRunJavaScriptConfirm"];
+vulnerable_86 -> fixed_203  [key=0];
+vulnerable_87 -> fixed_203  [key=0];
+vulnerable_88 -> fixed_203  [key=0];
+vulnerable_89 -> fixed_203  [key=0];
+vulnerable_90 -> fixed_203  [key=0];
+vulnerable_91 -> fixed_203  [key=0];
+vulnerable_92 -> fixed_203  [key=0];
+vulnerable_93 -> fixed_203  [key=0];
+vulnerable_94 -> fixed_203  [key=0];
+vulnerable_95 -> fixed_203  [key=0];
+vulnerable_96 -> fixed_203  [key=0];
+vulnerable_97 -> fixed_203  [key=0];
+vulnerable_98 -> fixed_203  [key=0];
+vulnerable_99 -> fixed_203  [key=0];
+vulnerable_100 -> fixed_203  [key=0];
+vulnerable_101 -> fixed_203  [key=0];
+vulnerable_102 -> fixed_203  [key=0];
+vulnerable_103 -> fixed_203  [key=0];
+vulnerable_104 -> fixed_203  [key=0];
+vulnerable_105 -> fixed_203  [key=0];
+vulnerable_106 -> fixed_203  [key=0];
+vulnerable_107 -> vulnerable_108  [key=0, label="AST: "];
+vulnerable_107 -> vulnerable_109  [key=0, label="AST: "];
+vulnerable_107 -> vulnerable_114  [key=0, label="CFG: "];
+vulnerable_107 -> vulnerable_137  [key=0, label="DDG: &amp;uiClient"];
+vulnerable_107 -> vulnerable_137  [key=1, label="DDG: WKBundlePageSetUIClient(m_page, &amp;uiClient)"];
+vulnerable_107 -> vulnerable_131  [key=0, label="DDG: m_page"];
+vulnerable_108 -> fixed_203  [key=0];
+vulnerable_109 -> vulnerable_110  [key=0, label="AST: "];
+vulnerable_109 -> vulnerable_107  [key=0, label="CFG: "];
+vulnerable_110 -> fixed_203  [key=0];
+vulnerable_111 -> fixed_203  [key=0];
+vulnerable_112 -> vulnerable_113  [key=0, label="AST: "];
+vulnerable_112 -> vulnerable_114  [key=0, label="AST: "];
+vulnerable_112 -> vulnerable_133  [key=0, label="CFG: "];
+vulnerable_112 -> vulnerable_137  [key=0, label="DDG: editorClient"];
+vulnerable_112 -> vulnerable_137  [key=1, label="DDG: {
+        kWKBundlePageEditorClientCurrentVersion,
+        this,
+        shouldBeginEditing,
+        shouldEndEditing,
+        shouldInsertNode,
+        shouldInsertText,
+        shouldDeleteRange,
+        shouldChangeSelectedRange,
+        shouldApplyStyle,
+        didBeginEditing,
+        didEndEditing,
+        didChange,
+        didChangeSelection,
+        0, /* willWriteToPasteboard */
+        0, /* getPasteboardDataForRange */
+        0  /* didWriteToPasteboard */
+    }"];
+vulnerable_112 -> vulnerable_137  [key=2, label="DDG: editorClient = {
+        kWKBundlePageEditorClientCurrentVersion,
+        this,
+        shouldBeginEditing,
+        shouldEndEditing,
+        shouldInsertNode,
+        shouldInsertText,
+        shouldDeleteRange,
+        shouldChangeSelectedRange,
+        shouldApplyStyle,
+        didBeginEditing,
+        didEndEditing,
+        didChange,
+        didChangeSelection,
+        0, /* willWriteToPasteboard */
+        0, /* getPasteboardDataForRange */
+        0  /* didWriteToPasteboard */
+    }"];
+vulnerable_112 -> vulnerable_131  [key=0, label="DDG: editorClient"];
+vulnerable_113 -> fixed_203  [key=0];
+vulnerable_114 -> vulnerable_115  [key=0, label="AST: "];
+vulnerable_114 -> vulnerable_116  [key=0, label="AST: "];
+vulnerable_114 -> vulnerable_117  [key=0, label="AST: "];
+vulnerable_114 -> vulnerable_118  [key=0, label="AST: "];
+vulnerable_114 -> vulnerable_119  [key=0, label="AST: "];
+vulnerable_114 -> vulnerable_120  [key=0, label="AST: "];
+vulnerable_114 -> vulnerable_121  [key=0, label="AST: "];
+vulnerable_114 -> vulnerable_122  [key=0, label="AST: "];
+vulnerable_114 -> vulnerable_123  [key=0, label="AST: "];
+vulnerable_114 -> vulnerable_124  [key=0, label="AST: "];
+vulnerable_114 -> vulnerable_125  [key=0, label="AST: "];
+vulnerable_114 -> vulnerable_126  [key=0, label="AST: "];
+vulnerable_114 -> vulnerable_127  [key=0, label="AST: "];
+vulnerable_114 -> vulnerable_128  [key=0, label="AST: "];
+vulnerable_114 -> vulnerable_129  [key=0, label="AST: "];
+vulnerable_114 -> vulnerable_130  [key=0, label="AST: "];
+vulnerable_114 -> vulnerable_112  [key=0, label="CFG: "];
+vulnerable_114 -> vulnerable_112  [key=1, label="DDG: 0"];
+vulnerable_114 -> vulnerable_112  [key=2, label="DDG: didChange"];
+vulnerable_114 -> vulnerable_112  [key=3, label="DDG: didBeginEditing"];
+vulnerable_114 -> vulnerable_112  [key=4, label="DDG: kWKBundlePageEditorClientCurrentVersion"];
+vulnerable_114 -> vulnerable_112  [key=5, label="DDG: shouldChangeSelectedRange"];
+vulnerable_114 -> vulnerable_112  [key=6, label="DDG: shouldDeleteRange"];
+vulnerable_114 -> vulnerable_112  [key=7, label="DDG: shouldBeginEditing"];
+vulnerable_114 -> vulnerable_112  [key=8, label="DDG: this"];
+vulnerable_114 -> vulnerable_112  [key=9, label="DDG: shouldEndEditing"];
+vulnerable_114 -> vulnerable_112  [key=10, label="DDG: didChangeSelection"];
+vulnerable_114 -> vulnerable_112  [key=11, label="DDG: shouldApplyStyle"];
+vulnerable_114 -> vulnerable_112  [key=12, label="DDG: shouldInsertNode"];
+vulnerable_114 -> vulnerable_112  [key=13, label="DDG: didEndEditing"];
+vulnerable_114 -> vulnerable_112  [key=14, label="DDG: shouldInsertText"];
+vulnerable_114 -> vulnerable_137  [key=0, label="DDG: kWKBundlePageEditorClientCurrentVersion"];
+vulnerable_114 -> vulnerable_137  [key=1, label="DDG: shouldBeginEditing"];
+vulnerable_114 -> vulnerable_137  [key=2, label="DDG: shouldEndEditing"];
+vulnerable_114 -> vulnerable_137  [key=3, label="DDG: shouldInsertNode"];
+vulnerable_114 -> vulnerable_137  [key=4, label="DDG: shouldInsertText"];
+vulnerable_114 -> vulnerable_137  [key=5, label="DDG: shouldDeleteRange"];
+vulnerable_114 -> vulnerable_137  [key=6, label="DDG: shouldChangeSelectedRange"];
+vulnerable_114 -> vulnerable_137  [key=7, label="DDG: shouldApplyStyle"];
+vulnerable_114 -> vulnerable_137  [key=8, label="DDG: didBeginEditing"];
+vulnerable_114 -> vulnerable_137  [key=9, label="DDG: didEndEditing"];
+vulnerable_114 -> vulnerable_137  [key=10, label="DDG: didChange"];
+vulnerable_114 -> vulnerable_137  [key=11, label="DDG: didChangeSelection"];
+vulnerable_115 -> fixed_203  [key=0];
+vulnerable_116 -> fixed_203  [key=0];
+vulnerable_117 -> fixed_203  [key=0];
+vulnerable_118 -> fixed_203  [key=0];
+vulnerable_119 -> fixed_203  [key=0];
+vulnerable_120 -> fixed_203  [key=0];
+vulnerable_121 -> fixed_203  [key=0];
+vulnerable_122 -> fixed_203  [key=0];
+vulnerable_123 -> fixed_203  [key=0];
+vulnerable_124 -> fixed_203  [key=0];
+vulnerable_125 -> fixed_203  [key=0];
+vulnerable_126 -> fixed_203  [key=0];
+vulnerable_127 -> fixed_203  [key=0];
+vulnerable_128 -> fixed_203  [key=0];
+vulnerable_129 -> fixed_203  [key=0];
+vulnerable_130 -> fixed_203  [key=0];
+vulnerable_131 -> vulnerable_132  [key=0, label="AST: "];
+vulnerable_131 -> vulnerable_133  [key=0, label="AST: "];
+vulnerable_131 -> vulnerable_137  [key=0, label="CFG: "];
+vulnerable_131 -> vulnerable_137  [key=1, label="DDG: m_page"];
+vulnerable_131 -> vulnerable_137  [key=2, label="DDG: &amp;editorClient"];
+vulnerable_131 -> vulnerable_137  [key=3, label="DDG: WKBundlePageSetEditorClient(m_page, &amp;editorClient)"];
+vulnerable_132 -> fixed_203  [key=0];
+vulnerable_133 -> vulnerable_134  [key=0, label="AST: "];
+vulnerable_133 -> vulnerable_131  [key=0, label="CFG: "];
+vulnerable_134 -> fixed_203  [key=0];
+vulnerable_135 -> fixed_203  [key=0];
+vulnerable_136 -> fixed_203  [key=0];
+vulnerable_137 -> fixed_203  [key=0];
+vulnerable_139 -> fixed_203  [key=0];
+vulnerable_173 -> vulnerable_174  [key=0, label="AST: "];
+vulnerable_173 -> vulnerable_174  [key=1, label="DDG: "];
+vulnerable_173 -> vulnerable_190  [key=0, label="AST: "];
+vulnerable_173 -> vulnerable_175  [key=0, label="AST: "];
+vulnerable_173 -> vulnerable_175  [key=1, label="DDG: "];
+vulnerable_173 -> vulnerable_191  [key=0, label="AST: "];
+vulnerable_173 -> vulnerable_191  [key=1, label="CFG: "];
+vulnerable_173 -> vulnerable_176  [key=0, label="AST: "];
+vulnerable_173 -> vulnerable_176  [key=1, label="DDG: "];
+vulnerable_173 -> vulnerable_177  [key=0, label="AST: "];
+vulnerable_173 -> vulnerable_177  [key=1, label="DDG: "];
+vulnerable_173 -> vulnerable_178  [key=0, label="AST: "];
+vulnerable_173 -> vulnerable_178  [key=1, label="DDG: "];
+vulnerable_173 -> vulnerable_179  [key=0, label="AST: "];
+vulnerable_173 -> vulnerable_179  [key=1, label="DDG: "];
+vulnerable_173 -> vulnerable_180  [key=0, label="AST: "];
+vulnerable_173 -> vulnerable_180  [key=1, label="DDG: "];
+vulnerable_173 -> vulnerable_181  [key=0, label="AST: "];
+vulnerable_173 -> vulnerable_181  [key=1, label="DDG: "];
+vulnerable_173 -> vulnerable_182  [key=0, label="AST: "];
+vulnerable_173 -> vulnerable_182  [key=1, label="DDG: "];
+vulnerable_173 -> vulnerable_183  [key=0, label="AST: "];
+vulnerable_173 -> vulnerable_183  [key=1, label="DDG: "];
+vulnerable_173 -> vulnerable_184  [key=0, label="AST: "];
+vulnerable_173 -> vulnerable_184  [key=1, label="DDG: "];
+vulnerable_173 -> vulnerable_185  [key=0, label="AST: "];
+vulnerable_173 -> vulnerable_185  [key=1, label="DDG: "];
+vulnerable_173 -> vulnerable_186  [key=0, label="AST: "];
+vulnerable_173 -> vulnerable_186  [key=1, label="DDG: "];
+vulnerable_173 -> vulnerable_187  [key=0, label="AST: "];
+vulnerable_173 -> vulnerable_187  [key=1, label="DDG: "];
+vulnerable_173 -> vulnerable_188  [key=0, label="AST: "];
+vulnerable_173 -> vulnerable_188  [key=1, label="DDG: "];
+vulnerable_173 -> vulnerable_189  [key=0, label="AST: "];
+vulnerable_173 -> vulnerable_189  [key=1, label="DDG: "];
+vulnerable_174 -> vulnerable_191  [key=0, label="DDG: p1"];
+vulnerable_175 -> vulnerable_191  [key=0, label="DDG: p2"];
+vulnerable_176 -> vulnerable_191  [key=0, label="DDG: p3"];
+vulnerable_177 -> vulnerable_191  [key=0, label="DDG: p4"];
+vulnerable_178 -> vulnerable_191  [key=0, label="DDG: p5"];
+vulnerable_179 -> vulnerable_191  [key=0, label="DDG: p6"];
+vulnerable_180 -> vulnerable_191  [key=0, label="DDG: p7"];
+vulnerable_181 -> vulnerable_191  [key=0, label="DDG: p8"];
+vulnerable_182 -> vulnerable_191  [key=0, label="DDG: p9"];
+vulnerable_183 -> vulnerable_191  [key=0, label="DDG: p10"];
+vulnerable_184 -> vulnerable_191  [key=0, label="DDG: p11"];
+vulnerable_185 -> vulnerable_191  [key=0, label="DDG: p12"];
+vulnerable_186 -> vulnerable_191  [key=0, label="DDG: p13"];
+vulnerable_187 -> vulnerable_191  [key=0, label="DDG: p14"];
+vulnerable_188 -> vulnerable_191  [key=0, label="DDG: p15"];
+vulnerable_189 -> vulnerable_191  [key=0, label="DDG: p16"];
+vulnerable_190 -> fixed_203  [key=0];
+vulnerable_191 -> fixed_203  [key=0];
+vulnerable_216 -> vulnerable_217  [key=0, label="AST: "];
+vulnerable_216 -> vulnerable_217  [key=1, label="DDG: "];
+vulnerable_216 -> vulnerable_219  [key=0, label="AST: "];
+vulnerable_216 -> vulnerable_218  [key=0, label="AST: "];
+vulnerable_216 -> vulnerable_218  [key=1, label="DDG: "];
+vulnerable_216 -> vulnerable_220  [key=0, label="AST: "];
+vulnerable_216 -> vulnerable_220  [key=1, label="CFG: "];
+vulnerable_217 -> vulnerable_220  [key=0, label="DDG: p1"];
+vulnerable_218 -> vulnerable_220  [key=0, label="DDG: p2"];
+vulnerable_219 -> fixed_203  [key=0];
+vulnerable_220 -> fixed_203  [key=0];
+vulnerable_211 -> vulnerable_212  [key=0, label="AST: "];
+vulnerable_211 -> vulnerable_212  [key=1, label="DDG: "];
+vulnerable_211 -> vulnerable_214  [key=0, label="AST: "];
+vulnerable_211 -> vulnerable_213  [key=0, label="AST: "];
+vulnerable_211 -> vulnerable_213  [key=1, label="DDG: "];
+vulnerable_211 -> vulnerable_215  [key=0, label="AST: "];
+vulnerable_211 -> vulnerable_215  [key=1, label="CFG: "];
+vulnerable_212 -> vulnerable_215  [key=0, label="DDG: p1"];
+vulnerable_213 -> vulnerable_215  [key=0, label="DDG: p2"];
+vulnerable_214 -> fixed_203  [key=0];
+vulnerable_215 -> fixed_203  [key=0];
+vulnerable_197 -> vulnerable_198  [key=0, label="AST: "];
+vulnerable_197 -> vulnerable_198  [key=1, label="DDG: "];
+vulnerable_197 -> vulnerable_199  [key=0, label="AST: "];
+vulnerable_197 -> vulnerable_200  [key=0, label="AST: "];
+vulnerable_197 -> vulnerable_200  [key=1, label="CFG: "];
+vulnerable_198 -> vulnerable_200  [key=0, label="DDG: p1"];
+vulnerable_199 -> fixed_203  [key=0];
+vulnerable_200 -> fixed_203  [key=0];
+vulnerable_192 -> vulnerable_193  [key=0, label="AST: "];
+vulnerable_192 -> vulnerable_193  [key=1, label="DDG: "];
+vulnerable_192 -> vulnerable_195  [key=0, label="AST: "];
+vulnerable_192 -> vulnerable_194  [key=0, label="AST: "];
+vulnerable_192 -> vulnerable_194  [key=1, label="DDG: "];
+vulnerable_192 -> vulnerable_196  [key=0, label="AST: "];
+vulnerable_192 -> vulnerable_196  [key=1, label="CFG: "];
+vulnerable_193 -> vulnerable_196  [key=0, label="DDG: p1"];
+vulnerable_194 -> vulnerable_196  [key=0, label="DDG: p2"];
+vulnerable_195 -> fixed_203  [key=0];
+vulnerable_196 -> fixed_203  [key=0];
+vulnerable_168 -> vulnerable_169  [key=0, label="AST: "];
+vulnerable_168 -> vulnerable_169  [key=1, label="DDG: "];
+vulnerable_168 -> vulnerable_171  [key=0, label="AST: "];
+vulnerable_168 -> vulnerable_170  [key=0, label="AST: "];
+vulnerable_168 -> vulnerable_170  [key=1, label="DDG: "];
+vulnerable_168 -> vulnerable_172  [key=0, label="AST: "];
+vulnerable_168 -> vulnerable_172  [key=1, label="CFG: "];
+vulnerable_169 -> vulnerable_172  [key=0, label="DDG: p1"];
+vulnerable_170 -> vulnerable_172  [key=0, label="DDG: p2"];
+vulnerable_171 -> fixed_203  [key=0];
+vulnerable_172 -> fixed_203  [key=0];
+vulnerable_162 -> vulnerable_163  [key=0, label="AST: "];
+vulnerable_162 -> vulnerable_164  [key=0, label="AST: "];
+vulnerable_162 -> vulnerable_164  [key=1, label="CFG: "];
+vulnerable_163 -> fixed_203  [key=0];
+vulnerable_164 -> fixed_203  [key=0];
+vulnerable_206 -> vulnerable_207  [key=0, label="AST: "];
+vulnerable_206 -> vulnerable_207  [key=1, label="DDG: "];
+vulnerable_206 -> vulnerable_209  [key=0, label="AST: "];
+vulnerable_206 -> vulnerable_208  [key=0, label="AST: "];
+vulnerable_206 -> vulnerable_208  [key=1, label="DDG: "];
+vulnerable_206 -> vulnerable_210  [key=0, label="AST: "];
+vulnerable_206 -> vulnerable_210  [key=1, label="CFG: "];
+vulnerable_207 -> vulnerable_210  [key=0, label="DDG: p1"];
+vulnerable_208 -> vulnerable_210  [key=0, label="DDG: p2"];
+vulnerable_209 -> fixed_203  [key=0];
+vulnerable_210 -> fixed_203  [key=0];
+fixed_203 -> fixed_204  [key=0, label="AST: "];
+fixed_203 -> fixed_204  [key=1, label="DDG: "];
+fixed_203 -> fixed_206  [key=0, label="AST: "];
+fixed_203 -> fixed_205  [key=0, label="AST: "];
+fixed_203 -> fixed_205  [key=1, label="DDG: "];
+fixed_203 -> fixed_207  [key=0, label="AST: "];
+fixed_203 -> fixed_207  [key=1, label="CFG: "];
+fixed_204 -> fixed_207  [key=0, label="DDG: p1"];
+fixed_205 -> fixed_207  [key=0, label="DDG: p2"];
+fixed_6 -> fixed_7  [key=0, label="AST: "];
+fixed_6 -> fixed_141  [key=0, label="AST: "];
+fixed_6 -> fixed_141  [key=1, label="CFG: "];
+fixed_7 -> fixed_8  [key=0, label="AST: "];
+fixed_8 -> fixed_9  [key=0, label="AST: "];
+fixed_8 -> fixed_9  [key=1, label="DDG: "];
+fixed_8 -> fixed_10  [key=0, label="AST: "];
+fixed_8 -> fixed_137  [key=0, label="AST: "];
+fixed_8 -> fixed_138  [key=0, label="AST: "];
+fixed_8 -> fixed_139  [key=0, label="AST: "];
+fixed_8 -> fixed_14  [key=0, label="CFG: "];
+fixed_8 -> fixed_14  [key=1, label="DDG: "];
+fixed_8 -> fixed_48  [key=0, label="DDG: "];
+fixed_8 -> fixed_66  [key=0, label="DDG: "];
+fixed_8 -> fixed_80  [key=0, label="DDG: "];
+fixed_8 -> fixed_109  [key=0, label="DDG: "];
+fixed_8 -> fixed_133  [key=0, label="DDG: "];
+fixed_8 -> fixed_55  [key=0, label="DDG: "];
+fixed_8 -> fixed_73  [key=0, label="DDG: "];
+fixed_8 -> fixed_87  [key=0, label="DDG: "];
+fixed_8 -> fixed_116  [key=0, label="DDG: "];
+fixed_9 -> fixed_139  [key=0, label="DDG: page"];
+fixed_10 -> fixed_11  [key=0, label="AST: "];
+fixed_10 -> fixed_12  [key=0, label="AST: "];
+fixed_10 -> fixed_48  [key=0, label="AST: "];
+fixed_10 -> fixed_52  [key=0, label="AST: "];
+fixed_10 -> fixed_53  [key=0, label="AST: "];
+fixed_10 -> fixed_66  [key=0, label="AST: "];
+fixed_10 -> fixed_70  [key=0, label="AST: "];
+fixed_10 -> fixed_71  [key=0, label="AST: "];
+fixed_10 -> fixed_80  [key=0, label="AST: "];
+fixed_10 -> fixed_84  [key=0, label="AST: "];
+fixed_10 -> fixed_85  [key=0, label="AST: "];
+fixed_10 -> fixed_109  [key=0, label="AST: "];
+fixed_10 -> fixed_113  [key=0, label="AST: "];
+fixed_10 -> fixed_114  [key=0, label="AST: "];
+fixed_10 -> fixed_133  [key=0, label="AST: "];
+fixed_12 -> fixed_13  [key=0, label="AST: "];
+fixed_12 -> fixed_14  [key=0, label="AST: "];
+fixed_12 -> fixed_50  [key=0, label="CFG: "];
+fixed_12 -> fixed_139  [key=0, label="DDG: loaderClient"];
+fixed_12 -> fixed_139  [key=1, label="DDG: {
+        kWKBundlePageLoaderClientCurrentVersion,
+        this,
+        didStartProvisionalLoadForFrame,
+        didReceiveServerRedirectForProvisionalLoadForFrame,
+        didFailProvisionalLoadWithErrorForFrame,
+        didCommitLoadForFrame,
+        didFinishDocumentLoadForFrame,
+        didFinishLoadForFrame,
+        didFailLoadWithErrorForFrame,
+        didSameDocumentNavigationForFrame,
+        didReceiveTitleForFrame,
+        0, // didFirstLayoutForFrame
+        0, // didFirstVisuallyNonEmptyLayoutForFrame
+        0, // didRemoveFrameFromHierarchy
+        didDisplayInsecureContentForFrame,
+        didRunInsecureContentForFrame,
+        didClearWindowForFrame,
+        didCancelClientRedirectForFrame,
+        willPerformClientRedirectForFrame,
+        didHandleOnloadEventsForFrame,
+        0, // didLayoutForFrame
+        0, // didNewFirstVisuallyNonEmptyLayoutForFrame
+        didDetectXSSForFrame,
+        0, // shouldGoToBackForwardListItem
+        0, // didCreateGlobalObjectF..."];
+fixed_12 -> fixed_139  [key=2, label="DDG: loaderClient = {
+        kWKBundlePageLoaderClientCurrentVersion,
+        this,
+        didStartProvisionalLoadForFrame,
+        didReceiveServerRedirectForProvisionalLoadForFrame,
+        didFailProvisionalLoadWithErrorForFrame,
+        didCommitLoadForFrame,
+        didFinishDocumentLoadForFrame,
+        didFinishLoadForFrame,
+        didFailLoadWithErrorForFrame,
+        didSameDocumentNavigationForFrame,
+        didReceiveTitleForFrame,
+        0, // didFirstLayoutForFrame
+        0, // didFirstVisuallyNonEmptyLayoutForFrame
+        0, // didRemoveFrameFromHierarchy
+        didDisplayInsecureContentForFrame,
+        didRunInsecureContentForFrame,
+        didClearWindowForFrame,
+        didCancelClientRedirectForFrame,
+        willPerformClientRedirectForFrame,
+        didHandleOnloadEventsForFrame,
+        0, // didLayoutForFrame
+        0, // didNewFirstVisuallyNonEmptyLayoutForFrame
+        didDetectXSSForFrame,
+        0, // shouldGoToBackForwardListItem
+        0, // didCrea..."];
+fixed_12 -> fixed_48  [key=0, label="DDG: loaderClient"];
+fixed_14 -> fixed_15  [key=0, label="AST: "];
+fixed_14 -> fixed_16  [key=0, label="AST: "];
+fixed_14 -> fixed_17  [key=0, label="AST: "];
+fixed_14 -> fixed_18  [key=0, label="AST: "];
+fixed_14 -> fixed_19  [key=0, label="AST: "];
+fixed_14 -> fixed_20  [key=0, label="AST: "];
+fixed_14 -> fixed_21  [key=0, label="AST: "];
+fixed_14 -> fixed_22  [key=0, label="AST: "];
+fixed_14 -> fixed_23  [key=0, label="AST: "];
+fixed_14 -> fixed_24  [key=0, label="AST: "];
+fixed_14 -> fixed_25  [key=0, label="AST: "];
+fixed_14 -> fixed_26  [key=0, label="AST: "];
+fixed_14 -> fixed_27  [key=0, label="AST: "];
+fixed_14 -> fixed_28  [key=0, label="AST: "];
+fixed_14 -> fixed_29  [key=0, label="AST: "];
+fixed_14 -> fixed_30  [key=0, label="AST: "];
+fixed_14 -> fixed_31  [key=0, label="AST: "];
+fixed_14 -> fixed_32  [key=0, label="AST: "];
+fixed_14 -> fixed_33  [key=0, label="AST: "];
+fixed_14 -> fixed_34  [key=0, label="AST: "];
+fixed_14 -> fixed_35  [key=0, label="AST: "];
+fixed_14 -> fixed_36  [key=0, label="AST: "];
+fixed_14 -> fixed_37  [key=0, label="AST: "];
+fixed_14 -> fixed_38  [key=0, label="AST: "];
+fixed_14 -> fixed_39  [key=0, label="AST: "];
+fixed_14 -> fixed_40  [key=0, label="AST: "];
+fixed_14 -> fixed_41  [key=0, label="AST: "];
+fixed_14 -> fixed_42  [key=0, label="AST: "];
+fixed_14 -> fixed_43  [key=0, label="AST: "];
+fixed_14 -> fixed_44  [key=0, label="AST: "];
+fixed_14 -> fixed_45  [key=0, label="AST: "];
+fixed_14 -> fixed_46  [key=0, label="AST: "];
+fixed_14 -> fixed_47  [key=0, label="AST: "];
+fixed_14 -> fixed_12  [key=0, label="CFG: "];
+fixed_14 -> fixed_12  [key=1, label="DDG: didStartProvisionalLoadForFrame"];
+fixed_14 -> fixed_12  [key=2, label="DDG: didCommitLoadForFrame"];
+fixed_14 -> fixed_12  [key=3, label="DDG: 0"];
+fixed_14 -> fixed_12  [key=4, label="DDG: kWKBundlePageLoaderClientCurrentVersion"];
+fixed_14 -> fixed_12  [key=5, label="DDG: didReceiveServerRedirectForProvisionalLoadForFrame"];
+fixed_14 -> fixed_12  [key=6, label="DDG: didFailLoadWithErrorForFrame"];
+fixed_14 -> fixed_12  [key=7, label="DDG: didHandleOnloadEventsForFrame"];
+fixed_14 -> fixed_12  [key=8, label="DDG: didFinishProgress"];
+fixed_14 -> fixed_12  [key=9, label="DDG: didRunInsecureContentForFrame"];
+fixed_14 -> fixed_12  [key=10, label="DDG: didDetectXSSForFrame"];
+fixed_14 -> fixed_12  [key=11, label="DDG: didFinishLoadForFrame"];
+fixed_14 -> fixed_12  [key=12, label="DDG: willPerformClientRedirectForFrame"];
+fixed_14 -> fixed_12  [key=13, label="DDG: this"];
+fixed_14 -> fixed_12  [key=14, label="DDG: didFailProvisionalLoadWithErrorForFrame"];
+fixed_14 -> fixed_12  [key=15, label="DDG: didSameDocumentNavigationForFrame"];
+fixed_14 -> fixed_12  [key=16, label="DDG: didCancelClientRedirectForFrame"];
+fixed_14 -> fixed_12  [key=17, label="DDG: didReceiveTitleForFrame"];
+fixed_14 -> fixed_12  [key=18, label="DDG: didClearWindowForFrame"];
+fixed_14 -> fixed_12  [key=19, label="DDG: didFinishDocumentLoadForFrame"];
+fixed_14 -> fixed_12  [key=20, label="DDG: didDisplayInsecureContentForFrame"];
+fixed_14 -> fixed_139  [key=0, label="DDG: kWKBundlePageLoaderClientCurrentVersion"];
+fixed_14 -> fixed_139  [key=1, label="DDG: didReceiveServerRedirectForProvisionalLoadForFrame"];
+fixed_14 -> fixed_139  [key=2, label="DDG: didFailProvisionalLoadWithErrorForFrame"];
+fixed_14 -> fixed_139  [key=3, label="DDG: didCommitLoadForFrame"];
+fixed_14 -> fixed_139  [key=4, label="DDG: didFinishDocumentLoadForFrame"];
+fixed_14 -> fixed_139  [key=5, label="DDG: didFinishLoadForFrame"];
+fixed_14 -> fixed_139  [key=6, label="DDG: didFailLoadWithErrorForFrame"];
+fixed_14 -> fixed_139  [key=7, label="DDG: didSameDocumentNavigationForFrame"];
+fixed_14 -> fixed_139  [key=8, label="DDG: didReceiveTitleForFrame"];
+fixed_14 -> fixed_139  [key=9, label="DDG: didDisplayInsecureContentForFrame"];
+fixed_14 -> fixed_139  [key=10, label="DDG: didRunInsecureContentForFrame"];
+fixed_14 -> fixed_139  [key=11, label="DDG: didClearWindowForFrame"];
+fixed_14 -> fixed_139  [key=12, label="DDG: didCancelClientRedirectForFrame"];
+fixed_14 -> fixed_139  [key=13, label="DDG: willPerformClientRedirectForFrame"];
+fixed_14 -> fixed_139  [key=14, label="DDG: didHandleOnloadEventsForFrame"];
+fixed_14 -> fixed_139  [key=15, label="DDG: didDetectXSSForFrame"];
+fixed_14 -> fixed_139  [key=16, label="DDG: didFinishProgress"];
+fixed_14 -> fixed_139  [key=17, label="DDG: didStartProvisionalLoadForFrame"];
+fixed_48 -> fixed_49  [key=0, label="AST: "];
+fixed_48 -> fixed_50  [key=0, label="AST: "];
+fixed_48 -> fixed_55  [key=0, label="CFG: "];
+fixed_48 -> fixed_139  [key=0, label="DDG: &amp;loaderClient"];
+fixed_48 -> fixed_139  [key=1, label="DDG: WKBundlePageSetPageLoaderClient(m_page, &amp;loaderClient)"];
+fixed_48 -> fixed_66  [key=0, label="DDG: m_page"];
+fixed_50 -> fixed_51  [key=0, label="AST: "];
+fixed_50 -> fixed_48  [key=0, label="CFG: "];
+fixed_53 -> fixed_54  [key=0, label="AST: "];
+fixed_53 -> fixed_55  [key=0, label="AST: "];
+fixed_53 -> fixed_68  [key=0, label="CFG: "];
+fixed_53 -> fixed_139  [key=0, label="DDG: resourceLoadClient"];
+fixed_53 -> fixed_139  [key=1, label="DDG: {
+        kWKBundlePageResourceLoadClientCurrentVersion,
+        this,
+        didInitiateLoadForResource,
+        willSendRequestForFrame,
+        didReceiveResponseForResource,
+        didReceiveContentLengthForResource,
+        didFinishLoadForResource,
+        didFailLoadForResource,
+        shouldCacheResponse,
+        0 // shouldUseCredentialStorage
+    }"];
+fixed_53 -> fixed_139  [key=2, label="DDG: resourceLoadClient = {
+        kWKBundlePageResourceLoadClientCurrentVersion,
+        this,
+        didInitiateLoadForResource,
+        willSendRequestForFrame,
+        didReceiveResponseForResource,
+        didReceiveContentLengthForResource,
+        didFinishLoadForResource,
+        didFailLoadForResource,
+        shouldCacheResponse,
+        0 // shouldUseCredentialStorage
+    }"];
+fixed_53 -> fixed_66  [key=0, label="DDG: resourceLoadClient"];
+fixed_55 -> fixed_56  [key=0, label="AST: "];
+fixed_55 -> fixed_57  [key=0, label="AST: "];
+fixed_55 -> fixed_58  [key=0, label="AST: "];
+fixed_55 -> fixed_59  [key=0, label="AST: "];
+fixed_55 -> fixed_60  [key=0, label="AST: "];
+fixed_55 -> fixed_61  [key=0, label="AST: "];
+fixed_55 -> fixed_62  [key=0, label="AST: "];
+fixed_55 -> fixed_63  [key=0, label="AST: "];
+fixed_55 -> fixed_64  [key=0, label="AST: "];
+fixed_55 -> fixed_65  [key=0, label="AST: "];
+fixed_55 -> fixed_53  [key=0, label="CFG: "];
+fixed_55 -> fixed_53  [key=1, label="DDG: kWKBundlePageResourceLoadClientCurrentVersion"];
+fixed_55 -> fixed_53  [key=2, label="DDG: 0"];
+fixed_55 -> fixed_53  [key=3, label="DDG: willSendRequestForFrame"];
+fixed_55 -> fixed_53  [key=4, label="DDG: didReceiveResponseForResource"];
+fixed_55 -> fixed_53  [key=5, label="DDG: this"];
+fixed_55 -> fixed_53  [key=6, label="DDG: didInitiateLoadForResource"];
+fixed_55 -> fixed_53  [key=7, label="DDG: didFinishLoadForResource"];
+fixed_55 -> fixed_53  [key=8, label="DDG: didFailLoadForResource"];
+fixed_55 -> fixed_53  [key=9, label="DDG: shouldCacheResponse"];
+fixed_55 -> fixed_53  [key=10, label="DDG: didReceiveContentLengthForResource"];
+fixed_55 -> fixed_139  [key=0, label="DDG: kWKBundlePageResourceLoadClientCurrentVersion"];
+fixed_55 -> fixed_139  [key=1, label="DDG: didInitiateLoadForResource"];
+fixed_55 -> fixed_139  [key=2, label="DDG: didReceiveResponseForResource"];
+fixed_55 -> fixed_139  [key=3, label="DDG: didReceiveContentLengthForResource"];
+fixed_55 -> fixed_139  [key=4, label="DDG: didFinishLoadForResource"];
+fixed_55 -> fixed_139  [key=5, label="DDG: didFailLoadForResource"];
+fixed_55 -> fixed_139  [key=6, label="DDG: shouldCacheResponse"];
+fixed_55 -> fixed_139  [key=7, label="DDG: willSendRequestForFrame"];
+fixed_66 -> fixed_67  [key=0, label="AST: "];
+fixed_66 -> fixed_68  [key=0, label="AST: "];
+fixed_66 -> fixed_73  [key=0, label="CFG: "];
+fixed_66 -> fixed_139  [key=0, label="DDG: &amp;resourceLoadClient"];
+fixed_66 -> fixed_139  [key=1, label="DDG: WKBundlePageSetResourceLoadClient(m_page, &amp;resourceLoadClient)"];
+fixed_66 -> fixed_80  [key=0, label="DDG: m_page"];
+fixed_68 -> fixed_69  [key=0, label="AST: "];
+fixed_68 -> fixed_66  [key=0, label="CFG: "];
+fixed_71 -> fixed_72  [key=0, label="AST: "];
+fixed_71 -> fixed_73  [key=0, label="AST: "];
+fixed_71 -> fixed_82  [key=0, label="CFG: "];
+fixed_71 -> fixed_139  [key=0, label="DDG: policyClient"];
+fixed_71 -> fixed_139  [key=1, label="DDG: {
+        kWKBundlePagePolicyClientCurrentVersion,
+        this,
+        decidePolicyForNavigationAction,
+        decidePolicyForNewWindowAction,
+        decidePolicyForResponse,
+        unableToImplementPolicy
+    }"];
+fixed_71 -> fixed_139  [key=2, label="DDG: policyClient = {
+        kWKBundlePagePolicyClientCurrentVersion,
+        this,
+        decidePolicyForNavigationAction,
+        decidePolicyForNewWindowAction,
+        decidePolicyForResponse,
+        unableToImplementPolicy
+    }"];
+fixed_71 -> fixed_80  [key=0, label="DDG: policyClient"];
+fixed_73 -> fixed_74  [key=0, label="AST: "];
+fixed_73 -> fixed_75  [key=0, label="AST: "];
+fixed_73 -> fixed_76  [key=0, label="AST: "];
+fixed_73 -> fixed_77  [key=0, label="AST: "];
+fixed_73 -> fixed_78  [key=0, label="AST: "];
+fixed_73 -> fixed_79  [key=0, label="AST: "];
+fixed_73 -> fixed_71  [key=0, label="CFG: "];
+fixed_73 -> fixed_71  [key=1, label="DDG: kWKBundlePagePolicyClientCurrentVersion"];
+fixed_73 -> fixed_71  [key=2, label="DDG: decidePolicyForNewWindowAction"];
+fixed_73 -> fixed_71  [key=3, label="DDG: decidePolicyForResponse"];
+fixed_73 -> fixed_71  [key=4, label="DDG: unableToImplementPolicy"];
+fixed_73 -> fixed_71  [key=5, label="DDG: decidePolicyForNavigationAction"];
+fixed_73 -> fixed_71  [key=6, label="DDG: this"];
+fixed_73 -> fixed_139  [key=0, label="DDG: kWKBundlePagePolicyClientCurrentVersion"];
+fixed_73 -> fixed_139  [key=1, label="DDG: decidePolicyForNavigationAction"];
+fixed_73 -> fixed_139  [key=2, label="DDG: decidePolicyForNewWindowAction"];
+fixed_73 -> fixed_139  [key=3, label="DDG: unableToImplementPolicy"];
+fixed_73 -> fixed_139  [key=4, label="DDG: decidePolicyForResponse"];
+fixed_80 -> fixed_81  [key=0, label="AST: "];
+fixed_80 -> fixed_82  [key=0, label="AST: "];
+fixed_80 -> fixed_87  [key=0, label="CFG: "];
+fixed_80 -> fixed_139  [key=0, label="DDG: &amp;policyClient"];
+fixed_80 -> fixed_139  [key=1, label="DDG: WKBundlePageSetPolicyClient(m_page, &amp;policyClient)"];
+fixed_80 -> fixed_109  [key=0, label="DDG: m_page"];
+fixed_82 -> fixed_83  [key=0, label="AST: "];
+fixed_82 -> fixed_80  [key=0, label="CFG: "];
+fixed_85 -> fixed_86  [key=0, label="AST: "];
+fixed_85 -> fixed_87  [key=0, label="AST: "];
+fixed_85 -> fixed_111  [key=0, label="CFG: "];
+fixed_85 -> fixed_139  [key=0, label="DDG: uiClient"];
+fixed_85 -> fixed_139  [key=1, label="DDG: {
+        kWKBundlePageUIClientCurrentVersion,
+        this,
+        willAddMessageToConsole,
+        willSetStatusbarText,
+        willRunJavaScriptAlert,
+        willRunJavaScriptConfirm,
+        willRunJavaScriptPrompt,
+        0, /*mouseDidMoveOverElement*/
+        0, /*pageDidScroll*/
+        0, /*paintCustomOverhangArea*/
+        0, /*shouldGenerateFileForUpload*/
+        0, /*generateFileForUpload*/
+        0, /*shouldRubberBandInDirection*/
+        0, /*statusBarIsVisible*/
+        0, /*menuBarIsVisible*/
+        0, /*toolbarsAreVisible*/
+        didReachApplicationCacheOriginQuota,
+        didExceedDatabaseQuota,
+        0, /*plugInStartLabelTitle*/
+        0, /*plugInStartLabelSubtitle*/
+        0, /*plugInExtraStyleSheet*/
+    }"];
+fixed_85 -> fixed_139  [key=2, label="DDG: uiClient = {
+        kWKBundlePageUIClientCurrentVersion,
+        this,
+        willAddMessageToConsole,
+        willSetStatusbarText,
+        willRunJavaScriptAlert,
+        willRunJavaScriptConfirm,
+        willRunJavaScriptPrompt,
+        0, /*mouseDidMoveOverElement*/
+        0, /*pageDidScroll*/
+        0, /*paintCustomOverhangArea*/
+        0, /*shouldGenerateFileForUpload*/
+        0, /*generateFileForUpload*/
+        0, /*shouldRubberBandInDirection*/
+        0, /*statusBarIsVisible*/
+        0, /*menuBarIsVisible*/
+        0, /*toolbarsAreVisible*/
+        didReachApplicationCacheOriginQuota,
+        didExceedDatabaseQuota,
+        0, /*plugInStartLabelTitle*/
+        0, /*plugInStartLabelSubtitle*/
+        0, /*plugInExtraStyleSheet*/
+    }"];
+fixed_85 -> fixed_109  [key=0, label="DDG: uiClient"];
+fixed_87 -> fixed_88  [key=0, label="AST: "];
+fixed_87 -> fixed_89  [key=0, label="AST: "];
+fixed_87 -> fixed_90  [key=0, label="AST: "];
+fixed_87 -> fixed_91  [key=0, label="AST: "];
+fixed_87 -> fixed_92  [key=0, label="AST: "];
+fixed_87 -> fixed_93  [key=0, label="AST: "];
+fixed_87 -> fixed_94  [key=0, label="AST: "];
+fixed_87 -> fixed_95  [key=0, label="AST: "];
+fixed_87 -> fixed_96  [key=0, label="AST: "];
+fixed_87 -> fixed_97  [key=0, label="AST: "];
+fixed_87 -> fixed_98  [key=0, label="AST: "];
+fixed_87 -> fixed_99  [key=0, label="AST: "];
+fixed_87 -> fixed_100  [key=0, label="AST: "];
+fixed_87 -> fixed_101  [key=0, label="AST: "];
+fixed_87 -> fixed_102  [key=0, label="AST: "];
+fixed_87 -> fixed_103  [key=0, label="AST: "];
+fixed_87 -> fixed_104  [key=0, label="AST: "];
+fixed_87 -> fixed_105  [key=0, label="AST: "];
+fixed_87 -> fixed_106  [key=0, label="AST: "];
+fixed_87 -> fixed_107  [key=0, label="AST: "];
+fixed_87 -> fixed_108  [key=0, label="AST: "];
+fixed_87 -> fixed_85  [key=0, label="CFG: "];
+fixed_87 -> fixed_85  [key=1, label="DDG: 0"];
+fixed_87 -> fixed_85  [key=2, label="DDG: willAddMessageToConsole"];
+fixed_87 -> fixed_85  [key=3, label="DDG: didExceedDatabaseQuota"];
+fixed_87 -> fixed_85  [key=4, label="DDG: willRunJavaScriptAlert"];
+fixed_87 -> fixed_85  [key=5, label="DDG: kWKBundlePageUIClientCurrentVersion"];
+fixed_87 -> fixed_85  [key=6, label="DDG: willRunJavaScriptPrompt"];
+fixed_87 -> fixed_85  [key=7, label="DDG: willRunJavaScriptConfirm"];
+fixed_87 -> fixed_85  [key=8, label="DDG: this"];
+fixed_87 -> fixed_85  [key=9, label="DDG: willSetStatusbarText"];
+fixed_87 -> fixed_85  [key=10, label="DDG: didReachApplicationCacheOriginQuota"];
+fixed_87 -> fixed_139  [key=0, label="DDG: kWKBundlePageUIClientCurrentVersion"];
+fixed_87 -> fixed_139  [key=1, label="DDG: willAddMessageToConsole"];
+fixed_87 -> fixed_139  [key=2, label="DDG: willSetStatusbarText"];
+fixed_87 -> fixed_139  [key=3, label="DDG: willRunJavaScriptAlert"];
+fixed_87 -> fixed_139  [key=4, label="DDG: willRunJavaScriptPrompt"];
+fixed_87 -> fixed_139  [key=5, label="DDG: didReachApplicationCacheOriginQuota"];
+fixed_87 -> fixed_139  [key=6, label="DDG: didExceedDatabaseQuota"];
+fixed_87 -> fixed_139  [key=7, label="DDG: willRunJavaScriptConfirm"];
+fixed_109 -> fixed_110  [key=0, label="AST: "];
+fixed_109 -> fixed_111  [key=0, label="AST: "];
+fixed_109 -> fixed_116  [key=0, label="CFG: "];
+fixed_109 -> fixed_139  [key=0, label="DDG: &amp;uiClient"];
+fixed_109 -> fixed_139  [key=1, label="DDG: WKBundlePageSetUIClient(m_page, &amp;uiClient)"];
+fixed_109 -> fixed_133  [key=0, label="DDG: m_page"];
+fixed_111 -> fixed_112  [key=0, label="AST: "];
+fixed_111 -> fixed_109  [key=0, label="CFG: "];
+fixed_114 -> fixed_115  [key=0, label="AST: "];
+fixed_114 -> fixed_116  [key=0, label="AST: "];
+fixed_114 -> fixed_135  [key=0, label="CFG: "];
+fixed_114 -> fixed_139  [key=0, label="DDG: editorClient"];
+fixed_114 -> fixed_139  [key=1, label="DDG: {
+        kWKBundlePageEditorClientCurrentVersion,
+        this,
+        shouldBeginEditing,
+        shouldEndEditing,
+        shouldInsertNode,
+        shouldInsertText,
+        shouldDeleteRange,
+        shouldChangeSelectedRange,
+        shouldApplyStyle,
+        didBeginEditing,
+        didEndEditing,
+        didChange,
+        didChangeSelection,
+        0, /* willWriteToPasteboard */
+        0, /* getPasteboardDataForRange */
+        0  /* didWriteToPasteboard */
+    }"];
+fixed_114 -> fixed_139  [key=2, label="DDG: editorClient = {
+        kWKBundlePageEditorClientCurrentVersion,
+        this,
+        shouldBeginEditing,
+        shouldEndEditing,
+        shouldInsertNode,
+        shouldInsertText,
+        shouldDeleteRange,
+        shouldChangeSelectedRange,
+        shouldApplyStyle,
+        didBeginEditing,
+        didEndEditing,
+        didChange,
+        didChangeSelection,
+        0, /* willWriteToPasteboard */
+        0, /* getPasteboardDataForRange */
+        0  /* didWriteToPasteboard */
+    }"];
+fixed_114 -> fixed_133  [key=0, label="DDG: editorClient"];
+fixed_116 -> fixed_117  [key=0, label="AST: "];
+fixed_116 -> fixed_118  [key=0, label="AST: "];
+fixed_116 -> fixed_119  [key=0, label="AST: "];
+fixed_116 -> fixed_120  [key=0, label="AST: "];
+fixed_116 -> fixed_121  [key=0, label="AST: "];
+fixed_116 -> fixed_122  [key=0, label="AST: "];
+fixed_116 -> fixed_123  [key=0, label="AST: "];
+fixed_116 -> fixed_124  [key=0, label="AST: "];
+fixed_116 -> fixed_125  [key=0, label="AST: "];
+fixed_116 -> fixed_126  [key=0, label="AST: "];
+fixed_116 -> fixed_127  [key=0, label="AST: "];
+fixed_116 -> fixed_128  [key=0, label="AST: "];
+fixed_116 -> fixed_129  [key=0, label="AST: "];
+fixed_116 -> fixed_130  [key=0, label="AST: "];
+fixed_116 -> fixed_131  [key=0, label="AST: "];
+fixed_116 -> fixed_132  [key=0, label="AST: "];
+fixed_116 -> fixed_114  [key=0, label="CFG: "];
+fixed_116 -> fixed_114  [key=1, label="DDG: 0"];
+fixed_116 -> fixed_114  [key=2, label="DDG: didBeginEditing"];
+fixed_116 -> fixed_114  [key=3, label="DDG: shouldChangeSelectedRange"];
+fixed_116 -> fixed_114  [key=4, label="DDG: shouldInsertText"];
+fixed_116 -> fixed_114  [key=5, label="DDG: shouldInsertNode"];
+fixed_116 -> fixed_114  [key=6, label="DDG: kWKBundlePageEditorClientCurrentVersion"];
+fixed_116 -> fixed_114  [key=7, label="DDG: didChangeSelection"];
+fixed_116 -> fixed_114  [key=8, label="DDG: this"];
+fixed_116 -> fixed_114  [key=9, label="DDG: didChange"];
+fixed_116 -> fixed_114  [key=10, label="DDG: didEndEditing"];
+fixed_116 -> fixed_114  [key=11, label="DDG: shouldDeleteRange"];
+fixed_116 -> fixed_114  [key=12, label="DDG: shouldBeginEditing"];
+fixed_116 -> fixed_114  [key=13, label="DDG: shouldApplyStyle"];
+fixed_116 -> fixed_114  [key=14, label="DDG: shouldEndEditing"];
+fixed_116 -> fixed_139  [key=0, label="DDG: kWKBundlePageEditorClientCurrentVersion"];
+fixed_116 -> fixed_139  [key=1, label="DDG: shouldBeginEditing"];
+fixed_116 -> fixed_139  [key=2, label="DDG: shouldEndEditing"];
+fixed_116 -> fixed_139  [key=3, label="DDG: shouldInsertNode"];
+fixed_116 -> fixed_139  [key=4, label="DDG: shouldInsertText"];
+fixed_116 -> fixed_139  [key=5, label="DDG: shouldDeleteRange"];
+fixed_116 -> fixed_139  [key=6, label="DDG: shouldChangeSelectedRange"];
+fixed_116 -> fixed_139  [key=7, label="DDG: shouldApplyStyle"];
+fixed_116 -> fixed_139  [key=8, label="DDG: didBeginEditing"];
+fixed_116 -> fixed_139  [key=9, label="DDG: didEndEditing"];
+fixed_116 -> fixed_139  [key=10, label="DDG: didChange"];
+fixed_116 -> fixed_139  [key=11, label="DDG: didChangeSelection"];
+fixed_133 -> fixed_134  [key=0, label="AST: "];
+fixed_133 -> fixed_135  [key=0, label="AST: "];
+fixed_133 -> fixed_139  [key=0, label="CFG: "];
+fixed_133 -> fixed_139  [key=1, label="DDG: m_page"];
+fixed_133 -> fixed_139  [key=2, label="DDG: &amp;editorClient"];
+fixed_133 -> fixed_139  [key=3, label="DDG: WKBundlePageSetEditorClient(m_page, &amp;editorClient)"];
+fixed_135 -> fixed_136  [key=0, label="AST: "];
+fixed_135 -> fixed_133  [key=0, label="CFG: "];
+fixed_175 -> fixed_176  [key=0, label="AST: "];
+fixed_175 -> fixed_176  [key=1, label="DDG: "];
+fixed_175 -> fixed_192  [key=0, label="AST: "];
+fixed_175 -> fixed_177  [key=0, label="AST: "];
+fixed_175 -> fixed_177  [key=1, label="DDG: "];
+fixed_175 -> fixed_193  [key=0, label="AST: "];
+fixed_175 -> fixed_193  [key=1, label="CFG: "];
+fixed_175 -> fixed_178  [key=0, label="AST: "];
+fixed_175 -> fixed_178  [key=1, label="DDG: "];
+fixed_175 -> fixed_179  [key=0, label="AST: "];
+fixed_175 -> fixed_179  [key=1, label="DDG: "];
+fixed_175 -> fixed_180  [key=0, label="AST: "];
+fixed_175 -> fixed_180  [key=1, label="DDG: "];
+fixed_175 -> fixed_181  [key=0, label="AST: "];
+fixed_175 -> fixed_181  [key=1, label="DDG: "];
+fixed_175 -> fixed_182  [key=0, label="AST: "];
+fixed_175 -> fixed_182  [key=1, label="DDG: "];
+fixed_175 -> fixed_183  [key=0, label="AST: "];
+fixed_175 -> fixed_183  [key=1, label="DDG: "];
+fixed_175 -> fixed_184  [key=0, label="AST: "];
+fixed_175 -> fixed_184  [key=1, label="DDG: "];
+fixed_175 -> fixed_185  [key=0, label="AST: "];
+fixed_175 -> fixed_185  [key=1, label="DDG: "];
+fixed_175 -> fixed_186  [key=0, label="AST: "];
+fixed_175 -> fixed_186  [key=1, label="DDG: "];
+fixed_175 -> fixed_187  [key=0, label="AST: "];
+fixed_175 -> fixed_187  [key=1, label="DDG: "];
+fixed_175 -> fixed_188  [key=0, label="AST: "];
+fixed_175 -> fixed_188  [key=1, label="DDG: "];
+fixed_175 -> fixed_189  [key=0, label="AST: "];
+fixed_175 -> fixed_189  [key=1, label="DDG: "];
+fixed_175 -> fixed_190  [key=0, label="AST: "];
+fixed_175 -> fixed_190  [key=1, label="DDG: "];
+fixed_175 -> fixed_191  [key=0, label="AST: "];
+fixed_175 -> fixed_191  [key=1, label="DDG: "];
+fixed_176 -> fixed_193  [key=0, label="DDG: p1"];
+fixed_177 -> fixed_193  [key=0, label="DDG: p2"];
+fixed_178 -> fixed_193  [key=0, label="DDG: p3"];
+fixed_179 -> fixed_193  [key=0, label="DDG: p4"];
+fixed_180 -> fixed_193  [key=0, label="DDG: p5"];
+fixed_181 -> fixed_193  [key=0, label="DDG: p6"];
+fixed_182 -> fixed_193  [key=0, label="DDG: p7"];
+fixed_183 -> fixed_193  [key=0, label="DDG: p8"];
+fixed_184 -> fixed_193  [key=0, label="DDG: p9"];
+fixed_185 -> fixed_193  [key=0, label="DDG: p10"];
+fixed_186 -> fixed_193  [key=0, label="DDG: p11"];
+fixed_187 -> fixed_193  [key=0, label="DDG: p12"];
+fixed_188 -> fixed_193  [key=0, label="DDG: p13"];
+fixed_189 -> fixed_193  [key=0, label="DDG: p14"];
+fixed_190 -> fixed_193  [key=0, label="DDG: p15"];
+fixed_191 -> fixed_193  [key=0, label="DDG: p16"];
+fixed_218 -> fixed_219  [key=0, label="AST: "];
+fixed_218 -> fixed_219  [key=1, label="DDG: "];
+fixed_218 -> fixed_221  [key=0, label="AST: "];
+fixed_218 -> fixed_220  [key=0, label="AST: "];
+fixed_218 -> fixed_220  [key=1, label="DDG: "];
+fixed_218 -> fixed_222  [key=0, label="AST: "];
+fixed_218 -> fixed_222  [key=1, label="CFG: "];
+fixed_219 -> fixed_222  [key=0, label="DDG: p1"];
+fixed_220 -> fixed_222  [key=0, label="DDG: p2"];
+fixed_213 -> fixed_214  [key=0, label="AST: "];
+fixed_213 -> fixed_214  [key=1, label="DDG: "];
+fixed_213 -> fixed_216  [key=0, label="AST: "];
+fixed_213 -> fixed_215  [key=0, label="AST: "];
+fixed_213 -> fixed_215  [key=1, label="DDG: "];
+fixed_213 -> fixed_217  [key=0, label="AST: "];
+fixed_213 -> fixed_217  [key=1, label="CFG: "];
+fixed_214 -> fixed_217  [key=0, label="DDG: p1"];
+fixed_215 -> fixed_217  [key=0, label="DDG: p2"];
+fixed_199 -> fixed_200  [key=0, label="AST: "];
+fixed_199 -> fixed_200  [key=1, label="DDG: "];
+fixed_199 -> fixed_201  [key=0, label="AST: "];
+fixed_199 -> fixed_202  [key=0, label="AST: "];
+fixed_199 -> fixed_202  [key=1, label="CFG: "];
+fixed_200 -> fixed_202  [key=0, label="DDG: p1"];
+fixed_194 -> fixed_195  [key=0, label="AST: "];
+fixed_194 -> fixed_195  [key=1, label="DDG: "];
+fixed_194 -> fixed_197  [key=0, label="AST: "];
+fixed_194 -> fixed_196  [key=0, label="AST: "];
+fixed_194 -> fixed_196  [key=1, label="DDG: "];
+fixed_194 -> fixed_198  [key=0, label="AST: "];
+fixed_194 -> fixed_198  [key=1, label="CFG: "];
+fixed_195 -> fixed_198  [key=0, label="DDG: p1"];
+fixed_196 -> fixed_198  [key=0, label="DDG: p2"];
+fixed_170 -> fixed_171  [key=0, label="AST: "];
+fixed_170 -> fixed_171  [key=1, label="DDG: "];
+fixed_170 -> fixed_173  [key=0, label="AST: "];
+fixed_170 -> fixed_172  [key=0, label="AST: "];
+fixed_170 -> fixed_172  [key=1, label="DDG: "];
+fixed_170 -> fixed_174  [key=0, label="AST: "];
+fixed_170 -> fixed_174  [key=1, label="CFG: "];
+fixed_171 -> fixed_174  [key=0, label="DDG: p1"];
+fixed_172 -> fixed_174  [key=0, label="DDG: p2"];
+fixed_164 -> fixed_165  [key=0, label="AST: "];
+fixed_164 -> fixed_166  [key=0, label="AST: "];
+fixed_164 -> fixed_166  [key=1, label="CFG: "];
+fixed_208 -> fixed_209  [key=0, label="AST: "];
+fixed_208 -> fixed_209  [key=1, label="DDG: "];
+fixed_208 -> fixed_211  [key=0, label="AST: "];
+fixed_208 -> fixed_210  [key=0, label="AST: "];
+fixed_208 -> fixed_210  [key=1, label="DDG: "];
+fixed_208 -> fixed_212  [key=0, label="AST: "];
+fixed_208 -> fixed_212  [key=1, label="CFG: "];
+fixed_209 -> fixed_212  [key=0, label="DDG: p1"];
+fixed_210 -> fixed_212  [key=0, label="DDG: p2"];
+}

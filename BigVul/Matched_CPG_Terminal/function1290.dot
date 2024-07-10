@@ -1,0 +1,528 @@
+digraph "&lt;global&gt;" {
+vulnerable_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+vulnerable_8 [label=<(METHOD,rpc_type_of_NPPVariable)<SUB>1</SUB>>];
+vulnerable_9 [label=<(PARAM,int variable)<SUB>1</SUB>>];
+vulnerable_10 [label=<(BLOCK,{
+  int type;
+  switch (variable) {
+   case NPP...,{
+  int type;
+  switch (variable) {
+   case NPP...)<SUB>2</SUB>>];
+vulnerable_11 [label="<(LOCAL,int type: int)<SUB>3</SUB>>"];
+vulnerable_12 [label=<(CONTROL_STRUCTURE,SWITCH,switch(variable))<SUB>4</SUB>>];
+vulnerable_13 [label=<(IDENTIFIER,variable,switch(variable))<SUB>4</SUB>>];
+vulnerable_14 [label="<(BLOCK,{
+   case NPPVpluginNameString:
+   case NPPVplu...,{
+   case NPPVpluginNameString:
+   case NPPVplu...)<SUB>4</SUB>>"];
+vulnerable_15 [label=<(JUMP_TARGET,case)<SUB>5</SUB>>];
+vulnerable_16 [label="<(IDENTIFIER,NPPVpluginNameString,{
+   case NPPVpluginNameString:
+   case NPPVplu...)<SUB>5</SUB>>"];
+vulnerable_17 [label=<(JUMP_TARGET,case)<SUB>6</SUB>>];
+vulnerable_18 [label="<(IDENTIFIER,NPPVpluginDescriptionString,{
+   case NPPVpluginNameString:
+   case NPPVplu...)<SUB>6</SUB>>"];
+vulnerable_19 [label=<(JUMP_TARGET,case)<SUB>7</SUB>>];
+vulnerable_20 [label="<(IDENTIFIER,NPPVformValue,{
+   case NPPVpluginNameString:
+   case NPPVplu...)<SUB>7</SUB>>"];
+vulnerable_21 [label=<(&lt;operator&gt;.assignment,type = RPC_TYPE_STRING)<SUB>8</SUB>>];
+vulnerable_22 [label=<(IDENTIFIER,type,type = RPC_TYPE_STRING)<SUB>8</SUB>>];
+vulnerable_23 [label=<(IDENTIFIER,RPC_TYPE_STRING,type = RPC_TYPE_STRING)<SUB>8</SUB>>];
+vulnerable_24 [label=<(CONTROL_STRUCTURE,BREAK,break;)<SUB>9</SUB>>];
+vulnerable_25 [label=<(JUMP_TARGET,case)<SUB>10</SUB>>];
+vulnerable_26 [label="<(IDENTIFIER,NPPVpluginWindowSize,{
+   case NPPVpluginNameString:
+   case NPPVplu...)<SUB>10</SUB>>"];
+vulnerable_27 [label=<(JUMP_TARGET,case)<SUB>11</SUB>>];
+vulnerable_28 [label="<(IDENTIFIER,NPPVpluginTimerInterval,{
+   case NPPVpluginNameString:
+   case NPPVplu...)<SUB>11</SUB>>"];
+vulnerable_29 [label=<(&lt;operator&gt;.assignment,type = RPC_TYPE_INT32)<SUB>12</SUB>>];
+vulnerable_30 [label=<(IDENTIFIER,type,type = RPC_TYPE_INT32)<SUB>12</SUB>>];
+vulnerable_31 [label=<(IDENTIFIER,RPC_TYPE_INT32,type = RPC_TYPE_INT32)<SUB>12</SUB>>];
+vulnerable_32 [label=<(CONTROL_STRUCTURE,BREAK,break;)<SUB>13</SUB>>];
+vulnerable_33 [label=<(JUMP_TARGET,case)<SUB>14</SUB>>];
+vulnerable_34 [label="<(IDENTIFIER,NPPVpluginNeedsXEmbed,{
+   case NPPVpluginNameString:
+   case NPPVplu...)<SUB>14</SUB>>"];
+vulnerable_35 [label=<(JUMP_TARGET,case)<SUB>15</SUB>>];
+vulnerable_36 [label="<(IDENTIFIER,NPPVpluginWindowBool,{
+   case NPPVpluginNameString:
+   case NPPVplu...)<SUB>15</SUB>>"];
+vulnerable_37 [label=<(JUMP_TARGET,case)<SUB>16</SUB>>];
+vulnerable_38 [label="<(IDENTIFIER,NPPVpluginTransparentBool,{
+   case NPPVpluginNameString:
+   case NPPVplu...)<SUB>16</SUB>>"];
+vulnerable_39 [label=<(JUMP_TARGET,case)<SUB>17</SUB>>];
+vulnerable_40 [label="<(IDENTIFIER,NPPVjavascriptPushCallerBool,{
+   case NPPVpluginNameString:
+   case NPPVplu...)<SUB>17</SUB>>"];
+vulnerable_41 [label=<(JUMP_TARGET,case)<SUB>18</SUB>>];
+vulnerable_42 [label="<(IDENTIFIER,NPPVpluginKeepLibraryInMemory,{
+   case NPPVpluginNameString:
+   case NPPVplu...)<SUB>18</SUB>>"];
+vulnerable_43 [label=<(&lt;operator&gt;.assignment,type = RPC_TYPE_BOOLEAN)<SUB>19</SUB>>];
+vulnerable_44 [label=<(IDENTIFIER,type,type = RPC_TYPE_BOOLEAN)<SUB>19</SUB>>];
+vulnerable_45 [label=<(IDENTIFIER,RPC_TYPE_BOOLEAN,type = RPC_TYPE_BOOLEAN)<SUB>19</SUB>>];
+vulnerable_46 [label=<(CONTROL_STRUCTURE,BREAK,break;)<SUB>20</SUB>>];
+vulnerable_47 [label=<(JUMP_TARGET,case)<SUB>21</SUB>>];
+vulnerable_48 [label="<(IDENTIFIER,NPPVpluginScriptableNPObject,{
+   case NPPVpluginNameString:
+   case NPPVplu...)<SUB>21</SUB>>"];
+vulnerable_49 [label=<(&lt;operator&gt;.assignment,type = RPC_TYPE_NP_OBJECT)<SUB>22</SUB>>];
+vulnerable_50 [label=<(IDENTIFIER,type,type = RPC_TYPE_NP_OBJECT)<SUB>22</SUB>>];
+vulnerable_51 [label=<(IDENTIFIER,RPC_TYPE_NP_OBJECT,type = RPC_TYPE_NP_OBJECT)<SUB>22</SUB>>];
+vulnerable_52 [label=<(CONTROL_STRUCTURE,BREAK,break;)<SUB>23</SUB>>];
+vulnerable_53 [label=<(JUMP_TARGET,default)<SUB>24</SUB>>];
+vulnerable_54 [label=<(&lt;operator&gt;.assignment,type = RPC_ERROR_GENERIC)<SUB>25</SUB>>];
+vulnerable_55 [label=<(IDENTIFIER,type,type = RPC_ERROR_GENERIC)<SUB>25</SUB>>];
+vulnerable_56 [label=<(IDENTIFIER,RPC_ERROR_GENERIC,type = RPC_ERROR_GENERIC)<SUB>25</SUB>>];
+vulnerable_57 [label=<(CONTROL_STRUCTURE,BREAK,break;)<SUB>26</SUB>>];
+vulnerable_58 [label=<(RETURN,return type;,return type;)<SUB>28</SUB>>];
+vulnerable_59 [label=<(IDENTIFIER,type,return type;)<SUB>28</SUB>>];
+vulnerable_60 [label=<(METHOD_RETURN,int)<SUB>1</SUB>>];
+vulnerable_62 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+vulnerable_77 [label=<(METHOD,&lt;operator&gt;.assignment)>];
+vulnerable_78 [label=<(PARAM,p1)>];
+vulnerable_79 [label=<(PARAM,p2)>];
+vulnerable_80 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_81 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_71 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_72 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_73 [label=<(METHOD_RETURN,ANY)>];
+fixed_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+fixed_8 [label=<(METHOD,rpc_type_of_NPPVariable)<SUB>1</SUB>>];
+fixed_9 [label=<(PARAM,int variable)<SUB>1</SUB>>];
+fixed_10 [label=<(BLOCK,{
+  int type;
+  switch (variable) {
+   case NPP...,{
+  int type;
+  switch (variable) {
+   case NPP...)<SUB>2</SUB>>];
+fixed_11 [label="<(LOCAL,int type: int)<SUB>3</SUB>>"];
+fixed_12 [label=<(CONTROL_STRUCTURE,SWITCH,switch(variable))<SUB>4</SUB>>];
+fixed_13 [label=<(IDENTIFIER,variable,switch(variable))<SUB>4</SUB>>];
+fixed_14 [label="<(BLOCK,{
+   case NPPVpluginNameString:
+   case NPPVplu...,{
+   case NPPVpluginNameString:
+   case NPPVplu...)<SUB>4</SUB>>"];
+fixed_15 [label=<(JUMP_TARGET,case)<SUB>5</SUB>>];
+fixed_16 [label="<(IDENTIFIER,NPPVpluginNameString,{
+   case NPPVpluginNameString:
+   case NPPVplu...)<SUB>5</SUB>>"];
+fixed_17 [label=<(JUMP_TARGET,case)<SUB>6</SUB>>];
+fixed_18 [label="<(IDENTIFIER,NPPVpluginDescriptionString,{
+   case NPPVpluginNameString:
+   case NPPVplu...)<SUB>6</SUB>>"];
+fixed_19 [label=<(JUMP_TARGET,case)<SUB>7</SUB>>];
+fixed_20 [label="<(IDENTIFIER,NPPVformValue,{
+   case NPPVpluginNameString:
+   case NPPVplu...)<SUB>7</SUB>>"];
+fixed_21 [label=<(JUMP_TARGET,case)<SUB>8</SUB>>];
+fixed_22 [label="<(IDENTIFIER,NPPVpluginNativeAccessibleAtkPlugId,{
+   case NPPVpluginNameString:
+   case NPPVplu...)<SUB>8</SUB>>"];
+fixed_23 [label=<(&lt;operator&gt;.assignment,type = RPC_TYPE_STRING)<SUB>9</SUB>>];
+fixed_24 [label=<(IDENTIFIER,type,type = RPC_TYPE_STRING)<SUB>9</SUB>>];
+fixed_25 [label=<(IDENTIFIER,RPC_TYPE_STRING,type = RPC_TYPE_STRING)<SUB>9</SUB>>];
+fixed_26 [label=<(CONTROL_STRUCTURE,BREAK,break;)<SUB>10</SUB>>];
+fixed_27 [label=<(JUMP_TARGET,case)<SUB>11</SUB>>];
+fixed_28 [label="<(IDENTIFIER,NPPVpluginWindowSize,{
+   case NPPVpluginNameString:
+   case NPPVplu...)<SUB>11</SUB>>"];
+fixed_29 [label=<(JUMP_TARGET,case)<SUB>12</SUB>>];
+fixed_30 [label="<(IDENTIFIER,NPPVpluginTimerInterval,{
+   case NPPVpluginNameString:
+   case NPPVplu...)<SUB>12</SUB>>"];
+fixed_31 [label=<(&lt;operator&gt;.assignment,type = RPC_TYPE_INT32)<SUB>13</SUB>>];
+fixed_32 [label=<(IDENTIFIER,type,type = RPC_TYPE_INT32)<SUB>13</SUB>>];
+fixed_33 [label=<(IDENTIFIER,RPC_TYPE_INT32,type = RPC_TYPE_INT32)<SUB>13</SUB>>];
+fixed_34 [label=<(CONTROL_STRUCTURE,BREAK,break;)<SUB>14</SUB>>];
+fixed_35 [label=<(JUMP_TARGET,case)<SUB>15</SUB>>];
+fixed_36 [label="<(IDENTIFIER,NPPVpluginNeedsXEmbed,{
+   case NPPVpluginNameString:
+   case NPPVplu...)<SUB>15</SUB>>"];
+fixed_37 [label=<(JUMP_TARGET,case)<SUB>16</SUB>>];
+fixed_38 [label="<(IDENTIFIER,NPPVpluginWindowBool,{
+   case NPPVpluginNameString:
+   case NPPVplu...)<SUB>16</SUB>>"];
+fixed_39 [label=<(JUMP_TARGET,case)<SUB>17</SUB>>];
+fixed_40 [label="<(IDENTIFIER,NPPVpluginTransparentBool,{
+   case NPPVpluginNameString:
+   case NPPVplu...)<SUB>17</SUB>>"];
+fixed_41 [label=<(JUMP_TARGET,case)<SUB>18</SUB>>];
+fixed_42 [label="<(IDENTIFIER,NPPVjavascriptPushCallerBool,{
+   case NPPVpluginNameString:
+   case NPPVplu...)<SUB>18</SUB>>"];
+fixed_43 [label=<(JUMP_TARGET,case)<SUB>19</SUB>>];
+fixed_44 [label="<(IDENTIFIER,NPPVpluginKeepLibraryInMemory,{
+   case NPPVpluginNameString:
+   case NPPVplu...)<SUB>19</SUB>>"];
+fixed_45 [label=<(JUMP_TARGET,case)<SUB>20</SUB>>];
+fixed_46 [label="<(IDENTIFIER,NPPVpluginUrlRequestsDisplayedBool,{
+   case NPPVpluginNameString:
+   case NPPVplu...)<SUB>20</SUB>>"];
+fixed_47 [label=<(JUMP_TARGET,case)<SUB>21</SUB>>];
+fixed_48 [label="<(IDENTIFIER,NPPVpluginWantsAllNetworkStreams,{
+   case NPPVpluginNameString:
+   case NPPVplu...)<SUB>21</SUB>>"];
+fixed_49 [label=<(JUMP_TARGET,case)<SUB>22</SUB>>];
+fixed_50 [label="<(IDENTIFIER,NPPVpluginCancelSrcStream,{
+   case NPPVpluginNameString:
+   case NPPVplu...)<SUB>22</SUB>>"];
+fixed_51 [label=<(JUMP_TARGET,case)<SUB>23</SUB>>];
+fixed_52 [label="<(IDENTIFIER,NPPVSupportsAdvancedKeyHandling,{
+   case NPPVpluginNameString:
+   case NPPVplu...)<SUB>23</SUB>>"];
+fixed_53 [label=<(&lt;operator&gt;.assignment,type = RPC_TYPE_BOOLEAN)<SUB>24</SUB>>];
+fixed_54 [label=<(IDENTIFIER,type,type = RPC_TYPE_BOOLEAN)<SUB>24</SUB>>];
+fixed_55 [label=<(IDENTIFIER,RPC_TYPE_BOOLEAN,type = RPC_TYPE_BOOLEAN)<SUB>24</SUB>>];
+fixed_56 [label=<(CONTROL_STRUCTURE,BREAK,break;)<SUB>25</SUB>>];
+fixed_57 [label=<(JUMP_TARGET,case)<SUB>26</SUB>>];
+fixed_58 [label="<(IDENTIFIER,NPPVpluginScriptableNPObject,{
+   case NPPVpluginNameString:
+   case NPPVplu...)<SUB>26</SUB>>"];
+fixed_59 [label=<(&lt;operator&gt;.assignment,type = RPC_TYPE_NP_OBJECT)<SUB>27</SUB>>];
+fixed_60 [label=<(IDENTIFIER,type,type = RPC_TYPE_NP_OBJECT)<SUB>27</SUB>>];
+fixed_61 [label=<(IDENTIFIER,RPC_TYPE_NP_OBJECT,type = RPC_TYPE_NP_OBJECT)<SUB>27</SUB>>];
+fixed_62 [label=<(CONTROL_STRUCTURE,BREAK,break;)<SUB>28</SUB>>];
+fixed_63 [label=<(JUMP_TARGET,default)<SUB>29</SUB>>];
+fixed_64 [label=<(&lt;operator&gt;.assignment,type = RPC_ERROR_GENERIC)<SUB>30</SUB>>];
+fixed_65 [label=<(IDENTIFIER,type,type = RPC_ERROR_GENERIC)<SUB>30</SUB>>];
+fixed_66 [label=<(IDENTIFIER,RPC_ERROR_GENERIC,type = RPC_ERROR_GENERIC)<SUB>30</SUB>>];
+fixed_67 [label=<(CONTROL_STRUCTURE,BREAK,break;)<SUB>31</SUB>>];
+fixed_68 [label=<(RETURN,return type;,return type;)<SUB>33</SUB>>];
+fixed_69 [label=<(IDENTIFIER,type,return type;)<SUB>33</SUB>>];
+fixed_70 [label=<(METHOD_RETURN,int)<SUB>1</SUB>>];
+fixed_72 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+fixed_87 [label=<(METHOD,&lt;operator&gt;.assignment)>];
+fixed_88 [label=<(PARAM,p1)>];
+fixed_89 [label=<(PARAM,p2)>];
+fixed_90 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_91 [label=<(METHOD_RETURN,ANY)>];
+fixed_81 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_82 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_83 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_6 -> vulnerable_7  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_62  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_62  [key=1, label="CFG: "];
+vulnerable_7 -> vulnerable_8  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_9  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_9  [key=1, label="DDG: "];
+vulnerable_8 -> vulnerable_10  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_60  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_13  [key=0, label="CFG: "];
+vulnerable_8 -> vulnerable_13  [key=1, label="DDG: "];
+vulnerable_8 -> vulnerable_59  [key=0, label="DDG: "];
+vulnerable_8 -> vulnerable_16  [key=0, label="DDG: "];
+vulnerable_8 -> vulnerable_18  [key=0, label="DDG: "];
+vulnerable_8 -> vulnerable_20  [key=0, label="DDG: "];
+vulnerable_8 -> vulnerable_21  [key=0, label="DDG: "];
+vulnerable_8 -> vulnerable_26  [key=0, label="DDG: "];
+vulnerable_8 -> vulnerable_28  [key=0, label="DDG: "];
+vulnerable_8 -> vulnerable_29  [key=0, label="DDG: "];
+vulnerable_8 -> vulnerable_34  [key=0, label="DDG: "];
+vulnerable_8 -> vulnerable_36  [key=0, label="DDG: "];
+vulnerable_8 -> vulnerable_38  [key=0, label="DDG: "];
+vulnerable_8 -> vulnerable_40  [key=0, label="DDG: "];
+vulnerable_8 -> vulnerable_42  [key=0, label="DDG: "];
+vulnerable_8 -> vulnerable_43  [key=0, label="DDG: "];
+vulnerable_8 -> vulnerable_48  [key=0, label="DDG: "];
+vulnerable_8 -> vulnerable_49  [key=0, label="DDG: "];
+vulnerable_8 -> vulnerable_54  [key=0, label="DDG: "];
+vulnerable_9 -> vulnerable_60  [key=0, label="DDG: variable"];
+vulnerable_10 -> vulnerable_11  [key=0, label="AST: "];
+vulnerable_10 -> vulnerable_12  [key=0, label="AST: "];
+vulnerable_10 -> vulnerable_58  [key=0, label="AST: "];
+vulnerable_11 -> fixed_6  [key=0];
+vulnerable_12 -> vulnerable_13  [key=0, label="AST: "];
+vulnerable_12 -> vulnerable_14  [key=0, label="AST: "];
+vulnerable_13 -> vulnerable_21  [key=0, label="CFG: "];
+vulnerable_13 -> vulnerable_21  [key=1, label="CDG: "];
+vulnerable_13 -> vulnerable_29  [key=0, label="CFG: "];
+vulnerable_13 -> vulnerable_29  [key=1, label="CDG: "];
+vulnerable_13 -> vulnerable_43  [key=0, label="CFG: "];
+vulnerable_13 -> vulnerable_43  [key=1, label="CDG: "];
+vulnerable_13 -> vulnerable_49  [key=0, label="CFG: "];
+vulnerable_13 -> vulnerable_49  [key=1, label="CDG: "];
+vulnerable_13 -> vulnerable_54  [key=0, label="CFG: "];
+vulnerable_13 -> vulnerable_54  [key=1, label="CDG: "];
+vulnerable_14 -> vulnerable_15  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_16  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_17  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_18  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_19  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_20  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_21  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_24  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_25  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_26  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_27  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_28  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_29  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_32  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_33  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_34  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_35  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_36  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_37  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_38  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_39  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_40  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_41  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_42  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_43  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_46  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_47  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_48  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_49  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_52  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_53  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_54  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_57  [key=0, label="AST: "];
+vulnerable_15 -> fixed_6  [key=0];
+vulnerable_16 -> fixed_6  [key=0];
+vulnerable_17 -> fixed_6  [key=0];
+vulnerable_18 -> fixed_6  [key=0];
+vulnerable_19 -> fixed_6  [key=0];
+vulnerable_20 -> fixed_6  [key=0];
+vulnerable_21 -> vulnerable_22  [key=0, label="AST: "];
+vulnerable_21 -> vulnerable_23  [key=0, label="AST: "];
+vulnerable_21 -> vulnerable_58  [key=0, label="CFG: "];
+vulnerable_21 -> vulnerable_60  [key=0, label="DDG: type"];
+vulnerable_21 -> vulnerable_60  [key=1, label="DDG: type = RPC_TYPE_STRING"];
+vulnerable_21 -> vulnerable_60  [key=2, label="DDG: RPC_TYPE_STRING"];
+vulnerable_21 -> vulnerable_59  [key=0, label="DDG: type"];
+vulnerable_22 -> fixed_6  [key=0];
+vulnerable_23 -> fixed_6  [key=0];
+vulnerable_24 -> fixed_6  [key=0];
+vulnerable_25 -> fixed_6  [key=0];
+vulnerable_26 -> fixed_6  [key=0];
+vulnerable_27 -> fixed_6  [key=0];
+vulnerable_28 -> fixed_6  [key=0];
+vulnerable_29 -> vulnerable_30  [key=0, label="AST: "];
+vulnerable_29 -> vulnerable_31  [key=0, label="AST: "];
+vulnerable_29 -> vulnerable_58  [key=0, label="CFG: "];
+vulnerable_29 -> vulnerable_60  [key=0, label="DDG: type"];
+vulnerable_29 -> vulnerable_60  [key=1, label="DDG: type = RPC_TYPE_INT32"];
+vulnerable_29 -> vulnerable_60  [key=2, label="DDG: RPC_TYPE_INT32"];
+vulnerable_29 -> vulnerable_59  [key=0, label="DDG: type"];
+vulnerable_30 -> fixed_6  [key=0];
+vulnerable_31 -> fixed_6  [key=0];
+vulnerable_32 -> fixed_6  [key=0];
+vulnerable_33 -> fixed_6  [key=0];
+vulnerable_34 -> fixed_6  [key=0];
+vulnerable_35 -> fixed_6  [key=0];
+vulnerable_36 -> fixed_6  [key=0];
+vulnerable_37 -> fixed_6  [key=0];
+vulnerable_38 -> fixed_6  [key=0];
+vulnerable_39 -> fixed_6  [key=0];
+vulnerable_40 -> fixed_6  [key=0];
+vulnerable_41 -> fixed_6  [key=0];
+vulnerable_42 -> fixed_6  [key=0];
+vulnerable_43 -> vulnerable_44  [key=0, label="AST: "];
+vulnerable_43 -> vulnerable_45  [key=0, label="AST: "];
+vulnerable_43 -> vulnerable_58  [key=0, label="CFG: "];
+vulnerable_43 -> vulnerable_60  [key=0, label="DDG: type"];
+vulnerable_43 -> vulnerable_60  [key=1, label="DDG: type = RPC_TYPE_BOOLEAN"];
+vulnerable_43 -> vulnerable_60  [key=2, label="DDG: RPC_TYPE_BOOLEAN"];
+vulnerable_43 -> vulnerable_59  [key=0, label="DDG: type"];
+vulnerable_44 -> fixed_6  [key=0];
+vulnerable_45 -> fixed_6  [key=0];
+vulnerable_46 -> fixed_6  [key=0];
+vulnerable_47 -> fixed_6  [key=0];
+vulnerable_48 -> fixed_6  [key=0];
+vulnerable_49 -> vulnerable_50  [key=0, label="AST: "];
+vulnerable_49 -> vulnerable_51  [key=0, label="AST: "];
+vulnerable_49 -> vulnerable_58  [key=0, label="CFG: "];
+vulnerable_49 -> vulnerable_60  [key=0, label="DDG: type"];
+vulnerable_49 -> vulnerable_60  [key=1, label="DDG: type = RPC_TYPE_NP_OBJECT"];
+vulnerable_49 -> vulnerable_60  [key=2, label="DDG: RPC_TYPE_NP_OBJECT"];
+vulnerable_49 -> vulnerable_59  [key=0, label="DDG: type"];
+vulnerable_50 -> fixed_6  [key=0];
+vulnerable_51 -> fixed_6  [key=0];
+vulnerable_52 -> fixed_6  [key=0];
+vulnerable_53 -> fixed_6  [key=0];
+vulnerable_54 -> vulnerable_55  [key=0, label="AST: "];
+vulnerable_54 -> vulnerable_56  [key=0, label="AST: "];
+vulnerable_54 -> vulnerable_58  [key=0, label="CFG: "];
+vulnerable_54 -> vulnerable_60  [key=0, label="DDG: type"];
+vulnerable_54 -> vulnerable_60  [key=1, label="DDG: type = RPC_ERROR_GENERIC"];
+vulnerable_54 -> vulnerable_60  [key=2, label="DDG: RPC_ERROR_GENERIC"];
+vulnerable_54 -> vulnerable_59  [key=0, label="DDG: type"];
+vulnerable_55 -> fixed_6  [key=0];
+vulnerable_56 -> fixed_6  [key=0];
+vulnerable_57 -> fixed_6  [key=0];
+vulnerable_58 -> vulnerable_59  [key=0, label="AST: "];
+vulnerable_58 -> vulnerable_60  [key=0, label="CFG: "];
+vulnerable_58 -> vulnerable_60  [key=1, label="DDG: &lt;RET&gt;"];
+vulnerable_59 -> vulnerable_58  [key=0, label="DDG: type"];
+vulnerable_60 -> fixed_6  [key=0];
+vulnerable_62 -> fixed_6  [key=0];
+vulnerable_77 -> vulnerable_78  [key=0, label="AST: "];
+vulnerable_77 -> vulnerable_78  [key=1, label="DDG: "];
+vulnerable_77 -> vulnerable_80  [key=0, label="AST: "];
+vulnerable_77 -> vulnerable_79  [key=0, label="AST: "];
+vulnerable_77 -> vulnerable_79  [key=1, label="DDG: "];
+vulnerable_77 -> vulnerable_81  [key=0, label="AST: "];
+vulnerable_77 -> vulnerable_81  [key=1, label="CFG: "];
+vulnerable_78 -> vulnerable_81  [key=0, label="DDG: p1"];
+vulnerable_79 -> vulnerable_81  [key=0, label="DDG: p2"];
+vulnerable_80 -> fixed_6  [key=0];
+vulnerable_81 -> fixed_6  [key=0];
+vulnerable_71 -> vulnerable_72  [key=0, label="AST: "];
+vulnerable_71 -> vulnerable_73  [key=0, label="AST: "];
+vulnerable_71 -> vulnerable_73  [key=1, label="CFG: "];
+vulnerable_72 -> fixed_6  [key=0];
+vulnerable_73 -> fixed_6  [key=0];
+fixed_6 -> fixed_7  [key=0, label="AST: "];
+fixed_6 -> fixed_72  [key=0, label="AST: "];
+fixed_6 -> fixed_72  [key=1, label="CFG: "];
+fixed_7 -> fixed_8  [key=0, label="AST: "];
+fixed_8 -> fixed_9  [key=0, label="AST: "];
+fixed_8 -> fixed_9  [key=1, label="DDG: "];
+fixed_8 -> fixed_10  [key=0, label="AST: "];
+fixed_8 -> fixed_70  [key=0, label="AST: "];
+fixed_8 -> fixed_13  [key=0, label="CFG: "];
+fixed_8 -> fixed_13  [key=1, label="DDG: "];
+fixed_8 -> fixed_69  [key=0, label="DDG: "];
+fixed_8 -> fixed_16  [key=0, label="DDG: "];
+fixed_8 -> fixed_18  [key=0, label="DDG: "];
+fixed_8 -> fixed_20  [key=0, label="DDG: "];
+fixed_8 -> fixed_22  [key=0, label="DDG: "];
+fixed_8 -> fixed_23  [key=0, label="DDG: "];
+fixed_8 -> fixed_28  [key=0, label="DDG: "];
+fixed_8 -> fixed_30  [key=0, label="DDG: "];
+fixed_8 -> fixed_31  [key=0, label="DDG: "];
+fixed_8 -> fixed_36  [key=0, label="DDG: "];
+fixed_8 -> fixed_38  [key=0, label="DDG: "];
+fixed_8 -> fixed_40  [key=0, label="DDG: "];
+fixed_8 -> fixed_42  [key=0, label="DDG: "];
+fixed_8 -> fixed_44  [key=0, label="DDG: "];
+fixed_8 -> fixed_46  [key=0, label="DDG: "];
+fixed_8 -> fixed_48  [key=0, label="DDG: "];
+fixed_8 -> fixed_50  [key=0, label="DDG: "];
+fixed_8 -> fixed_52  [key=0, label="DDG: "];
+fixed_8 -> fixed_53  [key=0, label="DDG: "];
+fixed_8 -> fixed_58  [key=0, label="DDG: "];
+fixed_8 -> fixed_59  [key=0, label="DDG: "];
+fixed_8 -> fixed_64  [key=0, label="DDG: "];
+fixed_9 -> fixed_70  [key=0, label="DDG: variable"];
+fixed_10 -> fixed_11  [key=0, label="AST: "];
+fixed_10 -> fixed_12  [key=0, label="AST: "];
+fixed_10 -> fixed_68  [key=0, label="AST: "];
+fixed_12 -> fixed_13  [key=0, label="AST: "];
+fixed_12 -> fixed_14  [key=0, label="AST: "];
+fixed_13 -> fixed_23  [key=0, label="CFG: "];
+fixed_13 -> fixed_23  [key=1, label="CDG: "];
+fixed_13 -> fixed_31  [key=0, label="CFG: "];
+fixed_13 -> fixed_31  [key=1, label="CDG: "];
+fixed_13 -> fixed_53  [key=0, label="CFG: "];
+fixed_13 -> fixed_53  [key=1, label="CDG: "];
+fixed_13 -> fixed_59  [key=0, label="CFG: "];
+fixed_13 -> fixed_59  [key=1, label="CDG: "];
+fixed_13 -> fixed_64  [key=0, label="CFG: "];
+fixed_13 -> fixed_64  [key=1, label="CDG: "];
+fixed_14 -> fixed_15  [key=0, label="AST: "];
+fixed_14 -> fixed_16  [key=0, label="AST: "];
+fixed_14 -> fixed_17  [key=0, label="AST: "];
+fixed_14 -> fixed_18  [key=0, label="AST: "];
+fixed_14 -> fixed_19  [key=0, label="AST: "];
+fixed_14 -> fixed_20  [key=0, label="AST: "];
+fixed_14 -> fixed_21  [key=0, label="AST: "];
+fixed_14 -> fixed_22  [key=0, label="AST: "];
+fixed_14 -> fixed_23  [key=0, label="AST: "];
+fixed_14 -> fixed_26  [key=0, label="AST: "];
+fixed_14 -> fixed_27  [key=0, label="AST: "];
+fixed_14 -> fixed_28  [key=0, label="AST: "];
+fixed_14 -> fixed_29  [key=0, label="AST: "];
+fixed_14 -> fixed_30  [key=0, label="AST: "];
+fixed_14 -> fixed_31  [key=0, label="AST: "];
+fixed_14 -> fixed_34  [key=0, label="AST: "];
+fixed_14 -> fixed_35  [key=0, label="AST: "];
+fixed_14 -> fixed_36  [key=0, label="AST: "];
+fixed_14 -> fixed_37  [key=0, label="AST: "];
+fixed_14 -> fixed_38  [key=0, label="AST: "];
+fixed_14 -> fixed_39  [key=0, label="AST: "];
+fixed_14 -> fixed_40  [key=0, label="AST: "];
+fixed_14 -> fixed_41  [key=0, label="AST: "];
+fixed_14 -> fixed_42  [key=0, label="AST: "];
+fixed_14 -> fixed_43  [key=0, label="AST: "];
+fixed_14 -> fixed_44  [key=0, label="AST: "];
+fixed_14 -> fixed_45  [key=0, label="AST: "];
+fixed_14 -> fixed_46  [key=0, label="AST: "];
+fixed_14 -> fixed_47  [key=0, label="AST: "];
+fixed_14 -> fixed_48  [key=0, label="AST: "];
+fixed_14 -> fixed_49  [key=0, label="AST: "];
+fixed_14 -> fixed_50  [key=0, label="AST: "];
+fixed_14 -> fixed_51  [key=0, label="AST: "];
+fixed_14 -> fixed_52  [key=0, label="AST: "];
+fixed_14 -> fixed_53  [key=0, label="AST: "];
+fixed_14 -> fixed_56  [key=0, label="AST: "];
+fixed_14 -> fixed_57  [key=0, label="AST: "];
+fixed_14 -> fixed_58  [key=0, label="AST: "];
+fixed_14 -> fixed_59  [key=0, label="AST: "];
+fixed_14 -> fixed_62  [key=0, label="AST: "];
+fixed_14 -> fixed_63  [key=0, label="AST: "];
+fixed_14 -> fixed_64  [key=0, label="AST: "];
+fixed_14 -> fixed_67  [key=0, label="AST: "];
+fixed_23 -> fixed_24  [key=0, label="AST: "];
+fixed_23 -> fixed_25  [key=0, label="AST: "];
+fixed_23 -> fixed_68  [key=0, label="CFG: "];
+fixed_23 -> fixed_70  [key=0, label="DDG: type"];
+fixed_23 -> fixed_70  [key=1, label="DDG: type = RPC_TYPE_STRING"];
+fixed_23 -> fixed_70  [key=2, label="DDG: RPC_TYPE_STRING"];
+fixed_23 -> fixed_69  [key=0, label="DDG: type"];
+fixed_31 -> fixed_32  [key=0, label="AST: "];
+fixed_31 -> fixed_33  [key=0, label="AST: "];
+fixed_31 -> fixed_68  [key=0, label="CFG: "];
+fixed_31 -> fixed_70  [key=0, label="DDG: type"];
+fixed_31 -> fixed_70  [key=1, label="DDG: type = RPC_TYPE_INT32"];
+fixed_31 -> fixed_70  [key=2, label="DDG: RPC_TYPE_INT32"];
+fixed_31 -> fixed_69  [key=0, label="DDG: type"];
+fixed_53 -> fixed_54  [key=0, label="AST: "];
+fixed_53 -> fixed_55  [key=0, label="AST: "];
+fixed_53 -> fixed_68  [key=0, label="CFG: "];
+fixed_53 -> fixed_70  [key=0, label="DDG: type"];
+fixed_53 -> fixed_70  [key=1, label="DDG: type = RPC_TYPE_BOOLEAN"];
+fixed_53 -> fixed_70  [key=2, label="DDG: RPC_TYPE_BOOLEAN"];
+fixed_53 -> fixed_69  [key=0, label="DDG: type"];
+fixed_59 -> fixed_60  [key=0, label="AST: "];
+fixed_59 -> fixed_61  [key=0, label="AST: "];
+fixed_59 -> fixed_68  [key=0, label="CFG: "];
+fixed_59 -> fixed_70  [key=0, label="DDG: type"];
+fixed_59 -> fixed_70  [key=1, label="DDG: type = RPC_TYPE_NP_OBJECT"];
+fixed_59 -> fixed_70  [key=2, label="DDG: RPC_TYPE_NP_OBJECT"];
+fixed_59 -> fixed_69  [key=0, label="DDG: type"];
+fixed_64 -> fixed_65  [key=0, label="AST: "];
+fixed_64 -> fixed_66  [key=0, label="AST: "];
+fixed_64 -> fixed_68  [key=0, label="CFG: "];
+fixed_64 -> fixed_70  [key=0, label="DDG: type"];
+fixed_64 -> fixed_70  [key=1, label="DDG: type = RPC_ERROR_GENERIC"];
+fixed_64 -> fixed_70  [key=2, label="DDG: RPC_ERROR_GENERIC"];
+fixed_64 -> fixed_69  [key=0, label="DDG: type"];
+fixed_68 -> fixed_69  [key=0, label="AST: "];
+fixed_68 -> fixed_70  [key=0, label="CFG: "];
+fixed_68 -> fixed_70  [key=1, label="DDG: &lt;RET&gt;"];
+fixed_69 -> fixed_68  [key=0, label="DDG: type"];
+fixed_87 -> fixed_88  [key=0, label="AST: "];
+fixed_87 -> fixed_88  [key=1, label="DDG: "];
+fixed_87 -> fixed_90  [key=0, label="AST: "];
+fixed_87 -> fixed_89  [key=0, label="AST: "];
+fixed_87 -> fixed_89  [key=1, label="DDG: "];
+fixed_87 -> fixed_91  [key=0, label="AST: "];
+fixed_87 -> fixed_91  [key=1, label="CFG: "];
+fixed_88 -> fixed_91  [key=0, label="DDG: p1"];
+fixed_89 -> fixed_91  [key=0, label="DDG: p2"];
+fixed_81 -> fixed_82  [key=0, label="AST: "];
+fixed_81 -> fixed_83  [key=0, label="AST: "];
+fixed_81 -> fixed_83  [key=1, label="CFG: "];
+}

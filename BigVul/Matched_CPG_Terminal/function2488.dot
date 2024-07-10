@@ -1,0 +1,57 @@
+digraph "&lt;global&gt;" {
+vulnerable_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+vulnerable_8 [label=<(UNKNOWN,SPL_METHOD(SplFileObject, fwrite)
+{
+	spl_filesy...,SPL_METHOD(SplFileObject, fwrite)
+{
+	spl_filesy...)<SUB>1</SUB>>];
+vulnerable_9 [label=<(UNKNOWN,SPL_METHOD(SplFileObject, fread)
+{
+	spl_filesys...,SPL_METHOD(SplFileObject, fread)
+{
+	spl_filesys...)<SUB>22</SUB>>];
+vulnerable_10 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+vulnerable_15 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_16 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_17 [label=<(METHOD_RETURN,ANY)>];
+fixed_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+fixed_8 [label=<(UNKNOWN,SPL_METHOD(SplFileObject, fwrite)
+{
+	spl_filesy...,SPL_METHOD(SplFileObject, fwrite)
+{
+	spl_filesy...)<SUB>1</SUB>>];
+fixed_9 [label=<(UNKNOWN,SPL_METHOD(SplFileObject, fread)
+{
+	spl_filesys...,SPL_METHOD(SplFileObject, fread)
+{
+	spl_filesys...)<SUB>22</SUB>>];
+fixed_10 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+fixed_15 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_16 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_17 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_6 -> vulnerable_7  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_10  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_8  [key=0, label="CFG: "];
+vulnerable_7 -> vulnerable_8  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_9  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_9  [key=0, label="CFG: "];
+vulnerable_9 -> vulnerable_10  [key=0, label="CFG: "];
+vulnerable_10 -> fixed_6  [key=0];
+vulnerable_15 -> vulnerable_16  [key=0, label="AST: "];
+vulnerable_15 -> vulnerable_17  [key=0, label="AST: "];
+vulnerable_15 -> vulnerable_17  [key=1, label="CFG: "];
+vulnerable_16 -> fixed_6  [key=0];
+vulnerable_17 -> fixed_6  [key=0];
+fixed_6 -> fixed_7  [key=0, label="AST: "];
+fixed_6 -> fixed_10  [key=0, label="AST: "];
+fixed_6 -> fixed_8  [key=0, label="CFG: "];
+fixed_7 -> fixed_8  [key=0, label="AST: "];
+fixed_7 -> fixed_9  [key=0, label="AST: "];
+fixed_8 -> fixed_9  [key=0, label="CFG: "];
+fixed_9 -> fixed_10  [key=0, label="CFG: "];
+fixed_15 -> fixed_16  [key=0, label="AST: "];
+fixed_15 -> fixed_17  [key=0, label="AST: "];
+fixed_15 -> fixed_17  [key=1, label="CFG: "];
+}

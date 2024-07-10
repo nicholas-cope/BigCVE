@@ -1,0 +1,88 @@
+digraph "&lt;global&gt;" {
+vulnerable_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+vulnerable_8 [label=<(UNKNOWN,gss_wrap_aead (minor_status,
+               con...,gss_wrap_aead (minor_status,
+               con...)<SUB>1</SUB>>];
+vulnerable_9 [label="<(LOCAL,gss_ctx_id_t context_handle: gss_ctx_id_t)<SUB>10</SUB>>"];
+vulnerable_10 [label="<(LOCAL,int conf_req_flag: int)<SUB>11</SUB>>"];
+vulnerable_11 [label="<(LOCAL,gss_qop_t qop_req: gss_qop_t)<SUB>12</SUB>>"];
+vulnerable_12 [label="<(LOCAL,gss_buffer_t input_assoc_buffer: gss_buffer_t)<SUB>13</SUB>>"];
+vulnerable_13 [label="<(LOCAL,gss_buffer_t input_payload_buffer: gss_buffer_t)<SUB>14</SUB>>"];
+vulnerable_14 [label="<(LOCAL,int* conf_state: int*)<SUB>15</SUB>>"];
+vulnerable_15 [label="<(LOCAL,gss_buffer_t output_message_buffer: gss_buffer_t)<SUB>16</SUB>>"];
+vulnerable_16 [label=<(UNKNOWN,{
+    OM_uint32		status;
+    gss_mechanism	mech...,{
+    OM_uint32		status;
+    gss_mechanism	mech...)<SUB>17</SUB>>];
+vulnerable_17 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+vulnerable_32 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_33 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_34 [label=<(METHOD_RETURN,ANY)>];
+fixed_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+fixed_8 [label=<(UNKNOWN,gss_wrap_aead (minor_status,
+               con...,gss_wrap_aead (minor_status,
+               con...)<SUB>1</SUB>>];
+fixed_9 [label="<(LOCAL,gss_ctx_id_t context_handle: gss_ctx_id_t)<SUB>10</SUB>>"];
+fixed_10 [label="<(LOCAL,int conf_req_flag: int)<SUB>11</SUB>>"];
+fixed_11 [label="<(LOCAL,gss_qop_t qop_req: gss_qop_t)<SUB>12</SUB>>"];
+fixed_12 [label="<(LOCAL,gss_buffer_t input_assoc_buffer: gss_buffer_t)<SUB>13</SUB>>"];
+fixed_13 [label="<(LOCAL,gss_buffer_t input_payload_buffer: gss_buffer_t)<SUB>14</SUB>>"];
+fixed_14 [label="<(LOCAL,int* conf_state: int*)<SUB>15</SUB>>"];
+fixed_15 [label="<(LOCAL,gss_buffer_t output_message_buffer: gss_buffer_t)<SUB>16</SUB>>"];
+fixed_16 [label=<(UNKNOWN,{
+    OM_uint32		status;
+    gss_mechanism	mech...,{
+    OM_uint32		status;
+    gss_mechanism	mech...)<SUB>17</SUB>>];
+fixed_17 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+fixed_32 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_33 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_34 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_6 -> vulnerable_7  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_17  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_8  [key=0, label="CFG: "];
+vulnerable_7 -> vulnerable_8  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_9  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_10  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_11  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_12  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_13  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_14  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_15  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_16  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_16  [key=0, label="CFG: "];
+vulnerable_16 -> vulnerable_17  [key=0, label="CFG: "];
+vulnerable_32 -> vulnerable_33  [key=0, label="AST: "];
+vulnerable_32 -> vulnerable_34  [key=0, label="AST: "];
+vulnerable_32 -> vulnerable_34  [key=1, label="CFG: "];
+fixed_6 -> fixed_7  [key=0, label="AST: "];
+fixed_6 -> fixed_17  [key=0, label="AST: "];
+fixed_6 -> fixed_8  [key=0, label="CFG: "];
+fixed_7 -> fixed_8  [key=0, label="AST: "];
+fixed_7 -> fixed_9  [key=0, label="AST: "];
+fixed_7 -> fixed_10  [key=0, label="AST: "];
+fixed_7 -> fixed_11  [key=0, label="AST: "];
+fixed_7 -> fixed_12  [key=0, label="AST: "];
+fixed_7 -> fixed_13  [key=0, label="AST: "];
+fixed_7 -> fixed_14  [key=0, label="AST: "];
+fixed_7 -> fixed_15  [key=0, label="AST: "];
+fixed_7 -> fixed_16  [key=0, label="AST: "];
+fixed_8 -> fixed_16  [key=0, label="CFG: "];
+fixed_9 -> vulnerable_6  [key=0];
+fixed_10 -> vulnerable_6  [key=0];
+fixed_11 -> vulnerable_6  [key=0];
+fixed_12 -> vulnerable_6  [key=0];
+fixed_13 -> vulnerable_6  [key=0];
+fixed_14 -> vulnerable_6  [key=0];
+fixed_15 -> vulnerable_6  [key=0];
+fixed_16 -> fixed_17  [key=0, label="CFG: "];
+fixed_17 -> vulnerable_6  [key=0];
+fixed_32 -> fixed_33  [key=0, label="AST: "];
+fixed_32 -> fixed_34  [key=0, label="AST: "];
+fixed_32 -> fixed_34  [key=1, label="CFG: "];
+fixed_33 -> vulnerable_6  [key=0];
+fixed_34 -> vulnerable_6  [key=0];
+}

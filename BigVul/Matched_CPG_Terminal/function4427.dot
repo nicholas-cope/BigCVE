@@ -1,0 +1,98 @@
+digraph "&lt;global&gt;" {
+vulnerable_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+vulnerable_8 [label=<(UNKNOWN,OVS_REQUIRES(ofproto_mutex)
+{
+     const struct...,OVS_REQUIRES(ofproto_mutex)
+{
+     const struct...)<SUB>1</SUB>>];
+vulnerable_9 [label=<(UNKNOWN,ovs_assert(rule-&gt;state == RULE_INITIALIZED);,ovs_assert(rule-&gt;state == RULE_INITIALIZED);)<SUB>6</SUB>>];
+vulnerable_10 [label=<(UNKNOWN,if (rule-&gt;hard_timeout || rule-&gt;idle_timeout) {...,if (rule-&gt;hard_timeout || rule-&gt;idle_timeout) {...)<SUB>8</SUB>>];
+vulnerable_11 [label=<(UNKNOWN,cookies_insert(ofproto, rule);,cookies_insert(ofproto, rule);)<SUB>11</SUB>>];
+vulnerable_12 [label="<(LOCAL,eviction_group_add_rule : eviction_group_add_rule)<SUB>12</SUB>>"];
+vulnerable_13 [label=<(UNKNOWN,if (actions-&gt;has_meter) {
+        meter_insert_...,if (actions-&gt;has_meter) {
+        meter_insert_...)<SUB>13</SUB>>];
+vulnerable_14 [label=<(UNKNOWN,if (actions-&gt;has_groups) {
+        const struct...,if (actions-&gt;has_groups) {
+        const struct...)<SUB>16</SUB>>];
+vulnerable_15 [label=<(UNKNOWN,rule-&gt;state = RULE_INSERTED;,rule-&gt;state = RULE_INSERTED;)<SUB>29</SUB>>];
+vulnerable_16 [label=<(UNKNOWN,},})<SUB>30</SUB>>];
+vulnerable_17 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+vulnerable_24 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_25 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_26 [label=<(METHOD_RETURN,ANY)>];
+fixed_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+fixed_8 [label=<(UNKNOWN,OVS_REQUIRES(ofproto_mutex)
+{
+     const struct...,OVS_REQUIRES(ofproto_mutex)
+{
+     const struct...)<SUB>1</SUB>>];
+fixed_9 [label=<(UNKNOWN,ovs_assert(rule-&gt;state != RULE_INSERTED);,ovs_assert(rule-&gt;state != RULE_INSERTED);)<SUB>6</SUB>>];
+fixed_10 [label=<(UNKNOWN,if (rule-&gt;hard_timeout || rule-&gt;idle_timeout) {...,if (rule-&gt;hard_timeout || rule-&gt;idle_timeout) {...)<SUB>8</SUB>>];
+fixed_11 [label=<(UNKNOWN,cookies_insert(ofproto, rule);,cookies_insert(ofproto, rule);)<SUB>11</SUB>>];
+fixed_12 [label="<(LOCAL,eviction_group_add_rule : eviction_group_add_rule)<SUB>12</SUB>>"];
+fixed_13 [label=<(UNKNOWN,if (actions-&gt;has_meter) {
+        meter_insert_...,if (actions-&gt;has_meter) {
+        meter_insert_...)<SUB>13</SUB>>];
+fixed_14 [label=<(UNKNOWN,if (actions-&gt;has_groups) {
+        const struct...,if (actions-&gt;has_groups) {
+        const struct...)<SUB>16</SUB>>];
+fixed_15 [label=<(UNKNOWN,rule-&gt;state = RULE_INSERTED;,rule-&gt;state = RULE_INSERTED;)<SUB>29</SUB>>];
+fixed_16 [label=<(UNKNOWN,},})<SUB>30</SUB>>];
+fixed_17 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+fixed_24 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_25 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_26 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_6 -> vulnerable_7  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_17  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_8  [key=0, label="CFG: "];
+vulnerable_7 -> vulnerable_8  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_9  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_10  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_11  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_12  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_13  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_14  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_15  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_16  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_9  [key=0, label="CFG: "];
+vulnerable_9 -> vulnerable_10  [key=0, label="CFG: "];
+vulnerable_10 -> vulnerable_11  [key=0, label="CFG: "];
+vulnerable_11 -> vulnerable_13  [key=0, label="CFG: "];
+vulnerable_12 -> fixed_6  [key=0];
+vulnerable_13 -> vulnerable_14  [key=0, label="CFG: "];
+vulnerable_14 -> vulnerable_15  [key=0, label="CFG: "];
+vulnerable_15 -> vulnerable_16  [key=0, label="CFG: "];
+vulnerable_16 -> vulnerable_17  [key=0, label="CFG: "];
+vulnerable_17 -> fixed_6  [key=0];
+vulnerable_24 -> vulnerable_25  [key=0, label="AST: "];
+vulnerable_24 -> vulnerable_26  [key=0, label="AST: "];
+vulnerable_24 -> vulnerable_26  [key=1, label="CFG: "];
+vulnerable_25 -> fixed_6  [key=0];
+vulnerable_26 -> fixed_6  [key=0];
+fixed_6 -> fixed_7  [key=0, label="AST: "];
+fixed_6 -> fixed_17  [key=0, label="AST: "];
+fixed_6 -> fixed_8  [key=0, label="CFG: "];
+fixed_7 -> fixed_8  [key=0, label="AST: "];
+fixed_7 -> fixed_9  [key=0, label="AST: "];
+fixed_7 -> fixed_10  [key=0, label="AST: "];
+fixed_7 -> fixed_11  [key=0, label="AST: "];
+fixed_7 -> fixed_12  [key=0, label="AST: "];
+fixed_7 -> fixed_13  [key=0, label="AST: "];
+fixed_7 -> fixed_14  [key=0, label="AST: "];
+fixed_7 -> fixed_15  [key=0, label="AST: "];
+fixed_7 -> fixed_16  [key=0, label="AST: "];
+fixed_8 -> fixed_9  [key=0, label="CFG: "];
+fixed_9 -> fixed_10  [key=0, label="CFG: "];
+fixed_10 -> fixed_11  [key=0, label="CFG: "];
+fixed_11 -> fixed_13  [key=0, label="CFG: "];
+fixed_13 -> fixed_14  [key=0, label="CFG: "];
+fixed_14 -> fixed_15  [key=0, label="CFG: "];
+fixed_15 -> fixed_16  [key=0, label="CFG: "];
+fixed_16 -> fixed_17  [key=0, label="CFG: "];
+fixed_24 -> fixed_25  [key=0, label="AST: "];
+fixed_24 -> fixed_26  [key=0, label="AST: "];
+fixed_24 -> fixed_26  [key=1, label="CFG: "];
+}

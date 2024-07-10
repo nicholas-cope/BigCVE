@@ -1,0 +1,262 @@
+digraph "&lt;global&gt;" {
+vulnerable_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+vulnerable_8 [label=<(UNKNOWN,SPL_METHOD(SplObjectStorage, unserialize)
+{
+	sp...,SPL_METHOD(SplObjectStorage, unserialize)
+{
+	sp...)<SUB>1</SUB>>];
+vulnerable_9 [label=<(UNKNOWN,ZEND_BEGIN_ARG_INFO(arginfo_Object, 0)
+	ZEND_AR...,ZEND_BEGIN_ARG_INFO(arginfo_Object, 0)
+	ZEND_AR...)<SUB>122</SUB>>];
+vulnerable_10 [label=<(UNKNOWN,ZEND_BEGIN_ARG_INFO_EX(arginfo_attach, 0, 0, 1)...,ZEND_BEGIN_ARG_INFO_EX(arginfo_attach, 0, 0, 1)...)<SUB>126</SUB>>];
+vulnerable_11 [label=<(UNKNOWN,ZEND_BEGIN_ARG_INFO(arginfo_Serialized, 0)
+	ZEN...,ZEND_BEGIN_ARG_INFO(arginfo_Serialized, 0)
+	ZEN...)<SUB>131</SUB>>];
+vulnerable_12 [label=<(UNKNOWN,ZEND_BEGIN_ARG_INFO(arginfo_setInfo, 0)
+	ZEND_A...,ZEND_BEGIN_ARG_INFO(arginfo_setInfo, 0)
+	ZEND_A...)<SUB>135</SUB>>];
+vulnerable_13 [label=<(UNKNOWN,ZEND_BEGIN_ARG_INFO(arginfo_getHash, 0)
+	ZEND_A...,ZEND_BEGIN_ARG_INFO(arginfo_getHash, 0)
+	ZEND_A...)<SUB>139</SUB>>];
+vulnerable_14 [label=<(UNKNOWN,ZEND_BEGIN_ARG_INFO_EX(arginfo_offsetGet, 0, 0,...,ZEND_BEGIN_ARG_INFO_EX(arginfo_offsetGet, 0, 0,...)<SUB>143</SUB>>];
+vulnerable_15 [label=<(TYPE_DECL,MultipleIteratorFlags)<SUB>179</SUB>>];
+vulnerable_16 [label=<(MEMBER,MIT_NEED_ANY)<SUB>180</SUB>>];
+vulnerable_17 [label=<(MEMBER,MIT_NEED_ALL)<SUB>181</SUB>>];
+vulnerable_18 [label=<(MEMBER,MIT_KEYS_NUMERIC)<SUB>182</SUB>>];
+vulnerable_19 [label=<(MEMBER,MIT_KEYS_ASSOC)<SUB>183</SUB>>];
+vulnerable_20 [label=<(METHOD,&lt;clinit&gt;)<SUB>179</SUB>>];
+vulnerable_21 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_22 [label=<(&lt;operator&gt;.assignment,MIT_NEED_ANY     = 0)<SUB>180</SUB>>];
+vulnerable_23 [label=<(IDENTIFIER,MIT_NEED_ANY,MIT_NEED_ANY     = 0)<SUB>180</SUB>>];
+vulnerable_24 [label=<(LITERAL,0,MIT_NEED_ANY     = 0)<SUB>180</SUB>>];
+vulnerable_25 [label=<(&lt;operator&gt;.assignment,MIT_NEED_ALL     = 1)<SUB>181</SUB>>];
+vulnerable_26 [label=<(IDENTIFIER,MIT_NEED_ALL,MIT_NEED_ALL     = 1)<SUB>181</SUB>>];
+vulnerable_27 [label=<(LITERAL,1,MIT_NEED_ALL     = 1)<SUB>181</SUB>>];
+vulnerable_28 [label=<(&lt;operator&gt;.assignment,MIT_KEYS_NUMERIC = 0)<SUB>182</SUB>>];
+vulnerable_29 [label=<(IDENTIFIER,MIT_KEYS_NUMERIC,MIT_KEYS_NUMERIC = 0)<SUB>182</SUB>>];
+vulnerable_30 [label=<(LITERAL,0,MIT_KEYS_NUMERIC = 0)<SUB>182</SUB>>];
+vulnerable_31 [label=<(&lt;operator&gt;.assignment,MIT_KEYS_ASSOC   = 2)<SUB>183</SUB>>];
+vulnerable_32 [label=<(IDENTIFIER,MIT_KEYS_ASSOC,MIT_KEYS_ASSOC   = 2)<SUB>183</SUB>>];
+vulnerable_33 [label=<(LITERAL,2,MIT_KEYS_ASSOC   = 2)<SUB>183</SUB>>];
+vulnerable_34 [label=<(MODIFIER,STATIC)>];
+vulnerable_35 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_36 [label="<(LOCAL,enum MultipleIteratorFlags: enum)<SUB>184</SUB>>"];
+vulnerable_37 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+vulnerable_53 [label=<(METHOD,&lt;operator&gt;.assignment)>];
+vulnerable_54 [label=<(PARAM,p1)>];
+vulnerable_55 [label=<(PARAM,p2)>];
+vulnerable_56 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_57 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_47 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_48 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_49 [label=<(METHOD_RETURN,ANY)>];
+fixed_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+fixed_8 [label=<(UNKNOWN,SPL_METHOD(SplObjectStorage, unserialize)
+{
+	sp...,SPL_METHOD(SplObjectStorage, unserialize)
+{
+	sp...)<SUB>1</SUB>>];
+fixed_9 [label=<(UNKNOWN,ZEND_BEGIN_ARG_INFO(arginfo_Object, 0)
+	ZEND_AR...,ZEND_BEGIN_ARG_INFO(arginfo_Object, 0)
+	ZEND_AR...)<SUB>124</SUB>>];
+fixed_10 [label=<(UNKNOWN,ZEND_BEGIN_ARG_INFO_EX(arginfo_attach, 0, 0, 1)...,ZEND_BEGIN_ARG_INFO_EX(arginfo_attach, 0, 0, 1)...)<SUB>128</SUB>>];
+fixed_11 [label=<(UNKNOWN,ZEND_BEGIN_ARG_INFO(arginfo_Serialized, 0)
+	ZEN...,ZEND_BEGIN_ARG_INFO(arginfo_Serialized, 0)
+	ZEN...)<SUB>133</SUB>>];
+fixed_12 [label=<(UNKNOWN,ZEND_BEGIN_ARG_INFO(arginfo_setInfo, 0)
+	ZEND_A...,ZEND_BEGIN_ARG_INFO(arginfo_setInfo, 0)
+	ZEND_A...)<SUB>137</SUB>>];
+fixed_13 [label=<(UNKNOWN,ZEND_BEGIN_ARG_INFO(arginfo_getHash, 0)
+	ZEND_A...,ZEND_BEGIN_ARG_INFO(arginfo_getHash, 0)
+	ZEND_A...)<SUB>141</SUB>>];
+fixed_14 [label=<(UNKNOWN,ZEND_BEGIN_ARG_INFO_EX(arginfo_offsetGet, 0, 0,...,ZEND_BEGIN_ARG_INFO_EX(arginfo_offsetGet, 0, 0,...)<SUB>145</SUB>>];
+fixed_15 [label=<(TYPE_DECL,MultipleIteratorFlags)<SUB>181</SUB>>];
+fixed_16 [label=<(MEMBER,MIT_NEED_ANY)<SUB>182</SUB>>];
+fixed_17 [label=<(MEMBER,MIT_NEED_ALL)<SUB>183</SUB>>];
+fixed_18 [label=<(MEMBER,MIT_KEYS_NUMERIC)<SUB>184</SUB>>];
+fixed_19 [label=<(MEMBER,MIT_KEYS_ASSOC)<SUB>185</SUB>>];
+fixed_20 [label=<(METHOD,&lt;clinit&gt;)<SUB>181</SUB>>];
+fixed_21 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_22 [label=<(&lt;operator&gt;.assignment,MIT_NEED_ANY     = 0)<SUB>182</SUB>>];
+fixed_23 [label=<(IDENTIFIER,MIT_NEED_ANY,MIT_NEED_ANY     = 0)<SUB>182</SUB>>];
+fixed_24 [label=<(LITERAL,0,MIT_NEED_ANY     = 0)<SUB>182</SUB>>];
+fixed_25 [label=<(&lt;operator&gt;.assignment,MIT_NEED_ALL     = 1)<SUB>183</SUB>>];
+fixed_26 [label=<(IDENTIFIER,MIT_NEED_ALL,MIT_NEED_ALL     = 1)<SUB>183</SUB>>];
+fixed_27 [label=<(LITERAL,1,MIT_NEED_ALL     = 1)<SUB>183</SUB>>];
+fixed_28 [label=<(&lt;operator&gt;.assignment,MIT_KEYS_NUMERIC = 0)<SUB>184</SUB>>];
+fixed_29 [label=<(IDENTIFIER,MIT_KEYS_NUMERIC,MIT_KEYS_NUMERIC = 0)<SUB>184</SUB>>];
+fixed_30 [label=<(LITERAL,0,MIT_KEYS_NUMERIC = 0)<SUB>184</SUB>>];
+fixed_31 [label=<(&lt;operator&gt;.assignment,MIT_KEYS_ASSOC   = 2)<SUB>185</SUB>>];
+fixed_32 [label=<(IDENTIFIER,MIT_KEYS_ASSOC,MIT_KEYS_ASSOC   = 2)<SUB>185</SUB>>];
+fixed_33 [label=<(LITERAL,2,MIT_KEYS_ASSOC   = 2)<SUB>185</SUB>>];
+fixed_34 [label=<(MODIFIER,STATIC)>];
+fixed_35 [label=<(METHOD_RETURN,ANY)>];
+fixed_36 [label="<(LOCAL,enum MultipleIteratorFlags: enum)<SUB>186</SUB>>"];
+fixed_37 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+fixed_53 [label=<(METHOD,&lt;operator&gt;.assignment)>];
+fixed_54 [label=<(PARAM,p1)>];
+fixed_55 [label=<(PARAM,p2)>];
+fixed_56 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_57 [label=<(METHOD_RETURN,ANY)>];
+fixed_47 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_48 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_49 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_6 -> vulnerable_7  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_37  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_8  [key=0, label="CFG: "];
+vulnerable_7 -> vulnerable_8  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_9  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_10  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_11  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_12  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_13  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_14  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_15  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_36  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_9  [key=0, label="CFG: "];
+vulnerable_9 -> vulnerable_10  [key=0, label="CFG: "];
+vulnerable_10 -> vulnerable_11  [key=0, label="CFG: "];
+vulnerable_11 -> vulnerable_12  [key=0, label="CFG: "];
+vulnerable_12 -> vulnerable_13  [key=0, label="CFG: "];
+vulnerable_13 -> vulnerable_14  [key=0, label="CFG: "];
+vulnerable_14 -> vulnerable_37  [key=0, label="CFG: "];
+vulnerable_15 -> vulnerable_16  [key=0, label="AST: "];
+vulnerable_15 -> vulnerable_17  [key=0, label="AST: "];
+vulnerable_15 -> vulnerable_18  [key=0, label="AST: "];
+vulnerable_15 -> vulnerable_19  [key=0, label="AST: "];
+vulnerable_15 -> vulnerable_20  [key=0, label="AST: "];
+vulnerable_16 -> fixed_6  [key=0];
+vulnerable_17 -> fixed_6  [key=0];
+vulnerable_18 -> fixed_6  [key=0];
+vulnerable_19 -> fixed_6  [key=0];
+vulnerable_20 -> vulnerable_21  [key=0, label="AST: "];
+vulnerable_20 -> vulnerable_34  [key=0, label="AST: "];
+vulnerable_20 -> vulnerable_35  [key=0, label="AST: "];
+vulnerable_20 -> vulnerable_22  [key=0, label="CFG: "];
+vulnerable_20 -> vulnerable_22  [key=1, label="DDG: "];
+vulnerable_20 -> vulnerable_25  [key=0, label="DDG: "];
+vulnerable_20 -> vulnerable_28  [key=0, label="DDG: "];
+vulnerable_20 -> vulnerable_31  [key=0, label="DDG: "];
+vulnerable_21 -> vulnerable_22  [key=0, label="AST: "];
+vulnerable_21 -> vulnerable_25  [key=0, label="AST: "];
+vulnerable_21 -> vulnerable_28  [key=0, label="AST: "];
+vulnerable_21 -> vulnerable_31  [key=0, label="AST: "];
+vulnerable_22 -> vulnerable_23  [key=0, label="AST: "];
+vulnerable_22 -> vulnerable_24  [key=0, label="AST: "];
+vulnerable_22 -> vulnerable_25  [key=0, label="CFG: "];
+vulnerable_22 -> vulnerable_35  [key=0, label="DDG: MIT_NEED_ANY     = 0"];
+vulnerable_22 -> vulnerable_35  [key=1, label="DDG: MIT_NEED_ANY"];
+vulnerable_23 -> fixed_6  [key=0];
+vulnerable_24 -> fixed_6  [key=0];
+vulnerable_25 -> vulnerable_26  [key=0, label="AST: "];
+vulnerable_25 -> vulnerable_27  [key=0, label="AST: "];
+vulnerable_25 -> vulnerable_28  [key=0, label="CFG: "];
+vulnerable_25 -> vulnerable_35  [key=0, label="DDG: MIT_NEED_ALL     = 1"];
+vulnerable_25 -> vulnerable_35  [key=1, label="DDG: MIT_NEED_ALL"];
+vulnerable_26 -> fixed_6  [key=0];
+vulnerable_27 -> fixed_6  [key=0];
+vulnerable_28 -> vulnerable_29  [key=0, label="AST: "];
+vulnerable_28 -> vulnerable_30  [key=0, label="AST: "];
+vulnerable_28 -> vulnerable_31  [key=0, label="CFG: "];
+vulnerable_28 -> vulnerable_35  [key=0, label="DDG: MIT_KEYS_NUMERIC = 0"];
+vulnerable_28 -> vulnerable_35  [key=1, label="DDG: MIT_KEYS_NUMERIC"];
+vulnerable_29 -> fixed_6  [key=0];
+vulnerable_30 -> fixed_6  [key=0];
+vulnerable_31 -> vulnerable_32  [key=0, label="AST: "];
+vulnerable_31 -> vulnerable_33  [key=0, label="AST: "];
+vulnerable_31 -> vulnerable_35  [key=0, label="CFG: "];
+vulnerable_31 -> vulnerable_35  [key=1, label="DDG: MIT_KEYS_ASSOC   = 2"];
+vulnerable_31 -> vulnerable_35  [key=2, label="DDG: MIT_KEYS_ASSOC"];
+vulnerable_32 -> fixed_6  [key=0];
+vulnerable_33 -> fixed_6  [key=0];
+vulnerable_34 -> fixed_6  [key=0];
+vulnerable_35 -> fixed_6  [key=0];
+vulnerable_36 -> fixed_6  [key=0];
+vulnerable_37 -> fixed_6  [key=0];
+vulnerable_53 -> vulnerable_54  [key=0, label="AST: "];
+vulnerable_53 -> vulnerable_54  [key=1, label="DDG: "];
+vulnerable_53 -> vulnerable_56  [key=0, label="AST: "];
+vulnerable_53 -> vulnerable_55  [key=0, label="AST: "];
+vulnerable_53 -> vulnerable_55  [key=1, label="DDG: "];
+vulnerable_53 -> vulnerable_57  [key=0, label="AST: "];
+vulnerable_53 -> vulnerable_57  [key=1, label="CFG: "];
+vulnerable_54 -> vulnerable_57  [key=0, label="DDG: p1"];
+vulnerable_55 -> vulnerable_57  [key=0, label="DDG: p2"];
+vulnerable_56 -> fixed_6  [key=0];
+vulnerable_57 -> fixed_6  [key=0];
+vulnerable_47 -> vulnerable_48  [key=0, label="AST: "];
+vulnerable_47 -> vulnerable_49  [key=0, label="AST: "];
+vulnerable_47 -> vulnerable_49  [key=1, label="CFG: "];
+vulnerable_48 -> fixed_6  [key=0];
+vulnerable_49 -> fixed_6  [key=0];
+fixed_6 -> fixed_7  [key=0, label="AST: "];
+fixed_6 -> fixed_37  [key=0, label="AST: "];
+fixed_6 -> fixed_8  [key=0, label="CFG: "];
+fixed_7 -> fixed_8  [key=0, label="AST: "];
+fixed_7 -> fixed_9  [key=0, label="AST: "];
+fixed_7 -> fixed_10  [key=0, label="AST: "];
+fixed_7 -> fixed_11  [key=0, label="AST: "];
+fixed_7 -> fixed_12  [key=0, label="AST: "];
+fixed_7 -> fixed_13  [key=0, label="AST: "];
+fixed_7 -> fixed_14  [key=0, label="AST: "];
+fixed_7 -> fixed_15  [key=0, label="AST: "];
+fixed_7 -> fixed_36  [key=0, label="AST: "];
+fixed_8 -> fixed_9  [key=0, label="CFG: "];
+fixed_9 -> fixed_10  [key=0, label="CFG: "];
+fixed_10 -> fixed_11  [key=0, label="CFG: "];
+fixed_11 -> fixed_12  [key=0, label="CFG: "];
+fixed_12 -> fixed_13  [key=0, label="CFG: "];
+fixed_13 -> fixed_14  [key=0, label="CFG: "];
+fixed_14 -> fixed_37  [key=0, label="CFG: "];
+fixed_15 -> fixed_16  [key=0, label="AST: "];
+fixed_15 -> fixed_17  [key=0, label="AST: "];
+fixed_15 -> fixed_18  [key=0, label="AST: "];
+fixed_15 -> fixed_19  [key=0, label="AST: "];
+fixed_15 -> fixed_20  [key=0, label="AST: "];
+fixed_20 -> fixed_21  [key=0, label="AST: "];
+fixed_20 -> fixed_34  [key=0, label="AST: "];
+fixed_20 -> fixed_35  [key=0, label="AST: "];
+fixed_20 -> fixed_22  [key=0, label="CFG: "];
+fixed_20 -> fixed_22  [key=1, label="DDG: "];
+fixed_20 -> fixed_25  [key=0, label="DDG: "];
+fixed_20 -> fixed_28  [key=0, label="DDG: "];
+fixed_20 -> fixed_31  [key=0, label="DDG: "];
+fixed_21 -> fixed_22  [key=0, label="AST: "];
+fixed_21 -> fixed_25  [key=0, label="AST: "];
+fixed_21 -> fixed_28  [key=0, label="AST: "];
+fixed_21 -> fixed_31  [key=0, label="AST: "];
+fixed_22 -> fixed_23  [key=0, label="AST: "];
+fixed_22 -> fixed_24  [key=0, label="AST: "];
+fixed_22 -> fixed_25  [key=0, label="CFG: "];
+fixed_22 -> fixed_35  [key=0, label="DDG: MIT_NEED_ANY     = 0"];
+fixed_22 -> fixed_35  [key=1, label="DDG: MIT_NEED_ANY"];
+fixed_25 -> fixed_26  [key=0, label="AST: "];
+fixed_25 -> fixed_27  [key=0, label="AST: "];
+fixed_25 -> fixed_28  [key=0, label="CFG: "];
+fixed_25 -> fixed_35  [key=0, label="DDG: MIT_NEED_ALL     = 1"];
+fixed_25 -> fixed_35  [key=1, label="DDG: MIT_NEED_ALL"];
+fixed_28 -> fixed_29  [key=0, label="AST: "];
+fixed_28 -> fixed_30  [key=0, label="AST: "];
+fixed_28 -> fixed_31  [key=0, label="CFG: "];
+fixed_28 -> fixed_35  [key=0, label="DDG: MIT_KEYS_NUMERIC = 0"];
+fixed_28 -> fixed_35  [key=1, label="DDG: MIT_KEYS_NUMERIC"];
+fixed_31 -> fixed_32  [key=0, label="AST: "];
+fixed_31 -> fixed_33  [key=0, label="AST: "];
+fixed_31 -> fixed_35  [key=0, label="CFG: "];
+fixed_31 -> fixed_35  [key=1, label="DDG: MIT_KEYS_ASSOC   = 2"];
+fixed_31 -> fixed_35  [key=2, label="DDG: MIT_KEYS_ASSOC"];
+fixed_53 -> fixed_54  [key=0, label="AST: "];
+fixed_53 -> fixed_54  [key=1, label="DDG: "];
+fixed_53 -> fixed_56  [key=0, label="AST: "];
+fixed_53 -> fixed_55  [key=0, label="AST: "];
+fixed_53 -> fixed_55  [key=1, label="DDG: "];
+fixed_53 -> fixed_57  [key=0, label="AST: "];
+fixed_53 -> fixed_57  [key=1, label="CFG: "];
+fixed_54 -> fixed_57  [key=0, label="DDG: p1"];
+fixed_55 -> fixed_57  [key=0, label="DDG: p2"];
+fixed_47 -> fixed_48  [key=0, label="AST: "];
+fixed_47 -> fixed_49  [key=0, label="AST: "];
+fixed_47 -> fixed_49  [key=1, label="CFG: "];
+}

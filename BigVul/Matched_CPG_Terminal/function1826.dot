@@ -1,0 +1,267 @@
+digraph "&lt;operator&gt;.assignment" {
+vulnerable_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+vulnerable_8 [label=<(UNKNOWN,bqarr_in(PG_FUNCTION_ARGS)
+{
+	char	   *buf = (c...,bqarr_in(PG_FUNCTION_ARGS)
+{
+	char	   *buf = (c...)<SUB>1</SUB>>];
+vulnerable_9 [label="<(LOCAL,WORKSTATE state: WORKSTATE)<SUB>4</SUB>>"];
+vulnerable_10 [label="<(LOCAL,int32 i: int32)<SUB>5</SUB>>"];
+vulnerable_11 [label="<(LOCAL,QUERYTYPE* query: QUERYTYPE*)<SUB>6</SUB>>"];
+vulnerable_12 [label="<(LOCAL,int32 commonlen: int32)<SUB>7</SUB>>"];
+vulnerable_13 [label="<(LOCAL,ITEM* ptr: ITEM*)<SUB>8</SUB>>"];
+vulnerable_14 [label="<(LOCAL,NODE* tmp: NODE*)<SUB>9</SUB>>"];
+vulnerable_15 [label="<(LOCAL,int32 pos: int32)<SUB>10</SUB>>"];
+vulnerable_16 [label=<(&lt;operator&gt;.assignment,pos = 0)<SUB>10</SUB>>];
+vulnerable_17 [label=<(IDENTIFIER,pos,pos = 0)<SUB>10</SUB>>];
+vulnerable_18 [label=<(LITERAL,0,pos = 0)<SUB>10</SUB>>];
+vulnerable_19 [label=<(UNKNOWN,state.buf = buf;,state.buf = buf;)<SUB>16</SUB>>];
+vulnerable_20 [label=<(UNKNOWN,state.state = WAITOPERAND;,state.state = WAITOPERAND;)<SUB>17</SUB>>];
+vulnerable_21 [label=<(UNKNOWN,state.count = 0;,state.count = 0;)<SUB>18</SUB>>];
+vulnerable_22 [label=<(UNKNOWN,state.num = 0;,state.num = 0;)<SUB>19</SUB>>];
+vulnerable_23 [label=<(UNKNOWN,state.str = NULL;,state.str = NULL;)<SUB>20</SUB>>];
+vulnerable_24 [label="<(LOCAL,makepol : makepol)<SUB>23</SUB>>"];
+vulnerable_25 [label=<(UNKNOWN,if (!state.num)
+		ereport(ERROR,
+ 				(errcode(...,if (!state.num)
+		ereport(ERROR,
+ 				(errcode(...)<SUB>24</SUB>>];
+vulnerable_26 [label=<(UNKNOWN,commonlen = COMPUTESIZE(state.num);,commonlen = COMPUTESIZE(state.num);)<SUB>29</SUB>>];
+vulnerable_27 [label=<(UNKNOWN,query = (QUERYTYPE *) palloc(commonlen);,query = (QUERYTYPE *) palloc(commonlen);)<SUB>30</SUB>>];
+vulnerable_28 [label=<(UNKNOWN,SET_VARSIZE(query, commonlen);,SET_VARSIZE(query, commonlen);)<SUB>31</SUB>>];
+vulnerable_29 [label=<(UNKNOWN,query-&gt;size = state.num;,query-&gt;size = state.num;)<SUB>32</SUB>>];
+vulnerable_30 [label=<(UNKNOWN,ptr = GETQUERY(query);,ptr = GETQUERY(query);)<SUB>33</SUB>>];
+vulnerable_31 [label=<(UNKNOWN,for (i = state.num - 1;,for (i = state.num - 1;)<SUB>35</SUB>>];
+vulnerable_32 [label=<(UNKNOWN,i &gt;= 0;,i &gt;= 0;)<SUB>35</SUB>>];
+vulnerable_33 [label=<(UNKNOWN,i--)
+	{
+		ptr[i].type = state.str-&gt;type;
+		ptr[...,i--)
+	{
+		ptr[i].type = state.str-&gt;type;
+		ptr[...)<SUB>35</SUB>>];
+vulnerable_34 [label=<(UNKNOWN,pos = query-&gt;size - 1;,pos = query-&gt;size - 1;)<SUB>44</SUB>>];
+vulnerable_35 [label=<(UNKNOWN,findoprnd(ptr, &amp;pos);,findoprnd(ptr, &amp;pos);)<SUB>45</SUB>>];
+vulnerable_36 [label="<(LOCAL,PG_RETURN_POINTER : PG_RETURN_POINTER)<SUB>59</SUB>>"];
+vulnerable_37 [label=<(UNKNOWN,},})<SUB>60</SUB>>];
+vulnerable_38 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+vulnerable_59 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_60 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_61 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_65 [label=<(METHOD,&lt;operator&gt;.assignment)>];
+vulnerable_66 [label=<(PARAM,p1)>];
+vulnerable_67 [label=<(PARAM,p2)>];
+vulnerable_68 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_69 [label=<(METHOD_RETURN,ANY)>];
+fixed_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+fixed_8 [label=<(UNKNOWN,bqarr_in(PG_FUNCTION_ARGS)
+{
+	char	   *buf = (c...,bqarr_in(PG_FUNCTION_ARGS)
+{
+	char	   *buf = (c...)<SUB>1</SUB>>];
+fixed_9 [label="<(LOCAL,WORKSTATE state: WORKSTATE)<SUB>4</SUB>>"];
+fixed_10 [label="<(LOCAL,int32 i: int32)<SUB>5</SUB>>"];
+fixed_11 [label="<(LOCAL,QUERYTYPE* query: QUERYTYPE*)<SUB>6</SUB>>"];
+fixed_12 [label="<(LOCAL,int32 commonlen: int32)<SUB>7</SUB>>"];
+fixed_13 [label="<(LOCAL,ITEM* ptr: ITEM*)<SUB>8</SUB>>"];
+fixed_14 [label="<(LOCAL,NODE* tmp: NODE*)<SUB>9</SUB>>"];
+fixed_15 [label="<(LOCAL,int32 pos: int32)<SUB>10</SUB>>"];
+fixed_16 [label=<(&lt;operator&gt;.assignment,pos = 0)<SUB>10</SUB>>];
+fixed_17 [label=<(IDENTIFIER,pos,pos = 0)<SUB>10</SUB>>];
+fixed_18 [label=<(LITERAL,0,pos = 0)<SUB>10</SUB>>];
+fixed_19 [label=<(UNKNOWN,state.buf = buf;,state.buf = buf;)<SUB>16</SUB>>];
+fixed_20 [label=<(UNKNOWN,state.state = WAITOPERAND;,state.state = WAITOPERAND;)<SUB>17</SUB>>];
+fixed_21 [label=<(UNKNOWN,state.count = 0;,state.count = 0;)<SUB>18</SUB>>];
+fixed_22 [label=<(UNKNOWN,state.num = 0;,state.num = 0;)<SUB>19</SUB>>];
+fixed_23 [label=<(UNKNOWN,state.str = NULL;,state.str = NULL;)<SUB>20</SUB>>];
+fixed_24 [label="<(LOCAL,makepol : makepol)<SUB>23</SUB>>"];
+fixed_25 [label=<(UNKNOWN,if (!state.num)
+		ereport(ERROR,
+ 				(errcode(...,if (!state.num)
+		ereport(ERROR,
+ 				(errcode(...)<SUB>24</SUB>>];
+fixed_26 [label=<(UNKNOWN,if (state.num &gt; QUERYTYPEMAXITEMS)
+		ereport(ER...,if (state.num &gt; QUERYTYPEMAXITEMS)
+		ereport(ER...)<SUB>29</SUB>>];
+fixed_27 [label=<(UNKNOWN,commonlen = COMPUTESIZE(state.num);,commonlen = COMPUTESIZE(state.num);)<SUB>34</SUB>>];
+fixed_28 [label=<(UNKNOWN,query = (QUERYTYPE *) palloc(commonlen);,query = (QUERYTYPE *) palloc(commonlen);)<SUB>36</SUB>>];
+fixed_29 [label=<(UNKNOWN,SET_VARSIZE(query, commonlen);,SET_VARSIZE(query, commonlen);)<SUB>37</SUB>>];
+fixed_30 [label=<(UNKNOWN,query-&gt;size = state.num;,query-&gt;size = state.num;)<SUB>38</SUB>>];
+fixed_31 [label=<(UNKNOWN,ptr = GETQUERY(query);,ptr = GETQUERY(query);)<SUB>39</SUB>>];
+fixed_32 [label=<(UNKNOWN,for (i = state.num - 1;,for (i = state.num - 1;)<SUB>41</SUB>>];
+fixed_33 [label=<(UNKNOWN,i &gt;= 0;,i &gt;= 0;)<SUB>41</SUB>>];
+fixed_34 [label=<(UNKNOWN,i--)
+	{
+		ptr[i].type = state.str-&gt;type;
+		ptr[...,i--)
+	{
+		ptr[i].type = state.str-&gt;type;
+		ptr[...)<SUB>41</SUB>>];
+fixed_35 [label=<(UNKNOWN,pos = query-&gt;size - 1;,pos = query-&gt;size - 1;)<SUB>50</SUB>>];
+fixed_36 [label=<(UNKNOWN,findoprnd(ptr, &amp;pos);,findoprnd(ptr, &amp;pos);)<SUB>51</SUB>>];
+fixed_37 [label="<(LOCAL,PG_RETURN_POINTER : PG_RETURN_POINTER)<SUB>65</SUB>>"];
+fixed_38 [label=<(UNKNOWN,},})<SUB>66</SUB>>];
+fixed_39 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+fixed_60 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_61 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_62 [label=<(METHOD_RETURN,ANY)>];
+fixed_66 [label=<(METHOD,&lt;operator&gt;.assignment)>];
+fixed_67 [label=<(PARAM,p1)>];
+fixed_68 [label=<(PARAM,p2)>];
+fixed_69 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_70 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_6 -> vulnerable_7  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_38  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_8  [key=0, label="CFG: "];
+vulnerable_6 -> vulnerable_16  [key=0, label="DDG: "];
+vulnerable_7 -> vulnerable_8  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_9  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_10  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_11  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_12  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_13  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_14  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_15  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_16  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_19  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_20  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_21  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_22  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_23  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_24  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_25  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_26  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_27  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_28  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_29  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_30  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_31  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_32  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_33  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_34  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_35  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_36  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_37  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_16  [key=0, label="CFG: "];
+vulnerable_9 -> fixed_6  [key=0];
+vulnerable_10 -> fixed_6  [key=0];
+vulnerable_11 -> fixed_6  [key=0];
+vulnerable_12 -> fixed_6  [key=0];
+vulnerable_13 -> fixed_6  [key=0];
+vulnerable_14 -> fixed_6  [key=0];
+vulnerable_15 -> fixed_6  [key=0];
+vulnerable_16 -> vulnerable_17  [key=0, label="AST: "];
+vulnerable_16 -> vulnerable_18  [key=0, label="AST: "];
+vulnerable_16 -> vulnerable_19  [key=0, label="CFG: "];
+vulnerable_16 -> vulnerable_38  [key=0, label="DDG: pos"];
+vulnerable_16 -> vulnerable_38  [key=1, label="DDG: pos = 0"];
+vulnerable_17 -> fixed_6  [key=0];
+vulnerable_18 -> fixed_6  [key=0];
+vulnerable_19 -> vulnerable_20  [key=0, label="CFG: "];
+vulnerable_20 -> vulnerable_21  [key=0, label="CFG: "];
+vulnerable_21 -> vulnerable_22  [key=0, label="CFG: "];
+vulnerable_22 -> vulnerable_23  [key=0, label="CFG: "];
+vulnerable_23 -> vulnerable_25  [key=0, label="CFG: "];
+vulnerable_24 -> fixed_6  [key=0];
+vulnerable_25 -> vulnerable_26  [key=0, label="CFG: "];
+vulnerable_26 -> vulnerable_27  [key=0, label="CFG: "];
+vulnerable_27 -> vulnerable_28  [key=0, label="CFG: "];
+vulnerable_28 -> vulnerable_29  [key=0, label="CFG: "];
+vulnerable_29 -> vulnerable_30  [key=0, label="CFG: "];
+vulnerable_30 -> vulnerable_31  [key=0, label="CFG: "];
+vulnerable_31 -> vulnerable_32  [key=0, label="CFG: "];
+vulnerable_32 -> vulnerable_33  [key=0, label="CFG: "];
+vulnerable_33 -> vulnerable_34  [key=0, label="CFG: "];
+vulnerable_34 -> vulnerable_35  [key=0, label="CFG: "];
+vulnerable_35 -> vulnerable_37  [key=0, label="CFG: "];
+vulnerable_36 -> fixed_6  [key=0];
+vulnerable_37 -> vulnerable_38  [key=0, label="CFG: "];
+vulnerable_38 -> fixed_6  [key=0];
+vulnerable_59 -> vulnerable_60  [key=0, label="AST: "];
+vulnerable_59 -> vulnerable_61  [key=0, label="AST: "];
+vulnerable_59 -> vulnerable_61  [key=1, label="CFG: "];
+vulnerable_60 -> fixed_6  [key=0];
+vulnerable_61 -> fixed_6  [key=0];
+vulnerable_65 -> vulnerable_66  [key=0, label="AST: "];
+vulnerable_65 -> vulnerable_66  [key=1, label="DDG: "];
+vulnerable_65 -> vulnerable_68  [key=0, label="AST: "];
+vulnerable_65 -> vulnerable_67  [key=0, label="AST: "];
+vulnerable_65 -> vulnerable_67  [key=1, label="DDG: "];
+vulnerable_65 -> vulnerable_69  [key=0, label="AST: "];
+vulnerable_65 -> vulnerable_69  [key=1, label="CFG: "];
+vulnerable_66 -> vulnerable_69  [key=0, label="DDG: p1"];
+vulnerable_67 -> vulnerable_69  [key=0, label="DDG: p2"];
+vulnerable_68 -> fixed_6  [key=0];
+vulnerable_69 -> fixed_6  [key=0];
+fixed_6 -> fixed_7  [key=0, label="AST: "];
+fixed_6 -> fixed_39  [key=0, label="AST: "];
+fixed_6 -> fixed_8  [key=0, label="CFG: "];
+fixed_6 -> fixed_16  [key=0, label="DDG: "];
+fixed_7 -> fixed_8  [key=0, label="AST: "];
+fixed_7 -> fixed_9  [key=0, label="AST: "];
+fixed_7 -> fixed_10  [key=0, label="AST: "];
+fixed_7 -> fixed_11  [key=0, label="AST: "];
+fixed_7 -> fixed_12  [key=0, label="AST: "];
+fixed_7 -> fixed_13  [key=0, label="AST: "];
+fixed_7 -> fixed_14  [key=0, label="AST: "];
+fixed_7 -> fixed_15  [key=0, label="AST: "];
+fixed_7 -> fixed_16  [key=0, label="AST: "];
+fixed_7 -> fixed_19  [key=0, label="AST: "];
+fixed_7 -> fixed_20  [key=0, label="AST: "];
+fixed_7 -> fixed_21  [key=0, label="AST: "];
+fixed_7 -> fixed_22  [key=0, label="AST: "];
+fixed_7 -> fixed_23  [key=0, label="AST: "];
+fixed_7 -> fixed_24  [key=0, label="AST: "];
+fixed_7 -> fixed_25  [key=0, label="AST: "];
+fixed_7 -> fixed_26  [key=0, label="AST: "];
+fixed_7 -> fixed_27  [key=0, label="AST: "];
+fixed_7 -> fixed_28  [key=0, label="AST: "];
+fixed_7 -> fixed_29  [key=0, label="AST: "];
+fixed_7 -> fixed_30  [key=0, label="AST: "];
+fixed_7 -> fixed_31  [key=0, label="AST: "];
+fixed_7 -> fixed_32  [key=0, label="AST: "];
+fixed_7 -> fixed_33  [key=0, label="AST: "];
+fixed_7 -> fixed_34  [key=0, label="AST: "];
+fixed_7 -> fixed_35  [key=0, label="AST: "];
+fixed_7 -> fixed_36  [key=0, label="AST: "];
+fixed_7 -> fixed_37  [key=0, label="AST: "];
+fixed_7 -> fixed_38  [key=0, label="AST: "];
+fixed_8 -> fixed_16  [key=0, label="CFG: "];
+fixed_16 -> fixed_17  [key=0, label="AST: "];
+fixed_16 -> fixed_18  [key=0, label="AST: "];
+fixed_16 -> fixed_19  [key=0, label="CFG: "];
+fixed_16 -> fixed_39  [key=0, label="DDG: pos"];
+fixed_16 -> fixed_39  [key=1, label="DDG: pos = 0"];
+fixed_19 -> fixed_20  [key=0, label="CFG: "];
+fixed_20 -> fixed_21  [key=0, label="CFG: "];
+fixed_21 -> fixed_22  [key=0, label="CFG: "];
+fixed_22 -> fixed_23  [key=0, label="CFG: "];
+fixed_23 -> fixed_25  [key=0, label="CFG: "];
+fixed_25 -> fixed_26  [key=0, label="CFG: "];
+fixed_26 -> fixed_27  [key=0, label="CFG: "];
+fixed_27 -> fixed_28  [key=0, label="CFG: "];
+fixed_28 -> fixed_29  [key=0, label="CFG: "];
+fixed_29 -> fixed_30  [key=0, label="CFG: "];
+fixed_30 -> fixed_31  [key=0, label="CFG: "];
+fixed_31 -> fixed_32  [key=0, label="CFG: "];
+fixed_32 -> fixed_33  [key=0, label="CFG: "];
+fixed_33 -> fixed_34  [key=0, label="CFG: "];
+fixed_34 -> fixed_35  [key=0, label="CFG: "];
+fixed_35 -> fixed_36  [key=0, label="CFG: "];
+fixed_36 -> fixed_38  [key=0, label="CFG: "];
+fixed_38 -> fixed_39  [key=0, label="CFG: "];
+fixed_60 -> fixed_61  [key=0, label="AST: "];
+fixed_60 -> fixed_62  [key=0, label="AST: "];
+fixed_60 -> fixed_62  [key=1, label="CFG: "];
+fixed_66 -> fixed_67  [key=0, label="AST: "];
+fixed_66 -> fixed_67  [key=1, label="DDG: "];
+fixed_66 -> fixed_69  [key=0, label="AST: "];
+fixed_66 -> fixed_68  [key=0, label="AST: "];
+fixed_66 -> fixed_68  [key=1, label="DDG: "];
+fixed_66 -> fixed_70  [key=0, label="AST: "];
+fixed_66 -> fixed_70  [key=1, label="CFG: "];
+fixed_67 -> fixed_70  [key=0, label="DDG: p1"];
+fixed_68 -> fixed_70  [key=0, label="DDG: p2"];
+}

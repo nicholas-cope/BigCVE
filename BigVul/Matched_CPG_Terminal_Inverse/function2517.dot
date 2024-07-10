@@ -1,0 +1,69 @@
+digraph "&lt;global&gt;" {
+vulnerable_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+vulnerable_8 [label=<(UNKNOWN,PHP_FUNCTION(mcrypt_module_self_test)
+ {
+ 	MCRY...,PHP_FUNCTION(mcrypt_module_self_test)
+ {
+ 	MCRY...)<SUB>1</SUB>>];
+vulnerable_9 [label=<(UNKNOWN,if (mcrypt_module_self_test(module, dir) == 0) ...,if (mcrypt_module_self_test(module, dir) == 0) ...)<SUB>4</SUB>>];
+vulnerable_10 [label=<(UNKNOWN,else {
+		RETURN_FALSE;
+	},else {
+		RETURN_FALSE;
+	})<SUB>6</SUB>>];
+vulnerable_11 [label=<(UNKNOWN,},})<SUB>9</SUB>>];
+vulnerable_12 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+vulnerable_17 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_18 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_19 [label=<(METHOD_RETURN,ANY)>];
+fixed_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+fixed_8 [label=<(UNKNOWN,PHP_FUNCTION(mcrypt_module_self_test)
+ {
+ 	MCRY...,PHP_FUNCTION(mcrypt_module_self_test)
+ {
+ 	MCRY...)<SUB>1</SUB>>];
+fixed_9 [label=<(UNKNOWN,if (mcrypt_module_self_test(module, dir) == 0) ...,if (mcrypt_module_self_test(module, dir) == 0) ...)<SUB>5</SUB>>];
+fixed_10 [label=<(UNKNOWN,else {
+		RETURN_FALSE;
+	},else {
+		RETURN_FALSE;
+	})<SUB>7</SUB>>];
+fixed_11 [label=<(UNKNOWN,},})<SUB>10</SUB>>];
+fixed_12 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+fixed_17 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_18 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_19 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_6 -> vulnerable_7  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_12  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_8  [key=0, label="CFG: "];
+vulnerable_7 -> vulnerable_8  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_9  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_10  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_11  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_9  [key=0, label="CFG: "];
+vulnerable_9 -> vulnerable_10  [key=0, label="CFG: "];
+vulnerable_10 -> vulnerable_11  [key=0, label="CFG: "];
+vulnerable_11 -> vulnerable_12  [key=0, label="CFG: "];
+vulnerable_17 -> vulnerable_18  [key=0, label="AST: "];
+vulnerable_17 -> vulnerable_19  [key=0, label="AST: "];
+vulnerable_17 -> vulnerable_19  [key=1, label="CFG: "];
+fixed_6 -> fixed_7  [key=0, label="AST: "];
+fixed_6 -> fixed_12  [key=0, label="AST: "];
+fixed_6 -> fixed_8  [key=0, label="CFG: "];
+fixed_7 -> fixed_8  [key=0, label="AST: "];
+fixed_7 -> fixed_9  [key=0, label="AST: "];
+fixed_7 -> fixed_10  [key=0, label="AST: "];
+fixed_7 -> fixed_11  [key=0, label="AST: "];
+fixed_8 -> fixed_9  [key=0, label="CFG: "];
+fixed_9 -> fixed_10  [key=0, label="CFG: "];
+fixed_10 -> fixed_11  [key=0, label="CFG: "];
+fixed_11 -> fixed_12  [key=0, label="CFG: "];
+fixed_12 -> vulnerable_6  [key=0];
+fixed_17 -> fixed_18  [key=0, label="AST: "];
+fixed_17 -> fixed_19  [key=0, label="AST: "];
+fixed_17 -> fixed_19  [key=1, label="CFG: "];
+fixed_18 -> vulnerable_6  [key=0];
+fixed_19 -> vulnerable_6  [key=0];
+}

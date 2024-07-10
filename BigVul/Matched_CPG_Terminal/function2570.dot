@@ -1,0 +1,69 @@
+digraph "&lt;global&gt;" {
+vulnerable_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+vulnerable_8 [label=<(UNKNOWN,parse_netscreen_hex_dump(FILE_T fh, int pkt_len...,parse_netscreen_hex_dump(FILE_T fh, int pkt_len...)<SUB>1</SUB>>];
+vulnerable_9 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+vulnerable_14 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_15 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_16 [label=<(METHOD_RETURN,ANY)>];
+fixed_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+fixed_8 [label=<(UNKNOWN,parse_netscreen_hex_dump(FILE_T fh, int pkt_len...,parse_netscreen_hex_dump(FILE_T fh, int pkt_len...)<SUB>1</SUB>>];
+fixed_9 [label=<(UNKNOWN,pd = ws_buffer_start_ptr(buf);,pd = ws_buffer_start_ptr(buf);)<SUB>4</SUB>>];
+fixed_10 [label=<(UNKNOWN,while(1) {
+
+		/* The last packet is not delimit...,while(1) {
+
+		/* The last packet is not delimit...)<SUB>6</SUB>>];
+fixed_11 [label=<(UNKNOWN,if (strncmp(cap_int, &quot;adsl&quot;, 4) == 0) {
+		/* Th...,if (strncmp(cap_int, &quot;adsl&quot;, 4) == 0) {
+		/* Th...)<SUB>75</SUB>>];
+fixed_12 [label=<(UNKNOWN,else if (strncmp(cap_int, &quot;seri&quot;, 4) == 0)
+		ph...,else if (strncmp(cap_int, &quot;seri&quot;, 4) == 0)
+		ph...)<SUB>89</SUB>>];
+fixed_13 [label=<(UNKNOWN,else
+		phdr-&gt;pkt_encap = WTAP_ENCAP_ETHERNET;,else
+		phdr-&gt;pkt_encap = WTAP_ENCAP_ETHERNET;)<SUB>91</SUB>>];
+fixed_14 [label=<(UNKNOWN,phdr-&gt;caplen = offset;,phdr-&gt;caplen = offset;)<SUB>94</SUB>>];
+fixed_15 [label=<(UNKNOWN,return TRUE;,return TRUE;)<SUB>96</SUB>>];
+fixed_16 [label=<(UNKNOWN,},})<SUB>97</SUB>>];
+fixed_17 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+fixed_22 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_23 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_24 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_6 -> vulnerable_7  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_9  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_8  [key=0, label="CFG: "];
+vulnerable_7 -> vulnerable_8  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_9  [key=0, label="CFG: "];
+vulnerable_9 -> fixed_6  [key=0];
+vulnerable_14 -> vulnerable_15  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_16  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_16  [key=1, label="CFG: "];
+vulnerable_15 -> fixed_6  [key=0];
+vulnerable_16 -> fixed_6  [key=0];
+fixed_6 -> fixed_7  [key=0, label="AST: "];
+fixed_6 -> fixed_17  [key=0, label="AST: "];
+fixed_6 -> fixed_8  [key=0, label="CFG: "];
+fixed_7 -> fixed_8  [key=0, label="AST: "];
+fixed_7 -> fixed_9  [key=0, label="AST: "];
+fixed_7 -> fixed_10  [key=0, label="AST: "];
+fixed_7 -> fixed_11  [key=0, label="AST: "];
+fixed_7 -> fixed_12  [key=0, label="AST: "];
+fixed_7 -> fixed_13  [key=0, label="AST: "];
+fixed_7 -> fixed_14  [key=0, label="AST: "];
+fixed_7 -> fixed_15  [key=0, label="AST: "];
+fixed_7 -> fixed_16  [key=0, label="AST: "];
+fixed_8 -> fixed_9  [key=0, label="CFG: "];
+fixed_9 -> fixed_10  [key=0, label="CFG: "];
+fixed_10 -> fixed_11  [key=0, label="CFG: "];
+fixed_11 -> fixed_12  [key=0, label="CFG: "];
+fixed_12 -> fixed_13  [key=0, label="CFG: "];
+fixed_13 -> fixed_14  [key=0, label="CFG: "];
+fixed_14 -> fixed_15  [key=0, label="CFG: "];
+fixed_15 -> fixed_16  [key=0, label="CFG: "];
+fixed_16 -> fixed_17  [key=0, label="CFG: "];
+fixed_22 -> fixed_23  [key=0, label="AST: "];
+fixed_22 -> fixed_24  [key=0, label="AST: "];
+fixed_22 -> fixed_24  [key=1, label="CFG: "];
+}

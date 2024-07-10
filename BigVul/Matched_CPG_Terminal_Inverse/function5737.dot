@@ -1,0 +1,504 @@
+digraph "&lt;global&gt;" {
+vulnerable_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+vulnerable_8 [label=<(METHOD,npClass)<SUB>1</SUB>>];
+vulnerable_9 [label=<(BLOCK,{
+    static NPClass npClass = {
+        NP_CLA...,{
+    static NPClass npClass = {
+        NP_CLA...)<SUB>2</SUB>>];
+vulnerable_10 [label="<(LOCAL,NPClass npClass: NPClass)<SUB>3</SUB>>"];
+vulnerable_11 [label=<(&lt;operator&gt;.assignment,npClass = {
+        NP_CLASS_STRUCT_VERSION,
+  ...)<SUB>3</SUB>>];
+vulnerable_12 [label=<(IDENTIFIER,npClass,npClass = {
+        NP_CLASS_STRUCT_VERSION,
+  ...)<SUB>3</SUB>>];
+vulnerable_13 [label=<(&lt;operator&gt;.arrayInitializer,{
+        NP_CLASS_STRUCT_VERSION,
+        NP_A...)<SUB>3</SUB>>];
+vulnerable_14 [label=<(IDENTIFIER,NP_CLASS_STRUCT_VERSION,{
+        NP_CLASS_STRUCT_VERSION,
+        NP_A...)<SUB>4</SUB>>];
+vulnerable_15 [label=<(IDENTIFIER,NP_Allocate,{
+        NP_CLASS_STRUCT_VERSION,
+        NP_A...)<SUB>5</SUB>>];
+vulnerable_16 [label=<(IDENTIFIER,NP_Deallocate,{
+        NP_CLASS_STRUCT_VERSION,
+        NP_A...)<SUB>6</SUB>>];
+vulnerable_17 [label=<(LITERAL,0,{
+        NP_CLASS_STRUCT_VERSION,
+        NP_A...)<SUB>7</SUB>>];
+vulnerable_18 [label=<(IDENTIFIER,NP_HasMethod,{
+        NP_CLASS_STRUCT_VERSION,
+        NP_A...)<SUB>8</SUB>>];
+vulnerable_19 [label=<(IDENTIFIER,NP_Invoke,{
+        NP_CLASS_STRUCT_VERSION,
+        NP_A...)<SUB>9</SUB>>];
+vulnerable_20 [label=<(IDENTIFIER,NP_InvokeDefault,{
+        NP_CLASS_STRUCT_VERSION,
+        NP_A...)<SUB>10</SUB>>];
+vulnerable_21 [label=<(IDENTIFIER,NP_HasProperty,{
+        NP_CLASS_STRUCT_VERSION,
+        NP_A...)<SUB>11</SUB>>];
+vulnerable_22 [label=<(IDENTIFIER,NP_GetProperty,{
+        NP_CLASS_STRUCT_VERSION,
+        NP_A...)<SUB>12</SUB>>];
+vulnerable_23 [label=<(IDENTIFIER,NP_SetProperty,{
+        NP_CLASS_STRUCT_VERSION,
+        NP_A...)<SUB>13</SUB>>];
+vulnerable_24 [label=<(LITERAL,0,{
+        NP_CLASS_STRUCT_VERSION,
+        NP_A...)<SUB>14</SUB>>];
+vulnerable_25 [label=<(IDENTIFIER,NP_Enumerate,{
+        NP_CLASS_STRUCT_VERSION,
+        NP_A...)<SUB>15</SUB>>];
+vulnerable_26 [label=<(IDENTIFIER,NP_Construct,{
+        NP_CLASS_STRUCT_VERSION,
+        NP_A...)<SUB>16</SUB>>];
+vulnerable_27 [label=<(RETURN,return &amp;npClass;,return &amp;npClass;)<SUB>19</SUB>>];
+vulnerable_28 [label=<(&lt;operator&gt;.addressOf,&amp;npClass)<SUB>19</SUB>>];
+vulnerable_29 [label=<(IDENTIFIER,npClass,return &amp;npClass;)<SUB>19</SUB>>];
+vulnerable_30 [label=<(METHOD_RETURN,NPClass)<SUB>1</SUB>>];
+vulnerable_32 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+vulnerable_54 [label=<(METHOD,&lt;operator&gt;.arrayInitializer)>];
+vulnerable_55 [label=<(PARAM,p1)>];
+vulnerable_56 [label=<(PARAM,p2)>];
+vulnerable_57 [label=<(PARAM,p3)>];
+vulnerable_58 [label=<(PARAM,p4)>];
+vulnerable_59 [label=<(PARAM,p5)>];
+vulnerable_60 [label=<(PARAM,p6)>];
+vulnerable_61 [label=<(PARAM,p7)>];
+vulnerable_62 [label=<(PARAM,p8)>];
+vulnerable_63 [label=<(PARAM,p9)>];
+vulnerable_64 [label=<(PARAM,p10)>];
+vulnerable_65 [label=<(PARAM,p11)>];
+vulnerable_66 [label=<(PARAM,p12)>];
+vulnerable_67 [label=<(PARAM,p13)>];
+vulnerable_68 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_69 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_70 [label=<(METHOD,&lt;operator&gt;.addressOf)>];
+vulnerable_71 [label=<(PARAM,p1)>];
+vulnerable_72 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_73 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_49 [label=<(METHOD,&lt;operator&gt;.assignment)>];
+vulnerable_50 [label=<(PARAM,p1)>];
+vulnerable_51 [label=<(PARAM,p2)>];
+vulnerable_52 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_53 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_43 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_44 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_45 [label=<(METHOD_RETURN,ANY)>];
+fixed_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+fixed_8 [label=<(METHOD,npClass)<SUB>1</SUB>>];
+fixed_9 [label=<(BLOCK,{
+    static NPClass npClass = {
+        NP_CLA...,{
+    static NPClass npClass = {
+        NP_CLA...)<SUB>2</SUB>>];
+fixed_10 [label="<(LOCAL,NPClass npClass: NPClass)<SUB>3</SUB>>"];
+fixed_11 [label=<(&lt;operator&gt;.assignment,npClass = {
+        NP_CLASS_STRUCT_VERSION,
+  ...)<SUB>3</SUB>>];
+fixed_12 [label=<(IDENTIFIER,npClass,npClass = {
+        NP_CLASS_STRUCT_VERSION,
+  ...)<SUB>3</SUB>>];
+fixed_13 [label=<(&lt;operator&gt;.arrayInitializer,{
+        NP_CLASS_STRUCT_VERSION,
+        NP_A...)<SUB>3</SUB>>];
+fixed_14 [label=<(IDENTIFIER,NP_CLASS_STRUCT_VERSION,{
+        NP_CLASS_STRUCT_VERSION,
+        NP_A...)<SUB>4</SUB>>];
+fixed_15 [label=<(IDENTIFIER,NP_Allocate,{
+        NP_CLASS_STRUCT_VERSION,
+        NP_A...)<SUB>5</SUB>>];
+fixed_16 [label=<(IDENTIFIER,NP_Deallocate,{
+        NP_CLASS_STRUCT_VERSION,
+        NP_A...)<SUB>6</SUB>>];
+fixed_17 [label=<(LITERAL,0,{
+        NP_CLASS_STRUCT_VERSION,
+        NP_A...)<SUB>7</SUB>>];
+fixed_18 [label=<(IDENTIFIER,NP_HasMethod,{
+        NP_CLASS_STRUCT_VERSION,
+        NP_A...)<SUB>8</SUB>>];
+fixed_19 [label=<(IDENTIFIER,NP_Invoke,{
+        NP_CLASS_STRUCT_VERSION,
+        NP_A...)<SUB>9</SUB>>];
+fixed_20 [label=<(IDENTIFIER,NP_InvokeDefault,{
+        NP_CLASS_STRUCT_VERSION,
+        NP_A...)<SUB>10</SUB>>];
+fixed_21 [label=<(IDENTIFIER,NP_HasProperty,{
+        NP_CLASS_STRUCT_VERSION,
+        NP_A...)<SUB>11</SUB>>];
+fixed_22 [label=<(IDENTIFIER,NP_GetProperty,{
+        NP_CLASS_STRUCT_VERSION,
+        NP_A...)<SUB>12</SUB>>];
+fixed_23 [label=<(IDENTIFIER,NP_SetProperty,{
+        NP_CLASS_STRUCT_VERSION,
+        NP_A...)<SUB>13</SUB>>];
+fixed_24 [label=<(IDENTIFIER,NP_RemoveProperty,{
+        NP_CLASS_STRUCT_VERSION,
+        NP_A...)<SUB>14</SUB>>];
+fixed_25 [label=<(IDENTIFIER,NP_Enumerate,{
+        NP_CLASS_STRUCT_VERSION,
+        NP_A...)<SUB>15</SUB>>];
+fixed_26 [label=<(IDENTIFIER,NP_Construct,{
+        NP_CLASS_STRUCT_VERSION,
+        NP_A...)<SUB>16</SUB>>];
+fixed_27 [label=<(RETURN,return &amp;npClass;,return &amp;npClass;)<SUB>19</SUB>>];
+fixed_28 [label=<(&lt;operator&gt;.addressOf,&amp;npClass)<SUB>19</SUB>>];
+fixed_29 [label=<(IDENTIFIER,npClass,return &amp;npClass;)<SUB>19</SUB>>];
+fixed_30 [label=<(METHOD_RETURN,NPClass)<SUB>1</SUB>>];
+fixed_32 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+fixed_54 [label=<(METHOD,&lt;operator&gt;.arrayInitializer)>];
+fixed_55 [label=<(PARAM,p1)>];
+fixed_56 [label=<(PARAM,p2)>];
+fixed_57 [label=<(PARAM,p3)>];
+fixed_58 [label=<(PARAM,p4)>];
+fixed_59 [label=<(PARAM,p5)>];
+fixed_60 [label=<(PARAM,p6)>];
+fixed_61 [label=<(PARAM,p7)>];
+fixed_62 [label=<(PARAM,p8)>];
+fixed_63 [label=<(PARAM,p9)>];
+fixed_64 [label=<(PARAM,p10)>];
+fixed_65 [label=<(PARAM,p11)>];
+fixed_66 [label=<(PARAM,p12)>];
+fixed_67 [label=<(PARAM,p13)>];
+fixed_68 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_69 [label=<(METHOD_RETURN,ANY)>];
+fixed_70 [label=<(METHOD,&lt;operator&gt;.addressOf)>];
+fixed_71 [label=<(PARAM,p1)>];
+fixed_72 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_73 [label=<(METHOD_RETURN,ANY)>];
+fixed_49 [label=<(METHOD,&lt;operator&gt;.assignment)>];
+fixed_50 [label=<(PARAM,p1)>];
+fixed_51 [label=<(PARAM,p2)>];
+fixed_52 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_53 [label=<(METHOD_RETURN,ANY)>];
+fixed_43 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_44 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_45 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_6 -> vulnerable_7  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_32  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_32  [key=1, label="CFG: "];
+vulnerable_7 -> vulnerable_8  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_9  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_30  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_13  [key=0, label="CFG: "];
+vulnerable_8 -> vulnerable_13  [key=1, label="DDG: "];
+vulnerable_9 -> vulnerable_10  [key=0, label="AST: "];
+vulnerable_9 -> vulnerable_11  [key=0, label="AST: "];
+vulnerable_9 -> vulnerable_27  [key=0, label="AST: "];
+vulnerable_11 -> vulnerable_12  [key=0, label="AST: "];
+vulnerable_11 -> vulnerable_13  [key=0, label="AST: "];
+vulnerable_11 -> vulnerable_28  [key=0, label="CFG: "];
+vulnerable_11 -> vulnerable_30  [key=0, label="DDG: npClass"];
+vulnerable_11 -> vulnerable_30  [key=1, label="DDG: {
+        NP_CLASS_STRUCT_VERSION,
+        NP_Allocate,
+        NP_Deallocate,
+        0,
+        NP_HasMethod,
+        NP_Invoke,
+        NP_InvokeDefault,
+         NP_HasProperty,
+         NP_GetProperty,
+         NP_SetProperty,
+        0,
+         NP_Enumerate,
+         NP_Construct
+     }"];
+vulnerable_11 -> vulnerable_30  [key=2, label="DDG: npClass = {
+        NP_CLASS_STRUCT_VERSION,
+        NP_Allocate,
+        NP_Deallocate,
+        0,
+        NP_HasMethod,
+        NP_Invoke,
+        NP_InvokeDefault,
+         NP_HasProperty,
+         NP_GetProperty,
+         NP_SetProperty,
+        0,
+         NP_Enumerate,
+         NP_Construct
+     }"];
+vulnerable_13 -> vulnerable_14  [key=0, label="AST: "];
+vulnerable_13 -> vulnerable_15  [key=0, label="AST: "];
+vulnerable_13 -> vulnerable_16  [key=0, label="AST: "];
+vulnerable_13 -> vulnerable_17  [key=0, label="AST: "];
+vulnerable_13 -> vulnerable_18  [key=0, label="AST: "];
+vulnerable_13 -> vulnerable_19  [key=0, label="AST: "];
+vulnerable_13 -> vulnerable_20  [key=0, label="AST: "];
+vulnerable_13 -> vulnerable_21  [key=0, label="AST: "];
+vulnerable_13 -> vulnerable_22  [key=0, label="AST: "];
+vulnerable_13 -> vulnerable_23  [key=0, label="AST: "];
+vulnerable_13 -> vulnerable_24  [key=0, label="AST: "];
+vulnerable_13 -> vulnerable_25  [key=0, label="AST: "];
+vulnerable_13 -> vulnerable_26  [key=0, label="AST: "];
+vulnerable_13 -> vulnerable_11  [key=0, label="CFG: "];
+vulnerable_13 -> vulnerable_11  [key=1, label="DDG: NP_GetProperty"];
+vulnerable_13 -> vulnerable_11  [key=2, label="DDG: 0"];
+vulnerable_13 -> vulnerable_11  [key=3, label="DDG: NP_InvokeDefault"];
+vulnerable_13 -> vulnerable_11  [key=4, label="DDG: NP_Deallocate"];
+vulnerable_13 -> vulnerable_11  [key=5, label="DDG: NP_Invoke"];
+vulnerable_13 -> vulnerable_11  [key=6, label="DDG: NP_Allocate"];
+vulnerable_13 -> vulnerable_11  [key=7, label="DDG: NP_HasMethod"];
+vulnerable_13 -> vulnerable_11  [key=8, label="DDG: NP_SetProperty"];
+vulnerable_13 -> vulnerable_11  [key=9, label="DDG: NP_Construct"];
+vulnerable_13 -> vulnerable_11  [key=10, label="DDG: NP_Enumerate"];
+vulnerable_13 -> vulnerable_11  [key=11, label="DDG: NP_HasProperty"];
+vulnerable_13 -> vulnerable_11  [key=12, label="DDG: NP_CLASS_STRUCT_VERSION"];
+vulnerable_13 -> vulnerable_30  [key=0, label="DDG: NP_Allocate"];
+vulnerable_13 -> vulnerable_30  [key=1, label="DDG: NP_Deallocate"];
+vulnerable_13 -> vulnerable_30  [key=2, label="DDG: NP_HasMethod"];
+vulnerable_13 -> vulnerable_30  [key=3, label="DDG: NP_Invoke"];
+vulnerable_13 -> vulnerable_30  [key=4, label="DDG: NP_InvokeDefault"];
+vulnerable_13 -> vulnerable_30  [key=5, label="DDG: NP_HasProperty"];
+vulnerable_13 -> vulnerable_30  [key=6, label="DDG: NP_GetProperty"];
+vulnerable_13 -> vulnerable_30  [key=7, label="DDG: NP_SetProperty"];
+vulnerable_13 -> vulnerable_30  [key=8, label="DDG: NP_Enumerate"];
+vulnerable_13 -> vulnerable_30  [key=9, label="DDG: NP_Construct"];
+vulnerable_13 -> vulnerable_30  [key=10, label="DDG: NP_CLASS_STRUCT_VERSION"];
+vulnerable_27 -> vulnerable_28  [key=0, label="AST: "];
+vulnerable_27 -> vulnerable_30  [key=0, label="CFG: "];
+vulnerable_27 -> vulnerable_30  [key=1, label="DDG: &lt;RET&gt;"];
+vulnerable_28 -> vulnerable_29  [key=0, label="AST: "];
+vulnerable_28 -> vulnerable_27  [key=0, label="CFG: "];
+vulnerable_54 -> vulnerable_55  [key=0, label="AST: "];
+vulnerable_54 -> vulnerable_55  [key=1, label="DDG: "];
+vulnerable_54 -> vulnerable_68  [key=0, label="AST: "];
+vulnerable_54 -> vulnerable_56  [key=0, label="AST: "];
+vulnerable_54 -> vulnerable_56  [key=1, label="DDG: "];
+vulnerable_54 -> vulnerable_69  [key=0, label="AST: "];
+vulnerable_54 -> vulnerable_69  [key=1, label="CFG: "];
+vulnerable_54 -> vulnerable_57  [key=0, label="AST: "];
+vulnerable_54 -> vulnerable_57  [key=1, label="DDG: "];
+vulnerable_54 -> vulnerable_58  [key=0, label="AST: "];
+vulnerable_54 -> vulnerable_58  [key=1, label="DDG: "];
+vulnerable_54 -> vulnerable_59  [key=0, label="AST: "];
+vulnerable_54 -> vulnerable_59  [key=1, label="DDG: "];
+vulnerable_54 -> vulnerable_60  [key=0, label="AST: "];
+vulnerable_54 -> vulnerable_60  [key=1, label="DDG: "];
+vulnerable_54 -> vulnerable_61  [key=0, label="AST: "];
+vulnerable_54 -> vulnerable_61  [key=1, label="DDG: "];
+vulnerable_54 -> vulnerable_62  [key=0, label="AST: "];
+vulnerable_54 -> vulnerable_62  [key=1, label="DDG: "];
+vulnerable_54 -> vulnerable_63  [key=0, label="AST: "];
+vulnerable_54 -> vulnerable_63  [key=1, label="DDG: "];
+vulnerable_54 -> vulnerable_64  [key=0, label="AST: "];
+vulnerable_54 -> vulnerable_64  [key=1, label="DDG: "];
+vulnerable_54 -> vulnerable_65  [key=0, label="AST: "];
+vulnerable_54 -> vulnerable_65  [key=1, label="DDG: "];
+vulnerable_54 -> vulnerable_66  [key=0, label="AST: "];
+vulnerable_54 -> vulnerable_66  [key=1, label="DDG: "];
+vulnerable_54 -> vulnerable_67  [key=0, label="AST: "];
+vulnerable_54 -> vulnerable_67  [key=1, label="DDG: "];
+vulnerable_55 -> vulnerable_69  [key=0, label="DDG: p1"];
+vulnerable_56 -> vulnerable_69  [key=0, label="DDG: p2"];
+vulnerable_57 -> vulnerable_69  [key=0, label="DDG: p3"];
+vulnerable_58 -> vulnerable_69  [key=0, label="DDG: p4"];
+vulnerable_59 -> vulnerable_69  [key=0, label="DDG: p5"];
+vulnerable_60 -> vulnerable_69  [key=0, label="DDG: p6"];
+vulnerable_61 -> vulnerable_69  [key=0, label="DDG: p7"];
+vulnerable_62 -> vulnerable_69  [key=0, label="DDG: p8"];
+vulnerable_63 -> vulnerable_69  [key=0, label="DDG: p9"];
+vulnerable_64 -> vulnerable_69  [key=0, label="DDG: p10"];
+vulnerable_65 -> vulnerable_69  [key=0, label="DDG: p11"];
+vulnerable_66 -> vulnerable_69  [key=0, label="DDG: p12"];
+vulnerable_67 -> vulnerable_69  [key=0, label="DDG: p13"];
+vulnerable_70 -> vulnerable_71  [key=0, label="AST: "];
+vulnerable_70 -> vulnerable_71  [key=1, label="DDG: "];
+vulnerable_70 -> vulnerable_72  [key=0, label="AST: "];
+vulnerable_70 -> vulnerable_73  [key=0, label="AST: "];
+vulnerable_70 -> vulnerable_73  [key=1, label="CFG: "];
+vulnerable_71 -> vulnerable_73  [key=0, label="DDG: p1"];
+vulnerable_49 -> vulnerable_50  [key=0, label="AST: "];
+vulnerable_49 -> vulnerable_50  [key=1, label="DDG: "];
+vulnerable_49 -> vulnerable_52  [key=0, label="AST: "];
+vulnerable_49 -> vulnerable_51  [key=0, label="AST: "];
+vulnerable_49 -> vulnerable_51  [key=1, label="DDG: "];
+vulnerable_49 -> vulnerable_53  [key=0, label="AST: "];
+vulnerable_49 -> vulnerable_53  [key=1, label="CFG: "];
+vulnerable_50 -> vulnerable_53  [key=0, label="DDG: p1"];
+vulnerable_51 -> vulnerable_53  [key=0, label="DDG: p2"];
+vulnerable_43 -> vulnerable_44  [key=0, label="AST: "];
+vulnerable_43 -> vulnerable_45  [key=0, label="AST: "];
+vulnerable_43 -> vulnerable_45  [key=1, label="CFG: "];
+fixed_6 -> fixed_7  [key=0, label="AST: "];
+fixed_6 -> fixed_32  [key=0, label="AST: "];
+fixed_6 -> fixed_32  [key=1, label="CFG: "];
+fixed_7 -> fixed_8  [key=0, label="AST: "];
+fixed_8 -> fixed_9  [key=0, label="AST: "];
+fixed_8 -> fixed_30  [key=0, label="AST: "];
+fixed_8 -> fixed_13  [key=0, label="CFG: "];
+fixed_8 -> fixed_13  [key=1, label="DDG: "];
+fixed_9 -> fixed_10  [key=0, label="AST: "];
+fixed_9 -> fixed_11  [key=0, label="AST: "];
+fixed_9 -> fixed_27  [key=0, label="AST: "];
+fixed_10 -> vulnerable_6  [key=0];
+fixed_11 -> fixed_12  [key=0, label="AST: "];
+fixed_11 -> fixed_13  [key=0, label="AST: "];
+fixed_11 -> fixed_28  [key=0, label="CFG: "];
+fixed_11 -> fixed_30  [key=0, label="DDG: npClass"];
+fixed_11 -> fixed_30  [key=1, label="DDG: {
+        NP_CLASS_STRUCT_VERSION,
+        NP_Allocate,
+        NP_Deallocate,
+        0,
+        NP_HasMethod,
+        NP_Invoke,
+        NP_InvokeDefault,
+         NP_HasProperty,
+         NP_GetProperty,
+         NP_SetProperty,
+        NP_RemoveProperty,
+         NP_Enumerate,
+         NP_Construct
+     }"];
+fixed_11 -> fixed_30  [key=2, label="DDG: npClass = {
+        NP_CLASS_STRUCT_VERSION,
+        NP_Allocate,
+        NP_Deallocate,
+        0,
+        NP_HasMethod,
+        NP_Invoke,
+        NP_InvokeDefault,
+         NP_HasProperty,
+         NP_GetProperty,
+         NP_SetProperty,
+        NP_RemoveProperty,
+         NP_Enumerate,
+         NP_Construct
+     }"];
+fixed_12 -> vulnerable_6  [key=0];
+fixed_13 -> fixed_14  [key=0, label="AST: "];
+fixed_13 -> fixed_15  [key=0, label="AST: "];
+fixed_13 -> fixed_16  [key=0, label="AST: "];
+fixed_13 -> fixed_17  [key=0, label="AST: "];
+fixed_13 -> fixed_18  [key=0, label="AST: "];
+fixed_13 -> fixed_19  [key=0, label="AST: "];
+fixed_13 -> fixed_20  [key=0, label="AST: "];
+fixed_13 -> fixed_21  [key=0, label="AST: "];
+fixed_13 -> fixed_22  [key=0, label="AST: "];
+fixed_13 -> fixed_23  [key=0, label="AST: "];
+fixed_13 -> fixed_24  [key=0, label="AST: "];
+fixed_13 -> fixed_25  [key=0, label="AST: "];
+fixed_13 -> fixed_26  [key=0, label="AST: "];
+fixed_13 -> fixed_11  [key=0, label="CFG: "];
+fixed_13 -> fixed_11  [key=1, label="DDG: NP_GetProperty"];
+fixed_13 -> fixed_11  [key=2, label="DDG: 0"];
+fixed_13 -> fixed_11  [key=3, label="DDG: NP_InvokeDefault"];
+fixed_13 -> fixed_11  [key=4, label="DDG: NP_Deallocate"];
+fixed_13 -> fixed_11  [key=5, label="DDG: NP_Invoke"];
+fixed_13 -> fixed_11  [key=6, label="DDG: NP_Allocate"];
+fixed_13 -> fixed_11  [key=7, label="DDG: NP_RemoveProperty"];
+fixed_13 -> fixed_11  [key=8, label="DDG: NP_HasMethod"];
+fixed_13 -> fixed_11  [key=9, label="DDG: NP_SetProperty"];
+fixed_13 -> fixed_11  [key=10, label="DDG: NP_Construct"];
+fixed_13 -> fixed_11  [key=11, label="DDG: NP_Enumerate"];
+fixed_13 -> fixed_11  [key=12, label="DDG: NP_HasProperty"];
+fixed_13 -> fixed_11  [key=13, label="DDG: NP_CLASS_STRUCT_VERSION"];
+fixed_13 -> fixed_30  [key=0, label="DDG: NP_Allocate"];
+fixed_13 -> fixed_30  [key=1, label="DDG: NP_Deallocate"];
+fixed_13 -> fixed_30  [key=2, label="DDG: NP_HasMethod"];
+fixed_13 -> fixed_30  [key=3, label="DDG: NP_Invoke"];
+fixed_13 -> fixed_30  [key=4, label="DDG: NP_InvokeDefault"];
+fixed_13 -> fixed_30  [key=5, label="DDG: NP_HasProperty"];
+fixed_13 -> fixed_30  [key=6, label="DDG: NP_GetProperty"];
+fixed_13 -> fixed_30  [key=7, label="DDG: NP_SetProperty"];
+fixed_13 -> fixed_30  [key=8, label="DDG: NP_RemoveProperty"];
+fixed_13 -> fixed_30  [key=9, label="DDG: NP_Enumerate"];
+fixed_13 -> fixed_30  [key=10, label="DDG: NP_Construct"];
+fixed_13 -> fixed_30  [key=11, label="DDG: NP_CLASS_STRUCT_VERSION"];
+fixed_14 -> vulnerable_6  [key=0];
+fixed_15 -> vulnerable_6  [key=0];
+fixed_16 -> vulnerable_6  [key=0];
+fixed_17 -> vulnerable_6  [key=0];
+fixed_18 -> vulnerable_6  [key=0];
+fixed_19 -> vulnerable_6  [key=0];
+fixed_20 -> vulnerable_6  [key=0];
+fixed_21 -> vulnerable_6  [key=0];
+fixed_22 -> vulnerable_6  [key=0];
+fixed_23 -> vulnerable_6  [key=0];
+fixed_24 -> vulnerable_6  [key=0];
+fixed_25 -> vulnerable_6  [key=0];
+fixed_26 -> vulnerable_6  [key=0];
+fixed_27 -> fixed_28  [key=0, label="AST: "];
+fixed_27 -> fixed_30  [key=0, label="CFG: "];
+fixed_27 -> fixed_30  [key=1, label="DDG: &lt;RET&gt;"];
+fixed_28 -> fixed_29  [key=0, label="AST: "];
+fixed_28 -> fixed_27  [key=0, label="CFG: "];
+fixed_29 -> vulnerable_6  [key=0];
+fixed_30 -> vulnerable_6  [key=0];
+fixed_32 -> vulnerable_6  [key=0];
+fixed_54 -> fixed_55  [key=0, label="AST: "];
+fixed_54 -> fixed_55  [key=1, label="DDG: "];
+fixed_54 -> fixed_68  [key=0, label="AST: "];
+fixed_54 -> fixed_56  [key=0, label="AST: "];
+fixed_54 -> fixed_56  [key=1, label="DDG: "];
+fixed_54 -> fixed_69  [key=0, label="AST: "];
+fixed_54 -> fixed_69  [key=1, label="CFG: "];
+fixed_54 -> fixed_57  [key=0, label="AST: "];
+fixed_54 -> fixed_57  [key=1, label="DDG: "];
+fixed_54 -> fixed_58  [key=0, label="AST: "];
+fixed_54 -> fixed_58  [key=1, label="DDG: "];
+fixed_54 -> fixed_59  [key=0, label="AST: "];
+fixed_54 -> fixed_59  [key=1, label="DDG: "];
+fixed_54 -> fixed_60  [key=0, label="AST: "];
+fixed_54 -> fixed_60  [key=1, label="DDG: "];
+fixed_54 -> fixed_61  [key=0, label="AST: "];
+fixed_54 -> fixed_61  [key=1, label="DDG: "];
+fixed_54 -> fixed_62  [key=0, label="AST: "];
+fixed_54 -> fixed_62  [key=1, label="DDG: "];
+fixed_54 -> fixed_63  [key=0, label="AST: "];
+fixed_54 -> fixed_63  [key=1, label="DDG: "];
+fixed_54 -> fixed_64  [key=0, label="AST: "];
+fixed_54 -> fixed_64  [key=1, label="DDG: "];
+fixed_54 -> fixed_65  [key=0, label="AST: "];
+fixed_54 -> fixed_65  [key=1, label="DDG: "];
+fixed_54 -> fixed_66  [key=0, label="AST: "];
+fixed_54 -> fixed_66  [key=1, label="DDG: "];
+fixed_54 -> fixed_67  [key=0, label="AST: "];
+fixed_54 -> fixed_67  [key=1, label="DDG: "];
+fixed_55 -> fixed_69  [key=0, label="DDG: p1"];
+fixed_56 -> fixed_69  [key=0, label="DDG: p2"];
+fixed_57 -> fixed_69  [key=0, label="DDG: p3"];
+fixed_58 -> fixed_69  [key=0, label="DDG: p4"];
+fixed_59 -> fixed_69  [key=0, label="DDG: p5"];
+fixed_60 -> fixed_69  [key=0, label="DDG: p6"];
+fixed_61 -> fixed_69  [key=0, label="DDG: p7"];
+fixed_62 -> fixed_69  [key=0, label="DDG: p8"];
+fixed_63 -> fixed_69  [key=0, label="DDG: p9"];
+fixed_64 -> fixed_69  [key=0, label="DDG: p10"];
+fixed_65 -> fixed_69  [key=0, label="DDG: p11"];
+fixed_66 -> fixed_69  [key=0, label="DDG: p12"];
+fixed_67 -> fixed_69  [key=0, label="DDG: p13"];
+fixed_68 -> vulnerable_6  [key=0];
+fixed_69 -> vulnerable_6  [key=0];
+fixed_70 -> fixed_71  [key=0, label="AST: "];
+fixed_70 -> fixed_71  [key=1, label="DDG: "];
+fixed_70 -> fixed_72  [key=0, label="AST: "];
+fixed_70 -> fixed_73  [key=0, label="AST: "];
+fixed_70 -> fixed_73  [key=1, label="CFG: "];
+fixed_71 -> fixed_73  [key=0, label="DDG: p1"];
+fixed_72 -> vulnerable_6  [key=0];
+fixed_73 -> vulnerable_6  [key=0];
+fixed_49 -> fixed_50  [key=0, label="AST: "];
+fixed_49 -> fixed_50  [key=1, label="DDG: "];
+fixed_49 -> fixed_52  [key=0, label="AST: "];
+fixed_49 -> fixed_51  [key=0, label="AST: "];
+fixed_49 -> fixed_51  [key=1, label="DDG: "];
+fixed_49 -> fixed_53  [key=0, label="AST: "];
+fixed_49 -> fixed_53  [key=1, label="CFG: "];
+fixed_50 -> fixed_53  [key=0, label="DDG: p1"];
+fixed_51 -> fixed_53  [key=0, label="DDG: p2"];
+fixed_52 -> vulnerable_6  [key=0];
+fixed_53 -> vulnerable_6  [key=0];
+fixed_43 -> fixed_44  [key=0, label="AST: "];
+fixed_43 -> fixed_45  [key=0, label="AST: "];
+fixed_43 -> fixed_45  [key=1, label="CFG: "];
+fixed_44 -> vulnerable_6  [key=0];
+fixed_45 -> vulnerable_6  [key=0];
+}

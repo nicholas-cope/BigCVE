@@ -1,0 +1,103 @@
+digraph "&lt;global&gt;" {
+vulnerable_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+vulnerable_8 [label=<(UNKNOWN,PHP_FUNCTION(radius_get_vendor_attr)
+ {
+	int res;,PHP_FUNCTION(radius_get_vendor_attr)
+ {
+	int res;)<SUB>1</SUB>>];
+vulnerable_9 [label="<(LOCAL,const void* data: void*)<SUB>4</SUB>>"];
+vulnerable_10 [label="<(LOCAL,int len: int)<SUB>5</SUB>>"];
+vulnerable_11 [label="<(LOCAL,u_int32_t vendor: u_int32_t)<SUB>6</SUB>>"];
+vulnerable_12 [label=<(UNKNOWN,if (zend_parse_parameters(ZEND_NUM_ARGS() TSRML...,if (zend_parse_parameters(ZEND_NUM_ARGS() TSRML...)<SUB>8</SUB>>];
+vulnerable_13 [label=<(UNKNOWN,res = rad_get_vendor_attr(&amp;vendor, &amp;data, (size...,res = rad_get_vendor_attr(&amp;vendor, &amp;data, (size...)<SUB>12</SUB>>];
+vulnerable_14 [label=<(UNKNOWN,if (res == -1) {
+ 		RETURN_FALSE;
+ 	},if (res == -1) {
+ 		RETURN_FALSE;
+ 	})<SUB>13</SUB>>];
+vulnerable_15 [label=<(UNKNOWN,else {
+ 
+ 		array_init(return_value);
+		add_ass...,else {
+ 
+ 		array_init(return_value);
+		add_ass...)<SUB>15</SUB>>];
+vulnerable_16 [label=<(UNKNOWN,},})<SUB>23</SUB>>];
+vulnerable_17 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+vulnerable_28 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_29 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_30 [label=<(METHOD_RETURN,ANY)>];
+fixed_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+fixed_8 [label=<(UNKNOWN,PHP_FUNCTION(radius_get_vendor_attr)
+ {
+	const ...,PHP_FUNCTION(radius_get_vendor_attr)
+ {
+	const ...)<SUB>1</SUB>>];
+fixed_9 [label="<(LOCAL,int len: int)<SUB>4</SUB>>"];
+fixed_10 [label="<(LOCAL,u_int32_t vendor: u_int32_t)<SUB>5</SUB>>"];
+fixed_11 [label="<(LOCAL,unsigned char type: unsigned char)<SUB>6</SUB>>"];
+fixed_12 [label="<(LOCAL,size_t data_len: size_t)<SUB>7</SUB>>"];
+fixed_13 [label=<(UNKNOWN,if (zend_parse_parameters(ZEND_NUM_ARGS() TSRML...,if (zend_parse_parameters(ZEND_NUM_ARGS() TSRML...)<SUB>9</SUB>>];
+fixed_14 [label=<(UNKNOWN,if (rad_get_vendor_attr(&amp;vendor, &amp;type, &amp;data, ...,if (rad_get_vendor_attr(&amp;vendor, &amp;type, &amp;data, ...)<SUB>13</SUB>>];
+fixed_15 [label=<(UNKNOWN,else {
+ 
+ 		array_init(return_value);
+		add_ass...,else {
+ 
+ 		array_init(return_value);
+		add_ass...)<SUB>15</SUB>>];
+fixed_16 [label=<(UNKNOWN,},})<SUB>23</SUB>>];
+fixed_17 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+fixed_30 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_31 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_32 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_6 -> vulnerable_7  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_17  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_8  [key=0, label="CFG: "];
+vulnerable_7 -> vulnerable_8  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_9  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_10  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_11  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_12  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_13  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_14  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_15  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_16  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_12  [key=0, label="CFG: "];
+vulnerable_9 -> fixed_6  [key=0];
+vulnerable_10 -> fixed_6  [key=0];
+vulnerable_11 -> fixed_6  [key=0];
+vulnerable_12 -> vulnerable_13  [key=0, label="CFG: "];
+vulnerable_13 -> vulnerable_14  [key=0, label="CFG: "];
+vulnerable_14 -> vulnerable_15  [key=0, label="CFG: "];
+vulnerable_15 -> vulnerable_16  [key=0, label="CFG: "];
+vulnerable_16 -> vulnerable_17  [key=0, label="CFG: "];
+vulnerable_17 -> fixed_6  [key=0];
+vulnerable_28 -> vulnerable_29  [key=0, label="AST: "];
+vulnerable_28 -> vulnerable_30  [key=0, label="AST: "];
+vulnerable_28 -> vulnerable_30  [key=1, label="CFG: "];
+vulnerable_29 -> fixed_6  [key=0];
+vulnerable_30 -> fixed_6  [key=0];
+fixed_6 -> fixed_7  [key=0, label="AST: "];
+fixed_6 -> fixed_17  [key=0, label="AST: "];
+fixed_6 -> fixed_8  [key=0, label="CFG: "];
+fixed_7 -> fixed_8  [key=0, label="AST: "];
+fixed_7 -> fixed_9  [key=0, label="AST: "];
+fixed_7 -> fixed_10  [key=0, label="AST: "];
+fixed_7 -> fixed_11  [key=0, label="AST: "];
+fixed_7 -> fixed_12  [key=0, label="AST: "];
+fixed_7 -> fixed_13  [key=0, label="AST: "];
+fixed_7 -> fixed_14  [key=0, label="AST: "];
+fixed_7 -> fixed_15  [key=0, label="AST: "];
+fixed_7 -> fixed_16  [key=0, label="AST: "];
+fixed_8 -> fixed_13  [key=0, label="CFG: "];
+fixed_13 -> fixed_14  [key=0, label="CFG: "];
+fixed_14 -> fixed_15  [key=0, label="CFG: "];
+fixed_15 -> fixed_16  [key=0, label="CFG: "];
+fixed_16 -> fixed_17  [key=0, label="CFG: "];
+fixed_30 -> fixed_31  [key=0, label="AST: "];
+fixed_30 -> fixed_32  [key=0, label="AST: "];
+fixed_30 -> fixed_32  [key=1, label="CFG: "];
+}

@@ -1,0 +1,188 @@
+digraph "&lt;operator&gt;.assignment" {
+vulnerable_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+vulnerable_8 [label=<(UNKNOWN,PHP_FUNCTION(openssl_random_pseudo_bytes)
+{
+   ...,PHP_FUNCTION(openssl_random_pseudo_bytes)
+{
+   ...)<SUB>1</SUB>>];
+vulnerable_9 [label="<(LOCAL,unsigned char* buffer: unsigned char*)<SUB>4</SUB>>"];
+vulnerable_10 [label=<(&lt;operator&gt;.assignment,*buffer = NULL)<SUB>4</SUB>>];
+vulnerable_11 [label=<(IDENTIFIER,buffer,*buffer = NULL)<SUB>4</SUB>>];
+vulnerable_12 [label=<(IDENTIFIER,NULL,*buffer = NULL)<SUB>4</SUB>>];
+vulnerable_13 [label="<(LOCAL,zval* zstrong_result_returned: zval*)<SUB>5</SUB>>"];
+vulnerable_14 [label=<(&lt;operator&gt;.assignment,*zstrong_result_returned = NULL)<SUB>5</SUB>>];
+vulnerable_15 [label=<(IDENTIFIER,zstrong_result_returned,*zstrong_result_returned = NULL)<SUB>5</SUB>>];
+vulnerable_16 [label=<(IDENTIFIER,NULL,*zstrong_result_returned = NULL)<SUB>5</SUB>>];
+vulnerable_17 [label="<(LOCAL,int strong_result: int)<SUB>6</SUB>>"];
+vulnerable_18 [label=<(&lt;operator&gt;.assignment,strong_result = 0)<SUB>6</SUB>>];
+vulnerable_19 [label=<(IDENTIFIER,strong_result,strong_result = 0)<SUB>6</SUB>>];
+vulnerable_20 [label=<(LITERAL,0,strong_result = 0)<SUB>6</SUB>>];
+vulnerable_21 [label=<(UNKNOWN,if (zend_parse_parameters(ZEND_NUM_ARGS() TSRML...,if (zend_parse_parameters(ZEND_NUM_ARGS() TSRML...)<SUB>8</SUB>>];
+vulnerable_22 [label=<(UNKNOWN,if (buffer_length &lt;= 0) {
+		RETURN_FALSE;
+	},if (buffer_length &lt;= 0) {
+		RETURN_FALSE;
+	})<SUB>13</SUB>>];
+vulnerable_23 [label=<(UNKNOWN,if (zstrong_result_returned) {
+		zval_dtor(zstr...,if (zstrong_result_returned) {
+		zval_dtor(zstr...)<SUB>17</SUB>>];
+vulnerable_24 [label=<(UNKNOWN,buffer = emalloc(buffer_length + 1);,buffer = emalloc(buffer_length + 1);)<SUB>21</SUB>>];
+vulnerable_25 [label=<(UNKNOWN,if ((strong_result = RAND_pseudo_bytes(buffer, ...,if ((strong_result = RAND_pseudo_bytes(buffer, ...)<SUB>34</SUB>>];
+vulnerable_26 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+vulnerable_37 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_38 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_39 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_43 [label=<(METHOD,&lt;operator&gt;.assignment)>];
+vulnerable_44 [label=<(PARAM,p1)>];
+vulnerable_45 [label=<(PARAM,p2)>];
+vulnerable_46 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_47 [label=<(METHOD_RETURN,ANY)>];
+fixed_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+fixed_8 [label=<(UNKNOWN,PHP_FUNCTION(openssl_random_pseudo_bytes)
+{
+   ...,PHP_FUNCTION(openssl_random_pseudo_bytes)
+{
+   ...)<SUB>1</SUB>>];
+fixed_9 [label="<(LOCAL,unsigned char* buffer: unsigned char*)<SUB>4</SUB>>"];
+fixed_10 [label=<(&lt;operator&gt;.assignment,*buffer = NULL)<SUB>4</SUB>>];
+fixed_11 [label=<(IDENTIFIER,buffer,*buffer = NULL)<SUB>4</SUB>>];
+fixed_12 [label=<(IDENTIFIER,NULL,*buffer = NULL)<SUB>4</SUB>>];
+fixed_13 [label="<(LOCAL,zval* zstrong_result_returned: zval*)<SUB>5</SUB>>"];
+fixed_14 [label=<(&lt;operator&gt;.assignment,*zstrong_result_returned = NULL)<SUB>5</SUB>>];
+fixed_15 [label=<(IDENTIFIER,zstrong_result_returned,*zstrong_result_returned = NULL)<SUB>5</SUB>>];
+fixed_16 [label=<(IDENTIFIER,NULL,*zstrong_result_returned = NULL)<SUB>5</SUB>>];
+fixed_17 [label=<(UNKNOWN,if (zend_parse_parameters(ZEND_NUM_ARGS() TSRML...,if (zend_parse_parameters(ZEND_NUM_ARGS() TSRML...)<SUB>7</SUB>>];
+fixed_18 [label=<(UNKNOWN,if (buffer_length &lt;= 0) {
+		RETURN_FALSE;
+	},if (buffer_length &lt;= 0) {
+		RETURN_FALSE;
+	})<SUB>12</SUB>>];
+fixed_19 [label=<(UNKNOWN,if (zstrong_result_returned) {
+		zval_dtor(zstr...,if (zstrong_result_returned) {
+		zval_dtor(zstr...)<SUB>16</SUB>>];
+fixed_20 [label=<(UNKNOWN,buffer = emalloc(buffer_length + 1);,buffer = emalloc(buffer_length + 1);)<SUB>20</SUB>>];
+fixed_21 [label=<(UNKNOWN,if (RAND_bytes(buffer, buffer_length) &lt;= 0) {
+ ...,if (RAND_bytes(buffer, buffer_length) &lt;= 0) {
+ ...)<SUB>32</SUB>>];
+fixed_22 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+fixed_31 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_32 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_33 [label=<(METHOD_RETURN,ANY)>];
+fixed_37 [label=<(METHOD,&lt;operator&gt;.assignment)>];
+fixed_38 [label=<(PARAM,p1)>];
+fixed_39 [label=<(PARAM,p2)>];
+fixed_40 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_41 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_6 -> vulnerable_7  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_26  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_8  [key=0, label="CFG: "];
+vulnerable_6 -> vulnerable_10  [key=0, label="DDG: "];
+vulnerable_6 -> vulnerable_14  [key=0, label="DDG: "];
+vulnerable_6 -> vulnerable_18  [key=0, label="DDG: "];
+vulnerable_7 -> vulnerable_8  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_9  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_10  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_13  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_14  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_17  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_18  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_21  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_22  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_23  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_24  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_25  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_10  [key=0, label="CFG: "];
+vulnerable_9 -> fixed_6  [key=0];
+vulnerable_10 -> vulnerable_11  [key=0, label="AST: "];
+vulnerable_10 -> vulnerable_12  [key=0, label="AST: "];
+vulnerable_10 -> vulnerable_14  [key=0, label="CFG: "];
+vulnerable_10 -> vulnerable_26  [key=0, label="DDG: buffer"];
+vulnerable_10 -> vulnerable_26  [key=1, label="DDG: *buffer = NULL"];
+vulnerable_11 -> fixed_6  [key=0];
+vulnerable_12 -> fixed_6  [key=0];
+vulnerable_13 -> fixed_6  [key=0];
+vulnerable_14 -> vulnerable_15  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_16  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_18  [key=0, label="CFG: "];
+vulnerable_14 -> vulnerable_26  [key=0, label="DDG: zstrong_result_returned"];
+vulnerable_14 -> vulnerable_26  [key=1, label="DDG: NULL"];
+vulnerable_14 -> vulnerable_26  [key=2, label="DDG: *zstrong_result_returned = NULL"];
+vulnerable_15 -> fixed_6  [key=0];
+vulnerable_16 -> fixed_6  [key=0];
+vulnerable_17 -> fixed_6  [key=0];
+vulnerable_18 -> vulnerable_19  [key=0, label="AST: "];
+vulnerable_18 -> vulnerable_20  [key=0, label="AST: "];
+vulnerable_18 -> vulnerable_21  [key=0, label="CFG: "];
+vulnerable_18 -> vulnerable_26  [key=0, label="DDG: strong_result"];
+vulnerable_18 -> vulnerable_26  [key=1, label="DDG: strong_result = 0"];
+vulnerable_19 -> fixed_6  [key=0];
+vulnerable_20 -> fixed_6  [key=0];
+vulnerable_21 -> vulnerable_22  [key=0, label="CFG: "];
+vulnerable_22 -> vulnerable_23  [key=0, label="CFG: "];
+vulnerable_23 -> vulnerable_24  [key=0, label="CFG: "];
+vulnerable_24 -> vulnerable_25  [key=0, label="CFG: "];
+vulnerable_25 -> vulnerable_26  [key=0, label="CFG: "];
+vulnerable_26 -> fixed_6  [key=0];
+vulnerable_37 -> vulnerable_38  [key=0, label="AST: "];
+vulnerable_37 -> vulnerable_39  [key=0, label="AST: "];
+vulnerable_37 -> vulnerable_39  [key=1, label="CFG: "];
+vulnerable_38 -> fixed_6  [key=0];
+vulnerable_39 -> fixed_6  [key=0];
+vulnerable_43 -> vulnerable_44  [key=0, label="AST: "];
+vulnerable_43 -> vulnerable_44  [key=1, label="DDG: "];
+vulnerable_43 -> vulnerable_46  [key=0, label="AST: "];
+vulnerable_43 -> vulnerable_45  [key=0, label="AST: "];
+vulnerable_43 -> vulnerable_45  [key=1, label="DDG: "];
+vulnerable_43 -> vulnerable_47  [key=0, label="AST: "];
+vulnerable_43 -> vulnerable_47  [key=1, label="CFG: "];
+vulnerable_44 -> vulnerable_47  [key=0, label="DDG: p1"];
+vulnerable_45 -> vulnerable_47  [key=0, label="DDG: p2"];
+vulnerable_46 -> fixed_6  [key=0];
+vulnerable_47 -> fixed_6  [key=0];
+fixed_6 -> fixed_7  [key=0, label="AST: "];
+fixed_6 -> fixed_22  [key=0, label="AST: "];
+fixed_6 -> fixed_8  [key=0, label="CFG: "];
+fixed_6 -> fixed_10  [key=0, label="DDG: "];
+fixed_6 -> fixed_14  [key=0, label="DDG: "];
+fixed_7 -> fixed_8  [key=0, label="AST: "];
+fixed_7 -> fixed_9  [key=0, label="AST: "];
+fixed_7 -> fixed_10  [key=0, label="AST: "];
+fixed_7 -> fixed_13  [key=0, label="AST: "];
+fixed_7 -> fixed_14  [key=0, label="AST: "];
+fixed_7 -> fixed_17  [key=0, label="AST: "];
+fixed_7 -> fixed_18  [key=0, label="AST: "];
+fixed_7 -> fixed_19  [key=0, label="AST: "];
+fixed_7 -> fixed_20  [key=0, label="AST: "];
+fixed_7 -> fixed_21  [key=0, label="AST: "];
+fixed_8 -> fixed_10  [key=0, label="CFG: "];
+fixed_10 -> fixed_11  [key=0, label="AST: "];
+fixed_10 -> fixed_12  [key=0, label="AST: "];
+fixed_10 -> fixed_14  [key=0, label="CFG: "];
+fixed_10 -> fixed_22  [key=0, label="DDG: buffer"];
+fixed_10 -> fixed_22  [key=1, label="DDG: *buffer = NULL"];
+fixed_14 -> fixed_15  [key=0, label="AST: "];
+fixed_14 -> fixed_16  [key=0, label="AST: "];
+fixed_14 -> fixed_17  [key=0, label="CFG: "];
+fixed_14 -> fixed_22  [key=0, label="DDG: zstrong_result_returned"];
+fixed_14 -> fixed_22  [key=1, label="DDG: NULL"];
+fixed_14 -> fixed_22  [key=2, label="DDG: *zstrong_result_returned = NULL"];
+fixed_17 -> fixed_18  [key=0, label="CFG: "];
+fixed_18 -> fixed_19  [key=0, label="CFG: "];
+fixed_19 -> fixed_20  [key=0, label="CFG: "];
+fixed_20 -> fixed_21  [key=0, label="CFG: "];
+fixed_21 -> fixed_22  [key=0, label="CFG: "];
+fixed_31 -> fixed_32  [key=0, label="AST: "];
+fixed_31 -> fixed_33  [key=0, label="AST: "];
+fixed_31 -> fixed_33  [key=1, label="CFG: "];
+fixed_37 -> fixed_38  [key=0, label="AST: "];
+fixed_37 -> fixed_38  [key=1, label="DDG: "];
+fixed_37 -> fixed_40  [key=0, label="AST: "];
+fixed_37 -> fixed_39  [key=0, label="AST: "];
+fixed_37 -> fixed_39  [key=1, label="DDG: "];
+fixed_37 -> fixed_41  [key=0, label="AST: "];
+fixed_37 -> fixed_41  [key=1, label="CFG: "];
+fixed_38 -> fixed_41  [key=0, label="DDG: p1"];
+fixed_39 -> fixed_41  [key=0, label="DDG: p2"];
+}

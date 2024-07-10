@@ -1,0 +1,424 @@
+digraph "&lt;operator&gt;.assignment" {
+vulnerable_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+vulnerable_8 [label=<(UNKNOWN,varbit_in(PG_FUNCTION_ARGS)
+{
+	char	   *input_s...,varbit_in(PG_FUNCTION_ARGS)
+{
+	char	   *input_s...)<SUB>1</SUB>>];
+vulnerable_9 [label="<(LOCAL,int32 atttypmod: int32)<SUB>8</SUB>>"];
+vulnerable_10 [label=<(&lt;operator&gt;.assignment,atttypmod = PG_GETARG_INT32(2))<SUB>8</SUB>>];
+vulnerable_11 [label=<(IDENTIFIER,atttypmod,atttypmod = PG_GETARG_INT32(2))<SUB>8</SUB>>];
+vulnerable_12 [label=<(PG_GETARG_INT32,PG_GETARG_INT32(2))<SUB>8</SUB>>];
+vulnerable_13 [label=<(LITERAL,2,PG_GETARG_INT32(2))<SUB>8</SUB>>];
+vulnerable_14 [label="<(LOCAL,VarBit* result: VarBit*)<SUB>9</SUB>>"];
+vulnerable_15 [label="<(LOCAL,char* sp: char*)<SUB>10</SUB>>"];
+vulnerable_16 [label="<(LOCAL,bits8* r: bits8*)<SUB>11</SUB>>"];
+vulnerable_17 [label="<(LOCAL,int len: int)<SUB>12</SUB>>"];
+vulnerable_18 [label="<(LOCAL,int bitlen: int)<SUB>13</SUB>>"];
+vulnerable_19 [label="<(LOCAL,int slen: int)<SUB>14</SUB>>"];
+vulnerable_20 [label="<(LOCAL,bool bit_not_hex: bool)<SUB>15</SUB>>"];
+vulnerable_21 [label="<(LOCAL,int bc: int)<SUB>16</SUB>>"];
+vulnerable_22 [label="<(LOCAL,bits8 x: bits8)<SUB>17</SUB>>"];
+vulnerable_23 [label=<(&lt;operator&gt;.assignment,x = 0)<SUB>17</SUB>>];
+vulnerable_24 [label=<(IDENTIFIER,x,x = 0)<SUB>17</SUB>>];
+vulnerable_25 [label=<(LITERAL,0,x = 0)<SUB>17</SUB>>];
+vulnerable_26 [label=<(UNKNOWN,if (input_string[0] == 'b' || input_string[0] =...,if (input_string[0] == 'b' || input_string[0] =...)<SUB>20</SUB>>];
+vulnerable_27 [label=<(UNKNOWN,else if (input_string[0] == 'x' || input_string...,else if (input_string[0] == 'x' || input_string...)<SUB>25</SUB>>];
+vulnerable_28 [label=<(UNKNOWN,else
+	{
+		bit_not_hex = true;
+ 		sp = input_str...,else
+	{
+		bit_not_hex = true;
+ 		sp = input_str...)<SUB>30</SUB>>];
+vulnerable_29 [label=<(UNKNOWN,slen = strlen(sp);,slen = strlen(sp);)<SUB>36</SUB>>];
+vulnerable_30 [label=<(UNKNOWN,if (bit_not_hex)
+ 		bitlen = slen;,if (bit_not_hex)
+ 		bitlen = slen;)<SUB>38</SUB>>];
+vulnerable_31 [label=<(UNKNOWN,else
+ 		bitlen = slen * 4;,else
+ 		bitlen = slen * 4;)<SUB>40</SUB>>];
+vulnerable_32 [label=<(UNKNOWN,if (atttypmod &lt;= 0)
+		atttypmod = bitlen;,if (atttypmod &lt;= 0)
+		atttypmod = bitlen;)<SUB>47</SUB>>];
+vulnerable_33 [label=<(UNKNOWN,else if (bitlen &gt; atttypmod)
+		ereport(ERROR,
+	...,else if (bitlen &gt; atttypmod)
+		ereport(ERROR,
+	...)<SUB>49</SUB>>];
+vulnerable_34 [label=<(UNKNOWN,len = VARBITTOTALLEN(bitlen);,len = VARBITTOTALLEN(bitlen);)<SUB>55</SUB>>];
+vulnerable_35 [label=<(UNKNOWN,result = (VarBit *) palloc0(len);,result = (VarBit *) palloc0(len);)<SUB>57</SUB>>];
+vulnerable_36 [label=<(UNKNOWN,SET_VARSIZE(result, len);,SET_VARSIZE(result, len);)<SUB>58</SUB>>];
+vulnerable_37 [label="<(LOCAL,VARBITLEN : VARBITLEN)<SUB>59</SUB>>"];
+vulnerable_38 [label=<(&lt;operator&gt;.assignment,(result) = Min(bitlen, atttypmod))<SUB>59</SUB>>];
+vulnerable_39 [label=<(IDENTIFIER,,(result) = Min(bitlen, atttypmod))>];
+vulnerable_40 [label=<(Min,Min(bitlen, atttypmod))<SUB>59</SUB>>];
+vulnerable_41 [label=<(IDENTIFIER,bitlen,Min(bitlen, atttypmod))<SUB>59</SUB>>];
+vulnerable_42 [label=<(IDENTIFIER,atttypmod,Min(bitlen, atttypmod))<SUB>59</SUB>>];
+vulnerable_43 [label=<(UNKNOWN,r = VARBITS(result);,r = VARBITS(result);)<SUB>61</SUB>>];
+vulnerable_44 [label=<(UNKNOWN,if (bit_not_hex)
+	{
+		/* Parse the bit represen...,if (bit_not_hex)
+	{
+		/* Parse the bit represen...)<SUB>62</SUB>>];
+vulnerable_45 [label=<(UNKNOWN,else
+	{
+		/* Parse the hex representation of th...,else
+	{
+		/* Parse the hex representation of th...)<SUB>85</SUB>>];
+vulnerable_46 [label="<(LOCAL,PG_RETURN_VARBIT_P : PG_RETURN_VARBIT_P)<SUB>115</SUB>>"];
+vulnerable_47 [label=<(UNKNOWN,},})<SUB>116</SUB>>];
+vulnerable_48 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+vulnerable_71 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_72 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_73 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_86 [label=<(METHOD,Min)>];
+vulnerable_87 [label=<(PARAM,p1)>];
+vulnerable_88 [label=<(PARAM,p2)>];
+vulnerable_89 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_90 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_82 [label=<(METHOD,PG_GETARG_INT32)>];
+vulnerable_83 [label=<(PARAM,p1)>];
+vulnerable_84 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_85 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_77 [label=<(METHOD,&lt;operator&gt;.assignment)>];
+vulnerable_78 [label=<(PARAM,p1)>];
+vulnerable_79 [label=<(PARAM,p2)>];
+vulnerable_80 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_81 [label=<(METHOD_RETURN,ANY)>];
+fixed_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+fixed_8 [label=<(UNKNOWN,varbit_in(PG_FUNCTION_ARGS)
+{
+	char	   *input_s...,varbit_in(PG_FUNCTION_ARGS)
+{
+	char	   *input_s...)<SUB>1</SUB>>];
+fixed_9 [label="<(LOCAL,int32 atttypmod: int32)<SUB>8</SUB>>"];
+fixed_10 [label=<(&lt;operator&gt;.assignment,atttypmod = PG_GETARG_INT32(2))<SUB>8</SUB>>];
+fixed_11 [label=<(IDENTIFIER,atttypmod,atttypmod = PG_GETARG_INT32(2))<SUB>8</SUB>>];
+fixed_12 [label=<(PG_GETARG_INT32,PG_GETARG_INT32(2))<SUB>8</SUB>>];
+fixed_13 [label=<(LITERAL,2,PG_GETARG_INT32(2))<SUB>8</SUB>>];
+fixed_14 [label="<(LOCAL,VarBit* result: VarBit*)<SUB>9</SUB>>"];
+fixed_15 [label="<(LOCAL,char* sp: char*)<SUB>10</SUB>>"];
+fixed_16 [label="<(LOCAL,bits8* r: bits8*)<SUB>11</SUB>>"];
+fixed_17 [label="<(LOCAL,int len: int)<SUB>12</SUB>>"];
+fixed_18 [label="<(LOCAL,int bitlen: int)<SUB>13</SUB>>"];
+fixed_19 [label="<(LOCAL,int slen: int)<SUB>14</SUB>>"];
+fixed_20 [label="<(LOCAL,bool bit_not_hex: bool)<SUB>15</SUB>>"];
+fixed_21 [label="<(LOCAL,int bc: int)<SUB>16</SUB>>"];
+fixed_22 [label="<(LOCAL,bits8 x: bits8)<SUB>17</SUB>>"];
+fixed_23 [label=<(&lt;operator&gt;.assignment,x = 0)<SUB>17</SUB>>];
+fixed_24 [label=<(IDENTIFIER,x,x = 0)<SUB>17</SUB>>];
+fixed_25 [label=<(LITERAL,0,x = 0)<SUB>17</SUB>>];
+fixed_26 [label=<(UNKNOWN,if (input_string[0] == 'b' || input_string[0] =...,if (input_string[0] == 'b' || input_string[0] =...)<SUB>20</SUB>>];
+fixed_27 [label=<(UNKNOWN,else if (input_string[0] == 'x' || input_string...,else if (input_string[0] == 'x' || input_string...)<SUB>25</SUB>>];
+fixed_28 [label=<(UNKNOWN,else
+	{
+		bit_not_hex = true;
+ 		sp = input_str...,else
+	{
+		bit_not_hex = true;
+ 		sp = input_str...)<SUB>30</SUB>>];
+fixed_29 [label=<(UNKNOWN,slen = strlen(sp);,slen = strlen(sp);)<SUB>40</SUB>>];
+fixed_30 [label=<(UNKNOWN,if (bit_not_hex)
+ 		bitlen = slen;,if (bit_not_hex)
+ 		bitlen = slen;)<SUB>41</SUB>>];
+fixed_31 [label=<(UNKNOWN,else
+	{
+		if (slen &gt; VARBITMAXLEN / 4)
+			erepo...,else
+	{
+		if (slen &gt; VARBITMAXLEN / 4)
+			erepo...)<SUB>43</SUB>>];
+fixed_32 [label=<(UNKNOWN,if (atttypmod &lt;= 0)
+		atttypmod = bitlen;,if (atttypmod &lt;= 0)
+		atttypmod = bitlen;)<SUB>57</SUB>>];
+fixed_33 [label=<(UNKNOWN,else if (bitlen &gt; atttypmod)
+		ereport(ERROR,
+	...,else if (bitlen &gt; atttypmod)
+		ereport(ERROR,
+	...)<SUB>59</SUB>>];
+fixed_34 [label=<(UNKNOWN,len = VARBITTOTALLEN(bitlen);,len = VARBITTOTALLEN(bitlen);)<SUB>65</SUB>>];
+fixed_35 [label=<(UNKNOWN,result = (VarBit *) palloc0(len);,result = (VarBit *) palloc0(len);)<SUB>67</SUB>>];
+fixed_36 [label=<(UNKNOWN,SET_VARSIZE(result, len);,SET_VARSIZE(result, len);)<SUB>68</SUB>>];
+fixed_37 [label="<(LOCAL,VARBITLEN : VARBITLEN)<SUB>69</SUB>>"];
+fixed_38 [label=<(&lt;operator&gt;.assignment,(result) = Min(bitlen, atttypmod))<SUB>69</SUB>>];
+fixed_39 [label=<(IDENTIFIER,,(result) = Min(bitlen, atttypmod))>];
+fixed_40 [label=<(Min,Min(bitlen, atttypmod))<SUB>69</SUB>>];
+fixed_41 [label=<(IDENTIFIER,bitlen,Min(bitlen, atttypmod))<SUB>69</SUB>>];
+fixed_42 [label=<(IDENTIFIER,atttypmod,Min(bitlen, atttypmod))<SUB>69</SUB>>];
+fixed_43 [label=<(UNKNOWN,r = VARBITS(result);,r = VARBITS(result);)<SUB>71</SUB>>];
+fixed_44 [label=<(UNKNOWN,if (bit_not_hex)
+	{
+		/* Parse the bit represen...,if (bit_not_hex)
+	{
+		/* Parse the bit represen...)<SUB>72</SUB>>];
+fixed_45 [label=<(UNKNOWN,else
+	{
+		/* Parse the hex representation of th...,else
+	{
+		/* Parse the hex representation of th...)<SUB>95</SUB>>];
+fixed_46 [label="<(LOCAL,PG_RETURN_VARBIT_P : PG_RETURN_VARBIT_P)<SUB>125</SUB>>"];
+fixed_47 [label=<(UNKNOWN,},})<SUB>126</SUB>>];
+fixed_48 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+fixed_71 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_72 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_73 [label=<(METHOD_RETURN,ANY)>];
+fixed_86 [label=<(METHOD,Min)>];
+fixed_87 [label=<(PARAM,p1)>];
+fixed_88 [label=<(PARAM,p2)>];
+fixed_89 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_90 [label=<(METHOD_RETURN,ANY)>];
+fixed_82 [label=<(METHOD,PG_GETARG_INT32)>];
+fixed_83 [label=<(PARAM,p1)>];
+fixed_84 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_85 [label=<(METHOD_RETURN,ANY)>];
+fixed_77 [label=<(METHOD,&lt;operator&gt;.assignment)>];
+fixed_78 [label=<(PARAM,p1)>];
+fixed_79 [label=<(PARAM,p2)>];
+fixed_80 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_81 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_6 -> vulnerable_7  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_48  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_8  [key=0, label="CFG: "];
+vulnerable_6 -> vulnerable_23  [key=0, label="DDG: "];
+vulnerable_6 -> vulnerable_12  [key=0, label="DDG: "];
+vulnerable_6 -> vulnerable_40  [key=0, label="DDG: "];
+vulnerable_7 -> vulnerable_8  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_9  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_10  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_14  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_15  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_16  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_17  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_18  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_19  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_20  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_21  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_22  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_23  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_26  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_27  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_28  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_29  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_30  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_31  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_32  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_33  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_34  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_35  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_36  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_37  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_38  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_43  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_44  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_45  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_46  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_47  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_12  [key=0, label="CFG: "];
+vulnerable_9 -> fixed_6  [key=0];
+vulnerable_10 -> vulnerable_11  [key=0, label="AST: "];
+vulnerable_10 -> vulnerable_12  [key=0, label="AST: "];
+vulnerable_10 -> vulnerable_23  [key=0, label="CFG: "];
+vulnerable_10 -> vulnerable_48  [key=0, label="DDG: PG_GETARG_INT32(2)"];
+vulnerable_10 -> vulnerable_48  [key=1, label="DDG: atttypmod = PG_GETARG_INT32(2)"];
+vulnerable_10 -> vulnerable_40  [key=0, label="DDG: atttypmod"];
+vulnerable_11 -> fixed_6  [key=0];
+vulnerable_12 -> vulnerable_13  [key=0, label="AST: "];
+vulnerable_12 -> vulnerable_10  [key=0, label="CFG: "];
+vulnerable_12 -> vulnerable_10  [key=1, label="DDG: 2"];
+vulnerable_13 -> fixed_6  [key=0];
+vulnerable_14 -> fixed_6  [key=0];
+vulnerable_15 -> fixed_6  [key=0];
+vulnerable_16 -> fixed_6  [key=0];
+vulnerable_17 -> fixed_6  [key=0];
+vulnerable_18 -> fixed_6  [key=0];
+vulnerable_19 -> fixed_6  [key=0];
+vulnerable_20 -> fixed_6  [key=0];
+vulnerable_21 -> fixed_6  [key=0];
+vulnerable_22 -> fixed_6  [key=0];
+vulnerable_23 -> vulnerable_24  [key=0, label="AST: "];
+vulnerable_23 -> vulnerable_25  [key=0, label="AST: "];
+vulnerable_23 -> vulnerable_26  [key=0, label="CFG: "];
+vulnerable_23 -> vulnerable_48  [key=0, label="DDG: x"];
+vulnerable_23 -> vulnerable_48  [key=1, label="DDG: x = 0"];
+vulnerable_24 -> fixed_6  [key=0];
+vulnerable_25 -> fixed_6  [key=0];
+vulnerable_26 -> vulnerable_27  [key=0, label="CFG: "];
+vulnerable_27 -> vulnerable_28  [key=0, label="CFG: "];
+vulnerable_28 -> vulnerable_29  [key=0, label="CFG: "];
+vulnerable_29 -> vulnerable_30  [key=0, label="CFG: "];
+vulnerable_30 -> vulnerable_31  [key=0, label="CFG: "];
+vulnerable_31 -> vulnerable_32  [key=0, label="CFG: "];
+vulnerable_32 -> vulnerable_33  [key=0, label="CFG: "];
+vulnerable_33 -> vulnerable_34  [key=0, label="CFG: "];
+vulnerable_34 -> vulnerable_35  [key=0, label="CFG: "];
+vulnerable_35 -> vulnerable_36  [key=0, label="CFG: "];
+vulnerable_36 -> vulnerable_40  [key=0, label="CFG: "];
+vulnerable_37 -> fixed_6  [key=0];
+vulnerable_38 -> vulnerable_39  [key=0, label="AST: "];
+vulnerable_38 -> vulnerable_40  [key=0, label="AST: "];
+vulnerable_38 -> vulnerable_43  [key=0, label="CFG: "];
+vulnerable_38 -> vulnerable_48  [key=0, label="DDG: Min(bitlen, atttypmod)"];
+vulnerable_38 -> vulnerable_48  [key=1, label="DDG: (result) = Min(bitlen, atttypmod)"];
+vulnerable_38 -> vulnerable_48  [key=2, label="DDG: "];
+vulnerable_39 -> fixed_6  [key=0];
+vulnerable_40 -> vulnerable_41  [key=0, label="AST: "];
+vulnerable_40 -> vulnerable_42  [key=0, label="AST: "];
+vulnerable_40 -> vulnerable_38  [key=0, label="CFG: "];
+vulnerable_40 -> vulnerable_38  [key=1, label="DDG: bitlen"];
+vulnerable_40 -> vulnerable_38  [key=2, label="DDG: atttypmod"];
+vulnerable_40 -> vulnerable_48  [key=0, label="DDG: bitlen"];
+vulnerable_40 -> vulnerable_48  [key=1, label="DDG: atttypmod"];
+vulnerable_41 -> fixed_6  [key=0];
+vulnerable_42 -> fixed_6  [key=0];
+vulnerable_43 -> vulnerable_44  [key=0, label="CFG: "];
+vulnerable_44 -> vulnerable_45  [key=0, label="CFG: "];
+vulnerable_45 -> vulnerable_47  [key=0, label="CFG: "];
+vulnerable_46 -> fixed_6  [key=0];
+vulnerable_47 -> vulnerable_48  [key=0, label="CFG: "];
+vulnerable_48 -> fixed_6  [key=0];
+vulnerable_71 -> vulnerable_72  [key=0, label="AST: "];
+vulnerable_71 -> vulnerable_73  [key=0, label="AST: "];
+vulnerable_71 -> vulnerable_73  [key=1, label="CFG: "];
+vulnerable_72 -> fixed_6  [key=0];
+vulnerable_73 -> fixed_6  [key=0];
+vulnerable_86 -> vulnerable_87  [key=0, label="AST: "];
+vulnerable_86 -> vulnerable_87  [key=1, label="DDG: "];
+vulnerable_86 -> vulnerable_89  [key=0, label="AST: "];
+vulnerable_86 -> vulnerable_88  [key=0, label="AST: "];
+vulnerable_86 -> vulnerable_88  [key=1, label="DDG: "];
+vulnerable_86 -> vulnerable_90  [key=0, label="AST: "];
+vulnerable_86 -> vulnerable_90  [key=1, label="CFG: "];
+vulnerable_87 -> vulnerable_90  [key=0, label="DDG: p1"];
+vulnerable_88 -> vulnerable_90  [key=0, label="DDG: p2"];
+vulnerable_89 -> fixed_6  [key=0];
+vulnerable_90 -> fixed_6  [key=0];
+vulnerable_82 -> vulnerable_83  [key=0, label="AST: "];
+vulnerable_82 -> vulnerable_83  [key=1, label="DDG: "];
+vulnerable_82 -> vulnerable_84  [key=0, label="AST: "];
+vulnerable_82 -> vulnerable_85  [key=0, label="AST: "];
+vulnerable_82 -> vulnerable_85  [key=1, label="CFG: "];
+vulnerable_83 -> vulnerable_85  [key=0, label="DDG: p1"];
+vulnerable_84 -> fixed_6  [key=0];
+vulnerable_85 -> fixed_6  [key=0];
+vulnerable_77 -> vulnerable_78  [key=0, label="AST: "];
+vulnerable_77 -> vulnerable_78  [key=1, label="DDG: "];
+vulnerable_77 -> vulnerable_80  [key=0, label="AST: "];
+vulnerable_77 -> vulnerable_79  [key=0, label="AST: "];
+vulnerable_77 -> vulnerable_79  [key=1, label="DDG: "];
+vulnerable_77 -> vulnerable_81  [key=0, label="AST: "];
+vulnerable_77 -> vulnerable_81  [key=1, label="CFG: "];
+vulnerable_78 -> vulnerable_81  [key=0, label="DDG: p1"];
+vulnerable_79 -> vulnerable_81  [key=0, label="DDG: p2"];
+vulnerable_80 -> fixed_6  [key=0];
+vulnerable_81 -> fixed_6  [key=0];
+fixed_6 -> fixed_7  [key=0, label="AST: "];
+fixed_6 -> fixed_48  [key=0, label="AST: "];
+fixed_6 -> fixed_8  [key=0, label="CFG: "];
+fixed_6 -> fixed_23  [key=0, label="DDG: "];
+fixed_6 -> fixed_12  [key=0, label="DDG: "];
+fixed_6 -> fixed_40  [key=0, label="DDG: "];
+fixed_7 -> fixed_8  [key=0, label="AST: "];
+fixed_7 -> fixed_9  [key=0, label="AST: "];
+fixed_7 -> fixed_10  [key=0, label="AST: "];
+fixed_7 -> fixed_14  [key=0, label="AST: "];
+fixed_7 -> fixed_15  [key=0, label="AST: "];
+fixed_7 -> fixed_16  [key=0, label="AST: "];
+fixed_7 -> fixed_17  [key=0, label="AST: "];
+fixed_7 -> fixed_18  [key=0, label="AST: "];
+fixed_7 -> fixed_19  [key=0, label="AST: "];
+fixed_7 -> fixed_20  [key=0, label="AST: "];
+fixed_7 -> fixed_21  [key=0, label="AST: "];
+fixed_7 -> fixed_22  [key=0, label="AST: "];
+fixed_7 -> fixed_23  [key=0, label="AST: "];
+fixed_7 -> fixed_26  [key=0, label="AST: "];
+fixed_7 -> fixed_27  [key=0, label="AST: "];
+fixed_7 -> fixed_28  [key=0, label="AST: "];
+fixed_7 -> fixed_29  [key=0, label="AST: "];
+fixed_7 -> fixed_30  [key=0, label="AST: "];
+fixed_7 -> fixed_31  [key=0, label="AST: "];
+fixed_7 -> fixed_32  [key=0, label="AST: "];
+fixed_7 -> fixed_33  [key=0, label="AST: "];
+fixed_7 -> fixed_34  [key=0, label="AST: "];
+fixed_7 -> fixed_35  [key=0, label="AST: "];
+fixed_7 -> fixed_36  [key=0, label="AST: "];
+fixed_7 -> fixed_37  [key=0, label="AST: "];
+fixed_7 -> fixed_38  [key=0, label="AST: "];
+fixed_7 -> fixed_43  [key=0, label="AST: "];
+fixed_7 -> fixed_44  [key=0, label="AST: "];
+fixed_7 -> fixed_45  [key=0, label="AST: "];
+fixed_7 -> fixed_46  [key=0, label="AST: "];
+fixed_7 -> fixed_47  [key=0, label="AST: "];
+fixed_8 -> fixed_12  [key=0, label="CFG: "];
+fixed_10 -> fixed_11  [key=0, label="AST: "];
+fixed_10 -> fixed_12  [key=0, label="AST: "];
+fixed_10 -> fixed_23  [key=0, label="CFG: "];
+fixed_10 -> fixed_48  [key=0, label="DDG: PG_GETARG_INT32(2)"];
+fixed_10 -> fixed_48  [key=1, label="DDG: atttypmod = PG_GETARG_INT32(2)"];
+fixed_10 -> fixed_40  [key=0, label="DDG: atttypmod"];
+fixed_12 -> fixed_13  [key=0, label="AST: "];
+fixed_12 -> fixed_10  [key=0, label="CFG: "];
+fixed_12 -> fixed_10  [key=1, label="DDG: 2"];
+fixed_23 -> fixed_24  [key=0, label="AST: "];
+fixed_23 -> fixed_25  [key=0, label="AST: "];
+fixed_23 -> fixed_26  [key=0, label="CFG: "];
+fixed_23 -> fixed_48  [key=0, label="DDG: x"];
+fixed_23 -> fixed_48  [key=1, label="DDG: x = 0"];
+fixed_26 -> fixed_27  [key=0, label="CFG: "];
+fixed_27 -> fixed_28  [key=0, label="CFG: "];
+fixed_28 -> fixed_29  [key=0, label="CFG: "];
+fixed_29 -> fixed_30  [key=0, label="CFG: "];
+fixed_30 -> fixed_31  [key=0, label="CFG: "];
+fixed_31 -> fixed_32  [key=0, label="CFG: "];
+fixed_32 -> fixed_33  [key=0, label="CFG: "];
+fixed_33 -> fixed_34  [key=0, label="CFG: "];
+fixed_34 -> fixed_35  [key=0, label="CFG: "];
+fixed_35 -> fixed_36  [key=0, label="CFG: "];
+fixed_36 -> fixed_40  [key=0, label="CFG: "];
+fixed_38 -> fixed_39  [key=0, label="AST: "];
+fixed_38 -> fixed_40  [key=0, label="AST: "];
+fixed_38 -> fixed_43  [key=0, label="CFG: "];
+fixed_38 -> fixed_48  [key=0, label="DDG: Min(bitlen, atttypmod)"];
+fixed_38 -> fixed_48  [key=1, label="DDG: (result) = Min(bitlen, atttypmod)"];
+fixed_38 -> fixed_48  [key=2, label="DDG: "];
+fixed_40 -> fixed_41  [key=0, label="AST: "];
+fixed_40 -> fixed_42  [key=0, label="AST: "];
+fixed_40 -> fixed_38  [key=0, label="CFG: "];
+fixed_40 -> fixed_38  [key=1, label="DDG: bitlen"];
+fixed_40 -> fixed_38  [key=2, label="DDG: atttypmod"];
+fixed_40 -> fixed_48  [key=0, label="DDG: bitlen"];
+fixed_40 -> fixed_48  [key=1, label="DDG: atttypmod"];
+fixed_43 -> fixed_44  [key=0, label="CFG: "];
+fixed_44 -> fixed_45  [key=0, label="CFG: "];
+fixed_45 -> fixed_47  [key=0, label="CFG: "];
+fixed_47 -> fixed_48  [key=0, label="CFG: "];
+fixed_71 -> fixed_72  [key=0, label="AST: "];
+fixed_71 -> fixed_73  [key=0, label="AST: "];
+fixed_71 -> fixed_73  [key=1, label="CFG: "];
+fixed_86 -> fixed_87  [key=0, label="AST: "];
+fixed_86 -> fixed_87  [key=1, label="DDG: "];
+fixed_86 -> fixed_89  [key=0, label="AST: "];
+fixed_86 -> fixed_88  [key=0, label="AST: "];
+fixed_86 -> fixed_88  [key=1, label="DDG: "];
+fixed_86 -> fixed_90  [key=0, label="AST: "];
+fixed_86 -> fixed_90  [key=1, label="CFG: "];
+fixed_87 -> fixed_90  [key=0, label="DDG: p1"];
+fixed_88 -> fixed_90  [key=0, label="DDG: p2"];
+fixed_82 -> fixed_83  [key=0, label="AST: "];
+fixed_82 -> fixed_83  [key=1, label="DDG: "];
+fixed_82 -> fixed_84  [key=0, label="AST: "];
+fixed_82 -> fixed_85  [key=0, label="AST: "];
+fixed_82 -> fixed_85  [key=1, label="CFG: "];
+fixed_83 -> fixed_85  [key=0, label="DDG: p1"];
+fixed_77 -> fixed_78  [key=0, label="AST: "];
+fixed_77 -> fixed_78  [key=1, label="DDG: "];
+fixed_77 -> fixed_80  [key=0, label="AST: "];
+fixed_77 -> fixed_79  [key=0, label="AST: "];
+fixed_77 -> fixed_79  [key=1, label="DDG: "];
+fixed_77 -> fixed_81  [key=0, label="AST: "];
+fixed_77 -> fixed_81  [key=1, label="CFG: "];
+fixed_78 -> fixed_81  [key=0, label="DDG: p1"];
+fixed_79 -> fixed_81  [key=0, label="DDG: p2"];
+}

@@ -1,0 +1,395 @@
+digraph "&lt;operator&gt;.assignment" {
+vulnerable_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+vulnerable_8 [label=<(UNKNOWN,PHP_FUNCTION(openssl_encrypt)
+{
+	zend_bool raw_...,PHP_FUNCTION(openssl_encrypt)
+{
+	zend_bool raw_...)<SUB>1</SUB>>];
+vulnerable_9 [label="<(LOCAL,char* data: char*)<SUB>4</SUB>>"];
+vulnerable_10 [label="<(LOCAL,char* method: char*)<SUB>4</SUB>>"];
+vulnerable_11 [label="<(LOCAL,char* password: char*)<SUB>4</SUB>>"];
+vulnerable_12 [label="<(LOCAL,char* iv: char*)<SUB>4</SUB>>"];
+vulnerable_13 [label=<(&lt;operator&gt;.assignment,*iv = &quot;&quot;)<SUB>4</SUB>>];
+vulnerable_14 [label=<(IDENTIFIER,iv,*iv = &quot;&quot;)<SUB>4</SUB>>];
+vulnerable_15 [label=<(LITERAL,&quot;&quot;,*iv = &quot;&quot;)<SUB>4</SUB>>];
+vulnerable_16 [label="<(LOCAL,int data_len: int)<SUB>5</SUB>>"];
+vulnerable_17 [label="<(LOCAL,int method_len: int)<SUB>5</SUB>>"];
+vulnerable_18 [label="<(LOCAL,int password_len: int)<SUB>5</SUB>>"];
+vulnerable_19 [label="<(LOCAL,int iv_len: int)<SUB>5</SUB>>"];
+vulnerable_20 [label="<(LOCAL,int max_iv_len: int)<SUB>5</SUB>>"];
+vulnerable_21 [label=<(&lt;operator&gt;.assignment,iv_len = 0)<SUB>5</SUB>>];
+vulnerable_22 [label=<(IDENTIFIER,iv_len,iv_len = 0)<SUB>5</SUB>>];
+vulnerable_23 [label=<(LITERAL,0,iv_len = 0)<SUB>5</SUB>>];
+vulnerable_24 [label="<(LOCAL,const EVP_CIPHER* cipher_type: EVP_CIPHER*)<SUB>6</SUB>>"];
+vulnerable_25 [label="<(LOCAL,EVP_CIPHER_CTX cipher_ctx: EVP_CIPHER_CTX)<SUB>7</SUB>>"];
+vulnerable_26 [label="<(LOCAL,int i: int)<SUB>8</SUB>>"];
+vulnerable_27 [label="<(LOCAL,int outlen: int)<SUB>8</SUB>>"];
+vulnerable_28 [label="<(LOCAL,int keylen: int)<SUB>8</SUB>>"];
+vulnerable_29 [label="<(LOCAL,unsigned char* outbuf: unsigned char*)<SUB>9</SUB>>"];
+vulnerable_30 [label="<(LOCAL,unsigned char* key: unsigned char*)<SUB>9</SUB>>"];
+vulnerable_31 [label="<(LOCAL,zend_bool free_iv: zend_bool)<SUB>10</SUB>>"];
+vulnerable_32 [label=<(UNKNOWN,if (zend_parse_parameters(ZEND_NUM_ARGS() TSRML...,if (zend_parse_parameters(ZEND_NUM_ARGS() TSRML...)<SUB>11</SUB>>];
+vulnerable_33 [label=<(UNKNOWN,cipher_type = EVP_get_cipherbyname(method);,cipher_type = EVP_get_cipherbyname(method);)<SUB>14</SUB>>];
+vulnerable_34 [label=<(UNKNOWN,if (!cipher_type) {
+		php_error_docref(NULL TSR...,if (!cipher_type) {
+		php_error_docref(NULL TSR...)<SUB>15</SUB>>];
+vulnerable_35 [label=<(UNKNOWN,keylen = EVP_CIPHER_key_length(cipher_type);,keylen = EVP_CIPHER_key_length(cipher_type);)<SUB>20</SUB>>];
+vulnerable_36 [label=<(UNKNOWN,if (keylen &gt; password_len) {
+		key = emalloc(ke...,if (keylen &gt; password_len) {
+		key = emalloc(ke...)<SUB>21</SUB>>];
+vulnerable_37 [label=<(UNKNOWN,else {
+		key = (unsigned char*)password;
+	},else {
+		key = (unsigned char*)password;
+	})<SUB>25</SUB>>];
+vulnerable_38 [label=<(UNKNOWN,max_iv_len = EVP_CIPHER_iv_length(cipher_type);,max_iv_len = EVP_CIPHER_iv_length(cipher_type);)<SUB>29</SUB>>];
+vulnerable_39 [label=<(UNKNOWN,if (iv_len &lt;= 0 &amp;&amp; max_iv_len &gt; 0) {
+		php_erro...,if (iv_len &lt;= 0 &amp;&amp; max_iv_len &gt; 0) {
+		php_erro...)<SUB>30</SUB>>];
+vulnerable_40 [label=<(UNKNOWN,free_iv = php_openssl_validate_iv(&amp;iv, &amp;iv_len,...,free_iv = php_openssl_validate_iv(&amp;iv, &amp;iv_len,...)<SUB>33</SUB>>];
+vulnerable_41 [label=<(UNKNOWN,outlen = data_len + EVP_CIPHER_block_size(ciphe...,outlen = data_len + EVP_CIPHER_block_size(ciphe...)<SUB>35</SUB>>];
+vulnerable_42 [label=<(UNKNOWN,outbuf = emalloc(outlen + 1);,outbuf = emalloc(outlen + 1);)<SUB>36</SUB>>];
+vulnerable_43 [label=<(UNKNOWN,EVP_EncryptInit(&amp;cipher_ctx, cipher_type, NULL,...,EVP_EncryptInit(&amp;cipher_ctx, cipher_type, NULL,...)<SUB>38</SUB>>];
+vulnerable_44 [label=<(UNKNOWN,if (password_len &gt; keylen) {
+		EVP_CIPHER_CTX_s...,if (password_len &gt; keylen) {
+		EVP_CIPHER_CTX_s...)<SUB>39</SUB>>];
+vulnerable_45 [label=<(UNKNOWN,EVP_EncryptInit_ex(&amp;cipher_ctx, NULL, NULL, key...,EVP_EncryptInit_ex(&amp;cipher_ctx, NULL, NULL, key...)<SUB>42</SUB>>];
+vulnerable_46 [label=<(UNKNOWN,if (data_len &gt; 0) {
+		EVP_EncryptUpdate(&amp;cipher...,if (data_len &gt; 0) {
+		EVP_EncryptUpdate(&amp;cipher...)<SUB>43</SUB>>];
+vulnerable_47 [label=<(UNKNOWN,outlen = i;,outlen = i;)<SUB>46</SUB>>];
+vulnerable_48 [label=<(UNKNOWN,if (EVP_EncryptFinal(&amp;cipher_ctx, (unsigned cha...,if (EVP_EncryptFinal(&amp;cipher_ctx, (unsigned cha...)<SUB>47</SUB>>];
+vulnerable_49 [label=<(UNKNOWN,else {
+		efree(outbuf);
+		RETVAL_FALSE;
+	},else {
+		efree(outbuf);
+		RETVAL_FALSE;
+	})<SUB>60</SUB>>];
+vulnerable_50 [label=<(UNKNOWN,if (key != (unsigned char*)password) {
+		efree(...,if (key != (unsigned char*)password) {
+		efree(...)<SUB>64</SUB>>];
+vulnerable_51 [label=<(UNKNOWN,if (free_iv) {
+		efree(iv);
+	},if (free_iv) {
+		efree(iv);
+	})<SUB>67</SUB>>];
+vulnerable_52 [label="<(LOCAL,EVP_CIPHER_CTX_cleanup : EVP_CIPHER_CTX_cleanup)<SUB>70</SUB>>"];
+vulnerable_53 [label=<(UNKNOWN,},})<SUB>71</SUB>>];
+vulnerable_54 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+vulnerable_75 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_76 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_77 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_81 [label=<(METHOD,&lt;operator&gt;.assignment)>];
+vulnerable_82 [label=<(PARAM,p1)>];
+vulnerable_83 [label=<(PARAM,p2)>];
+vulnerable_84 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_85 [label=<(METHOD_RETURN,ANY)>];
+fixed_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+fixed_8 [label=<(UNKNOWN,PHP_FUNCTION(openssl_encrypt)
+{
+	zend_bool raw_...,PHP_FUNCTION(openssl_encrypt)
+{
+	zend_bool raw_...)<SUB>1</SUB>>];
+fixed_9 [label="<(LOCAL,char* data: char*)<SUB>4</SUB>>"];
+fixed_10 [label="<(LOCAL,char* method: char*)<SUB>4</SUB>>"];
+fixed_11 [label="<(LOCAL,char* password: char*)<SUB>4</SUB>>"];
+fixed_12 [label="<(LOCAL,char* iv: char*)<SUB>4</SUB>>"];
+fixed_13 [label=<(&lt;operator&gt;.assignment,*iv = &quot;&quot;)<SUB>4</SUB>>];
+fixed_14 [label=<(IDENTIFIER,iv,*iv = &quot;&quot;)<SUB>4</SUB>>];
+fixed_15 [label=<(LITERAL,&quot;&quot;,*iv = &quot;&quot;)<SUB>4</SUB>>];
+fixed_16 [label="<(LOCAL,int data_len: int)<SUB>5</SUB>>"];
+fixed_17 [label="<(LOCAL,int method_len: int)<SUB>5</SUB>>"];
+fixed_18 [label="<(LOCAL,int password_len: int)<SUB>5</SUB>>"];
+fixed_19 [label="<(LOCAL,int iv_len: int)<SUB>5</SUB>>"];
+fixed_20 [label="<(LOCAL,int max_iv_len: int)<SUB>5</SUB>>"];
+fixed_21 [label=<(&lt;operator&gt;.assignment,iv_len = 0)<SUB>5</SUB>>];
+fixed_22 [label=<(IDENTIFIER,iv_len,iv_len = 0)<SUB>5</SUB>>];
+fixed_23 [label=<(LITERAL,0,iv_len = 0)<SUB>5</SUB>>];
+fixed_24 [label="<(LOCAL,const EVP_CIPHER* cipher_type: EVP_CIPHER*)<SUB>6</SUB>>"];
+fixed_25 [label="<(LOCAL,EVP_CIPHER_CTX cipher_ctx: EVP_CIPHER_CTX)<SUB>7</SUB>>"];
+fixed_26 [label="<(LOCAL,int i: int)<SUB>8</SUB>>"];
+fixed_27 [label="<(LOCAL,int outlen: int)<SUB>8</SUB>>"];
+fixed_28 [label="<(LOCAL,int keylen: int)<SUB>8</SUB>>"];
+fixed_29 [label=<(&lt;operator&gt;.assignment,i = 0)<SUB>8</SUB>>];
+fixed_30 [label=<(IDENTIFIER,i,i = 0)<SUB>8</SUB>>];
+fixed_31 [label=<(LITERAL,0,i = 0)<SUB>8</SUB>>];
+fixed_32 [label="<(LOCAL,unsigned char* outbuf: unsigned char*)<SUB>9</SUB>>"];
+fixed_33 [label="<(LOCAL,unsigned char* key: unsigned char*)<SUB>9</SUB>>"];
+fixed_34 [label="<(LOCAL,zend_bool free_iv: zend_bool)<SUB>10</SUB>>"];
+fixed_35 [label=<(UNKNOWN,if (zend_parse_parameters(ZEND_NUM_ARGS() TSRML...,if (zend_parse_parameters(ZEND_NUM_ARGS() TSRML...)<SUB>11</SUB>>];
+fixed_36 [label=<(UNKNOWN,cipher_type = EVP_get_cipherbyname(method);,cipher_type = EVP_get_cipherbyname(method);)<SUB>14</SUB>>];
+fixed_37 [label=<(UNKNOWN,if (!cipher_type) {
+		php_error_docref(NULL TSR...,if (!cipher_type) {
+		php_error_docref(NULL TSR...)<SUB>15</SUB>>];
+fixed_38 [label=<(UNKNOWN,keylen = EVP_CIPHER_key_length(cipher_type);,keylen = EVP_CIPHER_key_length(cipher_type);)<SUB>20</SUB>>];
+fixed_39 [label=<(UNKNOWN,if (keylen &gt; password_len) {
+		key = emalloc(ke...,if (keylen &gt; password_len) {
+		key = emalloc(ke...)<SUB>21</SUB>>];
+fixed_40 [label=<(UNKNOWN,else {
+		key = (unsigned char*)password;
+	},else {
+		key = (unsigned char*)password;
+	})<SUB>25</SUB>>];
+fixed_41 [label=<(UNKNOWN,max_iv_len = EVP_CIPHER_iv_length(cipher_type);,max_iv_len = EVP_CIPHER_iv_length(cipher_type);)<SUB>29</SUB>>];
+fixed_42 [label=<(UNKNOWN,if (iv_len &lt;= 0 &amp;&amp; max_iv_len &gt; 0) {
+		php_erro...,if (iv_len &lt;= 0 &amp;&amp; max_iv_len &gt; 0) {
+		php_erro...)<SUB>30</SUB>>];
+fixed_43 [label=<(UNKNOWN,free_iv = php_openssl_validate_iv(&amp;iv, &amp;iv_len,...,free_iv = php_openssl_validate_iv(&amp;iv, &amp;iv_len,...)<SUB>33</SUB>>];
+fixed_44 [label=<(UNKNOWN,outlen = data_len + EVP_CIPHER_block_size(ciphe...,outlen = data_len + EVP_CIPHER_block_size(ciphe...)<SUB>35</SUB>>];
+fixed_45 [label=<(UNKNOWN,outbuf = emalloc(outlen + 1);,outbuf = emalloc(outlen + 1);)<SUB>36</SUB>>];
+fixed_46 [label=<(UNKNOWN,EVP_EncryptInit(&amp;cipher_ctx, cipher_type, NULL,...,EVP_EncryptInit(&amp;cipher_ctx, cipher_type, NULL,...)<SUB>38</SUB>>];
+fixed_47 [label=<(UNKNOWN,if (password_len &gt; keylen) {
+		EVP_CIPHER_CTX_s...,if (password_len &gt; keylen) {
+		EVP_CIPHER_CTX_s...)<SUB>39</SUB>>];
+fixed_48 [label=<(UNKNOWN,EVP_EncryptInit_ex(&amp;cipher_ctx, NULL, NULL, key...,EVP_EncryptInit_ex(&amp;cipher_ctx, NULL, NULL, key...)<SUB>42</SUB>>];
+fixed_49 [label=<(UNKNOWN,if (data_len &gt; 0) {
+		EVP_EncryptUpdate(&amp;cipher...,if (data_len &gt; 0) {
+		EVP_EncryptUpdate(&amp;cipher...)<SUB>43</SUB>>];
+fixed_50 [label=<(UNKNOWN,outlen = i;,outlen = i;)<SUB>46</SUB>>];
+fixed_51 [label=<(UNKNOWN,if (EVP_EncryptFinal(&amp;cipher_ctx, (unsigned cha...,if (EVP_EncryptFinal(&amp;cipher_ctx, (unsigned cha...)<SUB>47</SUB>>];
+fixed_52 [label=<(UNKNOWN,else {
+		efree(outbuf);
+		RETVAL_FALSE;
+	},else {
+		efree(outbuf);
+		RETVAL_FALSE;
+	})<SUB>60</SUB>>];
+fixed_53 [label=<(UNKNOWN,if (key != (unsigned char*)password) {
+		efree(...,if (key != (unsigned char*)password) {
+		efree(...)<SUB>64</SUB>>];
+fixed_54 [label=<(UNKNOWN,if (free_iv) {
+		efree(iv);
+	},if (free_iv) {
+		efree(iv);
+	})<SUB>67</SUB>>];
+fixed_55 [label="<(LOCAL,EVP_CIPHER_CTX_cleanup : EVP_CIPHER_CTX_cleanup)<SUB>70</SUB>>"];
+fixed_56 [label=<(UNKNOWN,},})<SUB>71</SUB>>];
+fixed_57 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+fixed_78 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_79 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_80 [label=<(METHOD_RETURN,ANY)>];
+fixed_84 [label=<(METHOD,&lt;operator&gt;.assignment)>];
+fixed_85 [label=<(PARAM,p1)>];
+fixed_86 [label=<(PARAM,p2)>];
+fixed_87 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_88 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_6 -> vulnerable_7  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_54  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_8  [key=0, label="CFG: "];
+vulnerable_6 -> vulnerable_13  [key=0, label="DDG: "];
+vulnerable_6 -> vulnerable_21  [key=0, label="DDG: "];
+vulnerable_7 -> vulnerable_8  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_9  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_10  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_11  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_12  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_13  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_16  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_17  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_18  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_19  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_20  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_21  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_24  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_25  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_26  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_27  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_28  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_29  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_30  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_31  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_32  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_33  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_34  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_35  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_36  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_37  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_38  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_39  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_40  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_41  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_42  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_43  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_44  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_45  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_46  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_47  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_48  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_49  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_50  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_51  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_52  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_53  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_13  [key=0, label="CFG: "];
+vulnerable_9 -> fixed_6  [key=0];
+vulnerable_10 -> fixed_6  [key=0];
+vulnerable_11 -> fixed_6  [key=0];
+vulnerable_12 -> fixed_6  [key=0];
+vulnerable_13 -> vulnerable_14  [key=0, label="AST: "];
+vulnerable_13 -> vulnerable_15  [key=0, label="AST: "];
+vulnerable_13 -> vulnerable_21  [key=0, label="CFG: "];
+vulnerable_13 -> vulnerable_54  [key=0, label="DDG: iv"];
+vulnerable_13 -> vulnerable_54  [key=1, label="DDG: *iv = &quot;&quot;"];
+vulnerable_14 -> fixed_6  [key=0];
+vulnerable_15 -> fixed_6  [key=0];
+vulnerable_16 -> fixed_6  [key=0];
+vulnerable_17 -> fixed_6  [key=0];
+vulnerable_18 -> fixed_6  [key=0];
+vulnerable_19 -> fixed_6  [key=0];
+vulnerable_20 -> fixed_6  [key=0];
+vulnerable_21 -> vulnerable_22  [key=0, label="AST: "];
+vulnerable_21 -> vulnerable_23  [key=0, label="AST: "];
+vulnerable_21 -> vulnerable_32  [key=0, label="CFG: "];
+vulnerable_21 -> vulnerable_54  [key=0, label="DDG: iv_len"];
+vulnerable_21 -> vulnerable_54  [key=1, label="DDG: iv_len = 0"];
+vulnerable_22 -> fixed_6  [key=0];
+vulnerable_23 -> fixed_6  [key=0];
+vulnerable_24 -> fixed_6  [key=0];
+vulnerable_25 -> fixed_6  [key=0];
+vulnerable_26 -> fixed_6  [key=0];
+vulnerable_27 -> fixed_6  [key=0];
+vulnerable_28 -> fixed_6  [key=0];
+vulnerable_29 -> fixed_6  [key=0];
+vulnerable_30 -> fixed_6  [key=0];
+vulnerable_31 -> fixed_6  [key=0];
+vulnerable_32 -> vulnerable_33  [key=0, label="CFG: "];
+vulnerable_33 -> vulnerable_34  [key=0, label="CFG: "];
+vulnerable_34 -> vulnerable_35  [key=0, label="CFG: "];
+vulnerable_35 -> vulnerable_36  [key=0, label="CFG: "];
+vulnerable_36 -> vulnerable_37  [key=0, label="CFG: "];
+vulnerable_37 -> vulnerable_38  [key=0, label="CFG: "];
+vulnerable_38 -> vulnerable_39  [key=0, label="CFG: "];
+vulnerable_39 -> vulnerable_40  [key=0, label="CFG: "];
+vulnerable_40 -> vulnerable_41  [key=0, label="CFG: "];
+vulnerable_41 -> vulnerable_42  [key=0, label="CFG: "];
+vulnerable_42 -> vulnerable_43  [key=0, label="CFG: "];
+vulnerable_43 -> vulnerable_44  [key=0, label="CFG: "];
+vulnerable_44 -> vulnerable_45  [key=0, label="CFG: "];
+vulnerable_45 -> vulnerable_46  [key=0, label="CFG: "];
+vulnerable_46 -> vulnerable_47  [key=0, label="CFG: "];
+vulnerable_47 -> vulnerable_48  [key=0, label="CFG: "];
+vulnerable_48 -> vulnerable_49  [key=0, label="CFG: "];
+vulnerable_49 -> vulnerable_50  [key=0, label="CFG: "];
+vulnerable_50 -> vulnerable_51  [key=0, label="CFG: "];
+vulnerable_51 -> vulnerable_53  [key=0, label="CFG: "];
+vulnerable_52 -> fixed_6  [key=0];
+vulnerable_53 -> vulnerable_54  [key=0, label="CFG: "];
+vulnerable_54 -> fixed_6  [key=0];
+vulnerable_75 -> vulnerable_76  [key=0, label="AST: "];
+vulnerable_75 -> vulnerable_77  [key=0, label="AST: "];
+vulnerable_75 -> vulnerable_77  [key=1, label="CFG: "];
+vulnerable_76 -> fixed_6  [key=0];
+vulnerable_77 -> fixed_6  [key=0];
+vulnerable_81 -> vulnerable_82  [key=0, label="AST: "];
+vulnerable_81 -> vulnerable_82  [key=1, label="DDG: "];
+vulnerable_81 -> vulnerable_84  [key=0, label="AST: "];
+vulnerable_81 -> vulnerable_83  [key=0, label="AST: "];
+vulnerable_81 -> vulnerable_83  [key=1, label="DDG: "];
+vulnerable_81 -> vulnerable_85  [key=0, label="AST: "];
+vulnerable_81 -> vulnerable_85  [key=1, label="CFG: "];
+vulnerable_82 -> vulnerable_85  [key=0, label="DDG: p1"];
+vulnerable_83 -> vulnerable_85  [key=0, label="DDG: p2"];
+vulnerable_84 -> fixed_6  [key=0];
+vulnerable_85 -> fixed_6  [key=0];
+fixed_6 -> fixed_7  [key=0, label="AST: "];
+fixed_6 -> fixed_57  [key=0, label="AST: "];
+fixed_6 -> fixed_8  [key=0, label="CFG: "];
+fixed_6 -> fixed_13  [key=0, label="DDG: "];
+fixed_6 -> fixed_21  [key=0, label="DDG: "];
+fixed_6 -> fixed_29  [key=0, label="DDG: "];
+fixed_7 -> fixed_8  [key=0, label="AST: "];
+fixed_7 -> fixed_9  [key=0, label="AST: "];
+fixed_7 -> fixed_10  [key=0, label="AST: "];
+fixed_7 -> fixed_11  [key=0, label="AST: "];
+fixed_7 -> fixed_12  [key=0, label="AST: "];
+fixed_7 -> fixed_13  [key=0, label="AST: "];
+fixed_7 -> fixed_16  [key=0, label="AST: "];
+fixed_7 -> fixed_17  [key=0, label="AST: "];
+fixed_7 -> fixed_18  [key=0, label="AST: "];
+fixed_7 -> fixed_19  [key=0, label="AST: "];
+fixed_7 -> fixed_20  [key=0, label="AST: "];
+fixed_7 -> fixed_21  [key=0, label="AST: "];
+fixed_7 -> fixed_24  [key=0, label="AST: "];
+fixed_7 -> fixed_25  [key=0, label="AST: "];
+fixed_7 -> fixed_26  [key=0, label="AST: "];
+fixed_7 -> fixed_27  [key=0, label="AST: "];
+fixed_7 -> fixed_28  [key=0, label="AST: "];
+fixed_7 -> fixed_29  [key=0, label="AST: "];
+fixed_7 -> fixed_32  [key=0, label="AST: "];
+fixed_7 -> fixed_33  [key=0, label="AST: "];
+fixed_7 -> fixed_34  [key=0, label="AST: "];
+fixed_7 -> fixed_35  [key=0, label="AST: "];
+fixed_7 -> fixed_36  [key=0, label="AST: "];
+fixed_7 -> fixed_37  [key=0, label="AST: "];
+fixed_7 -> fixed_38  [key=0, label="AST: "];
+fixed_7 -> fixed_39  [key=0, label="AST: "];
+fixed_7 -> fixed_40  [key=0, label="AST: "];
+fixed_7 -> fixed_41  [key=0, label="AST: "];
+fixed_7 -> fixed_42  [key=0, label="AST: "];
+fixed_7 -> fixed_43  [key=0, label="AST: "];
+fixed_7 -> fixed_44  [key=0, label="AST: "];
+fixed_7 -> fixed_45  [key=0, label="AST: "];
+fixed_7 -> fixed_46  [key=0, label="AST: "];
+fixed_7 -> fixed_47  [key=0, label="AST: "];
+fixed_7 -> fixed_48  [key=0, label="AST: "];
+fixed_7 -> fixed_49  [key=0, label="AST: "];
+fixed_7 -> fixed_50  [key=0, label="AST: "];
+fixed_7 -> fixed_51  [key=0, label="AST: "];
+fixed_7 -> fixed_52  [key=0, label="AST: "];
+fixed_7 -> fixed_53  [key=0, label="AST: "];
+fixed_7 -> fixed_54  [key=0, label="AST: "];
+fixed_7 -> fixed_55  [key=0, label="AST: "];
+fixed_7 -> fixed_56  [key=0, label="AST: "];
+fixed_8 -> fixed_13  [key=0, label="CFG: "];
+fixed_13 -> fixed_14  [key=0, label="AST: "];
+fixed_13 -> fixed_15  [key=0, label="AST: "];
+fixed_13 -> fixed_21  [key=0, label="CFG: "];
+fixed_13 -> fixed_57  [key=0, label="DDG: iv"];
+fixed_13 -> fixed_57  [key=1, label="DDG: *iv = &quot;&quot;"];
+fixed_21 -> fixed_22  [key=0, label="AST: "];
+fixed_21 -> fixed_23  [key=0, label="AST: "];
+fixed_21 -> fixed_29  [key=0, label="CFG: "];
+fixed_21 -> fixed_57  [key=0, label="DDG: iv_len"];
+fixed_21 -> fixed_57  [key=1, label="DDG: iv_len = 0"];
+fixed_29 -> fixed_30  [key=0, label="AST: "];
+fixed_29 -> fixed_31  [key=0, label="AST: "];
+fixed_29 -> fixed_35  [key=0, label="CFG: "];
+fixed_29 -> fixed_57  [key=0, label="DDG: i"];
+fixed_29 -> fixed_57  [key=1, label="DDG: i = 0"];
+fixed_35 -> fixed_36  [key=0, label="CFG: "];
+fixed_36 -> fixed_37  [key=0, label="CFG: "];
+fixed_37 -> fixed_38  [key=0, label="CFG: "];
+fixed_38 -> fixed_39  [key=0, label="CFG: "];
+fixed_39 -> fixed_40  [key=0, label="CFG: "];
+fixed_40 -> fixed_41  [key=0, label="CFG: "];
+fixed_41 -> fixed_42  [key=0, label="CFG: "];
+fixed_42 -> fixed_43  [key=0, label="CFG: "];
+fixed_43 -> fixed_44  [key=0, label="CFG: "];
+fixed_44 -> fixed_45  [key=0, label="CFG: "];
+fixed_45 -> fixed_46  [key=0, label="CFG: "];
+fixed_46 -> fixed_47  [key=0, label="CFG: "];
+fixed_47 -> fixed_48  [key=0, label="CFG: "];
+fixed_48 -> fixed_49  [key=0, label="CFG: "];
+fixed_49 -> fixed_50  [key=0, label="CFG: "];
+fixed_50 -> fixed_51  [key=0, label="CFG: "];
+fixed_51 -> fixed_52  [key=0, label="CFG: "];
+fixed_52 -> fixed_53  [key=0, label="CFG: "];
+fixed_53 -> fixed_54  [key=0, label="CFG: "];
+fixed_54 -> fixed_56  [key=0, label="CFG: "];
+fixed_56 -> fixed_57  [key=0, label="CFG: "];
+fixed_78 -> fixed_79  [key=0, label="AST: "];
+fixed_78 -> fixed_80  [key=0, label="AST: "];
+fixed_78 -> fixed_80  [key=1, label="CFG: "];
+fixed_84 -> fixed_85  [key=0, label="AST: "];
+fixed_84 -> fixed_85  [key=1, label="DDG: "];
+fixed_84 -> fixed_87  [key=0, label="AST: "];
+fixed_84 -> fixed_86  [key=0, label="AST: "];
+fixed_84 -> fixed_86  [key=1, label="DDG: "];
+fixed_84 -> fixed_88  [key=0, label="AST: "];
+fixed_84 -> fixed_88  [key=1, label="CFG: "];
+fixed_85 -> fixed_88  [key=0, label="DDG: p1"];
+fixed_86 -> fixed_88  [key=0, label="DDG: p2"];
+}

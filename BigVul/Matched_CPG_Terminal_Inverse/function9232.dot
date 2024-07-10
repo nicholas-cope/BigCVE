@@ -1,0 +1,197 @@
+digraph "&lt;global&gt;" {
+vulnerable_61 [label=<(METHOD,GetID)>];
+vulnerable_62 [label=<(PARAM,p1)>];
+vulnerable_63 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_64 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+vulnerable_8 [label=<(METHOD,GetGuestView)<SUB>1</SUB>>];
+vulnerable_9 [label="<(BLOCK,{
+  return MimeHandlerViewGuest::From(
+        ...,{
+  return MimeHandlerViewGuest::From(
+        ...)<SUB>1</SUB>>"];
+vulnerable_10 [label="<(RETURN,return MimeHandlerViewGuest::From(
+            ...,return MimeHandlerViewGuest::From(
+            ...)<SUB>2</SUB>>"];
+vulnerable_11 [label="<(As&lt;MimeHandlerViewGuest&gt;,MimeHandlerViewGuest::From(
+             parent...)<SUB>2</SUB>>"];
+vulnerable_12 [label="<(&lt;operator&gt;.indirectFieldAccess,MimeHandlerViewGuest::From(
+             parent...)<SUB>2</SUB>>"];
+vulnerable_13 [label="<(MimeHandlerViewGuest.From,MimeHandlerViewGuest::From(
+             parent...)<SUB>2</SUB>>"];
+vulnerable_14 [label="<(&lt;operator&gt;.fieldAccess,MimeHandlerViewGuest::From)<SUB>2</SUB>>"];
+vulnerable_15 [label="<(IDENTIFIER,MimeHandlerViewGuest,MimeHandlerViewGuest::From(
+             parent...)<SUB>2</SUB>>"];
+vulnerable_16 [label=<(FIELD_IDENTIFIER,From,From)<SUB>2</SUB>>];
+vulnerable_17 [label=<(GetID,parent_site_instance_-&gt;GetProcess()-&gt;GetID())<SUB>3</SUB>>];
+vulnerable_18 [label=<(&lt;operator&gt;.indirectFieldAccess,parent_site_instance_-&gt;GetProcess()-&gt;GetID)<SUB>3</SUB>>];
+vulnerable_19 [label=<(GetProcess,parent_site_instance_-&gt;GetProcess())<SUB>3</SUB>>];
+vulnerable_20 [label=<(&lt;operator&gt;.indirectFieldAccess,parent_site_instance_-&gt;GetProcess)<SUB>3</SUB>>];
+vulnerable_21 [label=<(IDENTIFIER,parent_site_instance_,parent_site_instance_-&gt;GetProcess())<SUB>3</SUB>>];
+vulnerable_22 [label=<(FIELD_IDENTIFIER,GetProcess,GetProcess)<SUB>3</SUB>>];
+vulnerable_23 [label=<(FIELD_IDENTIFIER,GetID,GetID)<SUB>3</SUB>>];
+vulnerable_24 [label="<(IDENTIFIER,guest_instance_id_,MimeHandlerViewGuest::From(
+             parent...)<SUB>3</SUB>>"];
+vulnerable_25 [label=<(FIELD_IDENTIFIER,As&lt;MimeHandlerViewGuest&gt;,As&lt;MimeHandlerViewGuest&gt;)<SUB>2</SUB>>];
+vulnerable_26 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+vulnerable_28 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+vulnerable_45 [label=<(METHOD,&lt;operator&gt;.indirectFieldAccess)>];
+vulnerable_46 [label=<(PARAM,p1)>];
+vulnerable_47 [label=<(PARAM,p2)>];
+vulnerable_48 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_49 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_56 [label=<(METHOD,&lt;operator&gt;.fieldAccess)>];
+vulnerable_57 [label=<(PARAM,p1)>];
+vulnerable_58 [label=<(PARAM,p2)>];
+vulnerable_59 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_60 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_50 [label=<(METHOD,MimeHandlerViewGuest.From)>];
+vulnerable_51 [label=<(PARAM,p1)>];
+vulnerable_52 [label=<(PARAM,p2)>];
+vulnerable_53 [label=<(PARAM,p3)>];
+vulnerable_54 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_55 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_41 [label=<(METHOD,As&lt;MimeHandlerViewGuest&gt;)>];
+vulnerable_42 [label=<(PARAM,p1)>];
+vulnerable_43 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_44 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_35 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_36 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_37 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_65 [label=<(METHOD,GetProcess)>];
+vulnerable_66 [label=<(PARAM,p1)>];
+vulnerable_67 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_68 [label=<(METHOD_RETURN,ANY)>];
+fixed_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+fixed_8 [label=<(METHOD,GetGuestView)<SUB>1</SUB>>];
+fixed_9 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_10 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+fixed_12 [label=<(UNKNOWN,,)>];
+fixed_13 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+fixed_20 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_21 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_22 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_61 -> vulnerable_62  [key=0, label="AST: "];
+vulnerable_61 -> vulnerable_62  [key=1, label="DDG: "];
+vulnerable_61 -> vulnerable_63  [key=0, label="AST: "];
+vulnerable_61 -> vulnerable_64  [key=0, label="AST: "];
+vulnerable_61 -> vulnerable_64  [key=1, label="CFG: "];
+vulnerable_62 -> vulnerable_64  [key=0, label="DDG: p1"];
+vulnerable_6 -> vulnerable_7  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_28  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_28  [key=1, label="CFG: "];
+vulnerable_7 -> vulnerable_8  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_9  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_26  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_16  [key=0, label="CFG: "];
+vulnerable_8 -> vulnerable_13  [key=0, label="DDG: "];
+vulnerable_9 -> vulnerable_10  [key=0, label="AST: "];
+vulnerable_10 -> vulnerable_11  [key=0, label="AST: "];
+vulnerable_10 -> vulnerable_26  [key=0, label="CFG: "];
+vulnerable_10 -> vulnerable_26  [key=1, label="DDG: &lt;RET&gt;"];
+vulnerable_11 -> vulnerable_12  [key=0, label="AST: "];
+vulnerable_11 -> vulnerable_10  [key=0, label="CFG: "];
+vulnerable_11 -> vulnerable_10  [key=1, label="DDG: MimeHandlerViewGuest::From(
+             parent_site_instance_-&gt;GetProcess()-&gt;GetID(), guest_instance_id_)
+      -&gt;As&lt;MimeHandlerViewGuest&gt;()"];
+vulnerable_11 -> vulnerable_26  [key=0, label="DDG: MimeHandlerViewGuest::From(
+             parent_site_instance_-&gt;GetProcess()-&gt;GetID(), guest_instance_id_)
+      -&gt;As&lt;MimeHandlerViewGuest&gt;"];
+vulnerable_11 -> vulnerable_26  [key=1, label="DDG: MimeHandlerViewGuest::From(
+             parent_site_instance_-&gt;GetProcess()-&gt;GetID(), guest_instance_id_)
+      -&gt;As&lt;MimeHandlerViewGuest&gt;()"];
+vulnerable_12 -> vulnerable_13  [key=0, label="AST: "];
+vulnerable_12 -> vulnerable_25  [key=0, label="AST: "];
+vulnerable_12 -> vulnerable_11  [key=0, label="CFG: "];
+vulnerable_13 -> vulnerable_14  [key=0, label="AST: "];
+vulnerable_13 -> vulnerable_17  [key=0, label="AST: "];
+vulnerable_13 -> vulnerable_24  [key=0, label="AST: "];
+vulnerable_13 -> vulnerable_25  [key=0, label="CFG: "];
+vulnerable_13 -> vulnerable_26  [key=0, label="DDG: MimeHandlerViewGuest::From"];
+vulnerable_13 -> vulnerable_26  [key=1, label="DDG: parent_site_instance_-&gt;GetProcess()-&gt;GetID()"];
+vulnerable_13 -> vulnerable_26  [key=2, label="DDG: guest_instance_id_"];
+vulnerable_14 -> vulnerable_15  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_16  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_22  [key=0, label="CFG: "];
+vulnerable_16 -> vulnerable_14  [key=0, label="CFG: "];
+vulnerable_17 -> vulnerable_18  [key=0, label="AST: "];
+vulnerable_17 -> vulnerable_13  [key=0, label="CFG: "];
+vulnerable_17 -> vulnerable_13  [key=1, label="DDG: parent_site_instance_-&gt;GetProcess()-&gt;GetID"];
+vulnerable_17 -> vulnerable_26  [key=0, label="DDG: parent_site_instance_-&gt;GetProcess()-&gt;GetID"];
+vulnerable_18 -> vulnerable_19  [key=0, label="AST: "];
+vulnerable_18 -> vulnerable_23  [key=0, label="AST: "];
+vulnerable_18 -> vulnerable_17  [key=0, label="CFG: "];
+vulnerable_19 -> vulnerable_20  [key=0, label="AST: "];
+vulnerable_19 -> vulnerable_23  [key=0, label="CFG: "];
+vulnerable_19 -> vulnerable_26  [key=0, label="DDG: parent_site_instance_-&gt;GetProcess"];
+vulnerable_20 -> vulnerable_21  [key=0, label="AST: "];
+vulnerable_20 -> vulnerable_22  [key=0, label="AST: "];
+vulnerable_20 -> vulnerable_19  [key=0, label="CFG: "];
+vulnerable_22 -> vulnerable_20  [key=0, label="CFG: "];
+vulnerable_23 -> vulnerable_18  [key=0, label="CFG: "];
+vulnerable_25 -> vulnerable_12  [key=0, label="CFG: "];
+vulnerable_45 -> vulnerable_46  [key=0, label="AST: "];
+vulnerable_45 -> vulnerable_46  [key=1, label="DDG: "];
+vulnerable_45 -> vulnerable_48  [key=0, label="AST: "];
+vulnerable_45 -> vulnerable_47  [key=0, label="AST: "];
+vulnerable_45 -> vulnerable_47  [key=1, label="DDG: "];
+vulnerable_45 -> vulnerable_49  [key=0, label="AST: "];
+vulnerable_45 -> vulnerable_49  [key=1, label="CFG: "];
+vulnerable_46 -> vulnerable_49  [key=0, label="DDG: p1"];
+vulnerable_47 -> vulnerable_49  [key=0, label="DDG: p2"];
+vulnerable_56 -> vulnerable_57  [key=0, label="AST: "];
+vulnerable_56 -> vulnerable_57  [key=1, label="DDG: "];
+vulnerable_56 -> vulnerable_59  [key=0, label="AST: "];
+vulnerable_56 -> vulnerable_58  [key=0, label="AST: "];
+vulnerable_56 -> vulnerable_58  [key=1, label="DDG: "];
+vulnerable_56 -> vulnerable_60  [key=0, label="AST: "];
+vulnerable_56 -> vulnerable_60  [key=1, label="CFG: "];
+vulnerable_57 -> vulnerable_60  [key=0, label="DDG: p1"];
+vulnerable_58 -> vulnerable_60  [key=0, label="DDG: p2"];
+vulnerable_50 -> vulnerable_51  [key=0, label="AST: "];
+vulnerable_50 -> vulnerable_51  [key=1, label="DDG: "];
+vulnerable_50 -> vulnerable_54  [key=0, label="AST: "];
+vulnerable_50 -> vulnerable_52  [key=0, label="AST: "];
+vulnerable_50 -> vulnerable_52  [key=1, label="DDG: "];
+vulnerable_50 -> vulnerable_55  [key=0, label="AST: "];
+vulnerable_50 -> vulnerable_55  [key=1, label="CFG: "];
+vulnerable_50 -> vulnerable_53  [key=0, label="AST: "];
+vulnerable_50 -> vulnerable_53  [key=1, label="DDG: "];
+vulnerable_51 -> vulnerable_55  [key=0, label="DDG: p1"];
+vulnerable_52 -> vulnerable_55  [key=0, label="DDG: p2"];
+vulnerable_53 -> vulnerable_55  [key=0, label="DDG: p3"];
+vulnerable_41 -> vulnerable_42  [key=0, label="AST: "];
+vulnerable_41 -> vulnerable_42  [key=1, label="DDG: "];
+vulnerable_41 -> vulnerable_43  [key=0, label="AST: "];
+vulnerable_41 -> vulnerable_44  [key=0, label="AST: "];
+vulnerable_41 -> vulnerable_44  [key=1, label="CFG: "];
+vulnerable_42 -> vulnerable_44  [key=0, label="DDG: p1"];
+vulnerable_35 -> vulnerable_36  [key=0, label="AST: "];
+vulnerable_35 -> vulnerable_37  [key=0, label="AST: "];
+vulnerable_35 -> vulnerable_37  [key=1, label="CFG: "];
+vulnerable_65 -> vulnerable_66  [key=0, label="AST: "];
+vulnerable_65 -> vulnerable_66  [key=1, label="DDG: "];
+vulnerable_65 -> vulnerable_67  [key=0, label="AST: "];
+vulnerable_65 -> vulnerable_68  [key=0, label="AST: "];
+vulnerable_65 -> vulnerable_68  [key=1, label="CFG: "];
+vulnerable_66 -> vulnerable_68  [key=0, label="DDG: p1"];
+fixed_6 -> fixed_7  [key=0, label="AST: "];
+fixed_6 -> fixed_13  [key=0, label="AST: "];
+fixed_6 -> fixed_12  [key=0, label="CFG: "];
+fixed_7 -> fixed_8  [key=0, label="AST: "];
+fixed_7 -> fixed_12  [key=0, label="AST: "];
+fixed_8 -> fixed_9  [key=0, label="AST: "];
+fixed_8 -> fixed_10  [key=0, label="AST: "];
+fixed_8 -> fixed_10  [key=1, label="CFG: "];
+fixed_9 -> vulnerable_61  [key=0];
+fixed_10 -> vulnerable_61  [key=0];
+fixed_12 -> fixed_13  [key=0, label="CFG: "];
+fixed_13 -> vulnerable_61  [key=0];
+fixed_20 -> fixed_21  [key=0, label="AST: "];
+fixed_20 -> fixed_22  [key=0, label="AST: "];
+fixed_20 -> fixed_22  [key=1, label="CFG: "];
+fixed_21 -> vulnerable_61  [key=0];
+fixed_22 -> vulnerable_61  [key=0];
+}

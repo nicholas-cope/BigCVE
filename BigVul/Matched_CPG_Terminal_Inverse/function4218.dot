@@ -1,0 +1,132 @@
+digraph "&lt;global&gt;" {
+vulnerable_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+vulnerable_8 [label=<(UNKNOWN,CMD_FUNC(m_authenticate)
+{
+	aClient *agent_p = ...,CMD_FUNC(m_authenticate)
+{
+	aClient *agent_p = ...)<SUB>1</SUB>>];
+vulnerable_9 [label=<(UNKNOWN,if (!SASL_SERVER || !MyConnect(sptr) || BadPtr(...,if (!SASL_SERVER || !MyConnect(sptr) || BadPtr(...)<SUB>6</SUB>>];
+vulnerable_10 [label=<(UNKNOWN,if (sptr-&gt;local-&gt;sasl_complete)
+	{
+		sendto_one...,if (sptr-&gt;local-&gt;sasl_complete)
+	{
+		sendto_one...)<SUB>9</SUB>>];
+vulnerable_11 [label=<(UNKNOWN,if (strlen(parv[1]) &gt; 400)
+ 	{
+ 		sendto_one(sp...,if (strlen(parv[1]) &gt; 400)
+ 	{
+ 		sendto_one(sp...)<SUB>15</SUB>>];
+vulnerable_12 [label=<(UNKNOWN,if (*sptr-&gt;local-&gt;sasl_agent)
+		agent_p = find_...,if (*sptr-&gt;local-&gt;sasl_agent)
+		agent_p = find_...)<SUB>21</SUB>>];
+vulnerable_13 [label=<(UNKNOWN,if (agent_p == NULL)
+	{
+		char *addr = BadPtr(s...,if (agent_p == NULL)
+	{
+		char *addr = BadPtr(s...)<SUB>24</SUB>>];
+vulnerable_14 [label="<(UNKNOWN,else
+		sendto_server(NULL, 0, 0, &quot;:%s SASL %s %...,else
+		sendto_server(NULL, 0, 0, &quot;:%s SASL %s %...)<SUB>39</SUB>>"];
+vulnerable_15 [label=<(UNKNOWN,sptr-&gt;local-&gt;sasl_out++;,sptr-&gt;local-&gt;sasl_out++;)<SUB>43</SUB>>];
+vulnerable_16 [label=<(UNKNOWN,return 0;,return 0;)<SUB>45</SUB>>];
+vulnerable_17 [label=<(UNKNOWN,},})<SUB>46</SUB>>];
+vulnerable_18 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+vulnerable_23 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_24 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_25 [label=<(METHOD_RETURN,ANY)>];
+fixed_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+fixed_8 [label=<(UNKNOWN,CMD_FUNC(m_authenticate)
+{
+	aClient *agent_p = ...,CMD_FUNC(m_authenticate)
+{
+	aClient *agent_p = ...)<SUB>1</SUB>>];
+fixed_9 [label=<(UNKNOWN,if (!SASL_SERVER || !MyConnect(sptr) || BadPtr(...,if (!SASL_SERVER || !MyConnect(sptr) || BadPtr(...)<SUB>6</SUB>>];
+fixed_10 [label=<(UNKNOWN,if (sptr-&gt;local-&gt;sasl_complete)
+	{
+		sendto_one...,if (sptr-&gt;local-&gt;sasl_complete)
+	{
+		sendto_one...)<SUB>9</SUB>>];
+fixed_11 [label="<(UNKNOWN,if ((parv[1][0] == ':') || strchr(parv[1], ' ')...,if ((parv[1][0] == ':') || strchr(parv[1], ' ')...)<SUB>15</SUB>>"];
+fixed_12 [label=<(UNKNOWN,if (strlen(parv[1]) &gt; 400)
+ 	{
+ 		sendto_one(sp...,if (strlen(parv[1]) &gt; 400)
+ 	{
+ 		sendto_one(sp...)<SUB>21</SUB>>];
+fixed_13 [label=<(UNKNOWN,if (*sptr-&gt;local-&gt;sasl_agent)
+		agent_p = find_...,if (*sptr-&gt;local-&gt;sasl_agent)
+		agent_p = find_...)<SUB>27</SUB>>];
+fixed_14 [label=<(UNKNOWN,if (agent_p == NULL)
+	{
+		char *addr = BadPtr(s...,if (agent_p == NULL)
+	{
+		char *addr = BadPtr(s...)<SUB>30</SUB>>];
+fixed_15 [label="<(UNKNOWN,else
+		sendto_server(NULL, 0, 0, &quot;:%s SASL %s %...,else
+		sendto_server(NULL, 0, 0, &quot;:%s SASL %s %...)<SUB>45</SUB>>"];
+fixed_16 [label=<(UNKNOWN,sptr-&gt;local-&gt;sasl_out++;,sptr-&gt;local-&gt;sasl_out++;)<SUB>49</SUB>>];
+fixed_17 [label=<(UNKNOWN,return 0;,return 0;)<SUB>51</SUB>>];
+fixed_18 [label=<(UNKNOWN,},})<SUB>52</SUB>>];
+fixed_19 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+fixed_24 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_25 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_26 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_6 -> vulnerable_7  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_18  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_8  [key=0, label="CFG: "];
+vulnerable_7 -> vulnerable_8  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_9  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_10  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_11  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_12  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_13  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_14  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_15  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_16  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_17  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_9  [key=0, label="CFG: "];
+vulnerable_9 -> vulnerable_10  [key=0, label="CFG: "];
+vulnerable_10 -> vulnerable_11  [key=0, label="CFG: "];
+vulnerable_11 -> vulnerable_12  [key=0, label="CFG: "];
+vulnerable_12 -> vulnerable_13  [key=0, label="CFG: "];
+vulnerable_13 -> vulnerable_14  [key=0, label="CFG: "];
+vulnerable_14 -> vulnerable_15  [key=0, label="CFG: "];
+vulnerable_15 -> vulnerable_16  [key=0, label="CFG: "];
+vulnerable_16 -> vulnerable_17  [key=0, label="CFG: "];
+vulnerable_17 -> vulnerable_18  [key=0, label="CFG: "];
+vulnerable_23 -> vulnerable_24  [key=0, label="AST: "];
+vulnerable_23 -> vulnerable_25  [key=0, label="AST: "];
+vulnerable_23 -> vulnerable_25  [key=1, label="CFG: "];
+fixed_6 -> fixed_7  [key=0, label="AST: "];
+fixed_6 -> fixed_19  [key=0, label="AST: "];
+fixed_6 -> fixed_8  [key=0, label="CFG: "];
+fixed_7 -> fixed_8  [key=0, label="AST: "];
+fixed_7 -> fixed_9  [key=0, label="AST: "];
+fixed_7 -> fixed_10  [key=0, label="AST: "];
+fixed_7 -> fixed_11  [key=0, label="AST: "];
+fixed_7 -> fixed_12  [key=0, label="AST: "];
+fixed_7 -> fixed_13  [key=0, label="AST: "];
+fixed_7 -> fixed_14  [key=0, label="AST: "];
+fixed_7 -> fixed_15  [key=0, label="AST: "];
+fixed_7 -> fixed_16  [key=0, label="AST: "];
+fixed_7 -> fixed_17  [key=0, label="AST: "];
+fixed_7 -> fixed_18  [key=0, label="AST: "];
+fixed_8 -> fixed_9  [key=0, label="CFG: "];
+fixed_9 -> fixed_10  [key=0, label="CFG: "];
+fixed_10 -> fixed_11  [key=0, label="CFG: "];
+fixed_11 -> fixed_12  [key=0, label="CFG: "];
+fixed_12 -> fixed_13  [key=0, label="CFG: "];
+fixed_13 -> fixed_14  [key=0, label="CFG: "];
+fixed_14 -> fixed_15  [key=0, label="CFG: "];
+fixed_15 -> fixed_16  [key=0, label="CFG: "];
+fixed_16 -> fixed_17  [key=0, label="CFG: "];
+fixed_17 -> fixed_18  [key=0, label="CFG: "];
+fixed_18 -> fixed_19  [key=0, label="CFG: "];
+fixed_19 -> vulnerable_6  [key=0];
+fixed_24 -> fixed_25  [key=0, label="AST: "];
+fixed_24 -> fixed_26  [key=0, label="AST: "];
+fixed_24 -> fixed_26  [key=1, label="CFG: "];
+fixed_25 -> vulnerable_6  [key=0];
+fixed_26 -> vulnerable_6  [key=0];
+}

@@ -1,0 +1,403 @@
+digraph "&lt;global&gt;" {
+vulnerable_58 [label=<(METHOD,&lt;operator&gt;.indirection)>];
+vulnerable_59 [label=<(PARAM,p1)>];
+vulnerable_60 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_61 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+vulnerable_8 [label=<(METHOD,GetAllowedUkmFeatures)<SUB>1</SUB>>];
+vulnerable_9 [label="<(BLOCK,{
+  static base::NoDestructor&lt;UseCounterPageLoa...,{
+  static base::NoDestructor&lt;UseCounterPageLoa...)<SUB>1</SUB>>"];
+vulnerable_10 [label="<(LOCAL,base.NoDestructor&lt;UseCounterPageLoadMetricsObserver.UkmFeatureList&gt; opt_in_features: base.NoDestructor&lt;UseCounterPageLoadMetricsObserver.UkmFeatureList&gt;)<SUB>3</SUB>>"];
+vulnerable_11 [label="<(opt_in_features,opt_in_features(std::initializer_list&lt;WebFeatur...)<SUB>3</SUB>>"];
+vulnerable_12 [label="<(&lt;operator&gt;.greaterThan,std::initializer_list&lt;WebFeature&gt;({
+          W...)<SUB>3</SUB>>"];
+vulnerable_13 [label="<(&lt;operator&gt;.lessThan,std::initializer_list&lt;WebFeature)<SUB>3</SUB>>"];
+vulnerable_14 [label="<(&lt;operator&gt;.fieldAccess,std::initializer_list)<SUB>3</SUB>>"];
+vulnerable_15 [label="<(IDENTIFIER,std,std::initializer_list&lt;WebFeature)<SUB>3</SUB>>"];
+vulnerable_16 [label=<(FIELD_IDENTIFIER,initializer_list,initializer_list)<SUB>3</SUB>>];
+vulnerable_17 [label="<(IDENTIFIER,WebFeature,std::initializer_list&lt;WebFeature)<SUB>3</SUB>>"];
+vulnerable_18 [label="<(BLOCK,{
+          WebFeature::kNavigatorVibrate,
+    ...,{
+          WebFeature::kNavigatorVibrate,
+    ...)<SUB>3</SUB>>"];
+vulnerable_19 [label=<(RETURN,return *opt_in_features;,return *opt_in_features;)<SUB>73</SUB>>];
+vulnerable_20 [label=<(&lt;operator&gt;.indirection,*opt_in_features)<SUB>73</SUB>>];
+vulnerable_21 [label=<(IDENTIFIER,opt_in_features,return *opt_in_features;)<SUB>73</SUB>>];
+vulnerable_22 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+vulnerable_24 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+vulnerable_43 [label=<(METHOD,&lt;operator&gt;.greaterThan)>];
+vulnerable_44 [label=<(PARAM,p1)>];
+vulnerable_45 [label=<(PARAM,p2)>];
+vulnerable_46 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_47 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_53 [label=<(METHOD,&lt;operator&gt;.fieldAccess)>];
+vulnerable_54 [label=<(PARAM,p1)>];
+vulnerable_55 [label=<(PARAM,p2)>];
+vulnerable_56 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_57 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_48 [label=<(METHOD,&lt;operator&gt;.lessThan)>];
+vulnerable_49 [label=<(PARAM,p1)>];
+vulnerable_50 [label=<(PARAM,p2)>];
+vulnerable_51 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_52 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_39 [label=<(METHOD,opt_in_features)>];
+vulnerable_40 [label=<(PARAM,p1)>];
+vulnerable_41 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_42 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_33 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_34 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_35 [label=<(METHOD_RETURN,ANY)>];
+fixed_58 [label=<(METHOD,&lt;operator&gt;.indirection)>];
+fixed_59 [label=<(PARAM,p1)>];
+fixed_60 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_61 [label=<(METHOD_RETURN,ANY)>];
+fixed_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+fixed_8 [label=<(METHOD,GetAllowedUkmFeatures)<SUB>1</SUB>>];
+fixed_9 [label="<(BLOCK,{
+  static base::NoDestructor&lt;UseCounterPageLoa...,{
+  static base::NoDestructor&lt;UseCounterPageLoa...)<SUB>1</SUB>>"];
+fixed_10 [label="<(LOCAL,base.NoDestructor&lt;UseCounterPageLoadMetricsObserver.UkmFeatureList&gt; opt_in_features: base.NoDestructor&lt;UseCounterPageLoadMetricsObserver.UkmFeatureList&gt;)<SUB>3</SUB>>"];
+fixed_11 [label="<(opt_in_features,opt_in_features(std::initializer_list&lt;WebFeatur...)<SUB>3</SUB>>"];
+fixed_12 [label="<(&lt;operator&gt;.greaterThan,std::initializer_list&lt;WebFeature&gt;({
+          W...)<SUB>3</SUB>>"];
+fixed_13 [label="<(&lt;operator&gt;.lessThan,std::initializer_list&lt;WebFeature)<SUB>3</SUB>>"];
+fixed_14 [label="<(&lt;operator&gt;.fieldAccess,std::initializer_list)<SUB>3</SUB>>"];
+fixed_15 [label="<(IDENTIFIER,std,std::initializer_list&lt;WebFeature)<SUB>3</SUB>>"];
+fixed_16 [label=<(FIELD_IDENTIFIER,initializer_list,initializer_list)<SUB>3</SUB>>];
+fixed_17 [label="<(IDENTIFIER,WebFeature,std::initializer_list&lt;WebFeature)<SUB>3</SUB>>"];
+fixed_18 [label="<(BLOCK,{
+          WebFeature::kNavigatorVibrate,
+    ...,{
+          WebFeature::kNavigatorVibrate,
+    ...)<SUB>3</SUB>>"];
+fixed_19 [label=<(RETURN,return *opt_in_features;,return *opt_in_features;)<SUB>74</SUB>>];
+fixed_20 [label=<(&lt;operator&gt;.indirection,*opt_in_features)<SUB>74</SUB>>];
+fixed_21 [label=<(IDENTIFIER,opt_in_features,return *opt_in_features;)<SUB>74</SUB>>];
+fixed_22 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+fixed_24 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+fixed_43 [label=<(METHOD,&lt;operator&gt;.greaterThan)>];
+fixed_44 [label=<(PARAM,p1)>];
+fixed_45 [label=<(PARAM,p2)>];
+fixed_46 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_47 [label=<(METHOD_RETURN,ANY)>];
+fixed_53 [label=<(METHOD,&lt;operator&gt;.fieldAccess)>];
+fixed_54 [label=<(PARAM,p1)>];
+fixed_55 [label=<(PARAM,p2)>];
+fixed_56 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_57 [label=<(METHOD_RETURN,ANY)>];
+fixed_48 [label=<(METHOD,&lt;operator&gt;.lessThan)>];
+fixed_49 [label=<(PARAM,p1)>];
+fixed_50 [label=<(PARAM,p2)>];
+fixed_51 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_52 [label=<(METHOD_RETURN,ANY)>];
+fixed_39 [label=<(METHOD,opt_in_features)>];
+fixed_40 [label=<(PARAM,p1)>];
+fixed_41 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_42 [label=<(METHOD_RETURN,ANY)>];
+fixed_33 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_34 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_35 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_58 -> vulnerable_59  [key=0, label="AST: "];
+vulnerable_58 -> vulnerable_59  [key=1, label="DDG: "];
+vulnerable_58 -> vulnerable_60  [key=0, label="AST: "];
+vulnerable_58 -> vulnerable_61  [key=0, label="AST: "];
+vulnerable_58 -> vulnerable_61  [key=1, label="CFG: "];
+vulnerable_59 -> vulnerable_61  [key=0, label="DDG: p1"];
+vulnerable_60 -> fixed_58  [key=0];
+vulnerable_61 -> fixed_58  [key=0];
+vulnerable_6 -> vulnerable_7  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_24  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_24  [key=1, label="CFG: "];
+vulnerable_7 -> vulnerable_8  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_9  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_22  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_16  [key=0, label="CFG: "];
+vulnerable_8 -> vulnerable_19  [key=0, label="DDG: "];
+vulnerable_8 -> vulnerable_12  [key=0, label="DDG: "];
+vulnerable_8 -> vulnerable_13  [key=0, label="DDG: "];
+vulnerable_9 -> vulnerable_10  [key=0, label="AST: "];
+vulnerable_9 -> vulnerable_11  [key=0, label="AST: "];
+vulnerable_9 -> vulnerable_19  [key=0, label="AST: "];
+vulnerable_10 -> fixed_58  [key=0];
+vulnerable_11 -> vulnerable_12  [key=0, label="AST: "];
+vulnerable_11 -> vulnerable_20  [key=0, label="CFG: "];
+vulnerable_11 -> vulnerable_22  [key=0, label="DDG: std::initializer_list&lt;WebFeature&gt;({
+          WebFeature::kNavigatorVibrate,
+          WebFeature::kNavigatorVibrateSubFrame,
+          WebFeature::kTouchEventPreventedNoTouchAction,
+          WebFeature::kTouchEventPreventedForcedDocumentPassiveNoTouchAction,
+          WebFeature::kDataUriHasOctothorpe,
+          WebFeature::kApplicationCacheManifestSelectInsecureOrigin,
+          WebFeature::kApplicationCacheManifestSelectSecureOrigin,
+          WebFeature::kMixedContentAudio,
+          WebFeature::kMixedContentImage,
+          WebFeature::kMixedContentVideo,
+          WebFeature::kMixedContentPlugin,
+          WebFeature::kOpenerNavigationWithoutGesture,
+          WebFeature::kUsbRequestDevice,
+          WebFeature::kXMLHttpRequestSynchronous,
+          WebFeature::kPaymentHandler,
+          WebFeature::kPaymentRequestShowWithoutGesture,
+          WebFeature::kHTMLImports,
+          WebFeature::kHTMLImportsHasStyleSheets,
+          WebFeature::kElementCreateShadowRoot,
+          ..."];
+vulnerable_11 -> vulnerable_22  [key=1, label="DDG: opt_in_features(std::initializer_list&lt;WebFeature&gt;({
+          WebFeature::kNavigatorVibrate,
+          WebFeature::kNavigatorVibrateSubFrame,
+          WebFeature::kTouchEventPreventedNoTouchAction,
+          WebFeature::kTouchEventPreventedForcedDocumentPassiveNoTouchAction,
+          WebFeature::kDataUriHasOctothorpe,
+          WebFeature::kApplicationCacheManifestSelectInsecureOrigin,
+          WebFeature::kApplicationCacheManifestSelectSecureOrigin,
+          WebFeature::kMixedContentAudio,
+          WebFeature::kMixedContentImage,
+          WebFeature::kMixedContentVideo,
+          WebFeature::kMixedContentPlugin,
+          WebFeature::kOpenerNavigationWithoutGesture,
+          WebFeature::kUsbRequestDevice,
+          WebFeature::kXMLHttpRequestSynchronous,
+          WebFeature::kPaymentHandler,
+          WebFeature::kPaymentRequestShowWithoutGesture,
+          WebFeature::kHTMLImports,
+          WebFeature::kHTMLImportsHasStyleSheets,
+          WebFeature::kElementCreateShadow..."];
+vulnerable_12 -> vulnerable_13  [key=0, label="AST: "];
+vulnerable_12 -> vulnerable_18  [key=0, label="AST: "];
+vulnerable_12 -> vulnerable_11  [key=0, label="CFG: "];
+vulnerable_12 -> vulnerable_11  [key=1, label="DDG: std::initializer_list&lt;WebFeature"];
+vulnerable_12 -> vulnerable_11  [key=2, label="DDG: {
+          WebFeature::kNavigatorVibrate,
+          WebFeature::kNavigatorVibrateSubFrame,
+          WebFeature::kTouchEventPreventedNoTouchAction,
+          WebFeature::kTouchEventPreventedForcedDocumentPassiveNoTouchAction,
+          WebFeature::kDataUriHasOctothorpe,
+          WebFeature::kApplicationCacheManifestSelectInsecureOrigin,
+          WebFeature::kApplicationCacheManifestSelectSecureOrigin,
+          WebFeature::kMixedContentAudio,
+          WebFeature::kMixedContentImage,
+          WebFeature::kMixedContentVideo,
+          WebFeature::kMixedContentPlugin,
+          WebFeature::kOpenerNavigationWithoutGesture,
+          WebFeature::kUsbRequestDevice,
+          WebFeature::kXMLHttpRequestSynchronous,
+          WebFeature::kPaymentHandler,
+          WebFeature::kPaymentRequestShowWithoutGesture,
+          WebFeature::kHTMLImports,
+          WebFeature::kHTMLImportsHasStyleSheets,
+          WebFeature::kElementCreateShadowRoot,
+          WebFeature::kDocumentRegisterEleme..."];
+vulnerable_12 -> vulnerable_22  [key=0, label="DDG: std::initializer_list&lt;WebFeature"];
+vulnerable_13 -> vulnerable_14  [key=0, label="AST: "];
+vulnerable_13 -> vulnerable_17  [key=0, label="AST: "];
+vulnerable_13 -> vulnerable_12  [key=0, label="CFG: "];
+vulnerable_13 -> vulnerable_12  [key=1, label="DDG: std::initializer_list"];
+vulnerable_13 -> vulnerable_12  [key=2, label="DDG: WebFeature"];
+vulnerable_13 -> vulnerable_22  [key=0, label="DDG: std::initializer_list"];
+vulnerable_13 -> vulnerable_22  [key=1, label="DDG: WebFeature"];
+vulnerable_14 -> vulnerable_15  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_16  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_13  [key=0, label="CFG: "];
+vulnerable_15 -> fixed_58  [key=0];
+vulnerable_16 -> vulnerable_14  [key=0, label="CFG: "];
+vulnerable_17 -> fixed_58  [key=0];
+vulnerable_18 -> fixed_58  [key=0];
+vulnerable_19 -> vulnerable_20  [key=0, label="AST: "];
+vulnerable_19 -> vulnerable_22  [key=0, label="CFG: "];
+vulnerable_19 -> vulnerable_22  [key=1, label="DDG: &lt;RET&gt;"];
+vulnerable_20 -> vulnerable_21  [key=0, label="AST: "];
+vulnerable_20 -> vulnerable_19  [key=0, label="CFG: "];
+vulnerable_21 -> fixed_58  [key=0];
+vulnerable_22 -> fixed_58  [key=0];
+vulnerable_24 -> fixed_58  [key=0];
+vulnerable_43 -> vulnerable_44  [key=0, label="AST: "];
+vulnerable_43 -> vulnerable_44  [key=1, label="DDG: "];
+vulnerable_43 -> vulnerable_46  [key=0, label="AST: "];
+vulnerable_43 -> vulnerable_45  [key=0, label="AST: "];
+vulnerable_43 -> vulnerable_45  [key=1, label="DDG: "];
+vulnerable_43 -> vulnerable_47  [key=0, label="AST: "];
+vulnerable_43 -> vulnerable_47  [key=1, label="CFG: "];
+vulnerable_44 -> vulnerable_47  [key=0, label="DDG: p1"];
+vulnerable_45 -> vulnerable_47  [key=0, label="DDG: p2"];
+vulnerable_46 -> fixed_58  [key=0];
+vulnerable_47 -> fixed_58  [key=0];
+vulnerable_53 -> vulnerable_54  [key=0, label="AST: "];
+vulnerable_53 -> vulnerable_54  [key=1, label="DDG: "];
+vulnerable_53 -> vulnerable_56  [key=0, label="AST: "];
+vulnerable_53 -> vulnerable_55  [key=0, label="AST: "];
+vulnerable_53 -> vulnerable_55  [key=1, label="DDG: "];
+vulnerable_53 -> vulnerable_57  [key=0, label="AST: "];
+vulnerable_53 -> vulnerable_57  [key=1, label="CFG: "];
+vulnerable_54 -> vulnerable_57  [key=0, label="DDG: p1"];
+vulnerable_55 -> vulnerable_57  [key=0, label="DDG: p2"];
+vulnerable_56 -> fixed_58  [key=0];
+vulnerable_57 -> fixed_58  [key=0];
+vulnerable_48 -> vulnerable_49  [key=0, label="AST: "];
+vulnerable_48 -> vulnerable_49  [key=1, label="DDG: "];
+vulnerable_48 -> vulnerable_51  [key=0, label="AST: "];
+vulnerable_48 -> vulnerable_50  [key=0, label="AST: "];
+vulnerable_48 -> vulnerable_50  [key=1, label="DDG: "];
+vulnerable_48 -> vulnerable_52  [key=0, label="AST: "];
+vulnerable_48 -> vulnerable_52  [key=1, label="CFG: "];
+vulnerable_49 -> vulnerable_52  [key=0, label="DDG: p1"];
+vulnerable_50 -> vulnerable_52  [key=0, label="DDG: p2"];
+vulnerable_51 -> fixed_58  [key=0];
+vulnerable_52 -> fixed_58  [key=0];
+vulnerable_39 -> vulnerable_40  [key=0, label="AST: "];
+vulnerable_39 -> vulnerable_40  [key=1, label="DDG: "];
+vulnerable_39 -> vulnerable_41  [key=0, label="AST: "];
+vulnerable_39 -> vulnerable_42  [key=0, label="AST: "];
+vulnerable_39 -> vulnerable_42  [key=1, label="CFG: "];
+vulnerable_40 -> vulnerable_42  [key=0, label="DDG: p1"];
+vulnerable_41 -> fixed_58  [key=0];
+vulnerable_42 -> fixed_58  [key=0];
+vulnerable_33 -> vulnerable_34  [key=0, label="AST: "];
+vulnerable_33 -> vulnerable_35  [key=0, label="AST: "];
+vulnerable_33 -> vulnerable_35  [key=1, label="CFG: "];
+vulnerable_34 -> fixed_58  [key=0];
+vulnerable_35 -> fixed_58  [key=0];
+fixed_58 -> fixed_59  [key=0, label="AST: "];
+fixed_58 -> fixed_59  [key=1, label="DDG: "];
+fixed_58 -> fixed_60  [key=0, label="AST: "];
+fixed_58 -> fixed_61  [key=0, label="AST: "];
+fixed_58 -> fixed_61  [key=1, label="CFG: "];
+fixed_59 -> fixed_61  [key=0, label="DDG: p1"];
+fixed_6 -> fixed_7  [key=0, label="AST: "];
+fixed_6 -> fixed_24  [key=0, label="AST: "];
+fixed_6 -> fixed_24  [key=1, label="CFG: "];
+fixed_7 -> fixed_8  [key=0, label="AST: "];
+fixed_8 -> fixed_9  [key=0, label="AST: "];
+fixed_8 -> fixed_22  [key=0, label="AST: "];
+fixed_8 -> fixed_16  [key=0, label="CFG: "];
+fixed_8 -> fixed_19  [key=0, label="DDG: "];
+fixed_8 -> fixed_12  [key=0, label="DDG: "];
+fixed_8 -> fixed_13  [key=0, label="DDG: "];
+fixed_9 -> fixed_10  [key=0, label="AST: "];
+fixed_9 -> fixed_11  [key=0, label="AST: "];
+fixed_9 -> fixed_19  [key=0, label="AST: "];
+fixed_11 -> fixed_12  [key=0, label="AST: "];
+fixed_11 -> fixed_20  [key=0, label="CFG: "];
+fixed_11 -> fixed_22  [key=0, label="DDG: std::initializer_list&lt;WebFeature&gt;({
+          WebFeature::kNavigatorVibrate,
+          WebFeature::kNavigatorVibrateSubFrame,
+          WebFeature::kTouchEventPreventedNoTouchAction,
+          WebFeature::kTouchEventPreventedForcedDocumentPassiveNoTouchAction,
+          WebFeature::kDataUriHasOctothorpe,
+          WebFeature::kApplicationCacheManifestSelectInsecureOrigin,
+          WebFeature::kApplicationCacheManifestSelectSecureOrigin,
+          WebFeature::kMixedContentAudio,
+          WebFeature::kMixedContentImage,
+          WebFeature::kMixedContentVideo,
+          WebFeature::kMixedContentPlugin,
+          WebFeature::kOpenerNavigationWithoutGesture,
+          WebFeature::kUsbRequestDevice,
+          WebFeature::kXMLHttpRequestSynchronous,
+          WebFeature::kPaymentHandler,
+          WebFeature::kPaymentRequestShowWithoutGesture,
+          WebFeature::kHTMLImports,
+          WebFeature::kHTMLImportsHasStyleSheets,
+          WebFeature::kElementCreateShadowRoot,
+          ..."];
+fixed_11 -> fixed_22  [key=1, label="DDG: opt_in_features(std::initializer_list&lt;WebFeature&gt;({
+          WebFeature::kNavigatorVibrate,
+          WebFeature::kNavigatorVibrateSubFrame,
+          WebFeature::kTouchEventPreventedNoTouchAction,
+          WebFeature::kTouchEventPreventedForcedDocumentPassiveNoTouchAction,
+          WebFeature::kDataUriHasOctothorpe,
+          WebFeature::kApplicationCacheManifestSelectInsecureOrigin,
+          WebFeature::kApplicationCacheManifestSelectSecureOrigin,
+          WebFeature::kMixedContentAudio,
+          WebFeature::kMixedContentImage,
+          WebFeature::kMixedContentVideo,
+          WebFeature::kMixedContentPlugin,
+          WebFeature::kOpenerNavigationWithoutGesture,
+          WebFeature::kUsbRequestDevice,
+          WebFeature::kXMLHttpRequestSynchronous,
+          WebFeature::kPaymentHandler,
+          WebFeature::kPaymentRequestShowWithoutGesture,
+          WebFeature::kHTMLImports,
+          WebFeature::kHTMLImportsHasStyleSheets,
+          WebFeature::kElementCreateShadow..."];
+fixed_12 -> fixed_13  [key=0, label="AST: "];
+fixed_12 -> fixed_18  [key=0, label="AST: "];
+fixed_12 -> fixed_11  [key=0, label="CFG: "];
+fixed_12 -> fixed_11  [key=1, label="DDG: std::initializer_list&lt;WebFeature"];
+fixed_12 -> fixed_11  [key=2, label="DDG: {
+          WebFeature::kNavigatorVibrate,
+          WebFeature::kNavigatorVibrateSubFrame,
+          WebFeature::kTouchEventPreventedNoTouchAction,
+          WebFeature::kTouchEventPreventedForcedDocumentPassiveNoTouchAction,
+          WebFeature::kDataUriHasOctothorpe,
+          WebFeature::kApplicationCacheManifestSelectInsecureOrigin,
+          WebFeature::kApplicationCacheManifestSelectSecureOrigin,
+          WebFeature::kMixedContentAudio,
+          WebFeature::kMixedContentImage,
+          WebFeature::kMixedContentVideo,
+          WebFeature::kMixedContentPlugin,
+          WebFeature::kOpenerNavigationWithoutGesture,
+          WebFeature::kUsbRequestDevice,
+          WebFeature::kXMLHttpRequestSynchronous,
+          WebFeature::kPaymentHandler,
+          WebFeature::kPaymentRequestShowWithoutGesture,
+          WebFeature::kHTMLImports,
+          WebFeature::kHTMLImportsHasStyleSheets,
+          WebFeature::kElementCreateShadowRoot,
+          WebFeature::kDocumentRegisterEleme..."];
+fixed_12 -> fixed_22  [key=0, label="DDG: std::initializer_list&lt;WebFeature"];
+fixed_13 -> fixed_14  [key=0, label="AST: "];
+fixed_13 -> fixed_17  [key=0, label="AST: "];
+fixed_13 -> fixed_12  [key=0, label="CFG: "];
+fixed_13 -> fixed_12  [key=1, label="DDG: std::initializer_list"];
+fixed_13 -> fixed_12  [key=2, label="DDG: WebFeature"];
+fixed_13 -> fixed_22  [key=0, label="DDG: std::initializer_list"];
+fixed_13 -> fixed_22  [key=1, label="DDG: WebFeature"];
+fixed_14 -> fixed_15  [key=0, label="AST: "];
+fixed_14 -> fixed_16  [key=0, label="AST: "];
+fixed_14 -> fixed_13  [key=0, label="CFG: "];
+fixed_16 -> fixed_14  [key=0, label="CFG: "];
+fixed_19 -> fixed_20  [key=0, label="AST: "];
+fixed_19 -> fixed_22  [key=0, label="CFG: "];
+fixed_19 -> fixed_22  [key=1, label="DDG: &lt;RET&gt;"];
+fixed_20 -> fixed_21  [key=0, label="AST: "];
+fixed_20 -> fixed_19  [key=0, label="CFG: "];
+fixed_43 -> fixed_44  [key=0, label="AST: "];
+fixed_43 -> fixed_44  [key=1, label="DDG: "];
+fixed_43 -> fixed_46  [key=0, label="AST: "];
+fixed_43 -> fixed_45  [key=0, label="AST: "];
+fixed_43 -> fixed_45  [key=1, label="DDG: "];
+fixed_43 -> fixed_47  [key=0, label="AST: "];
+fixed_43 -> fixed_47  [key=1, label="CFG: "];
+fixed_44 -> fixed_47  [key=0, label="DDG: p1"];
+fixed_45 -> fixed_47  [key=0, label="DDG: p2"];
+fixed_53 -> fixed_54  [key=0, label="AST: "];
+fixed_53 -> fixed_54  [key=1, label="DDG: "];
+fixed_53 -> fixed_56  [key=0, label="AST: "];
+fixed_53 -> fixed_55  [key=0, label="AST: "];
+fixed_53 -> fixed_55  [key=1, label="DDG: "];
+fixed_53 -> fixed_57  [key=0, label="AST: "];
+fixed_53 -> fixed_57  [key=1, label="CFG: "];
+fixed_54 -> fixed_57  [key=0, label="DDG: p1"];
+fixed_55 -> fixed_57  [key=0, label="DDG: p2"];
+fixed_48 -> fixed_49  [key=0, label="AST: "];
+fixed_48 -> fixed_49  [key=1, label="DDG: "];
+fixed_48 -> fixed_51  [key=0, label="AST: "];
+fixed_48 -> fixed_50  [key=0, label="AST: "];
+fixed_48 -> fixed_50  [key=1, label="DDG: "];
+fixed_48 -> fixed_52  [key=0, label="AST: "];
+fixed_48 -> fixed_52  [key=1, label="CFG: "];
+fixed_49 -> fixed_52  [key=0, label="DDG: p1"];
+fixed_50 -> fixed_52  [key=0, label="DDG: p2"];
+fixed_39 -> fixed_40  [key=0, label="AST: "];
+fixed_39 -> fixed_40  [key=1, label="DDG: "];
+fixed_39 -> fixed_41  [key=0, label="AST: "];
+fixed_39 -> fixed_42  [key=0, label="AST: "];
+fixed_39 -> fixed_42  [key=1, label="CFG: "];
+fixed_40 -> fixed_42  [key=0, label="DDG: p1"];
+fixed_33 -> fixed_34  [key=0, label="AST: "];
+fixed_33 -> fixed_35  [key=0, label="AST: "];
+fixed_33 -> fixed_35  [key=1, label="CFG: "];
+}

@@ -1,0 +1,74 @@
+digraph "&lt;global&gt;" {
+vulnerable_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+vulnerable_8 [label=<(UNKNOWN,krb5_gss_wrap_size_limit(minor_status, context_...,krb5_gss_wrap_size_limit(minor_status, context_...)<SUB>1</SUB>>];
+vulnerable_9 [label="<(LOCAL,gss_ctx_id_t context_handle: gss_ctx_id_t)<SUB>4</SUB>>"];
+vulnerable_10 [label="<(LOCAL,int conf_req_flag: int)<SUB>5</SUB>>"];
+vulnerable_11 [label="<(LOCAL,gss_qop_t qop_req: gss_qop_t)<SUB>6</SUB>>"];
+vulnerable_12 [label="<(LOCAL,OM_uint32 req_output_size: OM_uint32)<SUB>7</SUB>>"];
+vulnerable_13 [label="<(LOCAL,OM_uint32* max_input_size: OM_uint32*)<SUB>8</SUB>>"];
+vulnerable_14 [label=<(UNKNOWN,{
+    krb5_gss_ctx_id_rec *ctx;
+    OM_uint32  ...,{
+    krb5_gss_ctx_id_rec *ctx;
+    OM_uint32  ...)<SUB>9</SUB>>];
+vulnerable_15 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+vulnerable_30 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_31 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_32 [label=<(METHOD_RETURN,ANY)>];
+fixed_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+fixed_8 [label=<(UNKNOWN,krb5_gss_wrap_size_limit(minor_status, context_...,krb5_gss_wrap_size_limit(minor_status, context_...)<SUB>1</SUB>>];
+fixed_9 [label="<(LOCAL,gss_ctx_id_t context_handle: gss_ctx_id_t)<SUB>4</SUB>>"];
+fixed_10 [label="<(LOCAL,int conf_req_flag: int)<SUB>5</SUB>>"];
+fixed_11 [label="<(LOCAL,gss_qop_t qop_req: gss_qop_t)<SUB>6</SUB>>"];
+fixed_12 [label="<(LOCAL,OM_uint32 req_output_size: OM_uint32)<SUB>7</SUB>>"];
+fixed_13 [label="<(LOCAL,OM_uint32* max_input_size: OM_uint32*)<SUB>8</SUB>>"];
+fixed_14 [label=<(UNKNOWN,{
+    krb5_gss_ctx_id_rec *ctx;
+    OM_uint32  ...,{
+    krb5_gss_ctx_id_rec *ctx;
+    OM_uint32  ...)<SUB>9</SUB>>];
+fixed_15 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+fixed_30 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_31 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_32 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_6 -> vulnerable_7  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_15  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_8  [key=0, label="CFG: "];
+vulnerable_7 -> vulnerable_8  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_9  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_10  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_11  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_12  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_13  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_14  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_14  [key=0, label="CFG: "];
+vulnerable_9 -> fixed_6  [key=0];
+vulnerable_10 -> fixed_6  [key=0];
+vulnerable_11 -> fixed_6  [key=0];
+vulnerable_12 -> fixed_6  [key=0];
+vulnerable_13 -> fixed_6  [key=0];
+vulnerable_14 -> vulnerable_15  [key=0, label="CFG: "];
+vulnerable_15 -> fixed_6  [key=0];
+vulnerable_30 -> vulnerable_31  [key=0, label="AST: "];
+vulnerable_30 -> vulnerable_32  [key=0, label="AST: "];
+vulnerable_30 -> vulnerable_32  [key=1, label="CFG: "];
+vulnerable_31 -> fixed_6  [key=0];
+vulnerable_32 -> fixed_6  [key=0];
+fixed_6 -> fixed_7  [key=0, label="AST: "];
+fixed_6 -> fixed_15  [key=0, label="AST: "];
+fixed_6 -> fixed_8  [key=0, label="CFG: "];
+fixed_7 -> fixed_8  [key=0, label="AST: "];
+fixed_7 -> fixed_9  [key=0, label="AST: "];
+fixed_7 -> fixed_10  [key=0, label="AST: "];
+fixed_7 -> fixed_11  [key=0, label="AST: "];
+fixed_7 -> fixed_12  [key=0, label="AST: "];
+fixed_7 -> fixed_13  [key=0, label="AST: "];
+fixed_7 -> fixed_14  [key=0, label="AST: "];
+fixed_8 -> fixed_14  [key=0, label="CFG: "];
+fixed_14 -> fixed_15  [key=0, label="CFG: "];
+fixed_30 -> fixed_31  [key=0, label="AST: "];
+fixed_30 -> fixed_32  [key=0, label="AST: "];
+fixed_30 -> fixed_32  [key=1, label="CFG: "];
+}

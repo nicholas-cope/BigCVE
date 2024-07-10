@@ -1,0 +1,164 @@
+digraph "&lt;global&gt;" {
+vulnerable_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+vulnerable_8 [label=<(METHOD,RegisterProperties)<SUB>1</SUB>>];
+vulnerable_9 [label=<(PARAM,const ImePropertyList&amp; prop_list)<SUB>1</SUB>>];
+vulnerable_10 [label=<(BLOCK,{
+     current_ime_properties_ = prop_list;
+ 
+ ...,{
+     current_ime_properties_ = prop_list;
+ 
+ ...)<SUB>1</SUB>>];
+vulnerable_11 [label=<(&lt;operator&gt;.assignment,current_ime_properties_ = prop_list)<SUB>2</SUB>>];
+vulnerable_12 [label=<(IDENTIFIER,current_ime_properties_,current_ime_properties_ = prop_list)<SUB>2</SUB>>];
+vulnerable_13 [label=<(IDENTIFIER,prop_list,current_ime_properties_ = prop_list)<SUB>2</SUB>>];
+vulnerable_14 [label=<(FOR_EACH_OBSERVER,FOR_EACH_OBSERVER(Observer, observers_,
+       ...)<SUB>4</SUB>>];
+vulnerable_15 [label=<(IDENTIFIER,Observer,FOR_EACH_OBSERVER(Observer, observers_,
+       ...)<SUB>4</SUB>>];
+vulnerable_16 [label=<(IDENTIFIER,observers_,FOR_EACH_OBSERVER(Observer, observers_,
+       ...)<SUB>4</SUB>>];
+vulnerable_17 [label=<(PropertyListChanged,PropertyListChanged(this,
+                     ...)<SUB>5</SUB>>];
+vulnerable_18 [label=<(LITERAL,this,PropertyListChanged(this,
+                     ...)<SUB>5</SUB>>];
+vulnerable_19 [label=<(IDENTIFIER,current_ime_properties_,PropertyListChanged(this,
+                     ...)<SUB>6</SUB>>];
+vulnerable_20 [label=<(METHOD_RETURN,void)<SUB>1</SUB>>];
+vulnerable_22 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+vulnerable_42 [label=<(METHOD,FOR_EACH_OBSERVER)>];
+vulnerable_43 [label=<(PARAM,p1)>];
+vulnerable_44 [label=<(PARAM,p2)>];
+vulnerable_45 [label=<(PARAM,p3)>];
+vulnerable_46 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_47 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_48 [label=<(METHOD,PropertyListChanged)>];
+vulnerable_49 [label=<(PARAM,p1)>];
+vulnerable_50 [label=<(PARAM,p2)>];
+vulnerable_51 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_52 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_37 [label=<(METHOD,&lt;operator&gt;.assignment)>];
+vulnerable_38 [label=<(PARAM,p1)>];
+vulnerable_39 [label=<(PARAM,p2)>];
+vulnerable_40 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_41 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_31 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_32 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_33 [label=<(METHOD_RETURN,ANY)>];
+fixed_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+fixed_8 [label=<(METHOD,RegisterProperties)<SUB>1</SUB>>];
+fixed_9 [label=<(PARAM,const ImePropertyList&amp; prop_list)<SUB>1</SUB>>];
+fixed_10 [label="<(BLOCK,{
+  void RegisterProperties(const input_method:...,{
+  void RegisterProperties(const input_method:...)<SUB>1</SUB>>"];
+fixed_11 [label=<(METHOD_RETURN,void)<SUB>1</SUB>>];
+fixed_13 [label=<(UNKNOWN,,)>];
+fixed_14 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+fixed_23 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_24 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_25 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_6 -> vulnerable_7  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_22  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_22  [key=1, label="CFG: "];
+vulnerable_7 -> vulnerable_8  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_9  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_9  [key=1, label="DDG: "];
+vulnerable_8 -> vulnerable_10  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_20  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_11  [key=0, label="CFG: "];
+vulnerable_8 -> vulnerable_11  [key=1, label="DDG: "];
+vulnerable_8 -> vulnerable_14  [key=0, label="DDG: "];
+vulnerable_8 -> vulnerable_17  [key=0, label="DDG: "];
+vulnerable_9 -> vulnerable_11  [key=0, label="DDG: prop_list"];
+vulnerable_10 -> vulnerable_11  [key=0, label="AST: "];
+vulnerable_10 -> vulnerable_14  [key=0, label="AST: "];
+vulnerable_11 -> vulnerable_12  [key=0, label="AST: "];
+vulnerable_11 -> vulnerable_13  [key=0, label="AST: "];
+vulnerable_11 -> vulnerable_17  [key=0, label="CFG: "];
+vulnerable_11 -> vulnerable_17  [key=1, label="DDG: current_ime_properties_"];
+vulnerable_11 -> vulnerable_20  [key=0, label="DDG: prop_list"];
+vulnerable_11 -> vulnerable_20  [key=1, label="DDG: current_ime_properties_ = prop_list"];
+vulnerable_12 -> fixed_6  [key=0];
+vulnerable_13 -> fixed_6  [key=0];
+vulnerable_14 -> vulnerable_15  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_16  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_17  [key=0, label="AST: "];
+vulnerable_14 -> vulnerable_20  [key=0, label="CFG: "];
+vulnerable_14 -> vulnerable_20  [key=1, label="DDG: observers_"];
+vulnerable_14 -> vulnerable_20  [key=2, label="DDG: PropertyListChanged(this,
+                                           current_ime_properties_)"];
+vulnerable_14 -> vulnerable_20  [key=3, label="DDG: FOR_EACH_OBSERVER(Observer, observers_,
+                       PropertyListChanged(this,
+                                           current_ime_properties_))"];
+vulnerable_14 -> vulnerable_20  [key=4, label="DDG: Observer"];
+vulnerable_15 -> fixed_6  [key=0];
+vulnerable_16 -> fixed_6  [key=0];
+vulnerable_17 -> vulnerable_18  [key=0, label="AST: "];
+vulnerable_17 -> vulnerable_19  [key=0, label="AST: "];
+vulnerable_17 -> vulnerable_14  [key=0, label="CFG: "];
+vulnerable_17 -> vulnerable_14  [key=1, label="DDG: this"];
+vulnerable_17 -> vulnerable_14  [key=2, label="DDG: current_ime_properties_"];
+vulnerable_17 -> vulnerable_20  [key=0, label="DDG: current_ime_properties_"];
+vulnerable_18 -> fixed_6  [key=0];
+vulnerable_19 -> fixed_6  [key=0];
+vulnerable_20 -> fixed_6  [key=0];
+vulnerable_22 -> fixed_6  [key=0];
+vulnerable_42 -> vulnerable_43  [key=0, label="AST: "];
+vulnerable_42 -> vulnerable_43  [key=1, label="DDG: "];
+vulnerable_42 -> vulnerable_46  [key=0, label="AST: "];
+vulnerable_42 -> vulnerable_44  [key=0, label="AST: "];
+vulnerable_42 -> vulnerable_44  [key=1, label="DDG: "];
+vulnerable_42 -> vulnerable_47  [key=0, label="AST: "];
+vulnerable_42 -> vulnerable_47  [key=1, label="CFG: "];
+vulnerable_42 -> vulnerable_45  [key=0, label="AST: "];
+vulnerable_42 -> vulnerable_45  [key=1, label="DDG: "];
+vulnerable_43 -> vulnerable_47  [key=0, label="DDG: p1"];
+vulnerable_44 -> vulnerable_47  [key=0, label="DDG: p2"];
+vulnerable_45 -> vulnerable_47  [key=0, label="DDG: p3"];
+vulnerable_46 -> fixed_6  [key=0];
+vulnerable_47 -> fixed_6  [key=0];
+vulnerable_48 -> vulnerable_49  [key=0, label="AST: "];
+vulnerable_48 -> vulnerable_49  [key=1, label="DDG: "];
+vulnerable_48 -> vulnerable_51  [key=0, label="AST: "];
+vulnerable_48 -> vulnerable_50  [key=0, label="AST: "];
+vulnerable_48 -> vulnerable_50  [key=1, label="DDG: "];
+vulnerable_48 -> vulnerable_52  [key=0, label="AST: "];
+vulnerable_48 -> vulnerable_52  [key=1, label="CFG: "];
+vulnerable_49 -> vulnerable_52  [key=0, label="DDG: p1"];
+vulnerable_50 -> vulnerable_52  [key=0, label="DDG: p2"];
+vulnerable_51 -> fixed_6  [key=0];
+vulnerable_52 -> fixed_6  [key=0];
+vulnerable_37 -> vulnerable_38  [key=0, label="AST: "];
+vulnerable_37 -> vulnerable_38  [key=1, label="DDG: "];
+vulnerable_37 -> vulnerable_40  [key=0, label="AST: "];
+vulnerable_37 -> vulnerable_39  [key=0, label="AST: "];
+vulnerable_37 -> vulnerable_39  [key=1, label="DDG: "];
+vulnerable_37 -> vulnerable_41  [key=0, label="AST: "];
+vulnerable_37 -> vulnerable_41  [key=1, label="CFG: "];
+vulnerable_38 -> vulnerable_41  [key=0, label="DDG: p1"];
+vulnerable_39 -> vulnerable_41  [key=0, label="DDG: p2"];
+vulnerable_40 -> fixed_6  [key=0];
+vulnerable_41 -> fixed_6  [key=0];
+vulnerable_31 -> vulnerable_32  [key=0, label="AST: "];
+vulnerable_31 -> vulnerable_33  [key=0, label="AST: "];
+vulnerable_31 -> vulnerable_33  [key=1, label="CFG: "];
+vulnerable_32 -> fixed_6  [key=0];
+vulnerable_33 -> fixed_6  [key=0];
+fixed_6 -> fixed_7  [key=0, label="AST: "];
+fixed_6 -> fixed_14  [key=0, label="AST: "];
+fixed_6 -> fixed_13  [key=0, label="CFG: "];
+fixed_7 -> fixed_8  [key=0, label="AST: "];
+fixed_7 -> fixed_13  [key=0, label="AST: "];
+fixed_8 -> fixed_9  [key=0, label="AST: "];
+fixed_8 -> fixed_9  [key=1, label="DDG: "];
+fixed_8 -> fixed_10  [key=0, label="AST: "];
+fixed_8 -> fixed_11  [key=0, label="AST: "];
+fixed_8 -> fixed_11  [key=1, label="CFG: "];
+fixed_9 -> fixed_11  [key=0, label="DDG: prop_list"];
+fixed_13 -> fixed_14  [key=0, label="CFG: "];
+fixed_23 -> fixed_24  [key=0, label="AST: "];
+fixed_23 -> fixed_25  [key=0, label="AST: "];
+fixed_23 -> fixed_25  [key=1, label="CFG: "];
+}

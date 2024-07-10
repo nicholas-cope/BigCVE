@@ -1,0 +1,50 @@
+digraph "&lt;global&gt;" {
+vulnerable_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+vulnerable_8 [label=<(UNKNOWN,PHP_FUNCTION(mcrypt_module_get_algo_key_size)
+ ...,PHP_FUNCTION(mcrypt_module_get_algo_key_size)
+ ...)<SUB>1</SUB>>];
+vulnerable_9 [label="<(LOCAL,RETURN_LONG : RETURN_LONG)<SUB>4</SUB>>"];
+vulnerable_10 [label=<(UNKNOWN,},})<SUB>5</SUB>>];
+vulnerable_11 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+vulnerable_18 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_19 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_20 [label=<(METHOD_RETURN,ANY)>];
+fixed_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+fixed_8 [label=<(UNKNOWN,PHP_FUNCTION(mcrypt_module_get_algo_key_size)
+ ...,PHP_FUNCTION(mcrypt_module_get_algo_key_size)
+ ...)<SUB>1</SUB>>];
+fixed_9 [label="<(LOCAL,RETURN_LONG : RETURN_LONG)<SUB>5</SUB>>"];
+fixed_10 [label=<(UNKNOWN,},})<SUB>6</SUB>>];
+fixed_11 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+fixed_18 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_19 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_20 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_6 -> vulnerable_7  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_11  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_8  [key=0, label="CFG: "];
+vulnerable_7 -> vulnerable_8  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_9  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_10  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_10  [key=0, label="CFG: "];
+vulnerable_9 -> fixed_6  [key=0];
+vulnerable_10 -> vulnerable_11  [key=0, label="CFG: "];
+vulnerable_11 -> fixed_6  [key=0];
+vulnerable_18 -> vulnerable_19  [key=0, label="AST: "];
+vulnerable_18 -> vulnerable_20  [key=0, label="AST: "];
+vulnerable_18 -> vulnerable_20  [key=1, label="CFG: "];
+vulnerable_19 -> fixed_6  [key=0];
+vulnerable_20 -> fixed_6  [key=0];
+fixed_6 -> fixed_7  [key=0, label="AST: "];
+fixed_6 -> fixed_11  [key=0, label="AST: "];
+fixed_6 -> fixed_8  [key=0, label="CFG: "];
+fixed_7 -> fixed_8  [key=0, label="AST: "];
+fixed_7 -> fixed_9  [key=0, label="AST: "];
+fixed_7 -> fixed_10  [key=0, label="AST: "];
+fixed_8 -> fixed_10  [key=0, label="CFG: "];
+fixed_10 -> fixed_11  [key=0, label="CFG: "];
+fixed_18 -> fixed_19  [key=0, label="AST: "];
+fixed_18 -> fixed_20  [key=0, label="AST: "];
+fixed_18 -> fixed_20  [key=1, label="CFG: "];
+}

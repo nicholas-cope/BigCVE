@@ -1,0 +1,67 @@
+digraph "&lt;global&gt;" {
+vulnerable_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+vulnerable_8 [label=<(METHOD,ChromeGeolocationPermissionContext)<SUB>1</SUB>>];
+vulnerable_9 [label=<(PARAM,Profile* profile)<SUB>2</SUB>>];
+vulnerable_10 [label=<(BLOCK,{
+ },{
+ })<SUB>9</SUB>>];
+vulnerable_11 [label=<(MODIFIER,CONSTRUCTOR)>];
+vulnerable_12 [label=<(MODIFIER,PUBLIC)>];
+vulnerable_13 [label=<(METHOD_RETURN,ChromeGeolocationPermissionContext.ChromeGeolocationPermissionContext)<SUB>1</SUB>>];
+vulnerable_15 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+vulnerable_26 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_27 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_28 [label=<(METHOD_RETURN,ANY)>];
+fixed_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+fixed_8 [label=<(METHOD,ChromeGeolocationPermissionContext)<SUB>1</SUB>>];
+fixed_9 [label=<(PARAM,Profile* profile)<SUB>2</SUB>>];
+fixed_10 [label=<(BLOCK,{
+ },{
+ })<SUB>9</SUB>>];
+fixed_11 [label=<(MODIFIER,CONSTRUCTOR)>];
+fixed_12 [label=<(MODIFIER,PUBLIC)>];
+fixed_13 [label=<(METHOD_RETURN,ChromeGeolocationPermissionContext.ChromeGeolocationPermissionContext)<SUB>1</SUB>>];
+fixed_15 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+fixed_26 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_27 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_28 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_6 -> vulnerable_7  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_15  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_15  [key=1, label="CFG: "];
+vulnerable_7 -> vulnerable_8  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_9  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_9  [key=1, label="DDG: "];
+vulnerable_8 -> vulnerable_10  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_11  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_12  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_13  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_13  [key=1, label="CFG: "];
+vulnerable_9 -> vulnerable_13  [key=0, label="DDG: profile"];
+vulnerable_26 -> vulnerable_27  [key=0, label="AST: "];
+vulnerable_26 -> vulnerable_28  [key=0, label="AST: "];
+vulnerable_26 -> vulnerable_28  [key=1, label="CFG: "];
+fixed_6 -> fixed_7  [key=0, label="AST: "];
+fixed_6 -> fixed_15  [key=0, label="AST: "];
+fixed_6 -> fixed_15  [key=1, label="CFG: "];
+fixed_7 -> fixed_8  [key=0, label="AST: "];
+fixed_8 -> fixed_9  [key=0, label="AST: "];
+fixed_8 -> fixed_9  [key=1, label="DDG: "];
+fixed_8 -> fixed_10  [key=0, label="AST: "];
+fixed_8 -> fixed_11  [key=0, label="AST: "];
+fixed_8 -> fixed_12  [key=0, label="AST: "];
+fixed_8 -> fixed_13  [key=0, label="AST: "];
+fixed_8 -> fixed_13  [key=1, label="CFG: "];
+fixed_9 -> fixed_13  [key=0, label="DDG: profile"];
+fixed_10 -> vulnerable_6  [key=0];
+fixed_11 -> vulnerable_6  [key=0];
+fixed_12 -> vulnerable_6  [key=0];
+fixed_13 -> vulnerable_6  [key=0];
+fixed_15 -> vulnerable_6  [key=0];
+fixed_26 -> fixed_27  [key=0, label="AST: "];
+fixed_26 -> fixed_28  [key=0, label="AST: "];
+fixed_26 -> fixed_28  [key=1, label="CFG: "];
+fixed_27 -> vulnerable_6  [key=0];
+fixed_28 -> vulnerable_6  [key=0];
+}

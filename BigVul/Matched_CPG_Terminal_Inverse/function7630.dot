@@ -1,0 +1,102 @@
+digraph "&lt;global&gt;" {
+vulnerable_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+vulnerable_8 [label=<(METHOD,TryUnwind)<SUB>1</SUB>>];
+vulnerable_9 [label=<(PARAM,CONTEXT* context)<SUB>1</SUB>>];
+vulnerable_10 [label=<(BLOCK,{
+ #ifdef _WIN64
+   CHECK(!at_top_frame_ || unw...,{
+ #ifdef _WIN64
+   CHECK(!at_top_frame_ || unw...)<SUB>1</SUB>>];
+vulnerable_11 [label=<(NOTREACHED,NOTREACHED())<SUB>39</SUB>>];
+vulnerable_12 [label=<(RETURN,return false;,return false;)<SUB>40</SUB>>];
+vulnerable_13 [label=<(LITERAL,false,return false;)<SUB>40</SUB>>];
+vulnerable_14 [label=<(METHOD_RETURN,bool)<SUB>1</SUB>>];
+vulnerable_16 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+vulnerable_33 [label=<(METHOD,NOTREACHED)>];
+vulnerable_34 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_35 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_27 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_28 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_29 [label=<(METHOD_RETURN,ANY)>];
+fixed_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+fixed_8 [label=<(METHOD,TryUnwind)<SUB>1</SUB>>];
+fixed_9 [label=<(PARAM,CONTEXT* context)<SUB>1</SUB>>];
+fixed_10 [label=<(BLOCK,{
+ #ifdef _WIN64
+   CHECK(!at_top_frame_ || unw...,{
+ #ifdef _WIN64
+   CHECK(!at_top_frame_ || unw...)<SUB>1</SUB>>];
+fixed_11 [label=<(NOTREACHED,NOTREACHED())<SUB>38</SUB>>];
+fixed_12 [label=<(RETURN,return false;,return false;)<SUB>39</SUB>>];
+fixed_13 [label=<(LITERAL,false,return false;)<SUB>39</SUB>>];
+fixed_14 [label=<(METHOD_RETURN,bool)<SUB>1</SUB>>];
+fixed_16 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+fixed_33 [label=<(METHOD,NOTREACHED)>];
+fixed_34 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_35 [label=<(METHOD_RETURN,ANY)>];
+fixed_27 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_28 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_29 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_6 -> vulnerable_7  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_16  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_16  [key=1, label="CFG: "];
+vulnerable_7 -> vulnerable_8  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_9  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_9  [key=1, label="DDG: "];
+vulnerable_8 -> vulnerable_10  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_14  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_11  [key=0, label="CFG: "];
+vulnerable_8 -> vulnerable_11  [key=1, label="DDG: "];
+vulnerable_8 -> vulnerable_12  [key=0, label="DDG: "];
+vulnerable_8 -> vulnerable_13  [key=0, label="DDG: "];
+vulnerable_9 -> vulnerable_14  [key=0, label="DDG: context"];
+vulnerable_10 -> vulnerable_11  [key=0, label="AST: "];
+vulnerable_10 -> vulnerable_12  [key=0, label="AST: "];
+vulnerable_11 -> vulnerable_12  [key=0, label="CFG: "];
+vulnerable_11 -> vulnerable_14  [key=0, label="DDG: NOTREACHED()"];
+vulnerable_12 -> vulnerable_13  [key=0, label="AST: "];
+vulnerable_12 -> vulnerable_14  [key=0, label="CFG: "];
+vulnerable_12 -> vulnerable_14  [key=1, label="DDG: &lt;RET&gt;"];
+vulnerable_13 -> vulnerable_12  [key=0, label="DDG: false"];
+vulnerable_33 -> vulnerable_34  [key=0, label="AST: "];
+vulnerable_33 -> vulnerable_35  [key=0, label="AST: "];
+vulnerable_33 -> vulnerable_35  [key=1, label="CFG: "];
+vulnerable_27 -> vulnerable_28  [key=0, label="AST: "];
+vulnerable_27 -> vulnerable_29  [key=0, label="AST: "];
+vulnerable_27 -> vulnerable_29  [key=1, label="CFG: "];
+fixed_6 -> fixed_7  [key=0, label="AST: "];
+fixed_6 -> fixed_16  [key=0, label="AST: "];
+fixed_6 -> fixed_16  [key=1, label="CFG: "];
+fixed_7 -> fixed_8  [key=0, label="AST: "];
+fixed_8 -> fixed_9  [key=0, label="AST: "];
+fixed_8 -> fixed_9  [key=1, label="DDG: "];
+fixed_8 -> fixed_10  [key=0, label="AST: "];
+fixed_8 -> fixed_14  [key=0, label="AST: "];
+fixed_8 -> fixed_11  [key=0, label="CFG: "];
+fixed_8 -> fixed_11  [key=1, label="DDG: "];
+fixed_8 -> fixed_12  [key=0, label="DDG: "];
+fixed_8 -> fixed_13  [key=0, label="DDG: "];
+fixed_9 -> fixed_14  [key=0, label="DDG: context"];
+fixed_10 -> fixed_11  [key=0, label="AST: "];
+fixed_10 -> fixed_12  [key=0, label="AST: "];
+fixed_11 -> fixed_12  [key=0, label="CFG: "];
+fixed_11 -> fixed_14  [key=0, label="DDG: NOTREACHED()"];
+fixed_12 -> fixed_13  [key=0, label="AST: "];
+fixed_12 -> fixed_14  [key=0, label="CFG: "];
+fixed_12 -> fixed_14  [key=1, label="DDG: &lt;RET&gt;"];
+fixed_13 -> fixed_12  [key=0, label="DDG: false"];
+fixed_14 -> vulnerable_6  [key=0];
+fixed_16 -> vulnerable_6  [key=0];
+fixed_33 -> fixed_34  [key=0, label="AST: "];
+fixed_33 -> fixed_35  [key=0, label="AST: "];
+fixed_33 -> fixed_35  [key=1, label="CFG: "];
+fixed_34 -> vulnerable_6  [key=0];
+fixed_35 -> vulnerable_6  [key=0];
+fixed_27 -> fixed_28  [key=0, label="AST: "];
+fixed_27 -> fixed_29  [key=0, label="AST: "];
+fixed_27 -> fixed_29  [key=1, label="CFG: "];
+fixed_28 -> vulnerable_6  [key=0];
+fixed_29 -> vulnerable_6  [key=0];
+}

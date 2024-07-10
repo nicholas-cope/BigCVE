@@ -1,0 +1,109 @@
+digraph "&lt;global&gt;" {
+vulnerable_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+vulnerable_8 [label=<(UNKNOWN,PHP_FUNCTION(linkinfo)
+ {
+ 	char *link;,PHP_FUNCTION(linkinfo)
+ {
+ 	char *link;)<SUB>1</SUB>>];
+vulnerable_9 [label="<(LOCAL,size_t link_len: size_t)<SUB>4</SUB>>"];
+vulnerable_10 [label="<(LOCAL,zend_stat_t sb: zend_stat_t)<SUB>5</SUB>>"];
+vulnerable_11 [label="<(LOCAL,int ret: int)<SUB>6</SUB>>"];
+vulnerable_12 [label=<(UNKNOWN,if (zend_parse_parameters(ZEND_NUM_ARGS(), &quot;p&quot;,...,if (zend_parse_parameters(ZEND_NUM_ARGS(), &quot;p&quot;,...)<SUB>8</SUB>>];
+vulnerable_13 [label=<(UNKNOWN,ret = VCWD_STAT(link, &amp;sb);,ret = VCWD_STAT(link, &amp;sb);)<SUB>12</SUB>>];
+vulnerable_14 [label=<(UNKNOWN,if (ret == -1) {
+ 		php_error_docref(NULL, E_WA...,if (ret == -1) {
+ 		php_error_docref(NULL, E_WA...)<SUB>13</SUB>>];
+vulnerable_15 [label=<(UNKNOWN,RETURN_LONG((zend_long) sb.st_dev);,RETURN_LONG((zend_long) sb.st_dev);)<SUB>18</SUB>>];
+vulnerable_16 [label=<(UNKNOWN,},})<SUB>19</SUB>>];
+vulnerable_17 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+vulnerable_28 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_29 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_30 [label=<(METHOD_RETURN,ANY)>];
+fixed_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+fixed_8 [label=<(UNKNOWN,PHP_FUNCTION(linkinfo)
+ {
+ 	char *link;,PHP_FUNCTION(linkinfo)
+ {
+ 	char *link;)<SUB>1</SUB>>];
+fixed_9 [label="<(LOCAL,char* dirname: char*)<SUB>4</SUB>>"];
+fixed_10 [label="<(LOCAL,size_t link_len: size_t)<SUB>5</SUB>>"];
+fixed_11 [label="<(LOCAL,zend_stat_t sb: zend_stat_t)<SUB>6</SUB>>"];
+fixed_12 [label="<(LOCAL,int ret: int)<SUB>7</SUB>>"];
+fixed_13 [label=<(UNKNOWN,if (zend_parse_parameters(ZEND_NUM_ARGS(), &quot;p&quot;,...,if (zend_parse_parameters(ZEND_NUM_ARGS(), &quot;p&quot;,...)<SUB>9</SUB>>];
+fixed_14 [label=<(UNKNOWN,dirname = estrndup(link, link_len);,dirname = estrndup(link, link_len);)<SUB>13</SUB>>];
+fixed_15 [label=<(UNKNOWN,php_dirname(dirname, link_len);,php_dirname(dirname, link_len);)<SUB>14</SUB>>];
+fixed_16 [label=<(UNKNOWN,if (php_check_open_basedir(dirname)) {
+		efree(...,if (php_check_open_basedir(dirname)) {
+		efree(...)<SUB>16</SUB>>];
+fixed_17 [label=<(UNKNOWN,ret = VCWD_STAT(link, &amp;sb);,ret = VCWD_STAT(link, &amp;sb);)<SUB>21</SUB>>];
+fixed_18 [label=<(UNKNOWN,if (ret == -1) {
+ 		php_error_docref(NULL, E_WA...,if (ret == -1) {
+ 		php_error_docref(NULL, E_WA...)<SUB>22</SUB>>];
+fixed_19 [label="<(LOCAL,efree : efree)<SUB>28</SUB>>"];
+fixed_20 [label=<(UNKNOWN,RETURN_LONG((zend_long) sb.st_dev);,RETURN_LONG((zend_long) sb.st_dev);)<SUB>29</SUB>>];
+fixed_21 [label=<(UNKNOWN,},})<SUB>30</SUB>>];
+fixed_22 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+fixed_37 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_38 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_39 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_6 -> vulnerable_7  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_17  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_8  [key=0, label="CFG: "];
+vulnerable_7 -> vulnerable_8  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_9  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_10  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_11  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_12  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_13  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_14  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_15  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_16  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_12  [key=0, label="CFG: "];
+vulnerable_12 -> vulnerable_13  [key=0, label="CFG: "];
+vulnerable_13 -> vulnerable_14  [key=0, label="CFG: "];
+vulnerable_14 -> vulnerable_15  [key=0, label="CFG: "];
+vulnerable_15 -> vulnerable_16  [key=0, label="CFG: "];
+vulnerable_16 -> vulnerable_17  [key=0, label="CFG: "];
+vulnerable_28 -> vulnerable_29  [key=0, label="AST: "];
+vulnerable_28 -> vulnerable_30  [key=0, label="AST: "];
+vulnerable_28 -> vulnerable_30  [key=1, label="CFG: "];
+fixed_6 -> fixed_7  [key=0, label="AST: "];
+fixed_6 -> fixed_22  [key=0, label="AST: "];
+fixed_6 -> fixed_8  [key=0, label="CFG: "];
+fixed_7 -> fixed_8  [key=0, label="AST: "];
+fixed_7 -> fixed_9  [key=0, label="AST: "];
+fixed_7 -> fixed_10  [key=0, label="AST: "];
+fixed_7 -> fixed_11  [key=0, label="AST: "];
+fixed_7 -> fixed_12  [key=0, label="AST: "];
+fixed_7 -> fixed_13  [key=0, label="AST: "];
+fixed_7 -> fixed_14  [key=0, label="AST: "];
+fixed_7 -> fixed_15  [key=0, label="AST: "];
+fixed_7 -> fixed_16  [key=0, label="AST: "];
+fixed_7 -> fixed_17  [key=0, label="AST: "];
+fixed_7 -> fixed_18  [key=0, label="AST: "];
+fixed_7 -> fixed_19  [key=0, label="AST: "];
+fixed_7 -> fixed_20  [key=0, label="AST: "];
+fixed_7 -> fixed_21  [key=0, label="AST: "];
+fixed_8 -> fixed_13  [key=0, label="CFG: "];
+fixed_9 -> vulnerable_6  [key=0];
+fixed_10 -> vulnerable_6  [key=0];
+fixed_11 -> vulnerable_6  [key=0];
+fixed_12 -> vulnerable_6  [key=0];
+fixed_13 -> fixed_14  [key=0, label="CFG: "];
+fixed_14 -> fixed_15  [key=0, label="CFG: "];
+fixed_15 -> fixed_16  [key=0, label="CFG: "];
+fixed_16 -> fixed_17  [key=0, label="CFG: "];
+fixed_17 -> fixed_18  [key=0, label="CFG: "];
+fixed_18 -> fixed_20  [key=0, label="CFG: "];
+fixed_19 -> vulnerable_6  [key=0];
+fixed_20 -> fixed_21  [key=0, label="CFG: "];
+fixed_21 -> fixed_22  [key=0, label="CFG: "];
+fixed_22 -> vulnerable_6  [key=0];
+fixed_37 -> fixed_38  [key=0, label="AST: "];
+fixed_37 -> fixed_39  [key=0, label="AST: "];
+fixed_37 -> fixed_39  [key=1, label="CFG: "];
+fixed_38 -> vulnerable_6  [key=0];
+fixed_39 -> vulnerable_6  [key=0];
+}

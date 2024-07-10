@@ -1,0 +1,113 @@
+digraph "&lt;global&gt;" {
+vulnerable_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+vulnerable_8 [label=<(UNKNOWN,gss_init_sec_context (minor_status,
+           ...,gss_init_sec_context (minor_status,
+           ...)<SUB>1</SUB>>];
+vulnerable_9 [label="<(LOCAL,gss_cred_id_t claimant_cred_handle: gss_cred_id_t)<SUB>16</SUB>>"];
+vulnerable_10 [label="<(LOCAL,gss_ctx_id_t* context_handle: gss_ctx_id_t*)<SUB>17</SUB>>"];
+vulnerable_11 [label="<(LOCAL,gss_name_t target_name: gss_name_t)<SUB>18</SUB>>"];
+vulnerable_12 [label="<(LOCAL,gss_OID req_mech_type: gss_OID)<SUB>19</SUB>>"];
+vulnerable_13 [label="<(LOCAL,OM_uint32 req_flags: OM_uint32)<SUB>20</SUB>>"];
+vulnerable_14 [label="<(LOCAL,OM_uint32 time_req: OM_uint32)<SUB>21</SUB>>"];
+vulnerable_15 [label="<(LOCAL,gss_channel_bindings_t input_chan_bindings: gss_channel_bindings_t)<SUB>22</SUB>>"];
+vulnerable_16 [label="<(LOCAL,gss_buffer_t input_token: gss_buffer_t)<SUB>23</SUB>>"];
+vulnerable_17 [label="<(LOCAL,gss_OID* actual_mech_type: gss_OID*)<SUB>24</SUB>>"];
+vulnerable_18 [label="<(LOCAL,gss_buffer_t output_token: gss_buffer_t)<SUB>25</SUB>>"];
+vulnerable_19 [label="<(LOCAL,OM_uint32* ret_flags: OM_uint32*)<SUB>26</SUB>>"];
+vulnerable_20 [label="<(LOCAL,OM_uint32* time_rec: OM_uint32*)<SUB>27</SUB>>"];
+vulnerable_21 [label=<(UNKNOWN,{
+    OM_uint32		status, temp_minor_status;
+   ...,{
+    OM_uint32		status, temp_minor_status;
+   ...)<SUB>29</SUB>>];
+vulnerable_22 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+vulnerable_45 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_46 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_47 [label=<(METHOD_RETURN,ANY)>];
+fixed_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+fixed_8 [label=<(UNKNOWN,gss_init_sec_context (minor_status,
+           ...,gss_init_sec_context (minor_status,
+           ...)<SUB>1</SUB>>];
+fixed_9 [label="<(LOCAL,gss_cred_id_t claimant_cred_handle: gss_cred_id_t)<SUB>16</SUB>>"];
+fixed_10 [label="<(LOCAL,gss_ctx_id_t* context_handle: gss_ctx_id_t*)<SUB>17</SUB>>"];
+fixed_11 [label="<(LOCAL,gss_name_t target_name: gss_name_t)<SUB>18</SUB>>"];
+fixed_12 [label="<(LOCAL,gss_OID req_mech_type: gss_OID)<SUB>19</SUB>>"];
+fixed_13 [label="<(LOCAL,OM_uint32 req_flags: OM_uint32)<SUB>20</SUB>>"];
+fixed_14 [label="<(LOCAL,OM_uint32 time_req: OM_uint32)<SUB>21</SUB>>"];
+fixed_15 [label="<(LOCAL,gss_channel_bindings_t input_chan_bindings: gss_channel_bindings_t)<SUB>22</SUB>>"];
+fixed_16 [label="<(LOCAL,gss_buffer_t input_token: gss_buffer_t)<SUB>23</SUB>>"];
+fixed_17 [label="<(LOCAL,gss_OID* actual_mech_type: gss_OID*)<SUB>24</SUB>>"];
+fixed_18 [label="<(LOCAL,gss_buffer_t output_token: gss_buffer_t)<SUB>25</SUB>>"];
+fixed_19 [label="<(LOCAL,OM_uint32* ret_flags: OM_uint32*)<SUB>26</SUB>>"];
+fixed_20 [label="<(LOCAL,OM_uint32* time_rec: OM_uint32*)<SUB>27</SUB>>"];
+fixed_21 [label=<(UNKNOWN,{
+    OM_uint32		status, temp_minor_status;
+   ...,{
+    OM_uint32		status, temp_minor_status;
+   ...)<SUB>29</SUB>>];
+fixed_22 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+fixed_45 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_46 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_47 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_6 -> vulnerable_7  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_22  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_8  [key=0, label="CFG: "];
+vulnerable_7 -> vulnerable_8  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_9  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_10  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_11  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_12  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_13  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_14  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_15  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_16  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_17  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_18  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_19  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_20  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_21  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_21  [key=0, label="CFG: "];
+vulnerable_21 -> vulnerable_22  [key=0, label="CFG: "];
+vulnerable_45 -> vulnerable_46  [key=0, label="AST: "];
+vulnerable_45 -> vulnerable_47  [key=0, label="AST: "];
+vulnerable_45 -> vulnerable_47  [key=1, label="CFG: "];
+fixed_6 -> fixed_7  [key=0, label="AST: "];
+fixed_6 -> fixed_22  [key=0, label="AST: "];
+fixed_6 -> fixed_8  [key=0, label="CFG: "];
+fixed_7 -> fixed_8  [key=0, label="AST: "];
+fixed_7 -> fixed_9  [key=0, label="AST: "];
+fixed_7 -> fixed_10  [key=0, label="AST: "];
+fixed_7 -> fixed_11  [key=0, label="AST: "];
+fixed_7 -> fixed_12  [key=0, label="AST: "];
+fixed_7 -> fixed_13  [key=0, label="AST: "];
+fixed_7 -> fixed_14  [key=0, label="AST: "];
+fixed_7 -> fixed_15  [key=0, label="AST: "];
+fixed_7 -> fixed_16  [key=0, label="AST: "];
+fixed_7 -> fixed_17  [key=0, label="AST: "];
+fixed_7 -> fixed_18  [key=0, label="AST: "];
+fixed_7 -> fixed_19  [key=0, label="AST: "];
+fixed_7 -> fixed_20  [key=0, label="AST: "];
+fixed_7 -> fixed_21  [key=0, label="AST: "];
+fixed_8 -> fixed_21  [key=0, label="CFG: "];
+fixed_9 -> vulnerable_6  [key=0];
+fixed_10 -> vulnerable_6  [key=0];
+fixed_11 -> vulnerable_6  [key=0];
+fixed_12 -> vulnerable_6  [key=0];
+fixed_13 -> vulnerable_6  [key=0];
+fixed_14 -> vulnerable_6  [key=0];
+fixed_15 -> vulnerable_6  [key=0];
+fixed_16 -> vulnerable_6  [key=0];
+fixed_17 -> vulnerable_6  [key=0];
+fixed_18 -> vulnerable_6  [key=0];
+fixed_19 -> vulnerable_6  [key=0];
+fixed_20 -> vulnerable_6  [key=0];
+fixed_21 -> fixed_22  [key=0, label="CFG: "];
+fixed_22 -> vulnerable_6  [key=0];
+fixed_45 -> fixed_46  [key=0, label="AST: "];
+fixed_45 -> fixed_47  [key=0, label="AST: "];
+fixed_45 -> fixed_47  [key=1, label="CFG: "];
+fixed_46 -> vulnerable_6  [key=0];
+fixed_47 -> vulnerable_6  [key=0];
+}

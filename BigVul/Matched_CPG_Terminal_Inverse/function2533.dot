@@ -1,0 +1,196 @@
+digraph "&lt;operator&gt;.assignment" {
+vulnerable_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+vulnerable_8 [label=<(UNKNOWN,PHP_FUNCTION(mcrypt_create_iv)
+{
+	char *iv;,PHP_FUNCTION(mcrypt_create_iv)
+{
+	char *iv;)<SUB>1</SUB>>];
+vulnerable_9 [label="<(LOCAL,long source: long)<SUB>4</SUB>>"];
+vulnerable_10 [label=<(&lt;operator&gt;.assignment,source = RANDOM)<SUB>4</SUB>>];
+vulnerable_11 [label=<(IDENTIFIER,source,source = RANDOM)<SUB>4</SUB>>];
+vulnerable_12 [label=<(IDENTIFIER,RANDOM,source = RANDOM)<SUB>4</SUB>>];
+vulnerable_13 [label="<(LOCAL,long size: long)<SUB>5</SUB>>"];
+vulnerable_14 [label="<(LOCAL,int n: int)<SUB>6</SUB>>"];
+vulnerable_15 [label=<(&lt;operator&gt;.assignment,n = 0)<SUB>6</SUB>>];
+vulnerable_16 [label=<(IDENTIFIER,n,n = 0)<SUB>6</SUB>>];
+vulnerable_17 [label=<(LITERAL,0,n = 0)<SUB>6</SUB>>];
+vulnerable_18 [label=<(UNKNOWN,if (zend_parse_parameters(ZEND_NUM_ARGS() TSRML...,if (zend_parse_parameters(ZEND_NUM_ARGS() TSRML...)<SUB>8</SUB>>];
+vulnerable_19 [label=<(UNKNOWN,if (size &lt;= 0 || size &gt;= INT_MAX) {
+ 		php_erro...,if (size &lt;= 0 || size &gt;= INT_MAX) {
+ 		php_erro...)<SUB>12</SUB>>];
+vulnerable_20 [label=<(UNKNOWN,iv = ecalloc(size + 1, 1);,iv = ecalloc(size + 1, 1);)<SUB>16</SUB>>];
+vulnerable_21 [label=<(UNKNOWN,if (source == RANDOM || source == URANDOM) {
+ #...,if (source == RANDOM || source == URANDOM) {
+ #...)<SUB>17</SUB>>];
+vulnerable_22 [label=<(UNKNOWN,else {
+		n = size;
+		while (size) {
+			iv[--siz...,else {
+		n = size;
+		while (size) {
+			iv[--siz...)<SUB>55</SUB>>];
+vulnerable_23 [label=<(UNKNOWN,RETURN_STRINGL(iv, n, 0);,RETURN_STRINGL(iv, n, 0);)<SUB>61</SUB>>];
+vulnerable_24 [label=<(UNKNOWN,},})<SUB>62</SUB>>];
+vulnerable_25 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+vulnerable_34 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_35 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_36 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_40 [label=<(METHOD,&lt;operator&gt;.assignment)>];
+vulnerable_41 [label=<(PARAM,p1)>];
+vulnerable_42 [label=<(PARAM,p2)>];
+vulnerable_43 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_44 [label=<(METHOD_RETURN,ANY)>];
+fixed_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+fixed_8 [label=<(UNKNOWN,PHP_FUNCTION(mcrypt_create_iv)
+{
+	char *iv;,PHP_FUNCTION(mcrypt_create_iv)
+{
+	char *iv;)<SUB>1</SUB>>];
+fixed_9 [label="<(LOCAL,long source: long)<SUB>4</SUB>>"];
+fixed_10 [label=<(&lt;operator&gt;.assignment,source = RANDOM)<SUB>4</SUB>>];
+fixed_11 [label=<(IDENTIFIER,source,source = RANDOM)<SUB>4</SUB>>];
+fixed_12 [label=<(IDENTIFIER,RANDOM,source = RANDOM)<SUB>4</SUB>>];
+fixed_13 [label="<(LOCAL,long size: long)<SUB>5</SUB>>"];
+fixed_14 [label="<(LOCAL,int n: int)<SUB>6</SUB>>"];
+fixed_15 [label=<(&lt;operator&gt;.assignment,n = 0)<SUB>6</SUB>>];
+fixed_16 [label=<(IDENTIFIER,n,n = 0)<SUB>6</SUB>>];
+fixed_17 [label=<(LITERAL,0,n = 0)<SUB>6</SUB>>];
+fixed_18 [label=<(UNKNOWN,if (zend_parse_parameters(ZEND_NUM_ARGS() TSRML...,if (zend_parse_parameters(ZEND_NUM_ARGS() TSRML...)<SUB>8</SUB>>];
+fixed_19 [label=<(UNKNOWN,if (size &lt;= 0 || size &gt;= INT_MAX) {
+ 		php_erro...,if (size &lt;= 0 || size &gt;= INT_MAX) {
+ 		php_erro...)<SUB>12</SUB>>];
+fixed_20 [label=<(UNKNOWN,iv = ecalloc(size + 1, 1);,iv = ecalloc(size + 1, 1);)<SUB>17</SUB>>];
+fixed_21 [label=<(UNKNOWN,if (source == RANDOM || source == URANDOM) {
+ #...,if (source == RANDOM || source == URANDOM) {
+ #...)<SUB>19</SUB>>];
+fixed_22 [label=<(UNKNOWN,else {
+		n = size;
+		while (size) {
+			iv[--siz...,else {
+		n = size;
+		while (size) {
+			iv[--siz...)<SUB>57</SUB>>];
+fixed_23 [label=<(UNKNOWN,RETURN_STRINGL(iv, n, 0);,RETURN_STRINGL(iv, n, 0);)<SUB>63</SUB>>];
+fixed_24 [label=<(UNKNOWN,},})<SUB>64</SUB>>];
+fixed_25 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+fixed_34 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_35 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_36 [label=<(METHOD_RETURN,ANY)>];
+fixed_40 [label=<(METHOD,&lt;operator&gt;.assignment)>];
+fixed_41 [label=<(PARAM,p1)>];
+fixed_42 [label=<(PARAM,p2)>];
+fixed_43 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_44 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_6 -> vulnerable_7  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_25  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_8  [key=0, label="CFG: "];
+vulnerable_6 -> vulnerable_10  [key=0, label="DDG: "];
+vulnerable_6 -> vulnerable_15  [key=0, label="DDG: "];
+vulnerable_7 -> vulnerable_8  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_9  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_10  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_13  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_14  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_15  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_18  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_19  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_20  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_21  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_22  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_23  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_24  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_10  [key=0, label="CFG: "];
+vulnerable_10 -> vulnerable_11  [key=0, label="AST: "];
+vulnerable_10 -> vulnerable_12  [key=0, label="AST: "];
+vulnerable_10 -> vulnerable_15  [key=0, label="CFG: "];
+vulnerable_10 -> vulnerable_25  [key=0, label="DDG: source"];
+vulnerable_10 -> vulnerable_25  [key=1, label="DDG: source = RANDOM"];
+vulnerable_10 -> vulnerable_25  [key=2, label="DDG: RANDOM"];
+vulnerable_15 -> vulnerable_16  [key=0, label="AST: "];
+vulnerable_15 -> vulnerable_17  [key=0, label="AST: "];
+vulnerable_15 -> vulnerable_18  [key=0, label="CFG: "];
+vulnerable_15 -> vulnerable_25  [key=0, label="DDG: n"];
+vulnerable_15 -> vulnerable_25  [key=1, label="DDG: n = 0"];
+vulnerable_18 -> vulnerable_19  [key=0, label="CFG: "];
+vulnerable_19 -> vulnerable_20  [key=0, label="CFG: "];
+vulnerable_20 -> vulnerable_21  [key=0, label="CFG: "];
+vulnerable_21 -> vulnerable_22  [key=0, label="CFG: "];
+vulnerable_22 -> vulnerable_23  [key=0, label="CFG: "];
+vulnerable_23 -> vulnerable_24  [key=0, label="CFG: "];
+vulnerable_24 -> vulnerable_25  [key=0, label="CFG: "];
+vulnerable_34 -> vulnerable_35  [key=0, label="AST: "];
+vulnerable_34 -> vulnerable_36  [key=0, label="AST: "];
+vulnerable_34 -> vulnerable_36  [key=1, label="CFG: "];
+vulnerable_40 -> vulnerable_41  [key=0, label="AST: "];
+vulnerable_40 -> vulnerable_41  [key=1, label="DDG: "];
+vulnerable_40 -> vulnerable_43  [key=0, label="AST: "];
+vulnerable_40 -> vulnerable_42  [key=0, label="AST: "];
+vulnerable_40 -> vulnerable_42  [key=1, label="DDG: "];
+vulnerable_40 -> vulnerable_44  [key=0, label="AST: "];
+vulnerable_40 -> vulnerable_44  [key=1, label="CFG: "];
+vulnerable_41 -> vulnerable_44  [key=0, label="DDG: p1"];
+vulnerable_42 -> vulnerable_44  [key=0, label="DDG: p2"];
+fixed_6 -> fixed_7  [key=0, label="AST: "];
+fixed_6 -> fixed_25  [key=0, label="AST: "];
+fixed_6 -> fixed_8  [key=0, label="CFG: "];
+fixed_6 -> fixed_10  [key=0, label="DDG: "];
+fixed_6 -> fixed_15  [key=0, label="DDG: "];
+fixed_7 -> fixed_8  [key=0, label="AST: "];
+fixed_7 -> fixed_9  [key=0, label="AST: "];
+fixed_7 -> fixed_10  [key=0, label="AST: "];
+fixed_7 -> fixed_13  [key=0, label="AST: "];
+fixed_7 -> fixed_14  [key=0, label="AST: "];
+fixed_7 -> fixed_15  [key=0, label="AST: "];
+fixed_7 -> fixed_18  [key=0, label="AST: "];
+fixed_7 -> fixed_19  [key=0, label="AST: "];
+fixed_7 -> fixed_20  [key=0, label="AST: "];
+fixed_7 -> fixed_21  [key=0, label="AST: "];
+fixed_7 -> fixed_22  [key=0, label="AST: "];
+fixed_7 -> fixed_23  [key=0, label="AST: "];
+fixed_7 -> fixed_24  [key=0, label="AST: "];
+fixed_8 -> fixed_10  [key=0, label="CFG: "];
+fixed_9 -> vulnerable_6  [color=blue, key=0, label="Connection to Vulnerable Root", penwidth="2.0", style=dashed];
+fixed_10 -> fixed_11  [key=0, label="AST: "];
+fixed_10 -> fixed_12  [key=0, label="AST: "];
+fixed_10 -> fixed_15  [key=0, label="CFG: "];
+fixed_10 -> fixed_25  [key=0, label="DDG: source"];
+fixed_10 -> fixed_25  [key=1, label="DDG: source = RANDOM"];
+fixed_10 -> fixed_25  [key=2, label="DDG: RANDOM"];
+fixed_11 -> vulnerable_6  [color=blue, key=0, label="Connection to Vulnerable Root", penwidth="2.0", style=dashed];
+fixed_12 -> vulnerable_6  [color=blue, key=0, label="Connection to Vulnerable Root", penwidth="2.0", style=dashed];
+fixed_13 -> vulnerable_6  [color=blue, key=0, label="Connection to Vulnerable Root", penwidth="2.0", style=dashed];
+fixed_14 -> vulnerable_6  [color=blue, key=0, label="Connection to Vulnerable Root", penwidth="2.0", style=dashed];
+fixed_15 -> fixed_16  [key=0, label="AST: "];
+fixed_15 -> fixed_17  [key=0, label="AST: "];
+fixed_15 -> fixed_18  [key=0, label="CFG: "];
+fixed_15 -> fixed_25  [key=0, label="DDG: n"];
+fixed_15 -> fixed_25  [key=1, label="DDG: n = 0"];
+fixed_16 -> vulnerable_6  [color=blue, key=0, label="Connection to Vulnerable Root", penwidth="2.0", style=dashed];
+fixed_17 -> vulnerable_6  [color=blue, key=0, label="Connection to Vulnerable Root", penwidth="2.0", style=dashed];
+fixed_18 -> fixed_19  [key=0, label="CFG: "];
+fixed_19 -> fixed_20  [key=0, label="CFG: "];
+fixed_20 -> fixed_21  [key=0, label="CFG: "];
+fixed_21 -> fixed_22  [key=0, label="CFG: "];
+fixed_22 -> fixed_23  [key=0, label="CFG: "];
+fixed_23 -> fixed_24  [key=0, label="CFG: "];
+fixed_24 -> fixed_25  [key=0, label="CFG: "];
+fixed_25 -> vulnerable_6  [color=blue, key=0, label="Connection to Vulnerable Root", penwidth="2.0", style=dashed];
+fixed_34 -> fixed_35  [key=0, label="AST: "];
+fixed_34 -> fixed_36  [key=0, label="AST: "];
+fixed_34 -> fixed_36  [key=1, label="CFG: "];
+fixed_35 -> vulnerable_6  [color=blue, key=0, label="Connection to Vulnerable Root", penwidth="2.0", style=dashed];
+fixed_36 -> vulnerable_6  [color=blue, key=0, label="Connection to Vulnerable Root", penwidth="2.0", style=dashed];
+fixed_40 -> fixed_41  [key=0, label="AST: "];
+fixed_40 -> fixed_41  [key=1, label="DDG: "];
+fixed_40 -> fixed_43  [key=0, label="AST: "];
+fixed_40 -> fixed_42  [key=0, label="AST: "];
+fixed_40 -> fixed_42  [key=1, label="DDG: "];
+fixed_40 -> fixed_44  [key=0, label="AST: "];
+fixed_40 -> fixed_44  [key=1, label="CFG: "];
+fixed_41 -> fixed_44  [key=0, label="DDG: p1"];
+fixed_42 -> fixed_44  [key=0, label="DDG: p2"];
+fixed_43 -> vulnerable_6  [color=blue, key=0, label="Connection to Vulnerable Root", penwidth="2.0", style=dashed];
+fixed_44 -> vulnerable_6  [color=blue, key=0, label="Connection to Vulnerable Root", penwidth="2.0", style=dashed];
+}

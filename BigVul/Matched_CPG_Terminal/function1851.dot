@@ -1,0 +1,180 @@
+digraph "&lt;global&gt;" {
+vulnerable_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+vulnerable_8 [label=<(UNKNOWN,PHP_FUNCTION(imagecrop)
+{
+	zval *IM;,PHP_FUNCTION(imagecrop)
+{
+	zval *IM;)<SUB>1</SUB>>];
+vulnerable_9 [label="<(LOCAL,gdImagePtr im: gdImagePtr)<SUB>4</SUB>>"];
+vulnerable_10 [label="<(LOCAL,gdImagePtr im_crop: gdImagePtr)<SUB>5</SUB>>"];
+vulnerable_11 [label="<(LOCAL,gdRect rect: gdRect)<SUB>6</SUB>>"];
+vulnerable_12 [label="<(LOCAL,zval* z_rect: zval*)<SUB>7</SUB>>"];
+vulnerable_13 [label="<(LOCAL,zval** tmp: zval**)<SUB>8</SUB>>"];
+vulnerable_14 [label=<(UNKNOWN,if (zend_parse_parameters(ZEND_NUM_ARGS() TSRML...,if (zend_parse_parameters(ZEND_NUM_ARGS() TSRML...)<SUB>10</SUB>>];
+vulnerable_15 [label=<(UNKNOWN,ZEND_FETCH_RESOURCE(im, gdImagePtr, &amp;IM, -1, &quot;I...,ZEND_FETCH_RESOURCE(im, gdImagePtr, &amp;IM, -1, &quot;I...)<SUB>14</SUB>>];
+vulnerable_16 [label=<(UNKNOWN,if (zend_hash_find(HASH_OF(z_rect), &quot;x&quot;, sizeof...,if (zend_hash_find(HASH_OF(z_rect), &quot;x&quot;, sizeof...)<SUB>16</SUB>>];
+vulnerable_17 [label=<(UNKNOWN,else {
+ 		php_error_docref(NULL TSRMLS_CC, E_WA...,else {
+ 		php_error_docref(NULL TSRMLS_CC, E_WA...)<SUB>18</SUB>>];
+vulnerable_18 [label=<(UNKNOWN,if (zend_hash_find(HASH_OF(z_rect), &quot;y&quot;, sizeof...,if (zend_hash_find(HASH_OF(z_rect), &quot;y&quot;, sizeof...)<SUB>23</SUB>>];
+vulnerable_19 [label=<(UNKNOWN,else {
+ 		php_error_docref(NULL TSRMLS_CC, E_WA...,else {
+ 		php_error_docref(NULL TSRMLS_CC, E_WA...)<SUB>25</SUB>>];
+vulnerable_20 [label=<(UNKNOWN,if (zend_hash_find(HASH_OF(z_rect), &quot;width&quot;, si...,if (zend_hash_find(HASH_OF(z_rect), &quot;width&quot;, si...)<SUB>30</SUB>>];
+vulnerable_21 [label=<(UNKNOWN,else {
+ 		php_error_docref(NULL TSRMLS_CC, E_WA...,else {
+ 		php_error_docref(NULL TSRMLS_CC, E_WA...)<SUB>32</SUB>>];
+vulnerable_22 [label=<(UNKNOWN,if (zend_hash_find(HASH_OF(z_rect), &quot;height&quot;, s...,if (zend_hash_find(HASH_OF(z_rect), &quot;height&quot;, s...)<SUB>37</SUB>>];
+vulnerable_23 [label=<(UNKNOWN,else {
+ 		php_error_docref(NULL TSRMLS_CC, E_WA...,else {
+ 		php_error_docref(NULL TSRMLS_CC, E_WA...)<SUB>39</SUB>>];
+vulnerable_24 [label=<(UNKNOWN,im_crop = gdImageCrop(im, &amp;rect);,im_crop = gdImageCrop(im, &amp;rect);)<SUB>44</SUB>>];
+vulnerable_25 [label=<(UNKNOWN,if (im_crop == NULL) {
+		RETURN_FALSE;
+	},if (im_crop == NULL) {
+		RETURN_FALSE;
+	})<SUB>46</SUB>>];
+vulnerable_26 [label=<(UNKNOWN,else {
+		ZEND_REGISTER_RESOURCE(return_value, i...,else {
+		ZEND_REGISTER_RESOURCE(return_value, i...)<SUB>48</SUB>>];
+vulnerable_27 [label=<(UNKNOWN,},})<SUB>51</SUB>>];
+vulnerable_28 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+vulnerable_41 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_42 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_43 [label=<(METHOD_RETURN,ANY)>];
+fixed_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+fixed_8 [label=<(UNKNOWN,PHP_FUNCTION(imagecrop)
+{
+	zval *IM;,PHP_FUNCTION(imagecrop)
+{
+	zval *IM;)<SUB>1</SUB>>];
+fixed_9 [label="<(LOCAL,gdImagePtr im: gdImagePtr)<SUB>4</SUB>>"];
+fixed_10 [label="<(LOCAL,gdImagePtr im_crop: gdImagePtr)<SUB>5</SUB>>"];
+fixed_11 [label="<(LOCAL,gdRect rect: gdRect)<SUB>6</SUB>>"];
+fixed_12 [label="<(LOCAL,zval* z_rect: zval*)<SUB>7</SUB>>"];
+fixed_13 [label="<(LOCAL,zval** tmp: zval**)<SUB>8</SUB>>"];
+fixed_14 [label=<(UNKNOWN,if (zend_parse_parameters(ZEND_NUM_ARGS() TSRML...,if (zend_parse_parameters(ZEND_NUM_ARGS() TSRML...)<SUB>10</SUB>>];
+fixed_15 [label=<(UNKNOWN,ZEND_FETCH_RESOURCE(im, gdImagePtr, &amp;IM, -1, &quot;I...,ZEND_FETCH_RESOURCE(im, gdImagePtr, &amp;IM, -1, &quot;I...)<SUB>14</SUB>>];
+fixed_16 [label=<(UNKNOWN,if (zend_hash_find(HASH_OF(z_rect), &quot;x&quot;, sizeof...,if (zend_hash_find(HASH_OF(z_rect), &quot;x&quot;, sizeof...)<SUB>16</SUB>>];
+fixed_17 [label=<(UNKNOWN,else {
+ 		php_error_docref(NULL TSRMLS_CC, E_WA...,else {
+ 		php_error_docref(NULL TSRMLS_CC, E_WA...)<SUB>26</SUB>>];
+fixed_18 [label=<(UNKNOWN,if (zend_hash_find(HASH_OF(z_rect), &quot;y&quot;, sizeof...,if (zend_hash_find(HASH_OF(z_rect), &quot;y&quot;, sizeof...)<SUB>31</SUB>>];
+fixed_19 [label=<(UNKNOWN,else {
+ 		php_error_docref(NULL TSRMLS_CC, E_WA...,else {
+ 		php_error_docref(NULL TSRMLS_CC, E_WA...)<SUB>41</SUB>>];
+fixed_20 [label=<(UNKNOWN,if (zend_hash_find(HASH_OF(z_rect), &quot;width&quot;, si...,if (zend_hash_find(HASH_OF(z_rect), &quot;width&quot;, si...)<SUB>46</SUB>>];
+fixed_21 [label=<(UNKNOWN,else {
+ 		php_error_docref(NULL TSRMLS_CC, E_WA...,else {
+ 		php_error_docref(NULL TSRMLS_CC, E_WA...)<SUB>56</SUB>>];
+fixed_22 [label=<(UNKNOWN,if (zend_hash_find(HASH_OF(z_rect), &quot;height&quot;, s...,if (zend_hash_find(HASH_OF(z_rect), &quot;height&quot;, s...)<SUB>61</SUB>>];
+fixed_23 [label=<(UNKNOWN,else {
+ 		php_error_docref(NULL TSRMLS_CC, E_WA...,else {
+ 		php_error_docref(NULL TSRMLS_CC, E_WA...)<SUB>71</SUB>>];
+fixed_24 [label=<(UNKNOWN,im_crop = gdImageCrop(im, &amp;rect);,im_crop = gdImageCrop(im, &amp;rect);)<SUB>76</SUB>>];
+fixed_25 [label=<(UNKNOWN,if (im_crop == NULL) {
+		RETURN_FALSE;
+	},if (im_crop == NULL) {
+		RETURN_FALSE;
+	})<SUB>78</SUB>>];
+fixed_26 [label=<(UNKNOWN,else {
+		ZEND_REGISTER_RESOURCE(return_value, i...,else {
+		ZEND_REGISTER_RESOURCE(return_value, i...)<SUB>80</SUB>>];
+fixed_27 [label=<(UNKNOWN,},})<SUB>83</SUB>>];
+fixed_28 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+fixed_41 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_42 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_43 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_6 -> vulnerable_7  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_28  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_8  [key=0, label="CFG: "];
+vulnerable_7 -> vulnerable_8  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_9  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_10  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_11  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_12  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_13  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_14  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_15  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_16  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_17  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_18  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_19  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_20  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_21  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_22  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_23  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_24  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_25  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_26  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_27  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_14  [key=0, label="CFG: "];
+vulnerable_9 -> fixed_6  [key=0];
+vulnerable_10 -> fixed_6  [key=0];
+vulnerable_11 -> fixed_6  [key=0];
+vulnerable_12 -> fixed_6  [key=0];
+vulnerable_13 -> fixed_6  [key=0];
+vulnerable_14 -> vulnerable_15  [key=0, label="CFG: "];
+vulnerable_15 -> vulnerable_16  [key=0, label="CFG: "];
+vulnerable_16 -> vulnerable_17  [key=0, label="CFG: "];
+vulnerable_17 -> vulnerable_18  [key=0, label="CFG: "];
+vulnerable_18 -> vulnerable_19  [key=0, label="CFG: "];
+vulnerable_19 -> vulnerable_20  [key=0, label="CFG: "];
+vulnerable_20 -> vulnerable_21  [key=0, label="CFG: "];
+vulnerable_21 -> vulnerable_22  [key=0, label="CFG: "];
+vulnerable_22 -> vulnerable_23  [key=0, label="CFG: "];
+vulnerable_23 -> vulnerable_24  [key=0, label="CFG: "];
+vulnerable_24 -> vulnerable_25  [key=0, label="CFG: "];
+vulnerable_25 -> vulnerable_26  [key=0, label="CFG: "];
+vulnerable_26 -> vulnerable_27  [key=0, label="CFG: "];
+vulnerable_27 -> vulnerable_28  [key=0, label="CFG: "];
+vulnerable_28 -> fixed_6  [key=0];
+vulnerable_41 -> vulnerable_42  [key=0, label="AST: "];
+vulnerable_41 -> vulnerable_43  [key=0, label="AST: "];
+vulnerable_41 -> vulnerable_43  [key=1, label="CFG: "];
+vulnerable_42 -> fixed_6  [key=0];
+vulnerable_43 -> fixed_6  [key=0];
+fixed_6 -> fixed_7  [key=0, label="AST: "];
+fixed_6 -> fixed_28  [key=0, label="AST: "];
+fixed_6 -> fixed_8  [key=0, label="CFG: "];
+fixed_7 -> fixed_8  [key=0, label="AST: "];
+fixed_7 -> fixed_9  [key=0, label="AST: "];
+fixed_7 -> fixed_10  [key=0, label="AST: "];
+fixed_7 -> fixed_11  [key=0, label="AST: "];
+fixed_7 -> fixed_12  [key=0, label="AST: "];
+fixed_7 -> fixed_13  [key=0, label="AST: "];
+fixed_7 -> fixed_14  [key=0, label="AST: "];
+fixed_7 -> fixed_15  [key=0, label="AST: "];
+fixed_7 -> fixed_16  [key=0, label="AST: "];
+fixed_7 -> fixed_17  [key=0, label="AST: "];
+fixed_7 -> fixed_18  [key=0, label="AST: "];
+fixed_7 -> fixed_19  [key=0, label="AST: "];
+fixed_7 -> fixed_20  [key=0, label="AST: "];
+fixed_7 -> fixed_21  [key=0, label="AST: "];
+fixed_7 -> fixed_22  [key=0, label="AST: "];
+fixed_7 -> fixed_23  [key=0, label="AST: "];
+fixed_7 -> fixed_24  [key=0, label="AST: "];
+fixed_7 -> fixed_25  [key=0, label="AST: "];
+fixed_7 -> fixed_26  [key=0, label="AST: "];
+fixed_7 -> fixed_27  [key=0, label="AST: "];
+fixed_8 -> fixed_14  [key=0, label="CFG: "];
+fixed_14 -> fixed_15  [key=0, label="CFG: "];
+fixed_15 -> fixed_16  [key=0, label="CFG: "];
+fixed_16 -> fixed_17  [key=0, label="CFG: "];
+fixed_17 -> fixed_18  [key=0, label="CFG: "];
+fixed_18 -> fixed_19  [key=0, label="CFG: "];
+fixed_19 -> fixed_20  [key=0, label="CFG: "];
+fixed_20 -> fixed_21  [key=0, label="CFG: "];
+fixed_21 -> fixed_22  [key=0, label="CFG: "];
+fixed_22 -> fixed_23  [key=0, label="CFG: "];
+fixed_23 -> fixed_24  [key=0, label="CFG: "];
+fixed_24 -> fixed_25  [key=0, label="CFG: "];
+fixed_25 -> fixed_26  [key=0, label="CFG: "];
+fixed_26 -> fixed_27  [key=0, label="CFG: "];
+fixed_27 -> fixed_28  [key=0, label="CFG: "];
+fixed_41 -> fixed_42  [key=0, label="AST: "];
+fixed_41 -> fixed_43  [key=0, label="AST: "];
+fixed_41 -> fixed_43  [key=1, label="CFG: "];
+}

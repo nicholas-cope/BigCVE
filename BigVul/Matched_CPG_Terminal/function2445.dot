@@ -1,0 +1,61 @@
+digraph "&lt;global&gt;" {
+vulnerable_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+vulnerable_8 [label=<(UNKNOWN,static PHP_MINIT_FUNCTION(zip)
+{
+#ifdef PHP_ZIP...,static PHP_MINIT_FUNCTION(zip)
+{
+#ifdef PHP_ZIP...)<SUB>1</SUB>>];
+vulnerable_9 [label=<(UNKNOWN,le_zip_entry = zend_register_list_destructors_e...,le_zip_entry = zend_register_list_destructors_e...)<SUB>82</SUB>>];
+vulnerable_10 [label=<(UNKNOWN,return SUCCESS;,return SUCCESS;)<SUB>84</SUB>>];
+vulnerable_11 [label=<(UNKNOWN,},})<SUB>85</SUB>>];
+vulnerable_12 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+vulnerable_17 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_18 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_19 [label=<(METHOD_RETURN,ANY)>];
+fixed_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+fixed_8 [label=<(UNKNOWN,static PHP_MINIT_FUNCTION(zip)
+{
+#ifdef PHP_ZIP...,static PHP_MINIT_FUNCTION(zip)
+{
+#ifdef PHP_ZIP...)<SUB>1</SUB>>];
+fixed_9 [label=<(UNKNOWN,le_zip_entry = zend_register_list_destructors_e...,le_zip_entry = zend_register_list_destructors_e...)<SUB>83</SUB>>];
+fixed_10 [label=<(UNKNOWN,return SUCCESS;,return SUCCESS;)<SUB>85</SUB>>];
+fixed_11 [label=<(UNKNOWN,},})<SUB>86</SUB>>];
+fixed_12 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+fixed_17 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_18 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_19 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_6 -> vulnerable_7  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_12  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_8  [key=0, label="CFG: "];
+vulnerable_7 -> vulnerable_8  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_9  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_10  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_11  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_9  [key=0, label="CFG: "];
+vulnerable_9 -> vulnerable_10  [key=0, label="CFG: "];
+vulnerable_10 -> vulnerable_11  [key=0, label="CFG: "];
+vulnerable_11 -> vulnerable_12  [key=0, label="CFG: "];
+vulnerable_12 -> fixed_6  [key=0];
+vulnerable_17 -> vulnerable_18  [key=0, label="AST: "];
+vulnerable_17 -> vulnerable_19  [key=0, label="AST: "];
+vulnerable_17 -> vulnerable_19  [key=1, label="CFG: "];
+vulnerable_18 -> fixed_6  [key=0];
+vulnerable_19 -> fixed_6  [key=0];
+fixed_6 -> fixed_7  [key=0, label="AST: "];
+fixed_6 -> fixed_12  [key=0, label="AST: "];
+fixed_6 -> fixed_8  [key=0, label="CFG: "];
+fixed_7 -> fixed_8  [key=0, label="AST: "];
+fixed_7 -> fixed_9  [key=0, label="AST: "];
+fixed_7 -> fixed_10  [key=0, label="AST: "];
+fixed_7 -> fixed_11  [key=0, label="AST: "];
+fixed_8 -> fixed_9  [key=0, label="CFG: "];
+fixed_9 -> fixed_10  [key=0, label="CFG: "];
+fixed_10 -> fixed_11  [key=0, label="CFG: "];
+fixed_11 -> fixed_12  [key=0, label="CFG: "];
+fixed_17 -> fixed_18  [key=0, label="AST: "];
+fixed_17 -> fixed_19  [key=0, label="AST: "];
+fixed_17 -> fixed_19  [key=1, label="CFG: "];
+}

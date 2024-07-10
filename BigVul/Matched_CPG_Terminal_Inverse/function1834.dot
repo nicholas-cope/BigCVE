@@ -1,0 +1,142 @@
+digraph "&lt;global&gt;" {
+vulnerable_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+vulnerable_8 [label=<(UNKNOWN,path_poly(PG_FUNCTION_ARGS)
+{
+	PATH	   *path = ...,path_poly(PG_FUNCTION_ARGS)
+{
+	PATH	   *path = ...)<SUB>1</SUB>>];
+vulnerable_9 [label="<(LOCAL,POLYGON* poly: POLYGON*)<SUB>4</SUB>>"];
+vulnerable_10 [label="<(LOCAL,int size: int)<SUB>5</SUB>>"];
+vulnerable_11 [label="<(LOCAL,int i: int)<SUB>6</SUB>>"];
+vulnerable_12 [label=<(UNKNOWN,if (!path-&gt;closed)
+		ereport(ERROR,
+ 				(errco...,if (!path-&gt;closed)
+		ereport(ERROR,
+ 				(errco...)<SUB>9</SUB>>];
+vulnerable_13 [label=<(UNKNOWN,size = offsetof(POLYGON, p[0]) +sizeof(poly-&gt;p[...,size = offsetof(POLYGON, p[0]) +sizeof(poly-&gt;p[...)<SUB>14</SUB>>];
+vulnerable_14 [label=<(UNKNOWN,poly = (POLYGON *) palloc(size);,poly = (POLYGON *) palloc(size);)<SUB>15</SUB>>];
+vulnerable_15 [label=<(UNKNOWN,SET_VARSIZE(poly, size);,SET_VARSIZE(poly, size);)<SUB>17</SUB>>];
+vulnerable_16 [label=<(UNKNOWN,poly-&gt;npts = path-&gt;npts;,poly-&gt;npts = path-&gt;npts;)<SUB>18</SUB>>];
+vulnerable_17 [label=<(UNKNOWN,for (i = 0;,for (i = 0;)<SUB>20</SUB>>];
+vulnerable_18 [label=<(UNKNOWN,i &lt; path-&gt;npts;,i &lt; path-&gt;npts;)<SUB>20</SUB>>];
+vulnerable_19 [label=<(UNKNOWN,i++)
+	{
+		poly-&gt;p[i].x = path-&gt;p[i].x;
+		poly-&gt;...,i++)
+	{
+		poly-&gt;p[i].x = path-&gt;p[i].x;
+		poly-&gt;...)<SUB>20</SUB>>];
+vulnerable_20 [label="<(LOCAL,make_bound_box : make_bound_box)<SUB>26</SUB>>"];
+vulnerable_21 [label="<(LOCAL,PG_RETURN_POLYGON_P : PG_RETURN_POLYGON_P)<SUB>28</SUB>>"];
+vulnerable_22 [label=<(UNKNOWN,},})<SUB>29</SUB>>];
+vulnerable_23 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+vulnerable_36 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_37 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_38 [label=<(METHOD_RETURN,ANY)>];
+fixed_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+fixed_8 [label=<(UNKNOWN,path_poly(PG_FUNCTION_ARGS)
+{
+	PATH	   *path = ...,path_poly(PG_FUNCTION_ARGS)
+{
+	PATH	   *path = ...)<SUB>1</SUB>>];
+fixed_9 [label="<(LOCAL,POLYGON* poly: POLYGON*)<SUB>4</SUB>>"];
+fixed_10 [label="<(LOCAL,int size: int)<SUB>5</SUB>>"];
+fixed_11 [label="<(LOCAL,int i: int)<SUB>6</SUB>>"];
+fixed_12 [label=<(UNKNOWN,if (!path-&gt;closed)
+		ereport(ERROR,
+ 				(errco...,if (!path-&gt;closed)
+		ereport(ERROR,
+ 				(errco...)<SUB>9</SUB>>];
+fixed_13 [label=<(UNKNOWN,size = offsetof(POLYGON, p[0]) +sizeof(poly-&gt;p[...,size = offsetof(POLYGON, p[0]) +sizeof(poly-&gt;p[...)<SUB>18</SUB>>];
+fixed_14 [label=<(UNKNOWN,poly = (POLYGON *) palloc(size);,poly = (POLYGON *) palloc(size);)<SUB>19</SUB>>];
+fixed_15 [label=<(UNKNOWN,SET_VARSIZE(poly, size);,SET_VARSIZE(poly, size);)<SUB>21</SUB>>];
+fixed_16 [label=<(UNKNOWN,poly-&gt;npts = path-&gt;npts;,poly-&gt;npts = path-&gt;npts;)<SUB>22</SUB>>];
+fixed_17 [label=<(UNKNOWN,for (i = 0;,for (i = 0;)<SUB>24</SUB>>];
+fixed_18 [label=<(UNKNOWN,i &lt; path-&gt;npts;,i &lt; path-&gt;npts;)<SUB>24</SUB>>];
+fixed_19 [label=<(UNKNOWN,i++)
+	{
+		poly-&gt;p[i].x = path-&gt;p[i].x;
+		poly-&gt;...,i++)
+	{
+		poly-&gt;p[i].x = path-&gt;p[i].x;
+		poly-&gt;...)<SUB>24</SUB>>];
+fixed_20 [label="<(LOCAL,make_bound_box : make_bound_box)<SUB>30</SUB>>"];
+fixed_21 [label="<(LOCAL,PG_RETURN_POLYGON_P : PG_RETURN_POLYGON_P)<SUB>32</SUB>>"];
+fixed_22 [label=<(UNKNOWN,},})<SUB>33</SUB>>];
+fixed_23 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+fixed_36 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_37 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_38 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_6 -> vulnerable_7  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_23  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_8  [key=0, label="CFG: "];
+vulnerable_7 -> vulnerable_8  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_9  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_10  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_11  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_12  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_13  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_14  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_15  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_16  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_17  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_18  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_19  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_20  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_21  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_22  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_12  [key=0, label="CFG: "];
+vulnerable_12 -> vulnerable_13  [key=0, label="CFG: "];
+vulnerable_13 -> vulnerable_14  [key=0, label="CFG: "];
+vulnerable_14 -> vulnerable_15  [key=0, label="CFG: "];
+vulnerable_15 -> vulnerable_16  [key=0, label="CFG: "];
+vulnerable_16 -> vulnerable_17  [key=0, label="CFG: "];
+vulnerable_17 -> vulnerable_18  [key=0, label="CFG: "];
+vulnerable_18 -> vulnerable_19  [key=0, label="CFG: "];
+vulnerable_19 -> vulnerable_22  [key=0, label="CFG: "];
+vulnerable_22 -> vulnerable_23  [key=0, label="CFG: "];
+vulnerable_36 -> vulnerable_37  [key=0, label="AST: "];
+vulnerable_36 -> vulnerable_38  [key=0, label="AST: "];
+vulnerable_36 -> vulnerable_38  [key=1, label="CFG: "];
+fixed_6 -> fixed_7  [key=0, label="AST: "];
+fixed_6 -> fixed_23  [key=0, label="AST: "];
+fixed_6 -> fixed_8  [key=0, label="CFG: "];
+fixed_7 -> fixed_8  [key=0, label="AST: "];
+fixed_7 -> fixed_9  [key=0, label="AST: "];
+fixed_7 -> fixed_10  [key=0, label="AST: "];
+fixed_7 -> fixed_11  [key=0, label="AST: "];
+fixed_7 -> fixed_12  [key=0, label="AST: "];
+fixed_7 -> fixed_13  [key=0, label="AST: "];
+fixed_7 -> fixed_14  [key=0, label="AST: "];
+fixed_7 -> fixed_15  [key=0, label="AST: "];
+fixed_7 -> fixed_16  [key=0, label="AST: "];
+fixed_7 -> fixed_17  [key=0, label="AST: "];
+fixed_7 -> fixed_18  [key=0, label="AST: "];
+fixed_7 -> fixed_19  [key=0, label="AST: "];
+fixed_7 -> fixed_20  [key=0, label="AST: "];
+fixed_7 -> fixed_21  [key=0, label="AST: "];
+fixed_7 -> fixed_22  [key=0, label="AST: "];
+fixed_8 -> fixed_12  [key=0, label="CFG: "];
+fixed_9 -> vulnerable_6  [key=0];
+fixed_10 -> vulnerable_6  [key=0];
+fixed_11 -> vulnerable_6  [key=0];
+fixed_12 -> fixed_13  [key=0, label="CFG: "];
+fixed_13 -> fixed_14  [key=0, label="CFG: "];
+fixed_14 -> fixed_15  [key=0, label="CFG: "];
+fixed_15 -> fixed_16  [key=0, label="CFG: "];
+fixed_16 -> fixed_17  [key=0, label="CFG: "];
+fixed_17 -> fixed_18  [key=0, label="CFG: "];
+fixed_18 -> fixed_19  [key=0, label="CFG: "];
+fixed_19 -> fixed_22  [key=0, label="CFG: "];
+fixed_20 -> vulnerable_6  [key=0];
+fixed_21 -> vulnerable_6  [key=0];
+fixed_22 -> fixed_23  [key=0, label="CFG: "];
+fixed_23 -> vulnerable_6  [key=0];
+fixed_36 -> fixed_37  [key=0, label="AST: "];
+fixed_36 -> fixed_38  [key=0, label="AST: "];
+fixed_36 -> fixed_38  [key=1, label="CFG: "];
+fixed_37 -> vulnerable_6  [key=0];
+fixed_38 -> vulnerable_6  [key=0];
+}

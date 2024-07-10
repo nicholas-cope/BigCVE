@@ -1,0 +1,412 @@
+digraph "&lt;global&gt;" {
+vulnerable_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+vulnerable_8 [label=<(METHOD,SetUpTestCase)<SUB>1</SUB>>];
+vulnerable_9 [label=<(BLOCK,{
+    input_ = reinterpret_cast&lt;uint8_t*&gt;(
+
+   ...,{
+    input_ = reinterpret_cast&lt;uint8_t*&gt;(
+
+   ...)<SUB>1</SUB>>];
+vulnerable_10 [label=<(&lt;operator&gt;.assignment,input_ = reinterpret_cast&lt;uint8_t*&gt;(
+
+         ...)<SUB>2</SUB>>];
+vulnerable_11 [label=<(IDENTIFIER,input_,input_ = reinterpret_cast&lt;uint8_t*&gt;(
+
+         ...)<SUB>2</SUB>>];
+vulnerable_12 [label=<(&lt;operator&gt;.addition,reinterpret_cast&lt;uint8_t*&gt;(
+
+         vpx_memal...)<SUB>2</SUB>>];
+vulnerable_13 [label=<(&lt;operator&gt;.cast,reinterpret_cast&lt;uint8_t*&gt;(
+
+         vpx_memal...)<SUB>2</SUB>>];
+vulnerable_14 [label=<(UNKNOWN,uint8_t*,uint8_t*)<SUB>2</SUB>>];
+vulnerable_15 [label=<(vpx_memalign,vpx_memalign(kDataAlignment, kInputBufferSize + 1))<SUB>4</SUB>>];
+vulnerable_16 [label=<(IDENTIFIER,kDataAlignment,vpx_memalign(kDataAlignment, kInputBufferSize + 1))<SUB>4</SUB>>];
+vulnerable_17 [label=<(&lt;operator&gt;.addition,kInputBufferSize + 1)<SUB>4</SUB>>];
+vulnerable_18 [label=<(IDENTIFIER,kInputBufferSize,kInputBufferSize + 1)<SUB>4</SUB>>];
+vulnerable_19 [label=<(LITERAL,1,kInputBufferSize + 1)<SUB>4</SUB>>];
+vulnerable_20 [label=<(LITERAL,1,reinterpret_cast&lt;uint8_t*&gt;(
+
+         vpx_memal...)<SUB>4</SUB>>];
+vulnerable_21 [label=<(&lt;operator&gt;.assignment,output_ = reinterpret_cast&lt;uint8_t*&gt;(
+         ...)<SUB>5</SUB>>];
+vulnerable_22 [label=<(IDENTIFIER,output_,output_ = reinterpret_cast&lt;uint8_t*&gt;(
+         ...)<SUB>5</SUB>>];
+vulnerable_23 [label=<(&lt;operator&gt;.cast,reinterpret_cast&lt;uint8_t*&gt;(
+         vpx_memali...)<SUB>5</SUB>>];
+vulnerable_24 [label=<(UNKNOWN,uint8_t*,uint8_t*)<SUB>5</SUB>>];
+vulnerable_25 [label=<(vpx_memalign,vpx_memalign(kDataAlignment, kOutputBufferSize))<SUB>6</SUB>>];
+vulnerable_26 [label=<(IDENTIFIER,kDataAlignment,vpx_memalign(kDataAlignment, kOutputBufferSize))<SUB>6</SUB>>];
+vulnerable_27 [label=<(IDENTIFIER,kOutputBufferSize,vpx_memalign(kDataAlignment, kOutputBufferSize))<SUB>6</SUB>>];
+vulnerable_28 [label=<(METHOD_RETURN,void)<SUB>1</SUB>>];
+vulnerable_30 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+vulnerable_50 [label=<(METHOD,&lt;operator&gt;.addition)>];
+vulnerable_51 [label=<(PARAM,p1)>];
+vulnerable_52 [label=<(PARAM,p2)>];
+vulnerable_53 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_54 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_60 [label=<(METHOD,vpx_memalign)>];
+vulnerable_61 [label=<(PARAM,p1)>];
+vulnerable_62 [label=<(PARAM,p2)>];
+vulnerable_63 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_64 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_55 [label=<(METHOD,&lt;operator&gt;.cast)>];
+vulnerable_56 [label=<(PARAM,p1)>];
+vulnerable_57 [label=<(PARAM,p2)>];
+vulnerable_58 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_59 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_45 [label=<(METHOD,&lt;operator&gt;.assignment)>];
+vulnerable_46 [label=<(PARAM,p1)>];
+vulnerable_47 [label=<(PARAM,p2)>];
+vulnerable_48 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_49 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_39 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_40 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_41 [label=<(METHOD_RETURN,ANY)>];
+fixed_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+fixed_8 [label=<(METHOD,SetUpTestCase)<SUB>1</SUB>>];
+fixed_9 [label=<(BLOCK,{
+    input_ = reinterpret_cast&lt;uint8_t*&gt;(
+
+   ...,{
+    input_ = reinterpret_cast&lt;uint8_t*&gt;(
+
+   ...)<SUB>1</SUB>>];
+fixed_10 [label=<(&lt;operator&gt;.assignment,input_ = reinterpret_cast&lt;uint8_t*&gt;(
+
+         ...)<SUB>2</SUB>>];
+fixed_11 [label=<(IDENTIFIER,input_,input_ = reinterpret_cast&lt;uint8_t*&gt;(
+
+         ...)<SUB>2</SUB>>];
+fixed_12 [label=<(&lt;operator&gt;.addition,reinterpret_cast&lt;uint8_t*&gt;(
+
+         vpx_memal...)<SUB>2</SUB>>];
+fixed_13 [label=<(&lt;operator&gt;.cast,reinterpret_cast&lt;uint8_t*&gt;(
+
+         vpx_memal...)<SUB>2</SUB>>];
+fixed_14 [label=<(UNKNOWN,uint8_t*,uint8_t*)<SUB>2</SUB>>];
+fixed_15 [label=<(vpx_memalign,vpx_memalign(kDataAlignment, kInputBufferSize + 1))<SUB>4</SUB>>];
+fixed_16 [label=<(IDENTIFIER,kDataAlignment,vpx_memalign(kDataAlignment, kInputBufferSize + 1))<SUB>4</SUB>>];
+fixed_17 [label=<(&lt;operator&gt;.addition,kInputBufferSize + 1)<SUB>4</SUB>>];
+fixed_18 [label=<(IDENTIFIER,kInputBufferSize,kInputBufferSize + 1)<SUB>4</SUB>>];
+fixed_19 [label=<(LITERAL,1,kInputBufferSize + 1)<SUB>4</SUB>>];
+fixed_20 [label=<(LITERAL,1,reinterpret_cast&lt;uint8_t*&gt;(
+
+         vpx_memal...)<SUB>4</SUB>>];
+fixed_21 [label=<(&lt;operator&gt;.assignment,output_ = reinterpret_cast&lt;uint8_t*&gt;(
+         ...)<SUB>5</SUB>>];
+fixed_22 [label=<(IDENTIFIER,output_,output_ = reinterpret_cast&lt;uint8_t*&gt;(
+         ...)<SUB>5</SUB>>];
+fixed_23 [label=<(&lt;operator&gt;.cast,reinterpret_cast&lt;uint8_t*&gt;(
+         vpx_memali...)<SUB>5</SUB>>];
+fixed_24 [label=<(UNKNOWN,uint8_t*,uint8_t*)<SUB>5</SUB>>];
+fixed_25 [label=<(vpx_memalign,vpx_memalign(kDataAlignment, kOutputBufferSize))<SUB>6</SUB>>];
+fixed_26 [label=<(IDENTIFIER,kDataAlignment,vpx_memalign(kDataAlignment, kOutputBufferSize))<SUB>6</SUB>>];
+fixed_27 [label=<(IDENTIFIER,kOutputBufferSize,vpx_memalign(kDataAlignment, kOutputBufferSize))<SUB>6</SUB>>];
+fixed_28 [label=<(&lt;operator&gt;.assignment,output_ref_ = reinterpret_cast&lt;uint8_t*&gt;(
+     ...)<SUB>7</SUB>>];
+fixed_29 [label=<(IDENTIFIER,output_ref_,output_ref_ = reinterpret_cast&lt;uint8_t*&gt;(
+     ...)<SUB>7</SUB>>];
+fixed_30 [label=<(&lt;operator&gt;.cast,reinterpret_cast&lt;uint8_t*&gt;(
+        vpx_memalig...)<SUB>7</SUB>>];
+fixed_31 [label=<(UNKNOWN,uint8_t*,uint8_t*)<SUB>7</SUB>>];
+fixed_32 [label=<(vpx_memalign,vpx_memalign(kDataAlignment, kOutputBufferSize))<SUB>8</SUB>>];
+fixed_33 [label=<(IDENTIFIER,kDataAlignment,vpx_memalign(kDataAlignment, kOutputBufferSize))<SUB>8</SUB>>];
+fixed_34 [label=<(IDENTIFIER,kOutputBufferSize,vpx_memalign(kDataAlignment, kOutputBufferSize))<SUB>8</SUB>>];
+fixed_35 [label=<(METHOD_RETURN,void)<SUB>1</SUB>>];
+fixed_37 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+fixed_57 [label=<(METHOD,&lt;operator&gt;.addition)>];
+fixed_58 [label=<(PARAM,p1)>];
+fixed_59 [label=<(PARAM,p2)>];
+fixed_60 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_61 [label=<(METHOD_RETURN,ANY)>];
+fixed_67 [label=<(METHOD,vpx_memalign)>];
+fixed_68 [label=<(PARAM,p1)>];
+fixed_69 [label=<(PARAM,p2)>];
+fixed_70 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_71 [label=<(METHOD_RETURN,ANY)>];
+fixed_62 [label=<(METHOD,&lt;operator&gt;.cast)>];
+fixed_63 [label=<(PARAM,p1)>];
+fixed_64 [label=<(PARAM,p2)>];
+fixed_65 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_66 [label=<(METHOD_RETURN,ANY)>];
+fixed_52 [label=<(METHOD,&lt;operator&gt;.assignment)>];
+fixed_53 [label=<(PARAM,p1)>];
+fixed_54 [label=<(PARAM,p2)>];
+fixed_55 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_56 [label=<(METHOD_RETURN,ANY)>];
+fixed_46 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_47 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_48 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_6 -> vulnerable_7  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_30  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_30  [key=1, label="CFG: "];
+vulnerable_7 -> vulnerable_8  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_9  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_28  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_14  [key=0, label="CFG: "];
+vulnerable_8 -> vulnerable_10  [key=0, label="DDG: "];
+vulnerable_8 -> vulnerable_12  [key=0, label="DDG: "];
+vulnerable_8 -> vulnerable_25  [key=0, label="DDG: "];
+vulnerable_8 -> vulnerable_15  [key=0, label="DDG: "];
+vulnerable_8 -> vulnerable_17  [key=0, label="DDG: "];
+vulnerable_9 -> vulnerable_10  [key=0, label="AST: "];
+vulnerable_9 -> vulnerable_21  [key=0, label="AST: "];
+vulnerable_10 -> vulnerable_11  [key=0, label="AST: "];
+vulnerable_10 -> vulnerable_12  [key=0, label="AST: "];
+vulnerable_10 -> vulnerable_24  [key=0, label="CFG: "];
+vulnerable_10 -> vulnerable_28  [key=0, label="DDG: reinterpret_cast&lt;uint8_t*&gt;(
+
+         vpx_memalign(kDataAlignment, kInputBufferSize + 1)) + 1"];
+vulnerable_10 -> vulnerable_28  [key=1, label="DDG: input_ = reinterpret_cast&lt;uint8_t*&gt;(
+
+         vpx_memalign(kDataAlignment, kInputBufferSize + 1)) + 1"];
+vulnerable_10 -> vulnerable_28  [key=2, label="DDG: input_"];
+vulnerable_12 -> vulnerable_13  [key=0, label="AST: "];
+vulnerable_12 -> vulnerable_20  [key=0, label="AST: "];
+vulnerable_12 -> vulnerable_10  [key=0, label="CFG: "];
+vulnerable_12 -> vulnerable_28  [key=0, label="DDG: reinterpret_cast&lt;uint8_t*&gt;(
+
+         vpx_memalign(kDataAlignment, kInputBufferSize + 1))"];
+vulnerable_13 -> vulnerable_14  [key=0, label="AST: "];
+vulnerable_13 -> vulnerable_15  [key=0, label="AST: "];
+vulnerable_13 -> vulnerable_12  [key=0, label="CFG: "];
+vulnerable_13 -> vulnerable_28  [key=0, label="DDG: vpx_memalign(kDataAlignment, kInputBufferSize + 1)"];
+vulnerable_14 -> vulnerable_17  [key=0, label="CFG: "];
+vulnerable_15 -> vulnerable_16  [key=0, label="AST: "];
+vulnerable_15 -> vulnerable_17  [key=0, label="AST: "];
+vulnerable_15 -> vulnerable_13  [key=0, label="CFG: "];
+vulnerable_15 -> vulnerable_13  [key=1, label="DDG: kDataAlignment"];
+vulnerable_15 -> vulnerable_13  [key=2, label="DDG: kInputBufferSize + 1"];
+vulnerable_15 -> vulnerable_28  [key=0, label="DDG: kInputBufferSize + 1"];
+vulnerable_15 -> vulnerable_10  [key=0, label="DDG: kDataAlignment"];
+vulnerable_15 -> vulnerable_10  [key=1, label="DDG: kInputBufferSize + 1"];
+vulnerable_15 -> vulnerable_12  [key=0, label="DDG: kDataAlignment"];
+vulnerable_15 -> vulnerable_12  [key=1, label="DDG: kInputBufferSize + 1"];
+vulnerable_15 -> vulnerable_25  [key=0, label="DDG: kDataAlignment"];
+vulnerable_17 -> vulnerable_18  [key=0, label="AST: "];
+vulnerable_17 -> vulnerable_19  [key=0, label="AST: "];
+vulnerable_17 -> vulnerable_15  [key=0, label="CFG: "];
+vulnerable_17 -> vulnerable_28  [key=0, label="DDG: kInputBufferSize"];
+vulnerable_21 -> vulnerable_22  [key=0, label="AST: "];
+vulnerable_21 -> vulnerable_23  [key=0, label="AST: "];
+vulnerable_21 -> vulnerable_28  [key=0, label="CFG: "];
+vulnerable_21 -> vulnerable_28  [key=1, label="DDG: reinterpret_cast&lt;uint8_t*&gt;(
+         vpx_memalign(kDataAlignment, kOutputBufferSize))"];
+vulnerable_21 -> vulnerable_28  [key=2, label="DDG: output_ = reinterpret_cast&lt;uint8_t*&gt;(
+         vpx_memalign(kDataAlignment, kOutputBufferSize))"];
+vulnerable_21 -> vulnerable_28  [key=3, label="DDG: output_"];
+vulnerable_23 -> vulnerable_24  [key=0, label="AST: "];
+vulnerable_23 -> vulnerable_25  [key=0, label="AST: "];
+vulnerable_23 -> vulnerable_21  [key=0, label="CFG: "];
+vulnerable_23 -> vulnerable_28  [key=0, label="DDG: vpx_memalign(kDataAlignment, kOutputBufferSize)"];
+vulnerable_24 -> vulnerable_25  [key=0, label="CFG: "];
+vulnerable_25 -> vulnerable_26  [key=0, label="AST: "];
+vulnerable_25 -> vulnerable_27  [key=0, label="AST: "];
+vulnerable_25 -> vulnerable_23  [key=0, label="CFG: "];
+vulnerable_25 -> vulnerable_23  [key=1, label="DDG: kDataAlignment"];
+vulnerable_25 -> vulnerable_23  [key=2, label="DDG: kOutputBufferSize"];
+vulnerable_25 -> vulnerable_28  [key=0, label="DDG: kDataAlignment"];
+vulnerable_25 -> vulnerable_28  [key=1, label="DDG: kOutputBufferSize"];
+vulnerable_25 -> vulnerable_21  [key=0, label="DDG: kDataAlignment"];
+vulnerable_25 -> vulnerable_21  [key=1, label="DDG: kOutputBufferSize"];
+vulnerable_50 -> vulnerable_51  [key=0, label="AST: "];
+vulnerable_50 -> vulnerable_51  [key=1, label="DDG: "];
+vulnerable_50 -> vulnerable_53  [key=0, label="AST: "];
+vulnerable_50 -> vulnerable_52  [key=0, label="AST: "];
+vulnerable_50 -> vulnerable_52  [key=1, label="DDG: "];
+vulnerable_50 -> vulnerable_54  [key=0, label="AST: "];
+vulnerable_50 -> vulnerable_54  [key=1, label="CFG: "];
+vulnerable_51 -> vulnerable_54  [key=0, label="DDG: p1"];
+vulnerable_52 -> vulnerable_54  [key=0, label="DDG: p2"];
+vulnerable_60 -> vulnerable_61  [key=0, label="AST: "];
+vulnerable_60 -> vulnerable_61  [key=1, label="DDG: "];
+vulnerable_60 -> vulnerable_63  [key=0, label="AST: "];
+vulnerable_60 -> vulnerable_62  [key=0, label="AST: "];
+vulnerable_60 -> vulnerable_62  [key=1, label="DDG: "];
+vulnerable_60 -> vulnerable_64  [key=0, label="AST: "];
+vulnerable_60 -> vulnerable_64  [key=1, label="CFG: "];
+vulnerable_61 -> vulnerable_64  [key=0, label="DDG: p1"];
+vulnerable_62 -> vulnerable_64  [key=0, label="DDG: p2"];
+vulnerable_55 -> vulnerable_56  [key=0, label="AST: "];
+vulnerable_55 -> vulnerable_56  [key=1, label="DDG: "];
+vulnerable_55 -> vulnerable_58  [key=0, label="AST: "];
+vulnerable_55 -> vulnerable_57  [key=0, label="AST: "];
+vulnerable_55 -> vulnerable_57  [key=1, label="DDG: "];
+vulnerable_55 -> vulnerable_59  [key=0, label="AST: "];
+vulnerable_55 -> vulnerable_59  [key=1, label="CFG: "];
+vulnerable_56 -> vulnerable_59  [key=0, label="DDG: p1"];
+vulnerable_57 -> vulnerable_59  [key=0, label="DDG: p2"];
+vulnerable_45 -> vulnerable_46  [key=0, label="AST: "];
+vulnerable_45 -> vulnerable_46  [key=1, label="DDG: "];
+vulnerable_45 -> vulnerable_48  [key=0, label="AST: "];
+vulnerable_45 -> vulnerable_47  [key=0, label="AST: "];
+vulnerable_45 -> vulnerable_47  [key=1, label="DDG: "];
+vulnerable_45 -> vulnerable_49  [key=0, label="AST: "];
+vulnerable_45 -> vulnerable_49  [key=1, label="CFG: "];
+vulnerable_46 -> vulnerable_49  [key=0, label="DDG: p1"];
+vulnerable_47 -> vulnerable_49  [key=0, label="DDG: p2"];
+vulnerable_39 -> vulnerable_40  [key=0, label="AST: "];
+vulnerable_39 -> vulnerable_41  [key=0, label="AST: "];
+vulnerable_39 -> vulnerable_41  [key=1, label="CFG: "];
+fixed_6 -> fixed_7  [key=0, label="AST: "];
+fixed_6 -> fixed_37  [key=0, label="AST: "];
+fixed_6 -> fixed_37  [key=1, label="CFG: "];
+fixed_7 -> fixed_8  [key=0, label="AST: "];
+fixed_8 -> fixed_9  [key=0, label="AST: "];
+fixed_8 -> fixed_35  [key=0, label="AST: "];
+fixed_8 -> fixed_14  [key=0, label="CFG: "];
+fixed_8 -> fixed_10  [key=0, label="DDG: "];
+fixed_8 -> fixed_12  [key=0, label="DDG: "];
+fixed_8 -> fixed_25  [key=0, label="DDG: "];
+fixed_8 -> fixed_32  [key=0, label="DDG: "];
+fixed_8 -> fixed_15  [key=0, label="DDG: "];
+fixed_8 -> fixed_17  [key=0, label="DDG: "];
+fixed_9 -> fixed_10  [key=0, label="AST: "];
+fixed_9 -> fixed_21  [key=0, label="AST: "];
+fixed_9 -> fixed_28  [key=0, label="AST: "];
+fixed_10 -> fixed_11  [key=0, label="AST: "];
+fixed_10 -> fixed_12  [key=0, label="AST: "];
+fixed_10 -> fixed_24  [key=0, label="CFG: "];
+fixed_10 -> fixed_35  [key=0, label="DDG: reinterpret_cast&lt;uint8_t*&gt;(
+
+         vpx_memalign(kDataAlignment, kInputBufferSize + 1)) + 1"];
+fixed_10 -> fixed_35  [key=1, label="DDG: input_ = reinterpret_cast&lt;uint8_t*&gt;(
+
+         vpx_memalign(kDataAlignment, kInputBufferSize + 1)) + 1"];
+fixed_10 -> fixed_35  [key=2, label="DDG: input_"];
+fixed_11 -> vulnerable_6  [key=0];
+fixed_12 -> fixed_13  [key=0, label="AST: "];
+fixed_12 -> fixed_20  [key=0, label="AST: "];
+fixed_12 -> fixed_10  [key=0, label="CFG: "];
+fixed_12 -> fixed_35  [key=0, label="DDG: reinterpret_cast&lt;uint8_t*&gt;(
+
+         vpx_memalign(kDataAlignment, kInputBufferSize + 1))"];
+fixed_13 -> fixed_14  [key=0, label="AST: "];
+fixed_13 -> fixed_15  [key=0, label="AST: "];
+fixed_13 -> fixed_12  [key=0, label="CFG: "];
+fixed_13 -> fixed_35  [key=0, label="DDG: vpx_memalign(kDataAlignment, kInputBufferSize + 1)"];
+fixed_14 -> fixed_17  [key=0, label="CFG: "];
+fixed_15 -> fixed_16  [key=0, label="AST: "];
+fixed_15 -> fixed_17  [key=0, label="AST: "];
+fixed_15 -> fixed_13  [key=0, label="CFG: "];
+fixed_15 -> fixed_13  [key=1, label="DDG: kDataAlignment"];
+fixed_15 -> fixed_13  [key=2, label="DDG: kInputBufferSize + 1"];
+fixed_15 -> fixed_35  [key=0, label="DDG: kInputBufferSize + 1"];
+fixed_15 -> fixed_10  [key=0, label="DDG: kDataAlignment"];
+fixed_15 -> fixed_10  [key=1, label="DDG: kInputBufferSize + 1"];
+fixed_15 -> fixed_12  [key=0, label="DDG: kDataAlignment"];
+fixed_15 -> fixed_12  [key=1, label="DDG: kInputBufferSize + 1"];
+fixed_15 -> fixed_25  [key=0, label="DDG: kDataAlignment"];
+fixed_16 -> vulnerable_6  [key=0];
+fixed_17 -> fixed_18  [key=0, label="AST: "];
+fixed_17 -> fixed_19  [key=0, label="AST: "];
+fixed_17 -> fixed_15  [key=0, label="CFG: "];
+fixed_17 -> fixed_35  [key=0, label="DDG: kInputBufferSize"];
+fixed_18 -> vulnerable_6  [key=0];
+fixed_19 -> vulnerable_6  [key=0];
+fixed_20 -> vulnerable_6  [key=0];
+fixed_21 -> fixed_22  [key=0, label="AST: "];
+fixed_21 -> fixed_23  [key=0, label="AST: "];
+fixed_21 -> fixed_31  [key=0, label="CFG: "];
+fixed_21 -> fixed_35  [key=0, label="DDG: reinterpret_cast&lt;uint8_t*&gt;(
+         vpx_memalign(kDataAlignment, kOutputBufferSize))"];
+fixed_21 -> fixed_35  [key=1, label="DDG: output_ = reinterpret_cast&lt;uint8_t*&gt;(
+         vpx_memalign(kDataAlignment, kOutputBufferSize))"];
+fixed_21 -> fixed_35  [key=2, label="DDG: output_"];
+fixed_22 -> vulnerable_6  [key=0];
+fixed_23 -> fixed_24  [key=0, label="AST: "];
+fixed_23 -> fixed_25  [key=0, label="AST: "];
+fixed_23 -> fixed_21  [key=0, label="CFG: "];
+fixed_24 -> fixed_25  [key=0, label="CFG: "];
+fixed_25 -> fixed_26  [key=0, label="AST: "];
+fixed_25 -> fixed_27  [key=0, label="AST: "];
+fixed_25 -> fixed_23  [key=0, label="CFG: "];
+fixed_25 -> fixed_23  [key=1, label="DDG: kDataAlignment"];
+fixed_25 -> fixed_23  [key=2, label="DDG: kOutputBufferSize"];
+fixed_25 -> fixed_21  [key=0, label="DDG: kDataAlignment"];
+fixed_25 -> fixed_21  [key=1, label="DDG: kOutputBufferSize"];
+fixed_25 -> fixed_32  [key=0, label="DDG: kDataAlignment"];
+fixed_25 -> fixed_32  [key=1, label="DDG: kOutputBufferSize"];
+fixed_26 -> vulnerable_6  [key=0];
+fixed_27 -> vulnerable_6  [key=0];
+fixed_28 -> fixed_29  [key=0, label="AST: "];
+fixed_28 -> fixed_30  [key=0, label="AST: "];
+fixed_28 -> fixed_35  [key=0, label="CFG: "];
+fixed_28 -> fixed_35  [key=1, label="DDG: reinterpret_cast&lt;uint8_t*&gt;(
+        vpx_memalign(kDataAlignment, kOutputBufferSize))"];
+fixed_28 -> fixed_35  [key=2, label="DDG: output_ref_ = reinterpret_cast&lt;uint8_t*&gt;(
+        vpx_memalign(kDataAlignment, kOutputBufferSize))"];
+fixed_28 -> fixed_35  [key=3, label="DDG: output_ref_"];
+fixed_29 -> vulnerable_6  [key=0];
+fixed_30 -> fixed_31  [key=0, label="AST: "];
+fixed_30 -> fixed_32  [key=0, label="AST: "];
+fixed_30 -> fixed_28  [key=0, label="CFG: "];
+fixed_30 -> fixed_35  [key=0, label="DDG: vpx_memalign(kDataAlignment, kOutputBufferSize)"];
+fixed_31 -> fixed_32  [key=0, label="CFG: "];
+fixed_32 -> fixed_33  [key=0, label="AST: "];
+fixed_32 -> fixed_34  [key=0, label="AST: "];
+fixed_32 -> fixed_30  [key=0, label="CFG: "];
+fixed_32 -> fixed_30  [key=1, label="DDG: kDataAlignment"];
+fixed_32 -> fixed_30  [key=2, label="DDG: kOutputBufferSize"];
+fixed_32 -> fixed_35  [key=0, label="DDG: kDataAlignment"];
+fixed_32 -> fixed_35  [key=1, label="DDG: kOutputBufferSize"];
+fixed_32 -> fixed_28  [key=0, label="DDG: kDataAlignment"];
+fixed_32 -> fixed_28  [key=1, label="DDG: kOutputBufferSize"];
+fixed_33 -> vulnerable_6  [key=0];
+fixed_34 -> vulnerable_6  [key=0];
+fixed_35 -> vulnerable_6  [key=0];
+fixed_37 -> vulnerable_6  [key=0];
+fixed_57 -> fixed_58  [key=0, label="AST: "];
+fixed_57 -> fixed_58  [key=1, label="DDG: "];
+fixed_57 -> fixed_60  [key=0, label="AST: "];
+fixed_57 -> fixed_59  [key=0, label="AST: "];
+fixed_57 -> fixed_59  [key=1, label="DDG: "];
+fixed_57 -> fixed_61  [key=0, label="AST: "];
+fixed_57 -> fixed_61  [key=1, label="CFG: "];
+fixed_58 -> fixed_61  [key=0, label="DDG: p1"];
+fixed_59 -> fixed_61  [key=0, label="DDG: p2"];
+fixed_60 -> vulnerable_6  [key=0];
+fixed_61 -> vulnerable_6  [key=0];
+fixed_67 -> fixed_68  [key=0, label="AST: "];
+fixed_67 -> fixed_68  [key=1, label="DDG: "];
+fixed_67 -> fixed_70  [key=0, label="AST: "];
+fixed_67 -> fixed_69  [key=0, label="AST: "];
+fixed_67 -> fixed_69  [key=1, label="DDG: "];
+fixed_67 -> fixed_71  [key=0, label="AST: "];
+fixed_67 -> fixed_71  [key=1, label="CFG: "];
+fixed_68 -> fixed_71  [key=0, label="DDG: p1"];
+fixed_69 -> fixed_71  [key=0, label="DDG: p2"];
+fixed_70 -> vulnerable_6  [key=0];
+fixed_71 -> vulnerable_6  [key=0];
+fixed_62 -> fixed_63  [key=0, label="AST: "];
+fixed_62 -> fixed_63  [key=1, label="DDG: "];
+fixed_62 -> fixed_65  [key=0, label="AST: "];
+fixed_62 -> fixed_64  [key=0, label="AST: "];
+fixed_62 -> fixed_64  [key=1, label="DDG: "];
+fixed_62 -> fixed_66  [key=0, label="AST: "];
+fixed_62 -> fixed_66  [key=1, label="CFG: "];
+fixed_63 -> fixed_66  [key=0, label="DDG: p1"];
+fixed_64 -> fixed_66  [key=0, label="DDG: p2"];
+fixed_65 -> vulnerable_6  [key=0];
+fixed_66 -> vulnerable_6  [key=0];
+fixed_52 -> fixed_53  [key=0, label="AST: "];
+fixed_52 -> fixed_53  [key=1, label="DDG: "];
+fixed_52 -> fixed_55  [key=0, label="AST: "];
+fixed_52 -> fixed_54  [key=0, label="AST: "];
+fixed_52 -> fixed_54  [key=1, label="DDG: "];
+fixed_52 -> fixed_56  [key=0, label="AST: "];
+fixed_52 -> fixed_56  [key=1, label="CFG: "];
+fixed_53 -> fixed_56  [key=0, label="DDG: p1"];
+fixed_54 -> fixed_56  [key=0, label="DDG: p2"];
+fixed_55 -> vulnerable_6  [key=0];
+fixed_56 -> vulnerable_6  [key=0];
+fixed_46 -> fixed_47  [key=0, label="AST: "];
+fixed_46 -> fixed_48  [key=0, label="AST: "];
+fixed_46 -> fixed_48  [key=1, label="CFG: "];
+fixed_47 -> vulnerable_6  [key=0];
+fixed_48 -> vulnerable_6  [key=0];
+}

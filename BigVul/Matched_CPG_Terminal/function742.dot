@@ -1,0 +1,114 @@
+digraph "&lt;global&gt;" {
+vulnerable_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+vulnerable_8 [label=<(UNKNOWN,PHP_FUNCTION(imagepsencodefont)
+{
+	zval *fnt;,PHP_FUNCTION(imagepsencodefont)
+{
+	zval *fnt;)<SUB>1</SUB>>];
+vulnerable_9 [label="<(LOCAL,char* enc: char*)<SUB>4</SUB>>"];
+vulnerable_10 [label="<(LOCAL,char** enc_vector: char**)<SUB>4</SUB>>"];
+vulnerable_11 [label="<(LOCAL,int enc_len: int)<SUB>5</SUB>>"];
+vulnerable_12 [label="<(LOCAL,int* f_ind: int*)<SUB>5</SUB>>"];
+vulnerable_13 [label=<(UNKNOWN,if (zend_parse_parameters(ZEND_NUM_ARGS() TSRML...,if (zend_parse_parameters(ZEND_NUM_ARGS() TSRML...)<SUB>7</SUB>>];
+vulnerable_14 [label=<(UNKNOWN,ZEND_FETCH_RESOURCE(f_ind, int *, &amp;fnt, -1, &quot;Ty...,ZEND_FETCH_RESOURCE(f_ind, int *, &amp;fnt, -1, &quot;Ty...)<SUB>10</SUB>>];
+vulnerable_15 [label=<(UNKNOWN,if ((enc_vector = T1_LoadEncoding(enc)) == NULL...,if ((enc_vector = T1_LoadEncoding(enc)) == NULL...)<SUB>12</SUB>>];
+vulnerable_16 [label="<(LOCAL,T1_DeleteAllSizes : T1_DeleteAllSizes)<SUB>17</SUB>>"];
+vulnerable_17 [label=<(UNKNOWN,if (T1_ReencodeFont(*f_ind, enc_vector)) {
+		T1...,if (T1_ReencodeFont(*f_ind, enc_vector)) {
+		T1...)<SUB>18</SUB>>];
+vulnerable_18 [label=<(UNKNOWN,zend_list_insert(enc_vector, le_ps_enc TSRMLS_CC);,zend_list_insert(enc_vector, le_ps_enc TSRMLS_CC);)<SUB>24</SUB>>];
+vulnerable_19 [label=<(UNKNOWN,RETURN_TRUE;,RETURN_TRUE;)<SUB>26</SUB>>];
+vulnerable_20 [label=<(UNKNOWN,},})<SUB>27</SUB>>];
+vulnerable_21 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+vulnerable_36 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+vulnerable_37 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+vulnerable_38 [label=<(METHOD_RETURN,ANY)>];
+fixed_6 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_7 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1</SUB>>];
+fixed_8 [label=<(UNKNOWN,PHP_FUNCTION(imagepsencodefont)
+{
+	zval *fnt;,PHP_FUNCTION(imagepsencodefont)
+{
+	zval *fnt;)<SUB>1</SUB>>];
+fixed_9 [label="<(LOCAL,char* enc: char*)<SUB>4</SUB>>"];
+fixed_10 [label="<(LOCAL,char** enc_vector: char**)<SUB>4</SUB>>"];
+fixed_11 [label="<(LOCAL,int enc_len: int)<SUB>5</SUB>>"];
+fixed_12 [label="<(LOCAL,int* f_ind: int*)<SUB>5</SUB>>"];
+fixed_13 [label=<(UNKNOWN,if (zend_parse_parameters(ZEND_NUM_ARGS() TSRML...,if (zend_parse_parameters(ZEND_NUM_ARGS() TSRML...)<SUB>7</SUB>>];
+fixed_14 [label=<(UNKNOWN,ZEND_FETCH_RESOURCE(f_ind, int *, &amp;fnt, -1, &quot;Ty...,ZEND_FETCH_RESOURCE(f_ind, int *, &amp;fnt, -1, &quot;Ty...)<SUB>10</SUB>>];
+fixed_15 [label=<(UNKNOWN,if ((enc_vector = T1_LoadEncoding(enc)) == NULL...,if ((enc_vector = T1_LoadEncoding(enc)) == NULL...)<SUB>12</SUB>>];
+fixed_16 [label="<(LOCAL,T1_DeleteAllSizes : T1_DeleteAllSizes)<SUB>17</SUB>>"];
+fixed_17 [label=<(UNKNOWN,if (T1_ReencodeFont(*f_ind, enc_vector)) {
+		T1...,if (T1_ReencodeFont(*f_ind, enc_vector)) {
+		T1...)<SUB>18</SUB>>];
+fixed_18 [label=<(UNKNOWN,zend_list_insert(enc_vector, le_ps_enc TSRMLS_CC);,zend_list_insert(enc_vector, le_ps_enc TSRMLS_CC);)<SUB>24</SUB>>];
+fixed_19 [label=<(UNKNOWN,RETURN_TRUE;,RETURN_TRUE;)<SUB>26</SUB>>];
+fixed_20 [label=<(UNKNOWN,},})<SUB>27</SUB>>];
+fixed_21 [label=<(METHOD_RETURN,ANY)<SUB>1</SUB>>];
+fixed_36 [label=<(METHOD,&lt;global&gt;)<SUB>1</SUB>>];
+fixed_37 [label=<(BLOCK,&lt;empty&gt;,&lt;empty&gt;)>];
+fixed_38 [label=<(METHOD_RETURN,ANY)>];
+vulnerable_6 -> vulnerable_7  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_21  [key=0, label="AST: "];
+vulnerable_6 -> vulnerable_8  [key=0, label="CFG: "];
+vulnerable_7 -> vulnerable_8  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_9  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_10  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_11  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_12  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_13  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_14  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_15  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_16  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_17  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_18  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_19  [key=0, label="AST: "];
+vulnerable_7 -> vulnerable_20  [key=0, label="AST: "];
+vulnerable_8 -> vulnerable_13  [key=0, label="CFG: "];
+vulnerable_9 -> fixed_6  [key=0];
+vulnerable_10 -> fixed_6  [key=0];
+vulnerable_11 -> fixed_6  [key=0];
+vulnerable_12 -> fixed_6  [key=0];
+vulnerable_13 -> vulnerable_14  [key=0, label="CFG: "];
+vulnerable_14 -> vulnerable_15  [key=0, label="CFG: "];
+vulnerable_15 -> vulnerable_17  [key=0, label="CFG: "];
+vulnerable_16 -> fixed_6  [key=0];
+vulnerable_17 -> vulnerable_18  [key=0, label="CFG: "];
+vulnerable_18 -> vulnerable_19  [key=0, label="CFG: "];
+vulnerable_19 -> vulnerable_20  [key=0, label="CFG: "];
+vulnerable_20 -> vulnerable_21  [key=0, label="CFG: "];
+vulnerable_21 -> fixed_6  [key=0];
+vulnerable_36 -> vulnerable_37  [key=0, label="AST: "];
+vulnerable_36 -> vulnerable_38  [key=0, label="AST: "];
+vulnerable_36 -> vulnerable_38  [key=1, label="CFG: "];
+vulnerable_37 -> fixed_6  [key=0];
+vulnerable_38 -> fixed_6  [key=0];
+fixed_6 -> fixed_7  [key=0, label="AST: "];
+fixed_6 -> fixed_21  [key=0, label="AST: "];
+fixed_6 -> fixed_8  [key=0, label="CFG: "];
+fixed_7 -> fixed_8  [key=0, label="AST: "];
+fixed_7 -> fixed_9  [key=0, label="AST: "];
+fixed_7 -> fixed_10  [key=0, label="AST: "];
+fixed_7 -> fixed_11  [key=0, label="AST: "];
+fixed_7 -> fixed_12  [key=0, label="AST: "];
+fixed_7 -> fixed_13  [key=0, label="AST: "];
+fixed_7 -> fixed_14  [key=0, label="AST: "];
+fixed_7 -> fixed_15  [key=0, label="AST: "];
+fixed_7 -> fixed_16  [key=0, label="AST: "];
+fixed_7 -> fixed_17  [key=0, label="AST: "];
+fixed_7 -> fixed_18  [key=0, label="AST: "];
+fixed_7 -> fixed_19  [key=0, label="AST: "];
+fixed_7 -> fixed_20  [key=0, label="AST: "];
+fixed_8 -> fixed_13  [key=0, label="CFG: "];
+fixed_13 -> fixed_14  [key=0, label="CFG: "];
+fixed_14 -> fixed_15  [key=0, label="CFG: "];
+fixed_15 -> fixed_17  [key=0, label="CFG: "];
+fixed_17 -> fixed_18  [key=0, label="CFG: "];
+fixed_18 -> fixed_19  [key=0, label="CFG: "];
+fixed_19 -> fixed_20  [key=0, label="CFG: "];
+fixed_20 -> fixed_21  [key=0, label="CFG: "];
+fixed_36 -> fixed_37  [key=0, label="AST: "];
+fixed_36 -> fixed_38  [key=0, label="AST: "];
+fixed_36 -> fixed_38  [key=1, label="CFG: "];
+}
