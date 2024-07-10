@@ -2,6 +2,9 @@ import os
 import networkx as nx
 import pydot
 import subprocess
+#For streamline usage
+import dot_cleaner
+import cpg_to_pickle
 
 # Function to load a graph from a DOT file
 def load_graph(file_path):
@@ -20,7 +23,8 @@ def find_root(graph):
 # Directory paths
 input_dir = 'Combined_CPG'
 output_dir = 'Matched_CPG_Root'
-
+clean_dot_dir = 'Test/'
+pkl_dir = 'pklTest'
 # Ensure the output directory exists
 os.makedirs(output_dir, exist_ok=True)
 
@@ -57,6 +61,6 @@ for function in os.listdir(input_dir):
             print(f"Warning: Missing vulnerability or fixed file for {function}")
 
 print("Moving to cleaning")
-subprocess.run(["python", "dot_cleaner_root.py"], check=True)
+dot_cleaner.clean_dot_files(output_dir, clean_dot_dir)
 print("Moving to pkl")
-subprocess.run(["python", "cpg_to_pickle_root.py"], check=True)
+cpg_to_pickle.main(clean_dot_dir, pkl_dir)

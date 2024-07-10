@@ -59,11 +59,16 @@ def process_dot_files_in_directory(input_directory, output_directory):
             with open(output_filepath, "w") as output_file:
                 output_file.write(renumbered_content)
 
+def clean_dot_files(input_dir, output_dir):
+    """
+    Cleans .dot files by renumbering node IDs.
 
-# Example usage
-input_directory = "Matched_CPG/"
-output_directory = "Clean_Matched_CPG_2/"  # Specify the output folder path
-
-os.makedirs(output_directory, exist_ok=True)
-
-process_dot_files_in_directory(input_directory, output_directory)
+    Args:
+        input_dir (str): Path to the directory containing .dot files to clean.
+        output_dir (str): Path to the directory where cleaned files will be saved.
+    """
+    os.makedirs(output_dir, exist_ok=True)
+    process_dot_files_in_directory(input_dir, output_dir)
+# If run as a script
+if __name__ == "__main__":
+    clean_dot_files()  # Use default directories or modify the arguments

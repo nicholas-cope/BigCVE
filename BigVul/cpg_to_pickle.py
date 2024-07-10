@@ -10,16 +10,17 @@ import random
 from huggingface_hub import login, HfFolder
 
 # This file is originaly based on VulCNN, but is fairly different now
+#Command to run python cpg_to_pickle.py -i ../vulFixing -o ../fixingPKL
+#Other way
+#python cpg_to_pickle.py -i ../vulInducing -o ../fixingPKL
+
 # Imports for tokenization via codebert model
 import torch
 from transformers import AutoTokenizer
-
-#Needed for Hellbender
-'''
 HF_TOKEN = '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'
 HfFolder.save_token(HF_TOKEN)
 login(HF_TOKEN, add_to_git_credential=True)
-'''
+
 # Imports for graph construction
 from torch_geometric.data import Data, Batch
 tokenizer = AutoTokenizer.from_pretrained("bigcode/starcoder")
@@ -128,26 +129,16 @@ def write_to_pkl(dot, out, existing_files):
                 pickle.dump(graph, f)
 
 
-def main():
-    #args = parse_options()
-    print("Running")
-    dir_name = "Clean_Matched_CPG_2/"
-    out_path = "vulFixing/"
-    # Don't judge my global variables. This was the way VulCNN did it and I don't feel like changing the structure
-    if dir_name[-1] == '/':
-        dir_name = dir_name
-    else:
-        dir_name += "/"
-    dotfiles = glob.glob(dir_name + '*.dot')
+def main(input_dir, output_dir):
+    #Ensuring proper formatting
+    input_dir = input_dir.rstrip('/') + '/'
+    output_dir = output_dir.rstrip('/') + '/'
+    dotfiles = glob.glob(input_dir + '*.dot')
 
-    if out_path[-1] == '/':
-        out_path = out_path
-    else:
-        out_path += '/'
 
-    if not os.path.exists(out_path):
-        os.makedirs(out_path)
-    existing_files = glob.glob(out_path + "/*.pkl")
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+    existing_files = glob.glob(output_dir + "/*.pkl")
     existing_files = [f.split('.pkl')[0] for f in existing_files]
 
     # Shuffling takes some computation time, but it overall speeds up the process
@@ -155,7 +146,7 @@ def main():
     # so there aren't 1-3 workers left processing much longer than the others
     random.shuffle(dotfiles)
     pool = Pool(10)
-    pool.map(partial(write_to_pkl, out=out_path, existing_files=existing_files), dotfiles)
+    pool.map(partial(write_to_pkl, out=output_dir, existing_files=existing_files), dotfiles)
 
 
 if __name__ == '__main__':
