@@ -132,8 +132,8 @@ def write_to_pkl(dot, out, existing_files):
 def main():
     #args = parse_options()
     print("Running")
-    dir_name = "Clean_Matched_CPG_CVE/"
-    out_path = "vulFixing/"
+    dir_name = "Clean_Matched_CPG_Root_Terminal"
+    out_path = "vulFixing_Root_Terminal/"
     # Don't judge my global variables. This was the way VulCNN did it and I don't feel like changing the structure
     if dir_name[-1] == '/':
         dir_name = dir_name
