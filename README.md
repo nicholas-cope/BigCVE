@@ -1,11 +1,16 @@
 # BigCVE
 
 ## :round_pushpin: About
-BigCVE is a data pipeline created by Yuri Batan (OSU :chestnut: ) and Nicholas Cope (UNC :ram: ) in the University of Missouri's Consumer Networking REU Program. BigCVE extracts vulnerable code snippets and their corresponding fixes from the BigVul and CVEFixes dataset. 
+BigCVE is a data pipeline created by Yuri Batan (OSU :chestnut: ) and Nicholas Cope (UNC :ram: ) in the University of Missouri's Consumer Networking REU Program ('24). 
+### How BigCVE Works
++ Extracts vulnerable code snippets and their corresponding fixes from the BigVul and CVEFixes dataset.
++ Takes functions and converts them into Code Property Graphs in a `.dot` format
++ Creates temporal representation CPG of the fixes introduced to fix the vulnerability by utilizing one of the many graph matching approaches
+  + In :file_folder: Matching
++ Temporal CPG's tokenized with the StarCoder model and transformed into a format suitable for machine learning models. `.pkl`
 
-BigCVE takes these functions and converts them into Code Property Graphs and creates a temporal representation of the fixes introduced to fix the vulnerability by utilizing one of the many graph matching approaches in :file_folder: Matching. 
+BigCVE's `.pkl` files have only been tested on a Graph Neural Network but it has the possibility to used on alternative deep learning models.
 
-Finally, these graphs are tokenized with the StarCoder model and transforms the CPG's into a format suitable for machine learning models, especially Graph Neural Networks.
 ## Data Preperation Steps
 ### For BigVul
 1. Run the CSV Cleaner on BigVul dataset to isolate changing functions. This script is present in Data_Prep/csv_cleaner.py
