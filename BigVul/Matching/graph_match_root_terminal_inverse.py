@@ -20,10 +20,25 @@ def find_sinks(graph):
     """Finds sink nodes (nodes with no outgoing edges) in a graph."""
     return [node for node in graph.nodes if graph.out_degree(node) == 0]
 
-input_dir = 'Combined_CPG/'
-output_dir = 'Matched_CPG_Root_Terminal_Inverse/'
-clean_dot_dir = ''
-pkl_dir = ''
+#Modified Directory Paths
+script_dir = os.path.dirname(os.path.realpath(__file__))  # Get the script's directory
+print(script_dir)
+output_root = os.path.join(os.path.dirname(script_dir))  # Parent directory of the scripts folder
+print(output_root)
+
+# Define output directories relative to the output_root
+output_dir = os.path.join(output_root, 'Matched_CPG_Root_Terminal_Inverse')
+clean_dot_dir = os.path.join(output_root, 'Clean_Matched_CPG_Root_Term_Inv')
+pkl_dir = os.path.join(output_root, 'rootTermInvPKL')
+
+# Define the input directory
+input_dir = os.path.join(output_root, 'Combined_CPG')
+
+# Ensure the output directory exists
+# Create the output directories if they don't exist
+os.makedirs(output_dir, exist_ok=True)
+os.makedirs(clean_dot_dir, exist_ok=True)
+os.makedirs(pkl_dir, exist_ok=True)
 
 os.makedirs(output_dir, exist_ok=True)
 
