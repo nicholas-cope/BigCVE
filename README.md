@@ -1,7 +1,7 @@
-# BigCVE
+# BigCVE :gear: 
 
 ## :round_pushpin: About
-BigCVE is a data pipeline created by Yuri Batan (OSU :chestnut: ) and Nicholas Cope (UNC :ram: ) in the University of Missouri's Consumer Networking REU Program ('24). 
+BigCVE is a data pipeline created by Yuri Batan (tOSU) and Nicholas Cope (UNC) in the University of Missouri's Consumer Networking REU Program ('24). 
 ### How BigCVE Works
 + Extracts vulnerable code snippets and their corresponding fixes from the BigVul and CVEFixes dataset.
 + Takes functions and converts them into Code Property Graphs in a `.dot` format
