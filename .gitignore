@@ -1,5 +1,8 @@
 #All Hellbender out files
 *.out
+#All batch files
+*.txt
+
 
 BigVul/Dataset/
 BigVul/Functions/
@@ -7,8 +10,8 @@ BigVul/CPG/
 BigVul/Combined_CPG/
 BigVul/Matched_CPG/
 BigVul/Combined_CPG_Inverse/
-BigVul/Matched_CPG/
-BigVul/Matched_CPG_Inverse/
+BigVul/Matched_CPG_Terminal/
+BigVul/Matched_CPG_Terminal_Inverse/
 BigVul/Temp/
 BigVul/Pickle/
 BigVul/Pickle_Inverse/
@@ -32,6 +35,12 @@ BigVul/Pickle_Root/
 BigVul/Clean_Matched_CPG_Root_Term_Inv
 BigVul/Clean_Matched_CPG_Root_Terminal
 BigVul/Pickle_Root_Terminal/
+BigVul/Matched_CPG_Similar/
+BigVul/Matched_CPG_Similar_Inverse/
+BigVul/Clean_Matched_CPG_Similar/
+BigVul/Clean_Matched_CPG_Similar_Inverse/
+BigVul/Pickle_Similarities/
+
 
 CVEFixes/CPG/
 CVEFixes/Pickle/
@@ -42,3 +51,7 @@ CVEFixes/Clean_Matched_CPG_CVE/
 CVEFixes/Clean_Matched_CPG_Inverse_CVE/
 CVEFixes/CVEFixes_v1.0.7
 
+
+BigVul/Matching/similar
+BigVul/Matching/__pycache__/cpg_to_pickle.cpython-312.pyc
+BigVul/Matching/__pycache__/dot_cleaner.cpython-312.pyc

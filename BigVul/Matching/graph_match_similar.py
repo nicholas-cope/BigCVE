@@ -58,6 +58,7 @@ for function in os.listdir(input_dir):
             combined_graph = nx.union(g_vulnerable, g_fixed, rename=('vulnerable_', 'fixed_'))
 
             # Connect and color SIMILAR nodes (yellow)
+            #vulnerable to fixed
             for v_node, f_node in find_similar_nodes(g_vulnerable, g_fixed):
                 combined_graph.add_edge('vulnerable_' + v_node, 'fixed_' + f_node)
 
@@ -66,6 +67,7 @@ for function in os.listdir(input_dir):
             sink_vulnerable_nodes = find_sinks(combined_graph.subgraph([n for n in combined_graph if n.startswith('vulnerable_')]))
             sink_fixed_nodes = find_sinks(combined_graph.subgraph([n for n in combined_graph if n.startswith('fixed_')]))
             for sink_v, sink_f in zip(sink_vulnerable_nodes, sink_fixed_nodes):
+                #vulnerable to fixed
                 combined_graph.add_edge(sink_v, sink_f)
 
             output_file = os.path.join(output_dir, f'{function}.dot')
